@@ -1,0 +1,37 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerAnimation : MonoBehaviour
+{
+    private Animator ani;
+    private Rigidbody2D rb;
+    private bool facingRight;
+    void Start()
+    {
+        this.ani = GetComponentInChildren<Animator>();
+        this.rb = GetComponent<Rigidbody2D>();  
+    }
+    void Update()
+    {
+        AnimationControll();
+    }
+    void AnimationControll()
+    {
+        bool moveleft = this.rb.velocityX != 0;
+        this.ani.SetBool("move",moveleft);
+        if (this.rb.velocityX > 0 && this.facingRight)
+            Flip();
+        else if (this.rb.velocityX < 0 && !this.facingRight) Flip();
+        bool runup = this.rb.velocityY > 0 && rb.velocityX == 0;
+        this.ani.SetBool ("runup",runup);
+        bool rundown = this.rb.velocityY < 0 && rb.velocityX == 0;
+        this.ani.SetBool("rundown", rundown);
+    }
+    void Flip()
+    {
+        this.facingRight = !this.facingRight;
+        this.transform.Rotate(0, 180, 0);
+    }
+}

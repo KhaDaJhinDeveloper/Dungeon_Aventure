@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skull : WeaponBase, IWeapon
+public class Axe : WeaponBase,IWeapon,IShoot
 {
     protected override void Start()
     {
@@ -16,4 +16,8 @@ public class Skull : WeaponBase, IWeapon
     {
         this.weaponSlotAttack.IsAttacking = !this.weaponSlotAttack.IsAttacking;
     }
+    public void Shooting()
+    {
+
+    }    
 }

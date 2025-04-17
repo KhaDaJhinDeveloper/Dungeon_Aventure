@@ -6,6 +6,7 @@ public class ObjectPooling : Singleton<ObjectPooling>
 {
     public static ObjectPooling ObjectPooling_Instance {  get; private set; }
     private Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
+    private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
     protected override void Awake()
     {
         base.Awake();
@@ -23,15 +24,25 @@ public class ObjectPooling : Singleton<ObjectPooling>
                 queue.Enqueue(obj);
             }
             poolDictionary.Add(key, queue);
+            prefabDictionary[key] = prefab;
         }
     }   
     public GameObject GetPool(string key)
     {
-        if(!poolDictionary.ContainsKey(key) && poolDictionary[key].Count > 0)
-        {
-            GameObject obj = poolDictionary[key].Dequeue();
-            obj.SetActive(true);
-            return obj;
+        if(poolDictionary.ContainsKey(key))
+        {            
+            if(poolDictionary[key].Count > 0)
+            {
+                GameObject obj = poolDictionary[key].Dequeue();
+                obj.SetActive(true);
+                return obj;
+            }    
+            else if (prefabDictionary.ContainsKey(key))
+            {
+                GameObject newObj = Instantiate(prefabDictionary[key]);
+                newObj.SetActive(true);
+                return newObj;
+            }
         }    
         return null;
     }

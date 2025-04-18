@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemy : MonoBehaviour
+public class SpawnEnemy : SpawnBase
 {
-    // Start is called before the first frame update
-    void Start()
+    RoomManager roomManager;
+    protected override void Start()
     {
-        
+        this.roomManager = GetComponent<RoomManager>();    
+        base.Start();
+           
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected override void Spawn()
+    {      
+        foreach(Room room in this.roomManager.placedRooms)
+        {
+            List<Room.SpawnPoint> pointList = room.GetSpawnPoint();
+            { 
+                if(pointList == null) continue;
+                foreach(Room.SpawnPoint pointSpawn in pointList)
+                {
+                    string randomKey = prefab[Random.Range(0, prefab.Count)].name;
+                    GameObject enemy =  ObjectPooling.ObjectPooling_Instance.GetPool(randomKey);
+                    enemy.transform.position = pointSpawn.point.transform.position;
+                    pointSpawn.isUsed = true;
+                }
+            }          
+        }
+    }    
 }

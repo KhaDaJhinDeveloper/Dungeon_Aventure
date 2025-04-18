@@ -25,7 +25,7 @@ public class Room : MonoBehaviour
         [HideInInspector]public bool isUsed;
     }
     public List<SpawnPoint> availablePoints = new List<SpawnPoint>();
-    public List<SpawnPoint> GetRanDomSpawnPoint()
+    public List<SpawnPoint> GetSpawnPoint()
     {
         List<SpawnPoint> pointUnused = new List<SpawnPoint>();
         if(availablePoints.Count == 0) return null;

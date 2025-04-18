@@ -20,5 +20,10 @@ public class ButtonTrigger : MonoBehaviour
     void HiddenButton()
     {
         this.gameObject.SetActive(false);
-    }    
+    }
+    private void OnDestroy()
+    {
+        EventManager.OP_EventManager.Unsubscribe("EventShowButton", Showbutton);
+        EventManager.OP_EventManager.Unsubscribe("EventHiddenButton", HiddenButton);
+    }
 }

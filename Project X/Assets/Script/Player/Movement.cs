@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Movement : MonoBehaviour
 {
+    //public InputAction playerActionControls;
     private PlayerStats playerStats;
     private Rigidbody2D rb;
-    private GameObject obj;
+    /*private Vector2 moveDirection = Vector2.zero;
+    private void OnEnable()
+    {
+        playerActionControls.Enable();
+    }
+    private void OnDisable()
+    {
+        playerActionControls.Disable();
+    }*/
     void Start()
     {
         this.playerStats = GetComponent<PlayerStats>();
@@ -14,6 +22,7 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
+        //moveDirection = playerActionControls.ReadValue<Vector2>();
         Move();
     }
     void Move()

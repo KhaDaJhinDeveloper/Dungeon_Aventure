@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Axe : WeaponBase,IWeapon,IShoot
+public class Axe : WeaponBase, IWeapon, IShoot
 {
+    [SerializeField] int speedBullet;
+    Transform firePoint;
     protected override void Start()
     {
         base.Start();
+        this.firePoint = this.transform;
     }
     public void WeaponAttack()
     {
         ani.SetTrigger("attack");
+        Shooting();
     }
     public void AllowTheAttack()
     {
@@ -18,6 +22,10 @@ public class Axe : WeaponBase,IWeapon,IShoot
     }
     public void Shooting()
     {
-
+        GameObject bulletAxe = ObjectPooling.ObjectPooling_Instance.GetPool("AxeBullet");
+        bulletAxe.transform.position = firePoint.position;
+        bulletAxe.transform.rotation = firePoint.rotation;
+        Rigidbody2D rbbullet = bulletAxe.GetComponent<Rigidbody2D>();
+        rbbullet.velocity = transform.right * this.speedBullet;
     }    
 }

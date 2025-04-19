@@ -17,4 +17,8 @@ public class Sickle : WeaponBase, IWeapon
     {
         this.weaponSlotAttack.IsAttacking = !this.weaponSlotAttack.IsAttacking;
     }
+    public override void DealDamage(BaseStats target)
+    {
+        
+    }
 }

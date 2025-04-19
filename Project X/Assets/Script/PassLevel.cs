@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PassLevel : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    float a;
+    float b;
+    private void Start()
     {
-        if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
-        {
-            SceneManager.LoadScene("Level2");
-        }
+        int c = Mathf.RoundToInt(a + b);
     }
 }

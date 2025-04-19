@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static BaseStats;
 
-public class AxeBullet : MonoBehaviour
+public class AxeBullet : BulletBase
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private LayerMask nameLayerTarget;
+    private IDamageType damageType;
+    private void Start()
     {
-        
+        this.damageType = new MixedDamage(damagePhysicalRate);
     }
-
-    // Update is called once per frame
-    void Update()
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (((1 << collision.gameObject.layer) & nameLayerTarget.value) > 0)
+        {
+            BaseStats baseStats = collision.gameObject.GetComponentInChildren<BaseStats>();
+            if (baseStats != null)
+            {
+                DamageAttack(baseStats);
+            }
+        }
+        ObjectPooling.ObjectPooling_Instance.ReturnToPool("AxeBullet", this.gameObject);
+    }
+    protected override void DamageAttack(BaseStats target)
+    {
+        target.TakeDamage(damage, damageType);
     }
 }

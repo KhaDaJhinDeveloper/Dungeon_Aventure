@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BaseStats : MonoBehaviour
 {
     [SerializeField] protected int maxHealth;
-    [SerializeField] protected int currentHealth;
+    protected int currentHealth;
     [SerializeField] protected int armor;
     [SerializeField] protected int antiMagic;
     [SerializeField] protected int speed;
@@ -17,17 +17,48 @@ public abstract class BaseStats : MonoBehaviour
     protected virtual void Start()
     {
         this.currentHealth = this.maxHealth;
+        Debug.Log(currentHealth);
     }
-    protected virtual void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount, IDamageType damageType)
     {
-        if(this.armor > 0) this.armor -= amount;
-        else
-            this.currentHealth -= amount;
-        if (this.currentHealth <= 0) Die();
+        damageType.ApplyDamage(this, amount);
     }
+    public virtual void ApplyPhysicalDamage(int amount)
+    {
+        if(this.armor > 0)
+        {
+            int armorDamage = Mathf.Min(this.armor, amount);
+            this.armor -= armorDamage;
+            amount -= armorDamage;
+        }
+        if(amount > 0)
+        {
+            this.currentHealth -= amount;
+            if(currentHealth <= 0) Die();
+        }
+    }
+    public virtual void ApplyMagicalDamage(int amount)
+    {
+        if (this.antiMagic > 0)
+        {
+            int magicDamage = Mathf.Min(this.antiMagic, amount);
+            this.antiMagic -= magicDamage;
+            amount -= magicDamage;
+        }
+        if (amount > 0)
+        {
+            this.currentHealth -= amount;
+            if (currentHealth <= 0) Die();
+        }
+    }
+    public virtual void ApplyTrueDamage(int amount)
+    {
+        this.currentHealth -= amount;
+        if (currentHealth <= 0) Die();
+    }    
     protected virtual void Healing(int amount)
     {
-        this.currentHealth += amount;
+        this.currentHealth += amount;       
     }
     protected virtual void ArmorRecovery(int amount)
     {
@@ -35,6 +66,45 @@ public abstract class BaseStats : MonoBehaviour
     }
     protected virtual void Die()
     {
+        Debug.Log("Die");
+    }
 
+    //---------------------------------------------
+    public class PhysicalDamage : IDamageType
+    {
+        public void ApplyDamage(BaseStats target, int amount)
+        {
+            target.ApplyPhysicalDamage(amount);
+        }
+    }
+    public class MagicalDamage : IDamageType
+    {
+        public void ApplyDamage(BaseStats target, int amount)
+        {
+            target.ApplyMagicalDamage(amount);
+        }
+    }
+    public class MixedDamage : IDamageType
+    {
+        private float physicalRate;
+        public MixedDamage(float physicalRate)
+        {
+            this.physicalRate = Mathf.Clamp01(physicalRate);
+        }
+        public void ApplyDamage(BaseStats target, int amount)
+        {
+            this.physicalRate = Mathf.Clamp01(physicalRate);
+            int physicalAmount = Mathf.RoundToInt(amount * physicalRate);
+            int MagicalAmount = amount - physicalAmount;
+            target.ApplyPhysicalDamage(physicalAmount);
+            target.ApplyMagicalDamage(MagicalAmount);
+        }
+    }
+    public class TrueDamage : IDamageType
+    {
+        public void ApplyDamage(BaseStats target, int amount)
+        {
+            target.ApplyTrueDamage(amount);
+        }
     }
 }

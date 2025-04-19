@@ -22,10 +22,10 @@ public class Axe : WeaponBase, IWeapon, IShoot
     }
     public void Shooting()
     {
-        GameObject bulletAxe = ObjectPooling.ObjectPooling_Instance.GetPool("AxeBullet");
+        GameObject bulletAxe = ObjectPooling.ObjectPooling_Instance.GetPool(this.name +"Bullet");
         bulletAxe.transform.position = firePoint.position;
         bulletAxe.transform.rotation = firePoint.rotation;
         Rigidbody2D rbbullet = bulletAxe.GetComponent<Rigidbody2D>();
         rbbullet.velocity = transform.right * this.speedBullet;
-    }    
+    }
 }

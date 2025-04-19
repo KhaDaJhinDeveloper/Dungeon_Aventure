@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BulletBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected int damage;
+    [SerializeField] protected float damagePhysicalRate;
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    protected virtual void DamageAttack(BaseStats target)
     {
-        
+
     }
 }

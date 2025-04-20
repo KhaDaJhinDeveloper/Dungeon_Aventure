@@ -9,7 +9,6 @@ public class ImageSlotWeapon : MonoBehaviour
     private int numberSlots;
     private bool[] slotFull;
     private Image[] imageWeapons;
-
     private void Start()
     {
         this.numberSlots = this.slotWeapon.Count;
@@ -41,5 +40,9 @@ public class ImageSlotWeapon : MonoBehaviour
             if (!isFull) return false;
         }
         return true;
+    }
+    private void OnDestroy()
+    {
+        EventManager.OP_EventManager.Unsubscribe<Sprite>("UpdateImageWeapon", UpdateImageWeapon);
     }
 }

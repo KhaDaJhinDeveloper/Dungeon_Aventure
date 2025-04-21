@@ -5,11 +5,9 @@ using static BaseStats;
 
 public class Storm : WeaponBase, IWeapon
 {
-    private float time =0f;
-    [SerializeField] float timeMax;
     protected override void Start()
     {
-        this.damageType = new MagicalDamage();
+        this.damageType = new TrueDamage();
         base.Start();
     }
     public void WeaponAttack()
@@ -25,14 +23,7 @@ public class Storm : WeaponBase, IWeapon
         if (collision.gameObject.CompareTag(TagManager.TAG_ENEMY))
         {
             BaseStats objEnemy = collision.gameObject.GetComponentInChildren<BaseStats>();
-            DealDamage(objEnemy);           
-        }
-    }
-    protected override void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag(TagManager.TAG_ENEMY))
-        {
-
+            DealDamage(objEnemy);
         }
     }
     public override void DealDamage(BaseStats target)

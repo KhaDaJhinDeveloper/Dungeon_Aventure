@@ -8,6 +8,8 @@ TagManager:
   - WeaponSlotsAttack
   - UI
   - Enemy
+  - WeaponMlee
+  - WeaponRange
   layers:
   - Default
   - TransparentFX

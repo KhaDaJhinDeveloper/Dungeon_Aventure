@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skull : WeaponBase, IWeapon, IShoot
+public class MagicBall : WeaponBase, IWeapon, IShoot
 {
     [SerializeField] int speedBullet;
     Transform firePoint;
@@ -22,10 +22,10 @@ public class Skull : WeaponBase, IWeapon, IShoot
     }
     public void Shooting()
     {
-        GameObject bulletSkull = ObjectPooling.ObjectPooling_Instance.GetPool(this.name + "Bullet");
-        bulletSkull.transform.position = firePoint.position;
-        bulletSkull.transform.rotation = firePoint.rotation;
-        Rigidbody2D rbbullet = bulletSkull.GetComponent<Rigidbody2D>();
+        GameObject bulletMagic = ObjectPooling.ObjectPooling_Instance.GetPool(this.name + "Bullet");
+        bulletMagic.transform.position = firePoint.position;
+        bulletMagic.transform.rotation = firePoint.rotation;
+        Rigidbody2D rbbullet = bulletMagic.GetComponent<Rigidbody2D>();
         rbbullet.velocity = transform.right * this.speedBullet;
     }
 }

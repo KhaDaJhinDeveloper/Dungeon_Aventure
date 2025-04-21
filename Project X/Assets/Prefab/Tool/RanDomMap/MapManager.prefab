@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3256414274367528093}
   m_Layer: 0
-  m_Name: Parent
+  m_Name: MapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,4 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc9f6b4541a8b04cb044eacec7cabce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: []
+  prefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  poolSize: 10

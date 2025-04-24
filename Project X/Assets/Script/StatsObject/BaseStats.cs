@@ -6,6 +6,7 @@ public abstract class BaseStats : MonoBehaviour
 {
     [SerializeField] protected int maxHealth;
     protected int currentHealth;
+    protected bool isDie;
     [SerializeField] protected int armor;
     [SerializeField] protected int antiMagic;
     [SerializeField] protected int speed;
@@ -14,6 +15,8 @@ public abstract class BaseStats : MonoBehaviour
     public int Speed{ get => this.speed; set => this.speed = value;}
     public int Armor{ get => this.armor; set => this.armor = Mathf.Max(value, 0); }
     public int AntiMagic { get => this.antiMagic; set => this.antiMagic = Mathf.Max(value, 0); }
+    public bool IsDie { get => isDie; set => isDie = value; }
+
     protected virtual void Start()
     {
         this.currentHealth = this.maxHealth;
@@ -55,16 +58,16 @@ public abstract class BaseStats : MonoBehaviour
         this.currentHealth -= amount;
         if (currentHealth <= 0) Die();
     }    
-    protected virtual void Healing(int amount)
+    public virtual void Healing(int amount)
     {
         this.currentHealth += amount;       
     }
-    protected virtual void ArmorRecovery(int amount)
+    public virtual void ArmorRecovery(int amount)
     {
         this.armor += amount;
     }
     protected virtual void Die()
     {
-        Debug.Log("Die");
+        isDie = true;
     }  
 }

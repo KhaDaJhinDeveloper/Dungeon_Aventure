@@ -1,8 +1,5 @@
 
 public interface IShoot 
 {
-    void Shooting()
-    {
-
-    }
+    void Shooting();
 }

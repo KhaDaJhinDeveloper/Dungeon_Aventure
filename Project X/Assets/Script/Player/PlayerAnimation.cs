@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,9 +15,9 @@ public class PlayerAnimation : MonoBehaviour
     }
     void Update()
     {
-        AnimationControll();
+        AnimationMove();
     }
-    void AnimationControll()
+    void AnimationMove()
     {
         bool moveleft = this.rb.velocityX != 0;
         this.ani.SetBool("move",moveleft);
@@ -29,6 +29,18 @@ public class PlayerAnimation : MonoBehaviour
         bool rundown = this.rb.velocityY < 0 && rb.velocityX == 0;
         this.ani.SetBool("rundown", rundown);
     }
+    public void AnimationDrop()
+    {
+        this.ani.SetTrigger("drop");
+    }
+    public void AnimationTakeHit()
+    {
+        this.ani.SetTrigger("takehit");
+    }
+    public void AnimationDeath()
+    {
+        this.ani.SetTrigger("death");
+    }    
     void Flip()
     {
         this.facingRight = !this.facingRight;

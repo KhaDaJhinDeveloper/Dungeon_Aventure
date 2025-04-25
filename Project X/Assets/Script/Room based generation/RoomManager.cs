@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent(typeof(SpawnEnemy))]
 public class RoomManager : MonoBehaviour
 {
     public  List<Room> roomPrefabs = new List<Room>();  
@@ -178,13 +179,14 @@ public class RoomManager : MonoBehaviour
                     if (wallEntrance != null && CorrespondingEntrances(exit.exitDirections, wallEntrance.exitDirections))
                     {                       
                         Vector2 wallPosition = exit.exitPoint.position - (wallEntrance.exitPoint.position - wallRoom.transform.position);
-                        wallRoom.transform.position = wallPosition;   
+                        wallRoom.transform.position = wallPosition;
+                        wallRoom.transform.SetParent(this.gameObject.transform);
                         exit.isUsed = true;
                     }
                     else
                     {                       
                         wallRoom.gameObject.SetActive(false);
-                        roomFailedList.Add(wallRoom.gameObject);
+                        roomFailedList.Add(wallRoom.gameObject);                   
                         continue;
                     }
                 }

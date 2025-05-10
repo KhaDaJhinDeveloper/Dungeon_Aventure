@@ -6,10 +6,8 @@ public class Pagination : MonoBehaviour
 {
     [SerializeField] List<Button> listButton = new List<Button>();
     [SerializeField] GameObject[] page;
-    private bool[] isSelect;
     void Start()
     {
-        this.isSelect = new bool[listButton.Count];
         for (int i = 0; i< listButton.Count; i++)
         {
             int index = i;

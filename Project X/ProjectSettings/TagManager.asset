@@ -11,6 +11,7 @@ TagManager:
   - WeaponMlee
   - WeaponRange
   - drop
+  - Light
   layers:
   - Default
   - TransparentFX

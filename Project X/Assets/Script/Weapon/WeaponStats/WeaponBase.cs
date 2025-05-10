@@ -4,18 +4,27 @@ using UnityEngine;
 
 public abstract class WeaponBase : MonoBehaviour
 {
+    protected string nameWeapon;
     protected IDamageType damageType;
     protected WeaponManager weaponSlotAttack;
     protected Animator ani;
+    protected SpriteRenderer srWeapon;
+    protected Sprite srOriginal;
     protected virtual void Start()
     {
         this.ani = GetComponent<Animator>();
+        this.srWeapon = GetComponent<SpriteRenderer>();
         this.weaponSlotAttack = GameObject.FindWithTag(TagManager.TAG_WEAPONSLOTS_ATTACK).GetComponent<WeaponManager>();
+        this.srOriginal = this.srWeapon.sprite;
+        this.nameWeapon = gameObject.name;
     }
     [SerializeField] protected int magical;
     [SerializeField] protected int strength;
     public int Magical { get => this.magical; set => this.magical = value; }
     public int Strength { get => this.strength; set => this.strength = value; }
+    public Sprite SrOriginal { get => this.srOriginal; }
+    public string NameWeapon { get => this.nameWeapon; }
+
     public void Initialize( int magical, int strength)
     {
         this.magical = magical;

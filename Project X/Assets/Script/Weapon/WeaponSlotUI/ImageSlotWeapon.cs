@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ImageSlotWeapon : MonoBehaviour
 {
     public List<GameObject> slotWeapon = new List<GameObject>();
-    private int numberSlots;
     private bool[] slotFull;
     private Image[] imageWeapons;
+    private WeaponManager weaponManager;
     private void Start()
     {
-        this.numberSlots = this.slotWeapon.Count;
+        this.weaponManager = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponentInChildren<WeaponManager>();
         this.slotFull = new bool[this.slotWeapon.Count];
         this.imageWeapons = new Image[this.slotWeapon.Count];
         for (int i = 0; i < this.slotWeapon.Count; i++)
@@ -19,6 +19,7 @@ public class ImageSlotWeapon : MonoBehaviour
             this.imageWeapons[i] = this.slotWeapon[i].GetComponent<Image>();
         }
         EventManager.OP_EventManager.Subscribe<Sprite>("UpdateImageWeapon", UpdateImageWeapon);
+        EventManager.OP_EventManager.Subscribe("LoadImageWeapon", LoadImageWeapon);
     }
     public void UpdateImageWeapon(Sprite imageWeapon)
     {    
@@ -33,16 +34,33 @@ public class ImageSlotWeapon : MonoBehaviour
             else continue;
         }  
     }
-    public bool CheckSlots()
+    public void LoadImageWeapon()
+    {
+        StartCoroutine(DelaayLoad());
+    }
+    IEnumerator DelaayLoad()
+    {
+        yield return null;
+        for (int i = 0; i < this.weaponManager.Weaponlist.Count; i++)
+        {
+            WeaponBase weapon = this.weaponManager.Weaponlist[i].GetComponentInChildren<WeaponBase>();
+            if (weapon != null)
+            {
+                imageWeapons[i].sprite = weapon.SrOriginal;
+            }
+        }
+    }
+    /*public bool CheckSlots()
     {
         foreach(bool isFull in this.slotFull)
         {
             if (!isFull) return false;
         }
         return true;
-    }
+    }*/
     private void OnDestroy()
     {
         EventManager.OP_EventManager.Unsubscribe<Sprite>("UpdateImageWeapon", UpdateImageWeapon);
+        EventManager.OP_EventManager.Unsubscribe("LoadImageWeapon", LoadImageWeapon);
     }
 }

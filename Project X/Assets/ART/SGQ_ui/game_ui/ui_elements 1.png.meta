@@ -1346,10 +1346,10 @@ TextureImporter:
       name: ui_elements_43
       rect:
         serializedVersion: 2
-        x: 0
-        y: 252
-        width: 41
-        height: 8
+        x: 4
+        y: 255
+        width: 32
+        height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

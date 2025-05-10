@@ -14,6 +14,7 @@ public class GhostStats : BaseStats
         this.damageType = new MagicalDamage();
         this.ani = GetComponentInChildren<Animator>();
         this.rb = GetComponent<Rigidbody2D>();
+        UpdateUI();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -26,6 +27,7 @@ public class GhostStats : BaseStats
     public override void TakeDamage(int amount, IDamageType damageType)
     {
         base.TakeDamage(amount, damageType);
+        UpdateUI();
         this.ani.SetTrigger("takehit");
     }
     protected override void Die()
@@ -39,5 +41,11 @@ public class GhostStats : BaseStats
         this.ani.SetTrigger("death");
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+    }
+    void UpdateUI()
+    {
+        EventManager.OP_EventManager.TriggerEvent("LoadHp");
+        EventManager.OP_EventManager.TriggerEvent("LoadArmor");
+        EventManager.OP_EventManager.TriggerEvent("LoadAntimagic");
     }
 }

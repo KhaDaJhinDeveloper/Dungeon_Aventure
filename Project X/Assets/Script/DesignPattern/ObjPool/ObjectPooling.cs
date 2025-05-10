@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ObjectPooling : Singleton<ObjectPooling>
@@ -29,17 +30,18 @@ public class ObjectPooling : Singleton<ObjectPooling>
     }   
     public GameObject GetPool(string key)
     {
-        if(poolDictionary.ContainsKey(key))
+        string cleankey = CleanKey(key);
+        if(poolDictionary.ContainsKey(cleankey))
         {            
-            if(poolDictionary[key].Count > 0)
+            if(poolDictionary[cleankey].Count > 0)
             {
-                GameObject obj = poolDictionary[key].Dequeue();
+                GameObject obj = poolDictionary[cleankey].Dequeue();
                 obj.SetActive(true);
                 return obj;
             }    
-            else if (prefabDictionary.ContainsKey(key))
+            else if (prefabDictionary.ContainsKey(cleankey))
             {
-                GameObject newObj = Instantiate(prefabDictionary[key]);
+                GameObject newObj = Instantiate(prefabDictionary[cleankey]);
                 newObj.SetActive(true);
                 return newObj;
             }
@@ -48,11 +50,16 @@ public class ObjectPooling : Singleton<ObjectPooling>
     }
     public void ReturnToPool(string key, GameObject prefab)
     {
-        if (!poolDictionary.ContainsKey(key))
+        string cleankey = CleanKey(key);
+        if (!poolDictionary.ContainsKey(cleankey))
         {
-            poolDictionary[key] = new Queue<GameObject>();
+            poolDictionary[cleankey] = new Queue<GameObject>();
         }  
         prefab.SetActive(false);
-        poolDictionary[key].Enqueue(prefab);
+        poolDictionary[cleankey].Enqueue(prefab);
+    }
+    private string CleanKey(string rawKey)
+    {
+        return rawKey.Replace("(Clone)", "").Trim();
     }
 }

@@ -12,16 +12,16 @@ public class ChaseState : IState
     }
     public void Enter()
     {
-        Debug.Log("this Stats Chase");
+       
     }
     public void Execute()
-    {
-        Debug.Log("this is Chase");
-        Chase();       
+    {       
+        Chase();  
+        enemyController.Flip();
     }
     public void Exit()
     {
-        Debug.Log("Exit from Chase");
+
     }
     public void Chase()
     {

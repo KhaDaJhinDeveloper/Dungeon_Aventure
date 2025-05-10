@@ -6,12 +6,15 @@ public abstract class EnemyController : MonoBehaviour
 {
     protected IState currentState;
     public Transform playerTransform;
-    protected Rigidbody2D rb;
+    public Rigidbody2D rb;
     protected Animator ani;
+
+    protected SpriteRenderer sr;
     protected virtual void Start()
     {
         ani = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         playerTransform = GameObject.FindWithTag(TagManager.TAG_PLAYER).transform;
     }
     protected virtual void Update()
@@ -52,5 +55,12 @@ public abstract class EnemyController : MonoBehaviour
         Vectorrandom = Random.insideUnitCircle.normalized;
         return Vectorrandom;
     }     
+    public virtual void Flip()
+    {
+        if(transform.position.x > playerTransform.position.x)
+            sr.flipX = true;
+        else if(transform.position.x < playerTransform.position.x)
+            sr.flipX=false;
+    }
 }
     

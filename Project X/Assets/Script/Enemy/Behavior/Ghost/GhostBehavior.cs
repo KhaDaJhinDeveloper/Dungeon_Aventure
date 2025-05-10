@@ -23,4 +23,5 @@ public class GhostBehavior : EnemyController
         if (this.GhostStats.IsDie)
             currentState = null;
     }
+  
 }

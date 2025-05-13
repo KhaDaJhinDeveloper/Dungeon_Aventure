@@ -16,7 +16,7 @@ public class GhostBehavior : EnemyController
         base.Update();
         if(IsPlayerRangeChase(6f))
         {
-            ChangeState(new ChaseState(this));
+            ChangeState(new FlyState(this));
         } 
         else
             ChangeState(new IdleState(this));

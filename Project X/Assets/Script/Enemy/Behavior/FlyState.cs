@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class ChaseState : IState
+public class FlyState : IState
 {
     protected EnemyController enemyController;
-    public ChaseState(EnemyController enemyController)
+    public FlyState(EnemyController enemyController)
     {
         this.enemyController = enemyController;
     }

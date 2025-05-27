@@ -15,7 +15,8 @@ public class ObjectPooling : Singleton<ObjectPooling>
     }
     public void CreatePool(string key, GameObject prefab,int poolSize)
     {
-        if(!poolDictionary.ContainsKey(key))
+        string keyClean = CleanKey(key);
+        if(!poolDictionary.ContainsKey(keyClean))
         {
             Queue<GameObject> queue = new Queue<GameObject>();
             for(int i = 0; i < poolSize; i++ )
@@ -24,8 +25,8 @@ public class ObjectPooling : Singleton<ObjectPooling>
                 obj.SetActive(false);
                 queue.Enqueue(obj);
             }
-            poolDictionary.Add(key, queue);
-            prefabDictionary[key] = prefab;
+            poolDictionary.Add(keyClean, queue);
+            prefabDictionary[keyClean] = prefab;
         }
     }   
     public GameObject GetPool(string key)

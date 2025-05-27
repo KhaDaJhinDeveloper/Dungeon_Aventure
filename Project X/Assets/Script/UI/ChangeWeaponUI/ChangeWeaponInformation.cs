@@ -32,9 +32,9 @@ public class ChangeWeaponInformation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (!isActive && this.weaponManager.Weaponlist.Count == 2)
-                EventManager.OP_EventManager.TriggerEvent("Show");
+                this.Show();
             else
-                EventManager.OP_EventManager.TriggerEvent("Hide");
+                this.Hide();
         }
         if (Input.GetKeyDown(KeyCode.X) && isActive)
         {

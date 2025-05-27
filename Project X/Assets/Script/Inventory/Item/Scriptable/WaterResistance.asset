@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1536072d4af9b34fa32276180accfa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ef9801fb2957104da524092f89f7527, type: 3}
   m_Name: WaterResistance
   m_EditorClassIdentifier: 
-  amount: 0
   nameItem: WaterResistance
+  spriteImage: {fileID: -4526945107906911481, guid: 75f54d38992bb8a46b1a4d6ab28e6d9e, type: 3}
+  armorAmount: 5

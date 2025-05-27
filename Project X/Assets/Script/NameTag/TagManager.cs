@@ -9,4 +9,7 @@ public class TagManager
     public const string TAG_MAINCAMERA = "MainCamera";
     public const string TAG_MENUUI = "MenuUI";
     public const string TAG_WEAPONSLOTS_ATTACK = "WeaponSlotsAttack";
+    public const string TAG_UI = "UI";
+    public const string TAG_INVENTORY_MANAGER = "InventoryManager";
+    public const string TAG_DROP_POSITION = "drop";
 }

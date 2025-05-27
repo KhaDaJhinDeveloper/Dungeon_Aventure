@@ -20,7 +20,7 @@ public class WeaponItem : MonoBehaviour
         this.weaponManager = GameObject.FindWithTag(TagManager.TAG_WEAPONSLOTS_ATTACK).GetComponentInChildren<WeaponManager>();
         this.sr = GetComponent<SpriteRenderer>();
         this.defaultSprite = this.sr.sprite;
-        this.targetName = this.gameObject.name;
+        this.targetName = KeyClean.CleanKey(this.gameObject.name);
     }
     void Update()
     {
@@ -48,13 +48,13 @@ public class WeaponItem : MonoBehaviour
     void Loot()
     {
         if (!this.weaponManager.CheckCondition())
-        {
-            EventManager.OP_EventManager.TriggerEvent<Sprite>("UpdateImageWeapon", this.defaultSprite);
+        {           
             foreach (GameObject weapon in this.weaponManager.weaponPrefab)
             {
-                if (weapon.name == targetName)
+                if (weapon.name == targetName )
                 {
                     this.weaponManager.AddWeaponList(weapon);
+                    EventManager.OP_EventManager.TriggerEvent<Sprite>("UpdateImageWeapon", this.defaultSprite);
                     this.gameObject.SetActive(false);
                 }
             }

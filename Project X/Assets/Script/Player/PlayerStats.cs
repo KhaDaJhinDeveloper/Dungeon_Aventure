@@ -6,7 +6,7 @@ public class PlayerStats : BaseStats
 {
     private PlayerAnimation ani;
     protected override void Start()
-    {     
+    {
         base.Start();
         this.ani = GetComponent<PlayerAnimation>();
         UpdateUI();
@@ -19,6 +19,21 @@ public class PlayerStats : BaseStats
             this.ani.AnimationTakeHit();
         else
             Die();
+    }
+    public override void Healing(int amount)
+    {
+        base.Healing(amount);
+        UpdateUI();
+    }
+    public override void ArmorRecovery(int amount)
+    {
+        base.ArmorRecovery(amount);
+        UpdateUI();
+    }
+    public override void AntiMagicRecovery(int amount)
+    {
+        base.AntiMagicRecovery(amount);
+        UpdateUI();
     }
     protected override void Die()
     {

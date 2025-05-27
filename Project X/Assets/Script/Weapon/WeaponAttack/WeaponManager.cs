@@ -121,8 +121,8 @@ public class WeaponManager : MonoBehaviour
     public void DropWeapon(GameObject obj)
     {
         if(this.weaponReserve != null)
-        {
-            GameObject weaponDrop =  ObjectPooling.ObjectPooling_Instance.GetPool(obj.name);
+        {   
+            GameObject weaponDrop = ObjectPooling.ObjectPooling_Instance.GetPool(obj.name);
             weaponDrop.transform.position = this.posDrop.transform.position;
             this.weaponReserve = null;
         }    

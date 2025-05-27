@@ -1,18 +1,50 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<InventorySlotItems> slotsList = new List<InventorySlotItems>();
+    [SerializeField] private RecoveryItem[] recoveryItems;
+    private PlayerStats playerStats;
+    //------------------------------------
+    private void Start()
     {
-        
+        this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
     }
+    public List<InventorySlotItems> SlotsList { get => this.slotsList; set => this.slotsList = value; }
 
-    // Update is called once per frame
-    void Update()
+    public void AddItem(Sprite imageItem, string nameItem, ItemType type)
     {
-        
+        foreach (InventorySlotItems item in slotsList)
+        {
+            if(!item.IsFull)
+            {
+                item.AddItem(imageItem, nameItem, type);
+                item.IsFull = true;
+                break;
+            }    
+        }           
+    }
+    public void UseItem(string name)
+    {
+        foreach (RecoveryItem itemSO in recoveryItems)
+        {
+            if(itemSO.nameItem == name)
+            {
+                itemSO.ApplyRecovery(this.playerStats);
+                break; 
+            }
+        }           
+    }    
+    public void DeselectedAllSlots()
+    {
+        foreach (InventorySlotItems item in slotsList)
+        {
+            item.SlotSelected.SetActive(false);
+            item.Option.SetActive(false);
+            item.IsSelected = false;
+        }
     }
 }

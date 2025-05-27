@@ -39,6 +39,8 @@ public class GhostStats : BaseStats
     {
         rb.simulated = false;
         this.ani.SetTrigger("death");
+        GameObject obj = ObjectPooling.ObjectPooling_Instance.GetPool("GoldItem");
+        obj.transform.position = this.transform.position;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }

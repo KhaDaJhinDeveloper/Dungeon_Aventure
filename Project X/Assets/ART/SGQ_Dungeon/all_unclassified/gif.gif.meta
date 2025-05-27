@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 3075c8402e6c0c0438a29f6da677e4bc
+guid: 88181845124173a48ba049f90c21a320
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5864029069022424770
-    second: pickup_items_animated1_0
-  - first:
-      213: -8805563132219180534
-    second: pickup_items_animated1_1
+      213: -4497881269359897830
+    second: ;;;;;;;;;;;;;;;;;;;;;;;;;;_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,43 +113,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pickup_items_animated1_0
+      name: gif_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 9
-        height: 26
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e319a5471a8ce9ea0800000000000000
-      internalID: -5864029069022424770
+      spriteID: 17def2f47c4031f4a92bdb8a3c87e026
+      internalID: 1705750475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pickup_items_animated1_1
+      name: gif_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 4
-        width: 11
-        height: 19
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a0abcc03cfa5cc580800000000000000
-      internalID: -8805563132219180534
+      spriteID: f8bd4c173e1e3a7459bf5dc52895104c
+      internalID: 642365107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d547d329c5dd044a93fbbd976528541
+      internalID: -1878579129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ac201ef857f844f811c6b3d466d93f
+      internalID: -2134609678
       vertices: []
       indices: 
       edges: []
@@ -160,7 +199,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9bfbe74770668a84e821854a048b3511
     internalID: 0
     vertices: []
     indices: 
@@ -168,8 +207,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pickup_items_animated1_0: -5864029069022424770
-      pickup_items_animated1_1: -8805563132219180534
+      gif_0: 1705750475
+      gif_1: 642365107
+      gif_2: -1878579129
+      gif_3: -2134609678
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

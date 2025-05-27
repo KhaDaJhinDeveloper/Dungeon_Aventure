@@ -14,4 +14,8 @@ public class BaseText : MonoBehaviour,ILoadUI
     {
        
     }
+    public virtual void Loadinput(string textinput)
+    {
+
+    }
 }

@@ -12,6 +12,7 @@ TagManager:
   - WeaponRange
   - drop
   - Light
+  - InventoryManager
   layers:
   - Default
   - TransparentFX

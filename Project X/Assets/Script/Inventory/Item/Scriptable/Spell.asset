@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2ce163384d5feb4fbcb1acb9df202b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a14c790c2c15154c96e2152eddc10c0, type: 3}
   m_Name: Spell
   m_EditorClassIdentifier: 
-  amount: 0
   nameItem: Spell
+  spriteImage: {fileID: -6214591665554272011, guid: 75f54d38992bb8a46b1a4d6ab28e6d9e, type: 3}
+  antiMagicAmount: 5

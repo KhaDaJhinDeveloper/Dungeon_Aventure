@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa73304f8102f5f4994d47f8122cf0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 985c1b5d98434c943a306b4bb7a43d6a, type: 3}
   m_Name: Health
   m_EditorClassIdentifier: 
-  amount: 0
   nameItem: Health
+  spriteImage: {fileID: 2972462337548477646, guid: 20a383b1f0a27774dbcc1e06ff3f9c82, type: 3}
+  HealAmount: 5

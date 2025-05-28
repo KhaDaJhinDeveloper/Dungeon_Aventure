@@ -5,13 +5,10 @@ using UnityEngine;
 public class HealItem : RecoveryItem
 {
     public int HealAmount;
-    public override void ApplyRecovery(PlayerStats player)
-    {
-        if (player.CurentHealth < player.MaxHealth)
-        {
-            
-            player.Healing(this.HealAmount);
-        }
-        else Debug.Log("da dây mau,, khong the dung");
+    public float additionalTime;
+    public override void ApplyRecovery(PlayerStats player, CountdownTimer countdownTimer)
+    { 
+        player.Healing(this.HealAmount);
+        countdownTimer.IncreaseTime(this.additionalTime);
     }
 }

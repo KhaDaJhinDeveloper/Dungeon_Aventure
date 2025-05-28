@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 985c1b5d98434c943a306b4bb7a43d6a, type: 3}
-  m_Name: FoodApple
+  m_Name: FoodPeanutRotten
   m_EditorClassIdentifier: 
-  nameItem: FoodApple
-  spriteImage: {fileID: 3000870428407498467, guid: 20a383b1f0a27774dbcc1e06ff3f9c82, type: 3}
+  nameItem: FoodPeanutRotten
+  spriteImage: {fileID: 6164743739567730321, guid: eb81a19cfe6dea24aba0250d06443de6, type: 3}
   type: 0
-  HealAmount: 5
-  additionalTime: 0.2
+  HealAmount: 10
+  additionalTime: -0.1

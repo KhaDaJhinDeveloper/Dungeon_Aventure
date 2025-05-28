@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TextCoin : BaseText
 {
-    private MyGameManager myGameManager;
+    private CoinManager myGameManager;
     protected override void Start()
     {
-        this.myGameManager = GameObject.FindFirstObjectByType<MyGameManager>();
+        this.myGameManager = GameObject.FindFirstObjectByType<CoinManager>();
         base.Start();
         EventManager.OP_EventManager.Subscribe("LoadCoinText", Load);
     }

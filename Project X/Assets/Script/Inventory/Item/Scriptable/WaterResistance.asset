@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameItem: WaterResistance
   spriteImage: {fileID: -4526945107906911481, guid: 75f54d38992bb8a46b1a4d6ab28e6d9e, type: 3}
+  type: 0
   armorAmount: 5
+  additionalTime: 0.1

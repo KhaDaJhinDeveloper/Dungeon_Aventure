@@ -7,5 +7,5 @@ public abstract class RecoveryItem : ScriptableObject
     public string nameItem;
     public Sprite spriteImage;
     public ItemType type;
-    public abstract void ApplyRecovery(PlayerStats player);
+    public abstract void ApplyRecovery(PlayerStats player, CountdownTimer countdownTimer);
 }

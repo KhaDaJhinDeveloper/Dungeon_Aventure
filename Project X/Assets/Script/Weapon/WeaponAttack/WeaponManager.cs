@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +14,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject WeaponReserve { get => weaponReserve; set => weaponReserve = value; }
     private void Start()
     {
-        this.posDrop = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<Transform>();
+        this.posDrop = GameObject.FindWithTag(TagManager.TAG_DROP_POSITION).transform;
         EventManager.OP_EventManager.Subscribe("ChangeWeaponSlot1", ChangeWeaponSlot1);
         EventManager.OP_EventManager.Subscribe("ChangeWeaponSlot2", ChangeWeaponSlot2);
     }
@@ -53,8 +52,8 @@ public class WeaponManager : MonoBehaviour
             GetInterfaceWeapon();
             LoadUI();
             DropWeapon(this.weaponReserve);
+            //WeaponDetected();
         }
-
     }
     void ChangeWeaponSlot2()
     {
@@ -67,6 +66,7 @@ public class WeaponManager : MonoBehaviour
             GetInterfaceWeapon();
             LoadUI();
             DropWeapon(this.weaponReserve);
+           // WeaponDetected();
         }
     }
     public void SwapWeaponSlots()
@@ -79,6 +79,7 @@ public class WeaponManager : MonoBehaviour
     }
     public void AddWeaponList(GameObject weapon)
     {
+        WeaponDetected();
         if (this.weaponlist.Count < 2)
         {
             this.weaponlist.Add(weapon);
@@ -127,6 +128,19 @@ public class WeaponManager : MonoBehaviour
             this.weaponReserve = null;
         }    
     }    
+    void WeaponDetected()
+    {
+        foreach (GameObject weaponprefab in this.weaponPrefab)
+        {
+            if (this.weaponlist.Count > 0)
+            {
+                foreach (GameObject weapon in this.weaponlist)
+                {
+                    if(weapon.name != weaponprefab.name) weaponprefab.SetActive(false);
+                }               
+            }            
+        }
+    }
     void LoadUI()
     {
         EventManager.OP_EventManager.TriggerEvent("LoadInForWeapon");

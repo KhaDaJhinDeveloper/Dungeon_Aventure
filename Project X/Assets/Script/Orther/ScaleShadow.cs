@@ -9,11 +9,8 @@ public class ScaleShadow : MonoBehaviour
     private Light2D Light2D;
     private void Start()
     {
-        cl = GetComponent<CircleCollider2D>();
-        Light2D = GetComponent<Light2D>();
-    }
-    private void FixedUpdate()
-    {
-        cl.radius = Light2D.pointLightOuterRadius - Light2D.pointLightOuterRadius*0.15f;
+        this.cl = GetComponent<CircleCollider2D>();
+        this.Light2D = GetComponent<Light2D>();
+        this.cl.radius = Light2D.pointLightOuterRadius - Light2D.pointLightOuterRadius * 0.15f;
     }
 }

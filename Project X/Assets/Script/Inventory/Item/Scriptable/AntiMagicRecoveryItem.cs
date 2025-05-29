@@ -5,8 +5,10 @@ using UnityEngine;
 public class AntiMagicRecoveryItem : RecoveryItem
 {
     public int antiMagicAmount;
-    public override void ApplyRecovery(PlayerStats player)
+    public float additionalTime;
+    public override void ApplyRecovery(PlayerStats player, CountdownTimer countdownTimer)
     {
         player.AntiMagicRecovery(this.antiMagicAmount);
+        countdownTimer.IncreaseTime(this.additionalTime);
     }
 }

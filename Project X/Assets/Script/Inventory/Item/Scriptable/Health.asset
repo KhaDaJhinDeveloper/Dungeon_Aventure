@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameItem: Health
   spriteImage: {fileID: 2972462337548477646, guid: 20a383b1f0a27774dbcc1e06ff3f9c82, type: 3}
+  type: 0
   HealAmount: 5
+  additionalTime: 0.5

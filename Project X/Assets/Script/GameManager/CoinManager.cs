@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyGameManager : MonoBehaviour
+public class CoinManager : MonoBehaviour
 {
     private int coinAmount = 0;
     public int CoinAmount { get => this.coinAmount; set => this.coinAmount = value; }

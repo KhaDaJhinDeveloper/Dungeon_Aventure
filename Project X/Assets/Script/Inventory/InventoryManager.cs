@@ -8,10 +8,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private List<InventorySlotItems> slotsList = new List<InventorySlotItems>();
     [SerializeField] private RecoveryItem[] recoveryItems;
     private PlayerStats playerStats;
+    private CountdownTimer countdownTimer;
     //------------------------------------
     private void Start()
     {
         this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
+        this.countdownTimer = GameObject.FindFirstObjectByType<CountdownTimer>();
     }
     public List<InventorySlotItems> SlotsList { get => this.slotsList; set => this.slotsList = value; }
 
@@ -33,7 +35,7 @@ public class InventoryManager : MonoBehaviour
         {
             if(itemSO.nameItem == name)
             {
-                itemSO.ApplyRecovery(this.playerStats);
+                itemSO.ApplyRecovery(this.playerStats, this.countdownTimer);
                 break; 
             }
         }           

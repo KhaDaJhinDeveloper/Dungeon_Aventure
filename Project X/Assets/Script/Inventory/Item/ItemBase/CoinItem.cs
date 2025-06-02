@@ -10,7 +10,7 @@ public class CoinItem : MonoBehaviour
     public int Amount { get => amount; }
     private void Start()
     {
-        this.nameitem = this.name;
+        this.nameitem = KeyClean.CleanKey(this.name);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

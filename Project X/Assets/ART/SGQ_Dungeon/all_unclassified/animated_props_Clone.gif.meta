@@ -1,0 +1,1802 @@
+fileFormatVersion: 2
+guid: b0b8680de9434f948883a1e4b54fe154
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 457030729131823349
+    second: animated_props_Clone_0
+  - first:
+      213: -6418660211802580170
+    second: animated_props_Clone_1
+  - first:
+      213: -5995839031196551205
+    second: animated_props_Clone_2
+  - first:
+      213: -6163602171670720821
+    second: animated_props_Clone_3
+  - first:
+      213: -4663521162073218281
+    second: animated_props_Clone_4
+  - first:
+      213: -8549642290950017241
+    second: animated_props_Clone_5
+  - first:
+      213: 2949739577540520496
+    second: animated_props_Clone_6
+  - first:
+      213: -8129174442515253237
+    second: animated_props_Clone_7
+  - first:
+      213: 9118465356913161167
+    second: animated_props_Clone_8
+  - first:
+      213: 2616679452279924328
+    second: animated_props_Clone_9
+  - first:
+      213: -2909175513673702052
+    second: animated_props_Clone_10
+  - first:
+      213: 7152155576385950156
+    second: animated_props_Clone_11
+  - first:
+      213: -9191681583116078553
+    second: animated_props_Clone_12
+  - first:
+      213: 7010101464124824217
+    second: animated_props_Clone_13
+  - first:
+      213: -8527795659724578168
+    second: animated_props_Clone_14
+  - first:
+      213: -8933177752034788827
+    second: animated_props_Clone_15
+  - first:
+      213: 6430329279605390102
+    second: animated_props_Clone_16
+  - first:
+      213: -7913741069715598215
+    second: animated_props_Clone_17
+  - first:
+      213: -4756470174657675796
+    second: animated_props_Clone_18
+  - first:
+      213: -3400880517044881926
+    second: animated_props_Clone_19
+  - first:
+      213: 154799120599039984
+    second: animated_props_Clone_20
+  - first:
+      213: -4597500816243940497
+    second: animated_props_Clone_21
+  - first:
+      213: 3790316349677362753
+    second: animated_props_Clone_22
+  - first:
+      213: 8981085971244467478
+    second: animated_props_Clone_23
+  - first:
+      213: -9152359670780745788
+    second: animated_props_Clone_24
+  - first:
+      213: 2731038256435286792
+    second: animated_props_Clone_25
+  - first:
+      213: -4342493304805225932
+    second: animated_props_Clone_26
+  - first:
+      213: 5158610741459066209
+    second: animated_props_Clone_27
+  - first:
+      213: 1959825513691375752
+    second: animated_props_Clone_28
+  - first:
+      213: -1752468413437243171
+    second: animated_props_Clone_29
+  - first:
+      213: 270163489698359539
+    second: animated_props_Clone_30
+  - first:
+      213: 1923599783408904088
+    second: animated_props_Clone_31
+  - first:
+      213: 1534665067495867633
+    second: animated_props_Clone_32
+  - first:
+      213: 7089177524217641917
+    second: animated_props_Clone_33
+  - first:
+      213: -2158430989859828219
+    second: animated_props_Clone_34
+  - first:
+      213: -7363237546463221587
+    second: animated_props_Clone_35
+  - first:
+      213: -46461665700589042
+    second: animated_props_Clone_36
+  - first:
+      213: 8671740814502425912
+    second: animated_props_Clone_37
+  - first:
+      213: -479811444164218564
+    second: animated_props_Clone_38
+  - first:
+      213: -5166040120647927861
+    second: animated_props_Clone_39
+  - first:
+      213: -7180383024865944604
+    second: animated_props_Clone_40
+  - first:
+      213: -2767462781517919602
+    second: animated_props_Clone_41
+  - first:
+      213: -4358959131785019752
+    second: animated_props_Clone_42
+  - first:
+      213: -1922379709321831364
+    second: animated_props_Clone_43
+  - first:
+      213: -4728732812519230625
+    second: animated_props_Clone_44
+  - first:
+      213: -3889119267646062046
+    second: animated_props_Clone_45
+  - first:
+      213: -6404913698083930979
+    second: animated_props_Clone_46
+  - first:
+      213: 2727458521320238028
+    second: animated_props_Clone_47
+  - first:
+      213: -6879403586660102434
+    second: animated_props_Clone_48
+  - first:
+      213: 4757416131234023383
+    second: animated_props_Clone_49
+  - first:
+      213: 5645899539946024025
+    second: animated_props_Clone_50
+  - first:
+      213: -4784190652555879545
+    second: animated_props_Clone_51
+  - first:
+      213: 7183185255452842141
+    second: animated_props_Clone_52
+  - first:
+      213: 8810026633592987666
+    second: animated_props_Clone_53
+  - first:
+      213: -1481250444567230936
+    second: animated_props_Clone_54
+  - first:
+      213: -5001497939813809824
+    second: animated_props_Clone_55
+  - first:
+      213: -3489187156149005807
+    second: animated_props_Clone_56
+  - first:
+      213: -1010748785111670729
+    second: animated_props_Clone_57
+  - first:
+      213: 7421259228550112585
+    second: animated_props_Clone_58
+  - first:
+      213: -1929887560809954889
+    second: animated_props_Clone_59
+  - first:
+      213: 4742851768059185270
+    second: animated_props_Clone_60
+  - first:
+      213: 6873895273540039329
+    second: animated_props_Clone_61
+  - first:
+      213: 106121990453244282
+    second: animated_props_Clone_62
+  - first:
+      213: -4895958229993576393
+    second: animated_props_Clone_63
+  - first:
+      213: -136450505224438786
+    second: animated_props_Clone_64
+  - first:
+      213: -4598190702957724412
+    second: animated_props_Clone_65
+  - first:
+      213: -334355921861112268
+    second: animated_props_Clone_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animated_props_Clone_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 303
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f01755d603b75600800000000000000
+      internalID: 457030729131823349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 303
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63bd29d7b865ce6a0800000000000000
+      internalID: -6418660211802580170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 303
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd77b1f1b208acca0800000000000000
+      internalID: -5995839031196551205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_3
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 303
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce8db42b7c767aa0800000000000000
+      internalID: -6163602171670720821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_4
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 307
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 713eb142638d74fb0800000000000000
+      internalID: -4663521162073218281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_5
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 307
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f644362a1995980800000000000000
+      internalID: -8549642290950017241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_6
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 307
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03aa63374849fe820800000000000000
+      internalID: 2949739577540520496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_7
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 309
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08b1bc2aee5f2f80800000000000000
+      internalID: -8129174442515253237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_8
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 309
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3b38f2eeb4b8e70800000000000000
+      internalID: 9118465356913161167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_9
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 309
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866653c1910505420800000000000000
+      internalID: 2616679452279924328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_10
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 309
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55e636a84880a7d0800000000000000
+      internalID: -2909175513673702052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 275
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc150dc5a9f814360800000000000000
+      internalID: 7152155576385950156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 275
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722bdddbc46907080800000000000000
+      internalID: -9191681583116078553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 273
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a1b98f322e84160800000000000000
+      internalID: 7010101464124824217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_14
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 273
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882aff8970f27a980800000000000000
+      internalID: -8527795659724578168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_15
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 263
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a3b8e1a2af60480800000000000000
+      internalID: -8933177752034788827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_16
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 263
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b3ca3196e1d3950800000000000000
+      internalID: 6430329279605390102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_17
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 263
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9749e270d6ebc2290800000000000000
+      internalID: -7913741069715598215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_18
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 233
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cedf9c6b39f9dfdb0800000000000000
+      internalID: -4756470174657675796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_19
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 255
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af53ef93035adc0d0800000000000000
+      internalID: -3400880517044881926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 243
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ff39d2eaf4f52200800000000000000
+      internalID: 154799120599039984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_21
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 243
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f632631cd556230c0800000000000000
+      internalID: -4597500816243940497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_22
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 243
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14edfd853a8e99430800000000000000
+      internalID: 3790316349677362753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_23
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 243
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61545456b1a33ac70800000000000000
+      internalID: 8981085971244467478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_24
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 211
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7a086ee594cf080800000000000000
+      internalID: -9152359670780745788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_25
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 211
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803d3d613d896e520800000000000000
+      internalID: 2731038256435286792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_26
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 211
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a8297c85d5cb3c0800000000000000
+      internalID: -4342493304805225932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_27
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 215
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d9e2b4321179740800000000000000
+      internalID: 5158610741459066209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_28
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 209
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888625dcbe2b23b10800000000000000
+      internalID: 1959825513691375752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_29
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 209
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd01bf0534bfda7e0800000000000000
+      internalID: -1752468413437243171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_30
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 211
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f820c23340dfb300800000000000000
+      internalID: 270163489698359539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_31
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 211
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8972b14bfcff1ba10800000000000000
+      internalID: 1923599783408904088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_32
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 161
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4ca457fb93c4510800000000000000
+      internalID: 1534665067495867633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_33
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 139
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbbfca0f561d16260800000000000000
+      internalID: 7089177524217641917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_34
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 171
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ec5395376bb02e0800000000000000
+      internalID: -2158430989859828219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_35
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 139
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da8ad3ea67680d990800000000000000
+      internalID: -7363237546463221587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_36
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 175
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e025e387c5fea5ff0800000000000000
+      internalID: -46461665700589042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_37
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 139
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8357ca07356385870800000000000000
+      internalID: 8671740814502425912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_38
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 173
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31bc6f980e5759f0800000000000000
+      internalID: -479811444164218564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_39
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 139
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc73d5191e98e48b0800000000000000
+      internalID: -5166040120647927861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_40
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 175
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebde93aea72a5c90800000000000000
+      internalID: -7180383024865944604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_41
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 167
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a828a434ff799d0800000000000000
+      internalID: -2767462781517919602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_42
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 167
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e328fa3cdd183c0800000000000000
+      internalID: -4358959131785019752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_43
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 167
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c147ee6d55255e0800000000000000
+      internalID: -1922379709321831364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_44
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 159
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53be089f8a206eb0800000000000000
+      internalID: -4728732812519230625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_45
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 75
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22244daa1a2170ac0800000000000000
+      internalID: -3889119267646062046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_46
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c7ca02dec2d17a0800000000000000
+      internalID: -6404913698083930979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_47
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 75
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccba7ee0311e9d520800000000000000
+      internalID: 2727458521320238028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_48
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 115
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ede8396f2e27780a0800000000000000
+      internalID: -6879403586660102434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_49
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 75
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d7cae6f3ccb50240800000000000000
+      internalID: 4757416131234023383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_50
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 113
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c2604e7b34a5e40800000000000000
+      internalID: 5645899539946024025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_51
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 75
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b99a003f32b9db0800000000000000
+      internalID: -4784190652555879545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_52
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 115
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9817138eeccfa360800000000000000
+      internalID: 7183185255452842141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_53
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 111
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2106a05bb80834a70800000000000000
+      internalID: 8810026633592987666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_54
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 107
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8264e24919a817be0800000000000000
+      internalID: -1481250444567230936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_55
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 105
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 061cc807f1c179ab0800000000000000
+      internalID: -5001497939813809824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_56
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 113
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11212ea94cae39fc0800000000000000
+      internalID: -3489187156149005807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_57
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 51
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730e24ac55919f1f0800000000000000
+      internalID: -1010748785111670729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_58
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 51
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 945a1d7e2fb9df660800000000000000
+      internalID: 7421259228550112585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_59
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 53
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b14a790d79a735e0800000000000000
+      internalID: -1929887560809954889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_60
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 53
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6784089ed8ef1d140800000000000000
+      internalID: 4742851768059185270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_61
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 55
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a23792f45bf46f50800000000000000
+      internalID: 6873895273540039329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_62
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 11
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71b2d75365097100800000000000000
+      internalID: 106121990453244282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_63
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 11
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73825120eef0e0cb0800000000000000
+      internalID: -4895958229993576393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_64
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 11
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efbbcaa0dfa3b1ef0800000000000000
+      internalID: -136450505224438786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_65
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 11
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d73bcfae1ff20c0800000000000000
+      internalID: -4598190702957724412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animated_props_Clone_66
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 11
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e8be08f012c5bf0800000000000000
+      internalID: -334355921861112268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      animated_props_Clone_0: 457030729131823349
+      animated_props_Clone_1: -6418660211802580170
+      animated_props_Clone_10: -2909175513673702052
+      animated_props_Clone_11: 7152155576385950156
+      animated_props_Clone_12: -9191681583116078553
+      animated_props_Clone_13: 7010101464124824217
+      animated_props_Clone_14: -8527795659724578168
+      animated_props_Clone_15: -8933177752034788827
+      animated_props_Clone_16: 6430329279605390102
+      animated_props_Clone_17: -7913741069715598215
+      animated_props_Clone_18: -4756470174657675796
+      animated_props_Clone_19: -3400880517044881926
+      animated_props_Clone_2: -5995839031196551205
+      animated_props_Clone_20: 154799120599039984
+      animated_props_Clone_21: -4597500816243940497
+      animated_props_Clone_22: 3790316349677362753
+      animated_props_Clone_23: 8981085971244467478
+      animated_props_Clone_24: -9152359670780745788
+      animated_props_Clone_25: 2731038256435286792
+      animated_props_Clone_26: -4342493304805225932
+      animated_props_Clone_27: 5158610741459066209
+      animated_props_Clone_28: 1959825513691375752
+      animated_props_Clone_29: -1752468413437243171
+      animated_props_Clone_3: -6163602171670720821
+      animated_props_Clone_30: 270163489698359539
+      animated_props_Clone_31: 1923599783408904088
+      animated_props_Clone_32: 1534665067495867633
+      animated_props_Clone_33: 7089177524217641917
+      animated_props_Clone_34: -2158430989859828219
+      animated_props_Clone_35: -7363237546463221587
+      animated_props_Clone_36: -46461665700589042
+      animated_props_Clone_37: 8671740814502425912
+      animated_props_Clone_38: -479811444164218564
+      animated_props_Clone_39: -5166040120647927861
+      animated_props_Clone_4: -4663521162073218281
+      animated_props_Clone_40: -7180383024865944604
+      animated_props_Clone_41: -2767462781517919602
+      animated_props_Clone_42: -4358959131785019752
+      animated_props_Clone_43: -1922379709321831364
+      animated_props_Clone_44: -4728732812519230625
+      animated_props_Clone_45: -3889119267646062046
+      animated_props_Clone_46: -6404913698083930979
+      animated_props_Clone_47: 2727458521320238028
+      animated_props_Clone_48: -6879403586660102434
+      animated_props_Clone_49: 4757416131234023383
+      animated_props_Clone_5: -8549642290950017241
+      animated_props_Clone_50: 5645899539946024025
+      animated_props_Clone_51: -4784190652555879545
+      animated_props_Clone_52: 7183185255452842141
+      animated_props_Clone_53: 8810026633592987666
+      animated_props_Clone_54: -1481250444567230936
+      animated_props_Clone_55: -5001497939813809824
+      animated_props_Clone_56: -3489187156149005807
+      animated_props_Clone_57: -1010748785111670729
+      animated_props_Clone_58: 7421259228550112585
+      animated_props_Clone_59: -1929887560809954889
+      animated_props_Clone_6: 2949739577540520496
+      animated_props_Clone_60: 4742851768059185270
+      animated_props_Clone_61: 6873895273540039329
+      animated_props_Clone_62: 106121990453244282
+      animated_props_Clone_63: -4895958229993576393
+      animated_props_Clone_64: -136450505224438786
+      animated_props_Clone_65: -4598190702957724412
+      animated_props_Clone_66: -334355921861112268
+      animated_props_Clone_7: -8129174442515253237
+      animated_props_Clone_8: 9118465356913161167
+      animated_props_Clone_9: 2616679452279924328
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

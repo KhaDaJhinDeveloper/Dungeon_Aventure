@@ -12,12 +12,10 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] private ItemType type;
     [SerializeField] private string nameitem;
     [SerializeField] private Sprite imageItem;
-    [SerializeField] private int amount;
     private InventoryManager inventoryManager;
     private SpriteRenderer spriteRenderer;
     public string Nameitem { get => nameitem; }
     public Sprite ImageItem { get => imageItem; }
-    public int Amount { get => amount; }
     public ItemType Type { get => type; set => type = value; }
 
     private void Start()
@@ -37,7 +35,7 @@ public class ItemPickUp : MonoBehaviour
     }
     private void LoadIndexItem()
     {
-        this.nameitem = this.name;
+        this.nameitem = KeyClean.CleanKey(this.name);
         this.imageItem = this.spriteRenderer.sprite;
     }
 }

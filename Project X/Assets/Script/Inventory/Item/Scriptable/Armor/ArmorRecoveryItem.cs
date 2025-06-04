@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 [CreateAssetMenu(menuName = "Items/ArmorRecoveryItem")]
 public class ArmorRecoveryItem : RecoveryItem
 {

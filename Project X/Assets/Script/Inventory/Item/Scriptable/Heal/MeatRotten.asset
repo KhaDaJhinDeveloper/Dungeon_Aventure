@@ -16,4 +16,4 @@ MonoBehaviour:
   spriteImage: {fileID: 21300000, guid: b3ed43b35aa26bb40972e394d37ce5b3, type: 3}
   type: 0
   HealAmount: 100
-  additionalTime: -1
+  additionalTime: -0.4

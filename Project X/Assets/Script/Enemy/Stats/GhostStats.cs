@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GhostStats : BaseStats
@@ -38,10 +37,9 @@ public class GhostStats : BaseStats
     IEnumerator Death()
     {
         rb.simulated = false;
-        this.ani.SetTrigger("death");
-        GameObject obj = ObjectPooling.ObjectPooling_Instance.GetPool("GoldItem");
-        obj.transform.position = this.transform.position;
+        this.ani.SetTrigger("death");       
         yield return new WaitForSeconds(1f);
+        ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, 3);
         Destroy(gameObject);
     }
     void UpdateUI()

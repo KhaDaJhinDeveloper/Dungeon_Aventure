@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingItem : MonoBehaviour
@@ -71,7 +69,7 @@ public class CraftingItem : MonoBehaviour
                     }
                     break;
                 }
-                else
+                else if(!match1 || !match2)
                 {
                     EventManager.OP_EventManager.TriggerEvent<string>("LoadCraftingReportText", "No matching formula found");
                 } 

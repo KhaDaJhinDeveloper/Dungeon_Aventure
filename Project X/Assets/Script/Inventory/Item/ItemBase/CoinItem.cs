@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinItem : MonoBehaviour
 {
     [SerializeField] private string nameitem;
     [SerializeField] private int amount;
+
     public string Nameitem { get => nameitem; }
     public int Amount { get => amount; }
     private void Start()

@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType
-{
-    Usable,
-    Material
-}
+
 public class ItemPickUp : MonoBehaviour
 {
     [SerializeField] private ItemType type;

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RatStats : BaseStats
@@ -40,6 +39,7 @@ public class RatStats : BaseStats
         rb.simulated = false;
         this.ani.SetTrigger("death");
         yield return new WaitForSeconds(1f);
+        ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, 3);
         Destroy(gameObject);
     }
     void UpdateUI()

@@ -17,29 +17,34 @@ public class Teleport : MonoBehaviour
     }
     void Update()
     {
-        if (this.canTeleport && Input.GetKeyDown(KeyCode.E) && this.istele == false)  
+        if (this.canTeleport == true)  
             TeleportPlayer();
     }
     private void TeleportPlayer()
     {       
         if (this.target != null)  
-            StartCoroutine(Tele(0.5f));  
+            StartCoroutine(Tele(1f));  
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
-            this.canTeleport = true;
+            // this.canTeleport = true;
+            StartCoroutine(Tele(1f));
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
             this.canTeleport = false;
-    }
+    }*/
     IEnumerator Tele(float duration)
     {
-        this.istele = true;
-        yield return new WaitForSeconds(duration);
-        this.player.position = this.target.transform.position;
-        this.istele = false;
+        if(!this.istele)
+        {
+            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_PlayerAnimationDrop);
+            this.istele = true;
+            yield return new WaitForSeconds(duration);
+            this.player.position = this.target.transform.position;
+            this.istele = false;
+        }     
     }
 }

@@ -11,7 +11,8 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         this.ani = GetComponentInChildren<Animator>();
-        this.rb = GetComponent<Rigidbody2D>();  
+        this.rb = GetComponent<Rigidbody2D>();
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);
     }
     void Update()
     {
@@ -45,5 +46,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         this.facingRight = !this.facingRight;
         this.transform.Rotate(0, 180, 0);
+    }
+    private void OnDestroy()
+    {
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);
     }
 }

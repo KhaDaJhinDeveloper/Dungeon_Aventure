@@ -50,6 +50,7 @@ public class CraftingItem : MonoBehaviour
     }
     public void Crafting()
     {
+        bool foundMatch = false;
         foreach (CraftingRecipe recipe in this.recipes)
         {
             for (int i = 0; i < this.rawMaterials.Length; i++)
@@ -67,13 +68,14 @@ public class CraftingItem : MonoBehaviour
                     {
                         this.rawMaterials[i].EmptySlot();
                     }
+                    foundMatch = true;
                     break;
                 }
-                else if(!match1 || !match2)
-                {
-                    EventManager.OP_EventManager.TriggerEvent<string>("LoadCraftingReportText", "No matching formula found");
-                } 
             }
-        }       
+        }
+        if (!foundMatch)
+        {
+            EventManager.OP_EventManager.TriggerEvent<string>("LoadCraftingReportText", "No matching formula found");
+        }
     }
 }

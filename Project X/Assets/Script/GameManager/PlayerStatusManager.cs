@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStatusManager : MonoBehaviour
@@ -18,12 +16,11 @@ public class PlayerStatusManager : MonoBehaviour
     }    
     public void StatusHungry()
     {
-        Debug.Log("hungry");
         this.playerStats.Speed = 4;
     }
     public void StatusThirsty()
     {
-        Debug.Log("Thirsty");
+        //Debug.Log("Thirsty");
     }    
     void IndexDefault()
     {

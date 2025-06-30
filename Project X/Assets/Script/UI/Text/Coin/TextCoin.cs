@@ -9,7 +9,7 @@ public class TextCoin : BaseText
     {
         this.myGameManager = GameObject.FindFirstObjectByType<CoinManager>();
         base.Start();
-        EventManager.OP_EventManager.Subscribe("LoadCoinText", Load);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_LoadCoinText, Load);
     }
     public override void Load()
     {
@@ -17,6 +17,6 @@ public class TextCoin : BaseText
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("LoadCoinText", Load);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_LoadCoinText, Load);
     }
 }

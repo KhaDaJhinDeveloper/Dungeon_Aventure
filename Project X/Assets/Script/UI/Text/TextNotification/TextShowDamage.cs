@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class TextShowDamage : BaseText
+{
+    string namekey;
+    protected override void Start()
+    {
+        base.Start();
+        this.namekey = KeyClean.CleanKey(this.name);
+        m_Text = GetComponentInChildren<TextMeshPro>();
+    }
+    public void Notification(Vector3 pos, int textinput)
+    {
+        StartCoroutine(Effect(pos, textinput));
+    }
+    IEnumerator Effect(Vector3 pos, int textinput)
+    {
+        m_Text.text = textinput.ToString();
+        this.transform.position = pos;
+
+        float timer = 0f;
+        float duration = 1f;
+        float moveSpeed = 2f;
+
+        while (timer < duration)
+        {
+            this.transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        m_Text.text = "";
+        ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.namekey, this.gameObject);
+    }
+}

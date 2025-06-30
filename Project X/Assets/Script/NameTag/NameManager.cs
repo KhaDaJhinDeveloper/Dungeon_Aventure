@@ -5,4 +5,6 @@ using UnityEngine;
 public static class NameManager 
 {
     public const string NAME_PLAYER = "Player";
+    public const string NAME_TEXTPOPUPDAMAGE = "TextPopupDamage";
+    public const string NAME_TEXTPOPUPCOIN = "TextPopupCoin";
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +7,7 @@ public class SpawnEnemy : SpawnBase
     protected override void Start()
     {
         this.roomManager = GetComponent<RoomManager>();    
-        base.Start();
-           
+        base.Start();          
     }
     protected override void Spawn()
     {      

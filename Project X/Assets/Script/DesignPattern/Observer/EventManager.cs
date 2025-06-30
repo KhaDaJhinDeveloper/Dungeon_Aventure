@@ -26,6 +26,13 @@ public class EventManager : Singleton<EventManager>
         else
             eventDictionary[eventName] = (Action<T>)eventDictionary[eventName] + listener;
     }
+    public void Subscribe<T1,T2>(string eventName, Action<T1, T2> listener)
+    {
+        if (!eventDictionary.ContainsKey(eventName))
+            eventDictionary[eventName] = listener;
+        else
+            eventDictionary[eventName] = (Action<T1, T2>)eventDictionary[eventName] + listener;
+    }
     //-----------------------------------------------------------
     public void Unsubscribe(string eventName, Action listener)
     {
@@ -39,6 +46,13 @@ public class EventManager : Singleton<EventManager>
         else
             eventDictionary[eventName] = (Action<T>)eventDictionary[eventName] - listener;
     }
+    public void Unsubscribe<T1, T2>(string eventName, Action<T1, T2> listener)
+    {
+        if (!eventDictionary.ContainsKey(eventName))
+            eventDictionary[eventName] = listener;
+        else
+            eventDictionary[eventName] = (Action<T1, T2>)eventDictionary[eventName] + listener;
+    }
     //-----------------------------------------------------------
     public void TriggerEvent(string eventName)
     {
@@ -49,5 +63,10 @@ public class EventManager : Singleton<EventManager>
     {
         if (eventDictionary.ContainsKey(eventName) && eventDictionary[eventName] is Action<T> action)
             action.Invoke(param);
+    }
+    public void TriggerEvent<T1, T2>(string eventName, T1 param1, T2 param2)
+    {
+        if (eventDictionary.ContainsKey(eventName) && eventDictionary[eventName] is Action<T1, T2> action)
+            action.Invoke(param1, param2);
     }
 }

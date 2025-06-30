@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 3969933590630963039}
   - component: {fileID: 1666958194958603991}
   - component: {fileID: 1030423789901904771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8597,7 +8597,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8908,10 +8908,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 436563815456543028, guid: 32dff847091ec904492a4b8b23c8a3eb, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 436563815456543028, guid: 32dff847091ec904492a4b8b23c8a3eb, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 81
     m_Data:
@@ -9209,4 +9209,5 @@ MonoBehaviour:
   - exitPoint: {fileID: 7681976678465754481}
     exitDirections: 0
     isUsed: 0
+  originalPrefab: {fileID: 0}
   availablePoints: []

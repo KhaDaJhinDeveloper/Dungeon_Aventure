@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class FlyState : IState
 {
@@ -25,6 +22,6 @@ public class FlyState : IState
     }
     public void Chase()
     {
-        enemyController.transform.position = Vector2.MoveTowards(enemyController.transform.position, enemyController.playerTransform.position, 2 * Time.deltaTime);
+        enemyController.transform.position = Vector2.MoveTowards(enemyController.transform.position, enemyController.playerTransform.position, this.enemyController.baseStats.Speed * Time.deltaTime);
     }
 }

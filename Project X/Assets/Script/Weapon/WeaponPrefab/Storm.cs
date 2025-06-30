@@ -28,6 +28,6 @@ public class Storm : WeaponBase, IWeapon
     }
     public override void DealDamage(BaseStats target)
     {
-        target.TakeDamage(this.magical, this.damageType);
+        target.TakeDamage(this.magical, this.damageType, this.transform);
     }
 }

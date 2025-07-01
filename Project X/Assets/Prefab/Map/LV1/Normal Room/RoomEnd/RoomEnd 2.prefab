@@ -5880,6 +5880,7 @@ MonoBehaviour:
   - exitPoint: {fileID: 2207479642908298062}
     exitDirections: 3
     isUsed: 0
+  originalPrefab: {fileID: 0}
   availablePoints: []
 --- !u!1 &7673076412814338419
 GameObject:
@@ -5895,7 +5896,7 @@ GameObject:
   - component: {fileID: 2891049403723311334}
   - component: {fileID: 3066673812799150475}
   - component: {fileID: 7295192374591926729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -25,6 +25,6 @@ public class AxeBullet : BulletBase
     }
     protected override void DamageAttack(BaseStats target)
     {
-        target.TakeDamage(damage, damageType);
+        target.TakeDamage(damage, damageType, this.transform);
     }
 }

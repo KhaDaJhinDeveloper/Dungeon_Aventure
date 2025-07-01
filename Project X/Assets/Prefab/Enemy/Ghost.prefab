@@ -496,8 +496,9 @@ MonoBehaviour:
   maxHealth: 30
   maxArmor: 0
   maxAntiMagic: 30
-  speed: 0
+  speed: 1
   damage: 10
+  amountCoin: 3
 --- !u!114 &2270456412747688244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,8 +511,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ecd417f21e5fc429fa92f8daebdae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseStats: {fileID: 0}
+  moveDirection: {x: 0, y: 0}
+  nameLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rayDistance: 0.1
+  detectionRange: 6
+  attackRange: 0
   playerTransform: {fileID: 0}
   rb: {fileID: 0}
+  enemyType: 01000000
 --- !u!1 &7790451653077214063
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,6 @@ public class Sickle : WeaponBase, IWeapon
     }
     public override void DealDamage(BaseStats target)
     {
-        target.TakeDamage(this.strength, this.damageType);
+        target.TakeDamage(this.strength, this.damageType,this.transform);
     }
 }

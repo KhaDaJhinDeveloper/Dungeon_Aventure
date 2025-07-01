@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonTrigger : MonoBehaviour
+public class ButtonTrigger : BaseInteraction
 {
     private Transform posPlayer;
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+    }
+    protected override void LoadComponent()
+    {
+        base.LoadComponent();
         this.posPlayer = GameObject.Find(NameManager.NAME_PLAYER).transform;
         this.gameObject.SetActive(false);
-        EventManager.OP_EventManager.Subscribe("EventShowButton", Showbutton);
-        EventManager.OP_EventManager.Subscribe("EventHiddenButton", HiddenButton);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
     }
     void Showbutton()
     {
@@ -23,7 +28,7 @@ public class ButtonTrigger : MonoBehaviour
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("EventShowButton", Showbutton);
-        EventManager.OP_EventManager.Unsubscribe("EventHiddenButton", HiddenButton);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
     }
 }

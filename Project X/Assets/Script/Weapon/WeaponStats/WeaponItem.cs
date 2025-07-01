@@ -34,7 +34,7 @@ public class WeaponItem : MonoBehaviour
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
             this.canLoot = true;
-            EventManager.OP_EventManager.TriggerEvent("EventShowButton");
+            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -42,7 +42,7 @@ public class WeaponItem : MonoBehaviour
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
             this.canLoot = false;
-            EventManager.OP_EventManager.TriggerEvent("EventHiddenButton");
+            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
         }
     }
     void Loot()

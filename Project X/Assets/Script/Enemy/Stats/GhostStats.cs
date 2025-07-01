@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class GhostStats : BaseStats
 {
-    [SerializeField] int damage;
+    [SerializeField] private int damage;
+    public int amountCoin;
     IDamageType damageType;
     private Animator ani;
     private Rigidbody2D rb;
@@ -20,14 +21,14 @@ public class GhostStats : BaseStats
         if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
             BaseStats objPlayer = collision.gameObject.GetComponentInChildren<BaseStats>();
-            objPlayer.TakeDamage(this.damage, this.damageType);
+            objPlayer.TakeDamage(this.damage, this.damageType, this.transform);
         }
     }
-    public override void TakeDamage(int amount, IDamageType damageType)
+    public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
-        base.TakeDamage(amount, damageType);
+        base.TakeDamage(amount, damageType, pos);
+        StartCoroutine(Effect(this.transform.position, amount));
         UpdateUI();
-        this.ani.SetTrigger("takehit");
     }
     protected override void Die()
     {
@@ -37,9 +38,9 @@ public class GhostStats : BaseStats
     IEnumerator Death()
     {
         rb.simulated = false;
-        this.ani.SetTrigger("death");       
+        this.ani.SetTrigger("death");
         yield return new WaitForSeconds(1f);
-        ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, 3);
+        ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, this.amountCoin);
         Destroy(gameObject);
     }
     void UpdateUI()
@@ -47,5 +48,13 @@ public class GhostStats : BaseStats
         EventManager.OP_EventManager.TriggerEvent("LoadHp");
         EventManager.OP_EventManager.TriggerEvent("LoadArmor");
         EventManager.OP_EventManager.TriggerEvent("LoadAntimagic");
+    }
+    IEnumerator Effect(Vector3 pos, int amount)
+    {
+        this.ani.SetTrigger("takehit");
+        GameObject textShowDamage = ObjectPooling.ObjectPooling_Instance.GetPool(NameManager.NAME_TEXTPOPUPDAMAGE);
+        TextShowDamage component = textShowDamage.GetComponent<TextShowDamage>();
+        yield return null;
+        component.Notification(pos, amount);
     }
 }

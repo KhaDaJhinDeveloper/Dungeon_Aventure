@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 2278361217127841623}
   - component: {fileID: 5221680089113879173}
   - component: {fileID: 8594109745488180287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9461,4 +9461,5 @@ MonoBehaviour:
   - exitPoint: {fileID: 628758532399637635}
     exitDirections: 2
     isUsed: 0
+  originalPrefab: {fileID: 0}
   availablePoints: []

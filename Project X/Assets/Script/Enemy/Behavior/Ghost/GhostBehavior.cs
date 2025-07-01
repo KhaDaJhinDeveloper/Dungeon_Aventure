@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class GhostBehavior : EnemyController
 {
-    private GhostStats GhostStats;
+    private GhostStats ghostStats;
     protected override void Start()
     {
         base.Start();
         ChangeState(new IdleState(this));
-        this.GhostStats = GetComponent<GhostStats>();
+        this.ghostStats = GetComponent<GhostStats>();
     }
     protected override void Update()
     {
         base.Update();
-        if(IsPlayerRangeChase(6f))
+        if (IsPlayerRangeChase(detectionRange))
         {
             ChangeState(new FlyState(this));
-        } 
+        }
         else
             ChangeState(new IdleState(this));
-        if (this.GhostStats.IsDie)
+        if (this.ghostStats.IsDie)
             currentState = null;
+        Flip();
     }
-  
+    public override void Flip()
+    {
+        if (transform.position.x > playerTransform.position.x)
+            sr.flipX = true;
+        else if (transform.position.x < playerTransform.position.x)
+            sr.flipX = false;
+    }
 }

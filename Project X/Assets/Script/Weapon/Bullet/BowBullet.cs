@@ -25,6 +25,6 @@ public class BowBullet : BulletBase
     }
     protected override void DamageAttack(BaseStats taget)
     {
-        taget.TakeDamage(damage, damageType);
+        taget.TakeDamage(damage, damageType, this.transform);
     }
 }

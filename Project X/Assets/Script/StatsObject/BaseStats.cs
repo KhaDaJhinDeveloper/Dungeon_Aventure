@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class BaseStats : MonoBehaviour
@@ -27,13 +28,14 @@ public abstract class BaseStats : MonoBehaviour
         this.armor = this.maxArmor;
         this.antiMagic = this.maxAntiMagic;
     }
-    public virtual void TakeDamage(int amount, IDamageType damageType)
+    public virtual void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
         damageType.ApplyDamage(this, amount);
     }
     public virtual void ApplyPhysicalDamage(int amount)
     {
-        if(this.armor > 0)
+        if (this.isDie) return;
+        if (this.armor > 0)
         {
             int armorDamage = Mathf.Min(this.armor, amount);
             this.armor -= armorDamage;
@@ -45,12 +47,14 @@ public abstract class BaseStats : MonoBehaviour
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
+                isDie = true;
                 Die();
             }
         }
     }
     public virtual void ApplyMagicalDamage(int amount)
     {
+        if (this.isDie) return;
         if (this.antiMagic > 0)
         {
             int magicDamage = Mathf.Min(this.antiMagic, amount);
@@ -63,16 +67,19 @@ public abstract class BaseStats : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
+                isDie = true;
                 Die();
             }
         }
     }
     public virtual void ApplyTrueDamage(int amount)
     {
+        if (this.isDie) return;
         this.currentHealth -= amount;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            isDie = true;
             Die();
         }
     }    
@@ -96,6 +103,23 @@ public abstract class BaseStats : MonoBehaviour
     }
     protected virtual void Die()
     {
-        isDie = true;
+        
     }  
+    protected virtual void ResetStats()
+    {
+        this.currentHealth = this.maxHealth;
+        this.armor = this.maxArmor;
+        this.antiMagic = this.maxAntiMagic;
+    }
+    protected virtual void OnEnable()
+    {
+        this.currentHealth = this.maxHealth;
+        this.armor = this.maxArmor;
+        this.antiMagic = this.maxAntiMagic;
+        this.isDie = false;
+    }
+    protected virtual void KnockBack(Transform pos, float knockbackforce)
+    {
+
+    }
 }

@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4fdb8492d32b940ab187eec3eb2c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 16
+  damage: 8
   damagePhysicalRate: 0.7
   nameLayerTarget:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 321

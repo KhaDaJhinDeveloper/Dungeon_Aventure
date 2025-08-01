@@ -5,7 +5,6 @@ using UnityEngine;
 public class AttackState : IState
 {
     protected EnemyController enemyController;
-    private float coolDownTimer = 0;
     public AttackState(EnemyController enemyController)
     {
         this.enemyController = enemyController;

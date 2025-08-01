@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e74cb685f9db734b9849058fa0623a2, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: -1151897558160835182, guid: 77e10ac2788ac2344a2e56af6b2b03a8, type: 3}
+  characterName: NPC1
+  dialogID: 
+  dialogLines:
+  - dialogText: eeeeweeeeeeeeeee
+    displaySpeed: 0
+    hasChoice: 0
+    choices:
+    - choiceText: case1
+      requiedFlag: 
+      setFlag: 
+      nextDialogIndex: 2
+    - choiceText: cas2
+      requiedFlag: 
+      setFlag: 
+      nextDialogIndex: 3
+    nextDialogIndex: 0
+    requiredFlag: 
+    setFlag: dwafsadwawd
+  - dialogText: safdfwfwgawg
+    displaySpeed: 0
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: 0
+    requiredFlag: sdsafdsxsad
+    setFlag: 
+  - dialogText: xsafdwafwa
+    displaySpeed: 0
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: 3
+    requiredFlag: 
+    setFlag: 
+  - dialogText: fsacxsacxzcsads
+    displaySpeed: 0
+    hasChoice: 0
+    choices:
+    - choiceText: dwadsadssd
+      requiedFlag: 
+      setFlag: ssa
+      nextDialogIndex: 1
+    - choiceText: dwadsadssd
+      requiedFlag: 
+      setFlag: ssa
+      nextDialogIndex: 1
+    - choiceText: eeesasdsdwa
+      requiedFlag: 
+      setFlag: ssa
+      nextDialogIndex: 1
+    nextDialogIndex: 4
+    requiredFlag: 
+    setFlag: 
+  canRepeat: 0

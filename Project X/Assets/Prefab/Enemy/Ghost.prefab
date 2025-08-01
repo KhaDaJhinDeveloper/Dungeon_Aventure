@@ -517,11 +517,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayDistance: 0.1
+  enemySize: 0
+  canSeeTarget: 0
+  canAttack: 0
+  attackCoolDown: 0
   detectionRange: 6
   attackRange: 0
   playerTransform: {fileID: 0}
   rb: {fileID: 0}
   enemyType: 01000000
+  showDebugRay: 0
 --- !u!1 &7790451653077214063
 GameObject:
   m_ObjectHideFlags: 0

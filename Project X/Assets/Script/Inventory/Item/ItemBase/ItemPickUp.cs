@@ -16,7 +16,6 @@ public class ItemPickUp : MonoBehaviour
 
     private void Start()
     {
-
         this.inventoryManager = GameObject.FindWithTag(TagManager.TAG_INVENTORY_MANAGER).GetComponent<InventoryManager>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.LoadIndexItem();

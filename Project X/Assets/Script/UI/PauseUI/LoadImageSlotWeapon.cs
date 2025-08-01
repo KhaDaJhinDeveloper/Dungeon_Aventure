@@ -21,7 +21,7 @@ public class LoadImageSlotWeapon : MonoBehaviour
     {
         for(int i = 0; i < imageSlotWeapon.Length; i++)
         {
-                this.imageSlotWeapon[i].sprite = changeWeaponInformation.weapons[i].image.sprite;
+            this.imageSlotWeapon[i].sprite = changeWeaponInformation.weapons[i].image.sprite;
         }    
     }
 }

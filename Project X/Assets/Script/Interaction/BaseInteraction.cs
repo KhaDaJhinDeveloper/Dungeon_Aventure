@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseInteraction : MonoBehaviour
+public abstract class BaseInteraction : MonoBehaviour
 {
     protected virtual void Start()
     {
         LoadComponent();
     }
     protected virtual void Update()
+    {
+        
+    }
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         
     }

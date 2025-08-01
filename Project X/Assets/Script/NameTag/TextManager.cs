@@ -1,18 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class TextManager : MonoBehaviour
+public class TextManager 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //====DialogText======================================================
+        public const string text_DialogTest = "fuck\n" + "this game so bad";
+                                                
 }

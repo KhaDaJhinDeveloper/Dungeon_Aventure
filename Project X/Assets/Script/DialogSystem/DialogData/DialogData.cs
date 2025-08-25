@@ -8,5 +8,7 @@ public class DialogData : ScriptableObject
     public string characterName;
     public string dialogID;
     public DialogLine[] dialogLines;
+    public int currentLine;
     public bool canRepeat = false;
+    
 }

@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ButtonDeleteData : BaseButton
 {
-    // Start is called before the first frame update
+    protected override void Start()
+    {
+        base.Start();
+    }
     protected override void OnClick()
     {
+        Debug.Log("Delete Data"); 
         PlayerPrefs.DeleteAll();
     }
 }

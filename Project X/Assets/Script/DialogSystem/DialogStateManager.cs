@@ -7,10 +7,15 @@ public class DialogStateManager : Singleton<DialogStateManager>
     public static DialogStateManager dialogState_Instance;
     public HashSet<string> completedDialogs = new HashSet<string>();
     public Dictionary<string, bool> dialogFlags = new Dictionary<string, bool>();
+    public Dictionary<string, int> dialogProgress = new Dictionary<string, int>();
     public DialogSaveData dialogSaveData = new DialogSaveData();
     protected override void Awake()
     {
         dialogState_Instance = this;
+    }
+    public void Start()
+    {
+        LoadDialogState();
     }
     public void MarkDialogCompleted(string dialogID)
     {
@@ -20,15 +25,14 @@ public class DialogStateManager : Singleton<DialogStateManager>
             SaveDialogState();
         }    
     }
-    private void Update()
-    {
-        if (this.completedDialogs == null) Debug.Log("completedialog null");
-        if (this.dialogFlags == null) Debug.Log("dialogflags null");
-    }
     public bool CheckDialogCompleted(string dialogID)
     {
         return this.completedDialogs.Contains(dialogID);
     }
+    public void UpdateProgress()
+    {
+
+    }    
     public void SetFlag(string flagName, bool value = true)
     {
         if(!string.IsNullOrEmpty(flagName))
@@ -50,8 +54,19 @@ public class DialogStateManager : Singleton<DialogStateManager>
     }
     public void SaveDialogState()
     {
+        List<DialogFlags> flagsList = new List<DialogFlags>();
+        List<DialogProgress> progressList = new List<DialogProgress>();
+        foreach(var cp in this.dialogFlags)
+        {
+            flagsList.Add(new DialogFlags(cp.Key, cp.Value));
+        }
+        foreach(var cx in dialogProgress)
+        {
+            progressList.Add(new DialogProgress(cx.Key, cx.Value));
+        }          
         this.dialogSaveData.completedDialogs = new List<string>(this.completedDialogs);
-        this.dialogSaveData.dialogFlags = new Dictionary<string, bool>(this.dialogFlags);
+        this.dialogSaveData.dialogFlags = flagsList;
+        this.dialogSaveData.dialogProgress = progressList;
         string json = JsonUtility.ToJson(this.dialogSaveData);
         PlayerPrefs.SetString("DialogState", json);
         PlayerPrefs.Save();
@@ -62,8 +77,33 @@ public class DialogStateManager : Singleton<DialogStateManager>
         {
             string json = PlayerPrefs.GetString("DialogState");
             DialogSaveData saveData = JsonUtility.FromJson<DialogSaveData>(json);
-            this.completedDialogs = new HashSet<string>(saveData.completedDialogs);
-            this.dialogFlags = new Dictionary<string, bool>(saveData.dialogFlags);
+            if(saveData.completedDialogs != null)
+            {
+                this.completedDialogs = new HashSet<string>(saveData.completedDialogs);
+            }    
+            else
+                this.completedDialogs = new HashSet<string>();
+            this.dialogFlags = new Dictionary<string, bool>();
+            if(this.dialogSaveData.dialogFlags != null)
+            {
+                foreach (DialogFlags flag in saveData.dialogFlags)
+                {
+                    if(!string.IsNullOrEmpty(flag.key))
+                    {
+                        this.dialogFlags[flag.key] = flag.value;
+                    }
+                }    
+            }
+            if (this.dialogSaveData.dialogProgress != null)
+            {
+                foreach (DialogProgress flag in saveData.dialogProgress)
+                {
+                    if (!string.IsNullOrEmpty(flag.dialogID))
+                    {
+                        this.dialogProgress[flag.dialogID] = flag.currentDialogIndex;
+                    }
+                }
+            }
         }    
     }    
 }

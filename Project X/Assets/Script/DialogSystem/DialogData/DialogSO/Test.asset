@@ -14,54 +14,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: -1151897558160835182, guid: 77e10ac2788ac2344a2e56af6b2b03a8, type: 3}
   characterName: NPC1
-  dialogID: 
+  dialogID: NPC_01
   dialogLines:
-  - dialogText: eeeeweeeeeeeeeee
-    displaySpeed: 0
-    hasChoice: 0
+  - dialogText: "\u0111\xE2y l\xE0 d\xF2ng 0"
+    hasChoice: 1
     choices:
     - choiceText: case1
       requiedFlag: 
-      setFlag: 
-      nextDialogIndex: 2
+      setFlag: met_npc
+      nextDialogIndex: 1
     - choiceText: cas2
       requiedFlag: 
       setFlag: 
       nextDialogIndex: 3
-    nextDialogIndex: 0
-    requiredFlag: 
-    setFlag: dwafsadwawd
-  - dialogText: safdfwfwgawg
-    displaySpeed: 0
-    hasChoice: 0
-    choices: []
-    nextDialogIndex: 0
-    requiredFlag: sdsafdsxsad
-    setFlag: 
-  - dialogText: xsafdwafwa
-    displaySpeed: 0
-    hasChoice: 0
-    choices: []
-    nextDialogIndex: 3
+    nextDialogIndex: -1
     requiredFlag: 
     setFlag: 
-  - dialogText: fsacxsacxzcsads
-    displaySpeed: 0
+    hasEvent: 0
+    dialogEvents:
+    - eventType: 0
+    executeEventOnStart: 1
+  - dialogText: "\u0111\xE2y l\xE0 d\xF2ng 1"
     hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 1
+    dialogEvents:
+    - eventType: 1
+    executeEventOnStart: 1
+  - dialogText: "\u0111\xE2y l\xE0 d\xF2ng 2"
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 1
+    dialogEvents:
+    - eventType: 2
+    executeEventOnStart: 1
+  - dialogText: "\u0111\xE2y l\xE0 d\xF2ng 3"
+    hasChoice: 1
     choices:
-    - choiceText: dwadsadssd
+    - choiceText: choice3.1
       requiedFlag: 
-      setFlag: ssa
-      nextDialogIndex: 1
-    - choiceText: dwadsadssd
+      setFlag: 
+      nextDialogIndex: 0
+    - choiceText: choice3.2
       requiedFlag: 
-      setFlag: ssa
+      setFlag: 
       nextDialogIndex: 1
-    - choiceText: eeesasdsdwa
+    - choiceText: choice3.3
       requiedFlag: 
-      setFlag: ssa
-      nextDialogIndex: 1
-    nextDialogIndex: 4
+      setFlag: 
+      nextDialogIndex: 4
+    nextDialogIndex: -1
     requiredFlag: 
     setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 1
+  - dialogText: "\u0111\xE2y l\xE0 d\xF2ng 4"
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 1
+  - dialogText: "\u0111\xE2y l\xE0 d\xF2ng 5"
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: met_npc
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 1
   canRepeat: 0

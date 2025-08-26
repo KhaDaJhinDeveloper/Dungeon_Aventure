@@ -1,78 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
     [SerializeField] private GameObject dialogBox;
-    [SerializeField] private ListButtonChoices listButtonChoices;
+    private ListButtonChoices listButtonChoices;
     private DialogData currentDialog;
-    public DialogData defaultDialog;
     private int currentDialogLineIndex = 0;
-    private bool activeDialog;
     private bool waitingForChoice;
     private bool isTying = false;
-
+    public GameObject buttonNextDialog;
     public DialogData CurrentDialog { get => currentDialog;}
+    public bool WaitingForChoice { get => waitingForChoice;  }
+
     void Start()
     {
         this.listButtonChoices = GetComponentInChildren<ListButtonChoices>();
-        StartDialogBox(this.defaultDialog);   
-        //CloseDialogBox();
+        DialogStateManager.dialogState_Instance.LoadDialogState();
+        CloseDialogBox();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            this.currentDialogLineIndex++;
-            DisplayCurrentLine();
-        }
+        HideButtonNextDialog();
     }
     public void StartDialogBox(DialogData dialogdata)
     {
         OpenDialogBox();
         this.currentDialog = dialogdata;
         this.currentDialogLineIndex = 0;
-        this.activeDialog = true;
         this.waitingForChoice = false;       
         DisplayCurrentLine();
     }    
 
-    void DisplayCurrentLine()
+    public void DisplayCurrentLine()
     {
-        if (this.currentDialog == null /*|| this.currentDialogLineIndex >= this.currentDialog.dialogLines.Length*/)
+        if (this.currentDialog == null || this.currentDialogLineIndex >= this.currentDialog.dialogLines.Length)
         {
+            EndDialogBox();
             return;
         }
         DialogLine currentLine = this.currentDialog.dialogLines[this.currentDialogLineIndex];
-        DisplayTextDialog(currentLine);
-        if (!string.IsNullOrEmpty(currentLine.setFlag))
-        {
-            DialogStateManager.dialogState_Instance.SetFlag(currentLine.setFlag);
-        }
         if (!string.IsNullOrEmpty(currentLine.requiredFlag) && !DialogStateManager.dialogState_Instance.HasFlag(currentLine.requiredFlag))
         {
             this.currentDialogLineIndex++;
             DisplayCurrentLine();
             return;
         }
+        if (!string.IsNullOrEmpty(currentLine.setFlag))
+        {
+            DialogStateManager.dialogState_Instance.SetFlag(currentLine.setFlag);
+        }
+        if (currentLine.hasEvent && currentLine.executeEventOnStart)
+            DialogEventManager.dialogEvent_Instance.CallDialogEvent(currentLine.dialogEvents);
         DisplayTextDialog(currentLine);
         ShowChoices(currentLine.choices);
     }    
-    public void CompleteCurrentLine()
-    {
-        DialogLine curentline = this.currentDialog.dialogLines[this.currentDialogLineIndex];
-        if(curentline.hasChoice)
-        {
-            ShowChoices(curentline.choices);
-        }    
-    }    
     public void ShowChoices(DialogChoice[] choices)
     {
-        this.waitingForChoice = true;
+        if(choices.Length > 0) this.waitingForChoice = true;
         this.listButtonChoices.ActiveButton(choices.Length);
         for(int i=0; i < choices.Length; i++)
         {
@@ -84,12 +72,21 @@ public class DialogManager : MonoBehaviour
             Button choicesButton = this.listButtonChoices.arrayButtonChoices[i].GetComponent<Button>();
             choicesButton.onClick.AddListener(() => OnChoiceSelected(choiceRef));
         }    
-    }    
+    }
+    public void CompleteCurrentLine()
+    {
+        DialogLine curentline = this.currentDialog.dialogLines[this.currentDialogLineIndex];
+        if (curentline.hasChoice)
+        {
+            ShowChoices(curentline.choices);
+        }
+    }
     public void ProcessCurrentLine()
     {
         DialogLine currentLine = this.currentDialog.dialogLines[this.currentDialogLineIndex];
+        if (currentLine.hasEvent && currentLine.executeEventOnStart)
+            DialogEventManager.dialogEvent_Instance.CallDialogEvent(currentLine.dialogEvents);
         if (currentLine.hasChoice) return;
-
         if(currentLine.nextDialogIndex >= 0)
         {
             this.currentDialogLineIndex = currentLine.nextDialogIndex;
@@ -111,18 +108,19 @@ public class DialogManager : MonoBehaviour
         if(choice.nextDialogIndex >= 0)
         {
             this.currentDialogLineIndex = choice.nextDialogIndex;
-            DisplayCurrentLine();
             this.listButtonChoices.HideButton();
+            DisplayCurrentLine();
         }
         else EndDialogBox();
     }
     public void EndDialogBox()
     {
-        if(this.currentDialog != null && !string.IsNullOrEmpty(this.currentDialog.dialogID))
+        if (this.currentDialog != null && !string.IsNullOrEmpty(this.currentDialog.dialogID))
         {
             DialogStateManager.dialogState_Instance.MarkDialogCompleted(this.currentDialog.dialogID);
         }    
         this.currentDialog = null;
+        this.listButtonChoices.HideButton();
         CloseDialogBox();
     }    
     public void OnNextButtonClicked()
@@ -130,6 +128,13 @@ public class DialogManager : MonoBehaviour
         if (this.waitingForChoice) return;
         if (this.isTying) CompleteCurrentLine();
         else ProcessCurrentLine();
+    }
+    void HideButtonNextDialog()
+    {
+        if(this.waitingForChoice)
+            this.buttonNextDialog.SetActive(false);
+        else
+            this.buttonNextDialog.SetActive(true);
     }
     public void DisplayTextDialog(DialogLine currentLine) => StartCoroutine(ShowTextDialog(currentLine));
     IEnumerator ShowTextDialog(DialogLine currentLine)

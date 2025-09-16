@@ -11875,7 +11875,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -33.8, y: -25.83}
-  m_SizeDelta: {x: 1100, y: 212.85}
+  m_SizeDelta: {x: 1130.01, y: 228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818152631
 MonoBehaviour:
@@ -11909,7 +11909,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: .......................
+  m_text: Name Character
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34f75ac628edeba4bba22e46cd783456, type: 2}
   m_sharedMaterial: {fileID: -4697899413547979032, guid: 34f75ac628edeba4bba22e46cd783456, type: 2}
@@ -23039,7 +23039,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ad0f42fe95dde4a91fd7819bac739e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogDataNPC: {fileID: 11400000, guid: 78d5e70cb9a7a1a469f8647d9d2a14da, type: 2}
+  dialogDataNPC:
+  - {fileID: 11400000, guid: 78d5e70cb9a7a1a469f8647d9d2a14da, type: 2}
+  - {fileID: 11400000, guid: 54cb828dd12ce304eb2d1fc2871d823e, type: 2}
 --- !u!61 &1517553490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26625,7 +26627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Text Dialog NPC.............
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34f75ac628edeba4bba22e46cd783456, type: 2}
   m_sharedMaterial: {fileID: -4697899413547979032, guid: 34f75ac628edeba4bba22e46cd783456, type: 2}

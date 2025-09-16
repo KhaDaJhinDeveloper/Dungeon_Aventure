@@ -35,9 +35,11 @@ public class DialogEventManager : Singleton<DialogEventManager>
     private void ShowShop()
     {
         Debug.Log("ShowShop");
+        //Add event show shop
     }   
     private void DropItem()
     {
         Debug.Log("DropItem");
-    }    
+        //Add event drop item
+    }
 }

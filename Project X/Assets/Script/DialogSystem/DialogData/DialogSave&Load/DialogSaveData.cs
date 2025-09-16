@@ -12,6 +12,7 @@ public class DialogFlags
         value = v;
     }
 }
+[System.Serializable]
 public class DialogProgress
 {
     public string dialogID;
@@ -29,5 +30,5 @@ public class DialogSaveData
 {
     public List<string> completedDialogs;
     public List<DialogFlags> dialogFlags;
-    public List <DialogProgress> dialogProgress;
+    public List<DialogProgress> dialogProgress;
 }

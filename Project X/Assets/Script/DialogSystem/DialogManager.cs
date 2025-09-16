@@ -14,7 +14,7 @@ public class DialogManager : MonoBehaviour
     private bool isTying = false;
     public GameObject buttonNextDialog;
     public DialogData CurrentDialog { get => currentDialog;}
-    public bool WaitingForChoice { get => waitingForChoice;  }
+    public bool WaitingForChoice { get => waitingForChoice;}
 
     void Start()
     {
@@ -26,11 +26,11 @@ public class DialogManager : MonoBehaviour
     {
         HideButtonNextDialog();
     }
-    public void StartDialogBox(DialogData dialogdata)
+    public void StartDialogBox(DialogData dialogdata, int indexDialog = 0)
     {
         OpenDialogBox();
         this.currentDialog = dialogdata;
-        this.currentDialogLineIndex = 0;
+        this.currentDialogLineIndex = indexDialog;
         this.waitingForChoice = false;       
         DisplayCurrentLine();
     }    
@@ -39,8 +39,9 @@ public class DialogManager : MonoBehaviour
     {
         if (this.currentDialog == null || this.currentDialogLineIndex >= this.currentDialog.dialogLines.Length)
         {
+            Debug.Log("thoa man");
             EndDialogBox();
-            return;
+            return;        
         }
         DialogLine currentLine = this.currentDialog.dialogLines[this.currentDialogLineIndex];
         if (!string.IsNullOrEmpty(currentLine.requiredFlag) && !DialogStateManager.dialogState_Instance.HasFlag(currentLine.requiredFlag))
@@ -119,8 +120,9 @@ public class DialogManager : MonoBehaviour
         {
             DialogStateManager.dialogState_Instance.MarkDialogCompleted(this.currentDialog.dialogID);
         }    
-        this.currentDialog = null;
         this.listButtonChoices.HideButton();
+        DialogStateManager.dialogState_Instance.UpdateProgress(this.currentDialog.dialogID, this.currentDialogLineIndex);
+        this.currentDialog = null;
         CloseDialogBox();
     }    
     public void OnNextButtonClicked()

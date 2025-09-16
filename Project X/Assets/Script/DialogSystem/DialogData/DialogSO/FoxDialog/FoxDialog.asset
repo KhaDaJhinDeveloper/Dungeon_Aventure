@@ -12,8 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e74cb685f9db734b9849058fa0623a2, type: 3}
   m_Name: FoxDialog
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 0}
-  characterName: 
-  dialogID: 
-  dialogLines: []
-  canRepeat: 0
+  characterSprite: {fileID: -1151897558160835182, guid: 77e10ac2788ac2344a2e56af6b2b03a8, type: 3}
+  characterName: sadsad
+  dialogID: ddd
+  dialogLines:
+  - dialogText: dsadsagfagagasddasdaw
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
+  - dialogText: save complated
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
+  - dialogText: test3
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: test4
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
+  canRepeat: 1

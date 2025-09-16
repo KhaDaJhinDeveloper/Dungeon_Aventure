@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DialogTrigger : BaseInteraction
 {
-    [SerializeField] private DialogData dialogDataNPC;
+    [SerializeField] private DialogData[] dialogDataNPC;
     private DialogManager dialogManager;
     private bool canDialog;
     protected override void LoadComponent()
@@ -40,12 +40,30 @@ public class DialogTrigger : BaseInteraction
     }
     public void TriggerDialog()
     {
-        bool isDialogComplated = this.dialogDataNPC != null && DialogStateManager.dialogState_Instance.CheckDialogCompleted(this.dialogDataNPC.dialogID);
-        if (isDialogComplated)
+        foreach (var dialog in this.dialogDataNPC)
         {
-            Debug.Log("Complated");
-        }
-        else Debug.Log("No complated"); 
-        this.dialogManager.StartDialogBox(this.dialogDataNPC);
+            bool isDialogComplated = this.dialogDataNPC != null && DialogStateManager.dialogState_Instance.IsDialogCompleted(dialog.dialogID);
+            if (isDialogComplated)
+            {
+                if(dialog.canRepeat)
+                {
+                    Debug.Log(" has complated");
+                    StartCoroutine(SetDialog(dialog));
+                }    
+            }
+            else
+            {
+                Debug.Log("No complated");
+                this.dialogManager.StartDialogBox(dialog);
+                break;
+            }                          
+        }    
     }    
+    IEnumerator SetDialog(DialogData dialog)
+    {
+        int line = DialogStateManager.dialogState_Instance.GetCurrentLine(dialog.dialogID);
+        yield return null;
+        Debug.Log(line);
+        this.dialogManager.StartDialogBox(dialog, line);
+    }
 }

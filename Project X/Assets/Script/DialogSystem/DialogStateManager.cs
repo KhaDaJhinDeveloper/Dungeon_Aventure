@@ -114,7 +114,7 @@ public class DialogStateManager : Singleton<DialogStateManager>
                     }
                 }
             }
-            else Debug.Log("Data Null, Check Class DialogSaveData or method");
+            else Debug.Log("Data Null, Check Class DialogSaveData or method Load of save");
         }    
     }    
 }

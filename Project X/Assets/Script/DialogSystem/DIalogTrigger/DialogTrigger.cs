@@ -43,27 +43,33 @@ public class DialogTrigger : BaseInteraction
         foreach (var dialog in this.dialogDataNPC)
         {
             bool isDialogComplated = this.dialogDataNPC != null && DialogStateManager.dialogState_Instance.IsDialogCompleted(dialog.dialogID);
-            if (isDialogComplated)
+            if (!dialog.hasunlockFlag)
             {
-                if(dialog.canRepeat)
+                if (isDialogComplated)
                 {
-                    Debug.Log(" has complated");
-                    StartCoroutine(SetDialog(dialog));
-                }    
+                    if (dialog.canRepeat)
+                        //int line = Mathf.Min(0, dialog.dialogLines.Length - 1);
+                        this.dialogManager.StartDialogBox(dialog);
+                }
+                else
+                {
+                    this.dialogManager.StartDialogBox(dialog);
+                    break;
+                }
             }
             else
-            {
-                Debug.Log("No complated");
-                this.dialogManager.StartDialogBox(dialog);
-                break;
-            }                          
-        }    
-    }    
-    IEnumerator SetDialog(DialogData dialog)
-    {
-        int line = DialogStateManager.dialogState_Instance.GetCurrentLine(dialog.dialogID);
-        yield return null;
-        Debug.Log(line);
-        this.dialogManager.StartDialogBox(dialog, line);
+            {     
+                if (DialogStateManager.dialogState_Instance.HasFlag(dialog.unlockFlag))
+                {
+                    if (!isDialogComplated)
+                        this.dialogManager.StartDialogBox(dialog);
+                    else
+                    {
+                        if(dialog.canRepeat)
+                            this.dialogManager.StartDialogBox(dialog);
+                    }
+                }
+            }
+        }
     }
 }

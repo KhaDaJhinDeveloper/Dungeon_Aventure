@@ -6,6 +6,7 @@ public class ButtonReturnMainMenu : BaseButton
 {
     protected override void OnClick()
     {
+        TimeManager.TimeResume();
         SceneManager.LoadScene("MainMenu");
     }
 }

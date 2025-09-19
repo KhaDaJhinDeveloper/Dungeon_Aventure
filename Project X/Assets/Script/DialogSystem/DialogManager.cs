@@ -39,7 +39,6 @@ public class DialogManager : MonoBehaviour
     {
         if (this.currentDialog == null || this.currentDialogLineIndex >= this.currentDialog.dialogLines.Length)
         {
-            Debug.Log("thoa man");
             EndDialogBox();
             return;        
         }
@@ -121,7 +120,7 @@ public class DialogManager : MonoBehaviour
             DialogStateManager.dialogState_Instance.MarkDialogCompleted(this.currentDialog.dialogID);
         }    
         this.listButtonChoices.HideButton();
-        DialogStateManager.dialogState_Instance.UpdateProgress(this.currentDialog.dialogID, this.currentDialogLineIndex);
+        //DialogStateManager.dialogState_Instance.UpdateProgress(this.currentDialog.dialogID, this.currentDialogLineIndex);
         this.currentDialog = null;
         CloseDialogBox();
     }    

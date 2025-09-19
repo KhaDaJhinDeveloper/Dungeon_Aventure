@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DialogTrigger : BaseInteraction
+public class DialogTriggerNPC : BaseInteraction
 {
     [SerializeField] private DialogData[] dialogDataNPC;
     private DialogManager dialogManager;

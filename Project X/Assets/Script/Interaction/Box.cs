@@ -19,7 +19,7 @@ public class Box : BaseInteraction
             {
                 if (this.canDrop)
                     DropItem();
-                else Debug.Log("not item");
+                //else Debug.Log("not item");
             }                
         }    
     }

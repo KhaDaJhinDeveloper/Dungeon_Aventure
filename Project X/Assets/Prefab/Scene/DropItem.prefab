@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &236602479974011661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3205692579834973260}
+  - component: {fileID: 9151801484900779424}
+  m_Layer: 0
+  m_Name: DropItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3205692579834973260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236602479974011661}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9151801484900779424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236602479974011661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adedc5d4fac4b29499b255498687b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDropRates:
+  - item: {fileID: 4900483439268426073, guid: 5cdcb76e95d9c644a91ee240e523da57, type: 3}
+    dropRate: 0.1
+  - item: {fileID: 858622111703833970, guid: ee289cbb0e197ba46b6d5c673bf5ea13, type: 3}
+    dropRate: 0.1
+  - item: {fileID: 4901563204041180068, guid: c8dfebed945f16a42ac049c04a106706, type: 3}
+    dropRate: 0.05
+  - item: {fileID: 3703783034645072894, guid: a267837f1182a5d469006abeea4d9d24, type: 3}
+    dropRate: 0.05
+  - item: {fileID: 1064319784473947240, guid: 89eb340a954d29a47bbcf8612f6fce9d, type: 3}
+    dropRate: 0.01
+  - item: {fileID: 5717376658937950224, guid: 8cc92b0b862beef45b75c49b7d1fd1e9, type: 3}
+    dropRate: 0.05
+  - item: {fileID: 2215671494302685086, guid: a2a1f10e232babb48baf474c655077c8, type: 3}
+    dropRate: 0.05
+  - item: {fileID: 5784108478492469890, guid: 9920f4d448a15144693e794d72124a74, type: 3}
+    dropRate: 0.05
+  - item: {fileID: 8115818472049129651, guid: 9c7e941baa866284da71613437a52ebe, type: 3}
+    dropRate: 0.05
+  - item: {fileID: 5738978228191124044, guid: b0de13f2bee83dc4495321c525e66c8c, type: 3}
+    dropRate: 0.05
+  - item: {fileID: 8967528257518686949, guid: d8488daca240a7c4a993771afecf1af1, type: 3}
+    dropRate: 0.001
+  weaponDropRate:
+  - {fileID: 355716282895627959, guid: cc49d8c3403b71848a8962c483f649b1, type: 3}
+  - {fileID: 3957672899151061996, guid: ac3a33e832758db4d9dbb70fc38c9c2d, type: 3}
+  - {fileID: 5905374842274944910, guid: 812caf0d1aa12e649ba0195f8996daa2, type: 3}
+  - {fileID: 510234287921693111, guid: 8f3469cc582cb2746908ee8db4fcfcad, type: 3}
+  - {fileID: 8480821452450823572, guid: 72bc748c1c7270e4eab42e4da76b7439, type: 3}
+  - {fileID: 4246425319737301541, guid: 925513f005b30664a988af6fc3425017, type: 3}
+  - {fileID: 119462386973194304, guid: 5f6661f63375d8243a4bed77cb288cf7, type: 3}
+  - {fileID: 4200184935961749510, guid: a5f40e16e574f0a4a8840d1bdcac5c82, type: 3}

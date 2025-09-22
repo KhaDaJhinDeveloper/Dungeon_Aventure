@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e74cb685f9db734b9849058fa0623a2, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: -1796980236, guid: 7b16f98f4f8f58a408d665627c3e902c, type: 3}
   unlockFlag: 
-  characterName: 
+  characterName: xx
   dialogID: Intro_01
   dialogLines:
   - dialogText: Inside a dark and cold space......

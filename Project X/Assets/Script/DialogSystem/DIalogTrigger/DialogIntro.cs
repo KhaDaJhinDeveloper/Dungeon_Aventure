@@ -8,7 +8,7 @@ public class DialogIntro : BaseInteraction
     private DialogManager dialogManager;
     protected override void LoadComponent()
     {
-        this.dialogManager = GetComponent<DialogManager>();
+        this.dialogManager = GameObject.FindFirstObjectByType<DialogManager>();
     }
     protected override void Update()
     {
@@ -17,6 +17,8 @@ public class DialogIntro : BaseInteraction
     public void StartIntro()
     {
         if(!DialogStateManager.dialogState_Instance.IsDialogCompleted(this.dialogData.dialogID))
-            this.dialogManager.StartDialogBox(this.dialogData); 
+        {
+            this.dialogManager.StartDialogBox(this.dialogData);
+        }
     }
 }

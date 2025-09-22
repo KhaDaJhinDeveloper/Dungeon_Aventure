@@ -6,13 +6,17 @@ public class DialogIntro : BaseInteraction
 {
     [SerializeField] private DialogData dialogData;
     private DialogManager dialogManager;
-    private bool canDialog;
     protected override void LoadComponent()
     {
-        this.dialogManager = GameObject.FindFirstObjectByType<DialogManager>();
+        this.dialogManager = GetComponent<DialogManager>();
     }
     protected override void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.X)) StartIntro();
+    }
+    public void StartIntro()
+    {
+        if(!DialogStateManager.dialogState_Instance.IsDialogCompleted(this.dialogData.dialogID))
+            this.dialogManager.StartDialogBox(this.dialogData); 
     }
 }

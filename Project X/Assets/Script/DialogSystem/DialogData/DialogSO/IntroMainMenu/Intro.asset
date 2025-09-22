@@ -15,7 +15,52 @@ MonoBehaviour:
   characterSprite: {fileID: 0}
   unlockFlag: 
   characterName: 
-  dialogID: 
-  dialogLines: []
+  dialogID: Intro_01
+  dialogLines:
+  - dialogText: Inside a dark and cold space......
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
+  - dialogText: You are stuck in the rusty dungeons......
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
+  - dialogText: full of curses and disgust......
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
+  - dialogText: So......
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
+  - dialogText: How to free myself from that hell??
+    hasChoice: 0
+    choices: []
+    nextDialogIndex: -1
+    requiredFlag: 
+    setFlag: 
+    hasEvent: 0
+    dialogEvents: []
+    executeEventOnStart: 0
   hasunlockFlag: 0
   canRepeat: 0

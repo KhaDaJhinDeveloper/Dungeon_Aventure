@@ -4,5 +4,6 @@ public enum DialogEventType
 {
     None,
     ShowShop,
-    DropItem
+    DropItem,
+    NewGame
 }

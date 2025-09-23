@@ -59,8 +59,9 @@ MonoBehaviour:
     nextDialogIndex: -1
     requiredFlag: 
     setFlag: 
-    hasEvent: 0
-    dialogEvents: []
+    hasEvent: 1
+    dialogEvents:
+    - eventType: 3
     executeEventOnStart: 0
   hasunlockFlag: 0
   canRepeat: 0

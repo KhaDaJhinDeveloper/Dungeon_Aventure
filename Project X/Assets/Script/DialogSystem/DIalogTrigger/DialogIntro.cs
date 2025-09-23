@@ -12,7 +12,7 @@ public class DialogIntro : BaseInteraction
     }
     protected override void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X)) StartIntro();
+        
     }
     public void StartIntro()
     {

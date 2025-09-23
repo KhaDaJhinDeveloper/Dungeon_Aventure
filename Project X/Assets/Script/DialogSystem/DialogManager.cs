@@ -84,7 +84,7 @@ public class DialogManager : MonoBehaviour
     public void ProcessCurrentLine()
     {
         DialogLine currentLine = this.currentDialog.dialogLines[this.currentDialogLineIndex];
-        if (currentLine.hasEvent && currentLine.executeEventOnStart)
+        if (currentLine.hasEvent && !currentLine.executeEventOnStart)
             DialogEventManager.dialogEvent_Instance.CallDialogEvent(currentLine.dialogEvents);
         if (currentLine.hasChoice) return;
         if(currentLine.nextDialogIndex >= 0)

@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ButtonNewGame : BaseButton
 {
-    // Start is called before the first frame update
+
+    DialogIntro intro;
     protected override void Start()
     {
         base.Start();
+        this.intro = GameObject.FindFirstObjectByType<DialogIntro>();
     }
     protected override void OnClick()
     {
-        Debug.Log("newgame");
-        SceneManager.LoadScene("Level1");
+       this.intro.StartIntro();
     }
 }

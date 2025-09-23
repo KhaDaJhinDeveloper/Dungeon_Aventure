@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogEventManager : Singleton<DialogEventManager>
 {
@@ -30,6 +31,9 @@ public class DialogEventManager : Singleton<DialogEventManager>
             case DialogEventType.DropItem:
                 DropItem(); 
                 break;
+            case DialogEventType.NewGame:
+                NewGame();
+                break;
         }
     }    
     private void ShowShop()
@@ -42,4 +46,9 @@ public class DialogEventManager : Singleton<DialogEventManager>
         Debug.Log("DropItem");
         //Add event drop item
     }
+    public void NewGame()
+    {
+        Debug.Log("NewGame");
+        SceneManager.LoadScene("Level1");
+    }    
 }

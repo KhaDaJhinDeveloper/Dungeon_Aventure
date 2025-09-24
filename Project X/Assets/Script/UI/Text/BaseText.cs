@@ -12,6 +12,10 @@ public class BaseText : MonoBehaviour,ILoadUI
         m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
         m_Text = GetComponent<TextMeshPro>();
     }
+    protected virtual void Update()
+    {
+        
+    }
     public virtual void Load()
     {
        

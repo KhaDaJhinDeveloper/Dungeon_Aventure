@@ -39,7 +39,7 @@ public class DialogEventManager : Singleton<DialogEventManager>
     private void ShowShop()
     {
         Debug.Log("ShowShop");
-        //Add event show shop
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_OpenShop);
     }   
     private void DropItem()
     {

@@ -40,6 +40,17 @@ public class InventoryManager : MonoBehaviour
             }
         }           
     }    
+    public bool IsFullSlot()
+    {
+        foreach (InventorySlotItems item in slotsList)
+        {
+            if (!item.IsFull)
+            {
+                return false;
+            }
+        }
+        return true;
+    }    
     public void DeselectedAllSlots()
     {
         foreach (InventorySlotItems item in slotsList)

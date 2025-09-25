@@ -15,6 +15,6 @@ public class ButtonBack : BaseButton
     {
         base.OnClick();
         this.shopManager.currentSlot = null;
-        TimeManager.TimeResume();      
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_CloseShop);     
     }
 }

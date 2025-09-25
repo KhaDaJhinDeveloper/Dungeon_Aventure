@@ -16,27 +16,33 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         this.shopManager = GameObject.FindFirstObjectByType<ShopManager>();
+        LoadDataItem();
         this.handleSelected.SetActive(false);
     }
     void Update()
     {
         this.handleSelected.SetActive(this.isSelected);
     }
-    public void AddItem(Sprite sprite, string nameItem, int priceItem, string describe, ItemType type)
+    void Additem()
     {
-        this.imageItem = sprite;
-        this.nameItem = nameItem;
-        this.priceItem = priceItem;
-        this.describe = describe;
-        this.typeItem = type;
-    }
 
+    }    
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             OnLeftClick();
         }
+    }
+    public void LoadDataItem()
+    {
+        int dataIndex = Random.Range(0, this.shopManager.itemsDetails.Count);
+        ItemDetailsSO currentslot = this.shopManager.itemsDetails[dataIndex];
+        this.imageItem = currentslot.imageItem;
+        this.nameItem = currentslot.nameItem;
+        this.priceItem = currentslot.priceItem;
+        this.describe = currentslot.describe;
+        this.typeItem = currentslot.typeItem;
     }
     void OnLeftClick()
     {

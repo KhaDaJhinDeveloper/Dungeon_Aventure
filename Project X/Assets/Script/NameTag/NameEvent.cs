@@ -15,5 +15,8 @@ public class NameEvent
         public const string Event_ShowDamageText = "ShowDamageText";
         //--------------TextDialog-------------------------------------------------------
         public const string Event_LoadDialogText = "LoadDialogText";
-    //---------SOUND---------------------------------------------------------------------
+      //--------SHOP----------------------------------------------------------------------
+        public const string Event_OpenShop = "OpenShop";
+        public const string Event_CloseShop = "CloseShop";
+    //--------SOUND---------------------------------------------------------------------
 }

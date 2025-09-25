@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6eb10bdc638eb4ea757d608ddc1965, type: 3}
   m_Name: FoodPeanutRotten
   m_EditorClassIdentifier: 
-  imageItem: {fileID: 0}
-  nameItem: 
-  priceItem: 0
+  imageItem: {fileID: 6164743739567730321, guid: eb81a19cfe6dea24aba0250d06443de6, type: 3}
+  nameItem: FoodPeanutRotten
+  priceItem: 20
+  typeItem: 0
   describe: 

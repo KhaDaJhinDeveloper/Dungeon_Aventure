@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    public Dictionary<string, int> priceItems;
+    public List<ItemDetailsSO>  itemsDetails = new List<ItemDetailsSO>();
+    public ShopSlot currentSlot = null;
     [SerializeField] private GameObject shop;
     void Start()
     {
-        this.priceItems = new Dictionary<string, int>()
-        {
-            {"Itemm1",2999 },
-            {"Item2",2999 }
-        };
         CloseShop();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SelectedSlot(ShopSlot slot)
     {
-        
-    }
+        if (this.currentSlot != null)
+            this.currentSlot.isSelected = false; 
+
+        this.currentSlot = slot;
+        this.currentSlot.isSelected = true;         
+    }    
     public void OpenShop() => this.shop.SetActive(true);
     public void CloseShop() => this.shop.SetActive(false);
 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 41252824627531599}
   - component: {fileID: 8410835878336232616}
   - component: {fileID: 3182030477288466593}
-  - component: {fileID: -3444420372419340680}
   m_Layer: 0
   m_Name: FoodPeanutRotten
   m_TagString: Untagged
@@ -173,30 +172,3 @@ MonoBehaviour:
   type: 0
   nameitem: 
   imageItem: {fileID: 0}
---- !u!50 &-3444420372419340680
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3703783034645072894}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

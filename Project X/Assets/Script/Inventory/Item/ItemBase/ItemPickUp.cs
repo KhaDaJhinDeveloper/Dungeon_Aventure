@@ -24,8 +24,11 @@ public class ItemPickUp : MonoBehaviour
     {
         if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            this.inventoryManager.AddItem(this.imageItem, this.nameitem, this.type);
-            ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.nameitem, this.gameObject);
+           if(!this.inventoryManager.IsFullSlot())
+            {
+                this.inventoryManager.AddItem(this.imageItem, this.nameitem, this.type);
+                ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.nameitem, this.gameObject);
+            }    
         }
     }
     private void LoadIndexItem()

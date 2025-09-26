@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6eb10bdc638eb4ea757d608ddc1965, type: 3}
   m_Name: IronOre
   m_EditorClassIdentifier: 
-  imageItem: {fileID: 0}
-  nameItem: 
-  priceItem: 0
+  imageItem: {fileID: -717792146, guid: c0c6feae38c4b164ab8383c14f22be3b, type: 3}
+  nameItem: IronOre
+  priceItem: 20
+  typeItem: 1
   describe: 

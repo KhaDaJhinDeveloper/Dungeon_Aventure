@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6eb10bdc638eb4ea757d608ddc1965, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: 
-  imageItem: {fileID: 0}
-  nameItem: 
-  priceItem: 0
+  imageItem: {fileID: -8356860057929190541, guid: 20a383b1f0a27774dbcc1e06ff3f9c82, type: 3}
+  nameItem: Key
+  priceItem: 20
+  typeItem: 1
   describe: 

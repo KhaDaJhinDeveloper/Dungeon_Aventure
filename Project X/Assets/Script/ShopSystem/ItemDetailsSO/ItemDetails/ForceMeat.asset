@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6eb10bdc638eb4ea757d608ddc1965, type: 3}
   m_Name: ForceMeat
   m_EditorClassIdentifier: 
-  imageItem: {fileID: 0}
-  nameItem: 
-  priceItem: 0
+  imageItem: {fileID: 21300000, guid: 03d6cca8fc2c83444bf9d10670e9b082, type: 3}
+  nameItem: ForceMeat
+  priceItem: 20
+  typeItem: 0
   describe: 

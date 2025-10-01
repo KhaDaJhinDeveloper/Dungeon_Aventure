@@ -28,11 +28,15 @@ public class Abyss : BaseInteraction
     {
         if(!this.istele)
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_PlayerAnimationDrop);
-            this.istele = true;
-            yield return new WaitForSeconds(duration);
-            this.player.position = this.target.transform.position;
-            this.istele = false;
+            if (this.target != null)
+            {
+                EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_PlayerAnimationDrop);
+                this.istele = true;
+                yield return new WaitForSeconds(duration);
+                this.player.position = this.target.transform.position;
+                this.istele = false;
+            }
+            else Debug.Log("Not Tele" + this.targetObjectName);
         }     
     }
 }

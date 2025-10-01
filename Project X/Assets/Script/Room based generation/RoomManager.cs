@@ -27,7 +27,7 @@ public class RoomManager : MonoBehaviour
     }
     public void GenerateLevel()
     {       
-        Room startingRoom = Instantiate(roomPrefabs[0], transform.parent.position, Quaternion.identity);
+        Room startingRoom = Instantiate(roomPrefabs[0], transform.position, Quaternion.identity);
         placedRooms.Add(startingRoom);      
         roomPrefabs.RemoveAt(0);
         for (int i = 0; i < roomCount; i++)

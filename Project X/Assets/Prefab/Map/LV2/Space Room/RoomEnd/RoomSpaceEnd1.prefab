@@ -826,7 +826,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1255,12 +1255,12 @@ Tilemap:
     m_Data: {fileID: -1796980236, guid: 7b16f98f4f8f58a408d665627c3e902c, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1118912625, guid: 32dff847091ec904492a4b8b23c8a3eb, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 81
     m_Data:
@@ -5956,7 +5956,7 @@ GameObject:
   - component: {fileID: 9163969093412995445}
   - component: {fileID: 2841838712474836455}
   - component: {fileID: 1052377989560972667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

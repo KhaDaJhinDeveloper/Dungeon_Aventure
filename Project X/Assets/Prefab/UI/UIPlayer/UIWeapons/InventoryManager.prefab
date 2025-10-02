@@ -80,6 +80,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 80315db8de64748428317258d1a1f3c3, type: 2}
   - {fileID: 11400000, guid: b7d7a32357846c447be126dc9f83afd6, type: 2}
   - {fileID: 11400000, guid: acf4b445dfbfc8840a75e8b2444435ba, type: 2}
+  - {fileID: 11400000, guid: fb0a63bcb1d390345b89263cdd537f72, type: 2}
 --- !u!114 &3661803485536902716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,4 +100,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b211a984f6a85045ba7025d340a6d24, type: 2}
   - {fileID: 11400000, guid: 2b8b4a0a0f43a4e44997a91f2a459f90, type: 2}
   - {fileID: 11400000, guid: 204cdb24ed863684391fc989ac4d118e, type: 2}
+  - {fileID: 11400000, guid: b426454cc1a173c4680656b435f17de6, type: 2}
   completeEquipment: {fileID: 0}

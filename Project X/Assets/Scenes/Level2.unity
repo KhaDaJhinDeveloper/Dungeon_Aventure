@@ -8372,7 +8372,7 @@ GameObject:
   - component: {fileID: 1733624416}
   - component: {fileID: 1733624415}
   - component: {fileID: 1733624414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10450,7 +10450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 4669951340439774663, guid: 802c4a3176f70214897e09bac87d9b1b, type: 3}
+  - {fileID: 5806476018707757717, guid: dde008ac5cda01049a8a499935c89e98, type: 3}
   - {fileID: 2200851390342076457, guid: 35718ad93fcc28c4fb08ef8f413dad52, type: 3}
   - {fileID: 1494578026178415240, guid: 8813a2e012d648d47a91f166ee3fad56, type: 3}
   - {fileID: 8998575390052887102, guid: 2ddb1a83880415049ba7321a846d5d60, type: 3}

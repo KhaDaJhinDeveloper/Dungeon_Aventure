@@ -6,6 +6,7 @@ public class TrapBow : BaseTrap,IShoot
 {
     [SerializeField] private float speedBullet;
     [SerializeField] private float timeAttack;
+    [SerializeField] private Transform posShoot;
     private float currentTime;
     private bool canAttack;
     protected override void LoadComponent()
@@ -44,7 +45,8 @@ public class TrapBow : BaseTrap,IShoot
     public void Shooting()
     {
         GameObject bulleBow = ObjectPooling.ObjectPooling_Instance.GetPool("BowBullet");
-        bulleBow.transform.position = this.transform.position;
+        bulleBow.transform.position = this.posShoot.position;
+        bulleBow.transform.rotation = this.transform.rotation;
         Rigidbody2D rbbullet = bulleBow.GetComponent<Rigidbody2D>();
         rbbullet.velocity = transform.right * this.speedBullet;
     }

@@ -613,7 +613,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1180,14 +1180,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 80
     m_Data: {fileID: -1796980236, guid: 7b16f98f4f8f58a408d665627c3e902c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 240704786, guid: 32dff847091ec904492a4b8b23c8a3eb, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 81
     m_Data:
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 781369115348006342}
   - component: {fileID: 2588536757368975023}
   - component: {fileID: 7115265434330509538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6047,7 +6047,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6827,7 +6827,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 15
-      m_TileSpriteIndex: 15
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9340,18 +9340,18 @@ Tilemap:
     m_Data: {fileID: 1530240919, guid: db64511bf330b114597186e390413d96, type: 3}
   - m_RefCount: 193
     m_Data: {fileID: -265383062, guid: 935e3089bfa4c2046816c84b707b01d9, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1079538469, guid: db64511bf330b114597186e390413d96, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 16
     m_Data: {fileID: 1006056620, guid: db64511bf330b114597186e390413d96, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -466160117, guid: db64511bf330b114597186e390413d96, type: 3}
+    m_Data: {fileID: 1079538469, guid: db64511bf330b114597186e390413d96, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -850279081, guid: db64511bf330b114597186e390413d96, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -967337613, guid: db64511bf330b114597186e390413d96, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -466160117, guid: db64511bf330b114597186e390413d96, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1053075048, guid: db64511bf330b114597186e390413d96, type: 3}
   - m_RefCount: 2

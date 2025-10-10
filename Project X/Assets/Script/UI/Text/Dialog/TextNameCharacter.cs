@@ -10,7 +10,7 @@ public class TextNameCharacter : BaseText
         base.Start();
         this.dialogManager = GameObject.FindFirstObjectByType<DialogManager>();
     }
-    void Update()
+    protected override void Update()
     {
         Load();
     }

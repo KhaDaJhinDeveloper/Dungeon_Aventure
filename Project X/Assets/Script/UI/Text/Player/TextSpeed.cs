@@ -10,7 +10,7 @@ public class TextSpeed : BaseText
         base.Start();
         this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
     }
-    private void Update()
+    protected override void Update()
     {
         Load();
     }

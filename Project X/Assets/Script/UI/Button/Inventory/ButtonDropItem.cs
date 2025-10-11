@@ -1,8 +1,10 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ButtonDropItem : BaseButton
+public class ButtonDropItem : BaseButton, IPointerEnterHandler
 {
     private InventorySlotItems inventorySlotItems;
     protected override void Start()
@@ -12,6 +14,12 @@ public class ButtonDropItem : BaseButton
     }
     protected override void OnClick()
     {
+        base.OnClick();
         this.inventorySlotItems.DropItemSlot();
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        transform.DOKill();
+        transform.DOShakePosition(0.3f, 10f, 20, 90, false, true).SetUpdate(true);
     }
 }

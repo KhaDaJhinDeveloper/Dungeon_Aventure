@@ -1,8 +1,10 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ButtonBuyItem : BaseButton
+public class ButtonBuyItem : BaseButton, IPointerEnterHandler
 {
     private InventoryManager inventoryManager;
     private ShopSlot shopSlot;
@@ -17,6 +19,7 @@ public class ButtonBuyItem : BaseButton
     }
     protected override void OnClick()
     {
+        base.OnClick();
         BuyItem();
     }
     public void BuyItem()
@@ -32,5 +35,10 @@ public class ButtonBuyItem : BaseButton
                 this.slotObject.SetActive(false);
             }
         }
-    }    
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        transform.DOKill();
+        transform.DOShakePosition(0.3f, 10f, 20, 90, false, true).SetUpdate(true);
+    }
 }

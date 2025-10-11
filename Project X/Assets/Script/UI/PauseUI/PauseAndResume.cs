@@ -29,7 +29,10 @@ public class PauseAndResume : MonoBehaviour
     {
         this.pauseUI.transform.DOKill();
         this.gamepause = true;
-        this.pauseUI.transform.DOMove(this.startPos, 0.5f).SetUpdate(true).OnComplete(() => { this.background.SetActive(false); this.pauseUI.SetActive(false); TimeManager.TimeResume(); }); 
+        this.pauseUI.transform.DOMove(this.startPos, 0.5f).SetUpdate(true).OnComplete(() => { this.background.SetActive(false); 
+                                                                                              this.pauseUI.SetActive(false);
+                                                                                              this.startPos = this.pauseUI.transform.position;
+                                                                                              TimeManager.TimeResume(); }); 
     }
     void Pause()
     {

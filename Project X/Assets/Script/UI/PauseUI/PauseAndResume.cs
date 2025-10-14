@@ -9,13 +9,12 @@ public class PauseAndResume : MonoBehaviour
     private bool gamepause;
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject background;
-    private Vector3 startPos;
-    private void Start()
-    {
-        //this.pauseUI = GameObject.FindGameObjectWithTag(TagManager.TAG_MENUUI);
-        //this.pauseUI.SetActive(false);
-        this.startPos = this.pauseUI.transform.position;
-    }
+    [SerializeField] private Transform startPos;
+    //private void Start()
+    //{
+    //    //this.pauseUI = GameObject.FindGameObjectWithTag(TagManager.TAG_MENUUI);
+    //    //this.pauseUI.SetActive(false);
+    //}
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -29,15 +28,15 @@ public class PauseAndResume : MonoBehaviour
     {
         this.pauseUI.transform.DOKill();
         this.gamepause = true;
-        this.pauseUI.transform.DOMove(this.startPos, 0.5f).SetUpdate(true).OnComplete(() => { this.background.SetActive(false); 
+        this.pauseUI.transform.DOMove(this.startPos.transform.position, 0.5f).SetUpdate(true).OnComplete(() => { this.background.SetActive(false); 
                                                                                               this.pauseUI.SetActive(false);
-                                                                                              this.startPos = this.pauseUI.transform.position;
                                                                                               TimeManager.TimeResume(); }); 
     }
     void Pause()
     {
         this.pauseUI.transform.DOKill();
         this.gamepause = false;
+        this.pauseUI.transform.position = this.startPos.transform.position;
         this.background.SetActive(true);
         this.pauseUI.SetActive(true);
         this.pauseUI.transform.DOLocalMove(new Vector3(0, 30, 0), 0.5f).SetUpdate(true);

@@ -21,12 +21,12 @@ public class RatBehavior : EnemyController
     }
     public override void Flip()
     {
-        if (rb.velocityX > 0 && facingRight)
+        if (rb.velocity.x > 0 && facingRight)
         {
             sr.flipX = false;
             facingRight = !facingRight;
         }
-        else if (rb.velocityX < 0 && !facingRight)
+        else if (rb.velocity.x < 0 && !facingRight)
         {
             sr.flipX = true;
             facingRight = !facingRight;

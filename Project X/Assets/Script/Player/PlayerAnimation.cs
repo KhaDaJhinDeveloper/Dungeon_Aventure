@@ -20,14 +20,14 @@ public class PlayerAnimation : MonoBehaviour
     }
     void AnimationMove()
     {
-        bool moveleft = this.rb.velocityX != 0;
+        bool moveleft = this.rb.velocity.x != 0;
         this.ani.SetBool("move",moveleft);
-        if (this.rb.velocityX > 0 && this.facingRight)
+        if (this.rb.velocity.x > 0 && this.facingRight)
             Flip();
-        else if (this.rb.velocityX < 0 && !this.facingRight) Flip();
-        bool runup = this.rb.velocityY > 0 && rb.velocityX == 0;
+        else if (this.rb.velocity.x < 0 && !this.facingRight) Flip();
+        bool runup = this.rb.velocity.y > 0 && rb.velocity.x == 0;
         this.ani.SetBool ("runup",runup);
-        bool rundown = this.rb.velocityY < 0 && rb.velocityX == 0;
+        bool rundown = this.rb.velocity.y < 0 && rb.velocity.x == 0;
         this.ani.SetBool("rundown", rundown);
     }
     public void AnimationDrop()

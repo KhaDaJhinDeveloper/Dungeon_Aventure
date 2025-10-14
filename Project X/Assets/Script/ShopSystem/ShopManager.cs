@@ -7,14 +7,13 @@ public class ShopManager : MonoBehaviour
 {
     public List<ItemDetailsSO>  itemsDetails = new List<ItemDetailsSO>();
     public ShopSlot currentSlot = null;
-    [SerializeField] private GameObject shop;
+    [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject bacckGround;
-    private Vector3 startPos;
+    [SerializeField] private Transform startPos;
     void Start()
     {
         EventManager.OP_EventManager.Subscribe(NameEvent.Event_OpenShop, OpenShop);
         EventManager.OP_EventManager.Subscribe(NameEvent.Event_CloseShop, CloseShop);
-        this.startPos = this.shop.transform.position;
         CloseShop();
     }
     private void Update()
@@ -34,21 +33,23 @@ public class ShopManager : MonoBehaviour
     }    
     public void OpenShop()
     {
-        this.shop.transform.DOKill();      
+        this.shopUI.transform.DOKill();      
         this.bacckGround.SetActive(true);
-        this.shop.SetActive(true);        
-        this.shop.transform.position = this.startPos;
-        this.shop.transform.DOMoveX(this.shop.transform.position.x - 11.5f, 0.5f).SetDelay(0.1f).SetUpdate(true);
+        this.shopUI.SetActive(true);
+        this.shopUI.transform.position = this.startPos.transform.position;
+        this.shopUI.transform.DOMoveX(this.shopUI.transform.position.x - 11.5f, 0.3f).SetDelay(0.1f).SetUpdate(true);
         TimeManager.TimePause();
     }     
     public void CloseShop()
     {
-        this.shop.transform.DOKill();      
-        this.shop.transform.DOMoveX(this.shop.transform.position.x + 11.5f, 0.5f).SetDelay(0.1f).SetUpdate(true).OnComplete(()=> { this.bacckGround.SetActive(false); this.shop.SetActive(false); TimeManager.TimeResume(); });      
+        this.shopUI.transform.DOKill();      
+        this.shopUI.transform.DOMoveX(this.shopUI.transform.position.x + 11.5f, 0.5f).SetDelay(0.1f).SetUpdate(true).OnComplete(()=> { this.bacckGround.SetActive(false); 
+                                                                                                                                       this.shopUI.SetActive(false); 
+                                                                                                                                       TimeManager.TimeResume(); });      
     }     
     private void OnDestroy()
     {
-        this.shop.transform.DOKill();
+        this.shopUI.transform.DOKill();
         EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_OpenShop, OpenShop);
         EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_CloseShop, CloseShop);
     }

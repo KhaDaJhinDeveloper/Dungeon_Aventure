@@ -12,7 +12,7 @@ public class BatStats : BaseStats
     protected override void Start()
     {
         base.Start();
-        this.damageType = new MagicalDamage();
+        this.damageType = new TrueDamage();
         this.ani = GetComponentInChildren<Animator>();
         this.rb = GetComponent<Rigidbody2D>();
         UpdateUI();

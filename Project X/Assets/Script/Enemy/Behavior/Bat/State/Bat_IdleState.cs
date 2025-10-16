@@ -17,10 +17,12 @@ public class Bat_IdleState : IState
     public void Execute()
     {
         Debug.Log("IdleState");
+        this.batController.Rb.velocity = Vector2.zero;
     }
 
     public void Exit()
     {
         Debug.Log("End IDleState");
+        this.batController.Rb.velocity = this.batController.MoveDirection.normalized * this.batController.SpeedMove;
     }
 }

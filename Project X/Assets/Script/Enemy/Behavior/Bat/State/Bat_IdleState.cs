@@ -16,7 +16,6 @@ public class Bat_IdleState : IState
 
     public void Execute()
     {
-        Debug.Log("IdleState");
         this.batController.Rb.velocity = Vector2.zero;
     }
 

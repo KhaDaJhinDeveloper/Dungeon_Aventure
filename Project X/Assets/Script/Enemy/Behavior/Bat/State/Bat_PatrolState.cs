@@ -12,6 +12,7 @@ public class Bat_PatrolState : IState
     }
     public void Enter()
     {
+        Debug.Log("Start Patrol");
         float randomAngle = Random.Range(0f, 360f);
         this.batController.MoveDirection = new Vector3 (Mathf.Cos(randomAngle * Mathf.Deg2Rad), Mathf.Sin(randomAngle * Mathf.Deg2Rad), 0f).normalized;
     }

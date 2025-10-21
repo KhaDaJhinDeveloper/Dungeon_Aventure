@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BatController : MonoBehaviour
 {
-    [Header("Component")]
+    [Header("Components")]
     protected Animator ani;
     protected Collider2D coli;
     protected BatStats batStats;

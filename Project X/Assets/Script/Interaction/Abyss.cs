@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Abyss : BaseInteraction
 {
-    [SerializeField] private string targetObjectName; 
+    [SerializeField] private NamePointTele targetObjectName; 
     private Transform player;
     private Transform target;
     private bool istele = false;
@@ -17,7 +17,7 @@ public class Abyss : BaseInteraction
     {
         base.LoadComponent();
         this.player = GameObject.FindGameObjectWithTag(TagManager.TAG_PLAYER).transform;
-        this.target = GameObject.Find(targetObjectName).transform;
+        this.target = GameObject.Find(targetObjectName.ToString()).transform;
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,7 +36,7 @@ public class Abyss : BaseInteraction
                 this.player.position = this.target.transform.position;
                 this.istele = false;
             }
-            else Debug.Log("Not Tele" + this.targetObjectName);
+            else DebugLogger.LogWarning("Not Tele" + this.targetObjectName);
         }     
     }
 }

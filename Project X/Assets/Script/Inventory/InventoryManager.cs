@@ -14,9 +14,20 @@ public class InventoryManager : MonoBehaviour
     {
         this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
         this.countdownTimer = GameObject.FindFirstObjectByType<CountdownTimer>();
+        InventoryDataManager.S_inventoryDataManager.LoadDataItems(this.slotsList);
     }
     public List<InventorySlotItems> SlotsList { get => this.slotsList; set => this.slotsList = value; }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            InventoryDataManager.S_inventoryDataManager.SaveDataItems(this.slotsList);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            InventoryDataManager.S_inventoryDataManager.DeleteAllDataItems();
+        }
+    }
     public void AddItem(Sprite imageItem, string nameItem, ItemType type)
     {
         foreach (InventorySlotItems item in slotsList)

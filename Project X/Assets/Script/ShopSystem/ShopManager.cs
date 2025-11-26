@@ -16,13 +16,6 @@ public class ShopManager : MonoBehaviour
         EventManager.OP_EventManager.Subscribe(NameEvent.Event_CloseShop, CloseShop);
         CloseShop();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-            OpenShop();
-        if (Input.GetKeyDown(KeyCode.Z))  
-            CloseShop();
-    }
     public void SelectedSlot(ShopSlot slot)
     {
         if (this.currentSlot != null)

@@ -22,6 +22,7 @@ public class ButtonChangeWeaponSlot1 : BaseButton, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOKill();
-        transform.DOShakePosition(0.3f, 10f, 20, 90, false, true).SetUpdate(true);
+        transform.localPosition = this.originalPos;
+        transform.DOShakePosition(0.3f, 10f, 10, 40, false, true).SetUpdate(true);
     }
 }

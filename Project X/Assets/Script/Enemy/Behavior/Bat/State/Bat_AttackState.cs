@@ -16,7 +16,6 @@ public class Bat_AttackState : IState
     }
     public void Enter()
     {
-        Debug.Log("Start Attack");
         this.hasKeyPos = false;
     }
 
@@ -28,7 +27,6 @@ public class Bat_AttackState : IState
 
     public void Exit()
     {
-        Debug.Log("End Attack");
         this.batController.Ani.SetBool("attack", false);
     }
     void MarkTheLocation()

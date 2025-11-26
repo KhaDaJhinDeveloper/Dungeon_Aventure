@@ -10,6 +10,6 @@ public class ButtonQuittGame : BaseButton
     }
     protected override void OnClick()
     {
-        Debug.Log("quit");
+        DebugLogger.Log("quit");
     }
 }

@@ -11,10 +11,10 @@ public abstract class BatController : MonoBehaviour
     protected SpriteRenderer sr;
     private Rigidbody2D rb;
     [Header("CheckWall")]
-    [SerializeField] protected float rayDistance;
-    [SerializeField] protected LayerMask nameLayer;
+    protected float rayDistance;
+    protected LayerMask nameLayer;
     [Header("DetecPlayer")]
-    [SerializeField] protected GameObject targetObject;
+    protected GameObject targetObject;
     [SerializeField] protected LayerMask playerLayer;
     [SerializeField] protected bool isDetecPlayer;
     [SerializeField] protected bool isTrigger;
@@ -32,17 +32,17 @@ public abstract class BatController : MonoBehaviour
 
     IState currentState;
     public bool IsDetecPlayer { get => isDetecPlayer; set => isDetecPlayer = value; }
-    public Animator Ani { get => ani; set => ani = value; }
+    public Animator Ani { get => ani; }
     public Vector3 MoveDirection { get => moveDirection; set => moveDirection = value; }
     public float TimeChangeDirection { get => timeChangeDirection; set => timeChangeDirection = value; }
     public bool AttackComplated { get => attackComplated; set => attackComplated = value; }
     public bool IsTrigger { get => isTrigger; set => isTrigger = value; }
     public GameObject TargetObject { get => targetObject;}
     public LayerMask LayerWall { get => layerWall;}
-    public Rigidbody2D Rb { get => rb; set => rb = value; }
+    public Rigidbody2D Rb { get => rb;  }
     public float SpeedMove { get => speedMove; set => speedMove = value; }
     public float RayDistance { get => rayDistance; set => rayDistance = value; }
-    public LayerMask NameLayer { get => nameLayer; set => nameLayer = value; }
+    public LayerMask NameLayer { get => nameLayer;}
 
     protected virtual void Start()
     {

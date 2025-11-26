@@ -10,7 +10,7 @@ public class ButtonDeleteData : BaseButton
     }
     protected override void OnClick()
     {
-        Debug.Log("Delete Data"); 
+        DebugLogger.Log("Delete Data"); 
         PlayerPrefs.DeleteAll();
     }
 }

@@ -10,6 +10,6 @@ public class ButtonContinue : BaseButton
     }
     protected override void OnClick()
     {
-        Debug.Log("continue");
+        DebugLogger.Log("continue");
     }
 }

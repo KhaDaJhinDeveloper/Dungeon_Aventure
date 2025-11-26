@@ -11,16 +11,18 @@ public class Spider_IdleState : IState
     }
     public void Enter()
     {
-        throw new System.NotImplementedException();
+        this.spiderController.ani.SetBool("idle", true);
+        this.spiderController.LockVelocity();
     }
 
     public void Execute()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        this.spiderController.ani.SetBool("idle", false);
+        this.spiderController.UnlockVelocity();
     }
 }

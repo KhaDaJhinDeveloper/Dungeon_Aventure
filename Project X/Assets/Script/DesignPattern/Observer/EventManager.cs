@@ -41,17 +41,21 @@ public class EventManager : Singleton<EventManager>
     }
     public void Unsubscribe<T>(string eventName, Action<T> listener)
     {
-        if (!eventDictionary.ContainsKey(eventName))
-            eventDictionary[eventName] = listener;
-        else
+        if (eventDictionary.ContainsKey(eventName))
+        {
             eventDictionary[eventName] = (Action<T>)eventDictionary[eventName] - listener;
+            if (eventDictionary[eventName] == null)
+                eventDictionary.Remove(eventName);
+        }    
     }
     public void Unsubscribe<T1, T2>(string eventName, Action<T1, T2> listener)
     {
-        if (!eventDictionary.ContainsKey(eventName))
-            eventDictionary[eventName] = listener;
-        else
-            eventDictionary[eventName] = (Action<T1, T2>)eventDictionary[eventName] + listener;
+        if (eventDictionary.ContainsKey(eventName))
+        {
+            eventDictionary[eventName] = (Action<T1, T2>)eventDictionary[eventName] - listener;
+            if (eventDictionary[eventName] == null)
+                eventDictionary.Remove(eventName);
+        }
     }
     //-----------------------------------------------------------
     public void TriggerEvent(string eventName)

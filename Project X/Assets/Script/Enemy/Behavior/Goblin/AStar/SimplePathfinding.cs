@@ -25,7 +25,7 @@ public class SimplePathfinding : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
-            Debug.LogError("Cần có Rigidbody2D component để di chuyển bằng vật lý!");
+            DebugLogger.LogError("Cần có Rigidbody2D component để di chuyển bằng vật lý!");
             return;
         }
 

@@ -441,7 +441,7 @@ MonoBehaviour:
   - {x: 0.0039978796, y: -0.052964546, z: 0}
   m_ShapePathHash: 996039410
   m_Mesh: {fileID: 0}
-  m_InstanceId: -28130
+  m_InstanceId: 88424
   m_LocalBounds:
     m_Center: {x: 0.019292573, y: -0.011520967, z: 0}
     m_Extent: {x: 0.04588578, y: 0.04144358, z: 0}
@@ -859,11 +859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9a5d480eee2b74dba215616823eb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayDistance: 1
-  nameLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  targetObject: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 512

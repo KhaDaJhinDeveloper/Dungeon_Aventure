@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ChangeWeaponInformation : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class ChangeWeaponInformation : MonoBehaviour
     public List<WeaponInfor> weapons = new List<WeaponInfor>();
     public GameObject changeWeaponUI;
     private WeaponManager weaponManager;
+    [SerializeField] private Transform startPos;
+    [SerializeField] private GameObject background;
     private bool isActive ;
     private void Start()
     {
@@ -63,14 +66,18 @@ public class ChangeWeaponInformation : MonoBehaviour
     }
     void Hide()
     {       
-        this.changeWeaponUI.SetActive(false);
         this.isActive = false;
-        TimeManager.TimeResume();
+        this.changeWeaponUI.transform.DOKill();
+        this.changeWeaponUI.transform.DOMove(this.startPos.transform.position, 0.5f).SetUpdate(true).OnComplete(() => {this.background.SetActive(false);
+                                                                                                                       this.changeWeaponUI.SetActive(false);                                                                                                                        
+                                                                                                                       TimeManager.TimeResume();});                                                                                                                                                   
     }
     void Show()
     {      
-        this.changeWeaponUI.SetActive(true);
         this.isActive = true;
+        this.background.SetActive(true);
+        this.changeWeaponUI.SetActive(true);
+        this.changeWeaponUI.transform.DOLocalMove(new Vector3(0, 30, 0), 0.5f).SetUpdate(true);
         TimeManager.TimePause();
     }
     private void OnDestroy()

@@ -38,17 +38,17 @@ public class DialogEventManager : Singleton<DialogEventManager>
     }    
     private void ShowShop()
     {
-        Debug.Log("ShowShop");
+        DebugLogger.Log("ShowShop");
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_OpenShop);
     }   
     private void DropItem()
     {
-        Debug.Log("DropItem");
+        DebugLogger.Log("DropItem");
         //Add event drop item
     }
     public void NewGame()
     {
-        Debug.Log("NewGame");
+        DebugLogger.Log("NewGame");
         SceneManager.LoadScene("Level1");
     }    
 }

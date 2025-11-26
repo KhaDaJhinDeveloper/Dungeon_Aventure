@@ -156,7 +156,7 @@ Transform:
   - {fileID: 1203811157658661823}
   - {fileID: 6344664518603947299}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4047433998289723602
 MonoBehaviour:
@@ -9062,7 +9062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6061631307973878723, guid: 42d0299a31e6a734999eeb1e9156d111, type: 3}
       propertyPath: targetObjectName
-      value: Tele1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7754227887016013743, guid: 42d0299a31e6a734999eeb1e9156d111, type: 3}
       propertyPath: m_Name

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BonFire : BaseInteraction
 {
+    public bool Pre_activated;
     private bool activeBorn;
     private bool canActive;
     private CountdownTimer timer;
@@ -16,6 +17,11 @@ public class BonFire : BaseInteraction
     }
     protected override void Update()
     {
+        if(this.Pre_activated)
+        {
+            this.activeBorn = true;
+            this.ani.SetBool("fire", true);
+        }
         if(Input.GetKeyDown(KeyCode.E))
         {
             if(this.canActive)
@@ -31,8 +37,7 @@ public class BonFire : BaseInteraction
     {
         if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            if(!this.activeBorn)
-                EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
+            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
             this.canActive = true;
         }    
     }

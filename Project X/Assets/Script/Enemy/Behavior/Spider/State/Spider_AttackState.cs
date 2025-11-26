@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spider_AttackState : MonoBehaviour
+public class Spider_AttackState : IState
 {
-    // Start is called before the first frame update
-    void Start()
+    private float currentTime;
+    private SpiderController spiderController;
+    public Spider_AttackState(SpiderController spiderController)
+    {
+        this.spiderController = spiderController;
+    }
+    public void Enter()
+    {
+        this.spiderController.ani.SetBool("attack", true);
+        this.spiderController.LockVelocity();
+    }
+
+    public void Execute()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Exit()
     {
-        
+        this.spiderController.ani.SetBool("attack", false);
     }
 }

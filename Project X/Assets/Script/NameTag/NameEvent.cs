@@ -4,9 +4,13 @@ public class NameEvent
 {
     public const string Event_PlayerAnimationDrop = "AnimationDrop";
     //================UI=================================================================
-      //-------BUTTON--------------------------------------------------------------------
-        //--------------ButtonTrigger----------------------------------------------------
-        public const string Event_ShowButtonTrigger = "EventShowButton";
+    //-------CONTENTUI-----------------------------------------------------------------
+        public const string Event_LoadIndex = "LoadIndex";
+        public const string Event_ShowContentBoard = "ShowContentBoard";
+        public const string Event_HideContentBroad = "HideContentBroad";
+    //-------BUTTON--------------------------------------------------------------------
+    //--------------ButtonTrigger----------------------------------------------------
+    public const string Event_ShowButtonTrigger = "EventShowButton";
         public const string Event_HiddenButtonTrigger = "EventHiddenButton";
 
       //-------TEXT----------------------------------------------------------------------
@@ -15,7 +19,7 @@ public class NameEvent
         public const string Event_ShowDamageText = "ShowDamageText";
         //--------------TextDialog-------------------------------------------------------
         public const string Event_LoadDialogText = "LoadDialogText";
-      //--------SHOP----------------------------------------------------------------------
+      //--------SHOPUI-------------------------------------------------------------------
         public const string Event_OpenShop = "OpenShop";
         public const string Event_CloseShop = "CloseShop";
     //--------SOUND---------------------------------------------------------------------

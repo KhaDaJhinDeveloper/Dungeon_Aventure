@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : BaseInteraction
 {
-    public string nameScene;
+    public NameScene nameScene;
     private bool isLoad = false;
     protected override void Update()
     {
@@ -32,6 +32,6 @@ public class NextLevel : BaseInteraction
     {    
         this.isLoad = false;
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(nameScene);
+        SceneManager.LoadScene(this.nameScene.ToString());
     }    
 }

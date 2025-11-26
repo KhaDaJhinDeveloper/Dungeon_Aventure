@@ -68,7 +68,7 @@ public class WeaponItem : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
             else
-                Debug.Log("1");
+                DebugLogger.Log("Weapon reserve is full");
         }
     }
 }

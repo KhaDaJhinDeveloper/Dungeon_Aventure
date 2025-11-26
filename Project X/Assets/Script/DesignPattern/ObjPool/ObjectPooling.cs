@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectPooling : Singleton<ObjectPooling>
 {
@@ -12,6 +13,7 @@ public class ObjectPooling : Singleton<ObjectPooling>
     {
         base.Awake();
         ObjectPooling_Instance = this;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     public void CreatePool(string key, GameObject prefab,int poolSize)
     {
@@ -63,4 +65,16 @@ public class ObjectPooling : Singleton<ObjectPooling>
     {
         return rawKey.Replace("(Clone)", "").Trim();
     }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        PoolClear();
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    public void PoolClear()
+    {
+        this.poolDictionary.Clear();
+    }    
 }

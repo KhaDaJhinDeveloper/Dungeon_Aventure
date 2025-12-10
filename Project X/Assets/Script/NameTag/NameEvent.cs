@@ -23,4 +23,9 @@ public class NameEvent
         public const string Event_OpenShop = "OpenShop";
         public const string Event_CloseShop = "CloseShop";
     //--------SOUND---------------------------------------------------------------------
+    //================DATA================================================================
+    //-------INVENTORY-----------------------------------------------------------------
+    public const string Event_InventorySaveData = "InventorySaveData";
+    public const string Event_InventoryLoadData = "InventoryLoadData";
+    public const string Event_InventoryDeleteData = "InventoryDeleteData";
 }

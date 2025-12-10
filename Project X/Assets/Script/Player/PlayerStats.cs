@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats : BaseStats
@@ -46,7 +43,7 @@ public class PlayerStats : BaseStats
         base.Die();
         this.ani.AnimationDeath();
     }
-    void UpdateUI()
+    public void UpdateUI()
     {
         EventManager.OP_EventManager.TriggerEvent("LoadHp");
         EventManager.OP_EventManager.TriggerEvent("LoadHPText");

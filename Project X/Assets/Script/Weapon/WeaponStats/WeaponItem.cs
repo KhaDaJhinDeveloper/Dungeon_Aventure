@@ -53,7 +53,7 @@ public class WeaponItem : MonoBehaviour
             {
                 if (weapon.name == targetName )
                 {
-                    this.weaponManager.AddWeaponList(weapon);
+                    this.weaponManager.AddWeaponList(KeyClean.CleanKey(weapon.name));
                     EventManager.OP_EventManager.TriggerEvent<Sprite>("UpdateImageWeapon", this.defaultSprite);
                     this.gameObject.SetActive(false);
                 }
@@ -63,7 +63,7 @@ public class WeaponItem : MonoBehaviour
         {
             if (this.weaponManager.WeaponReserve == null)
             {
-                this.weaponManager.AddWeaponReserve(this.gameObject);
+                this.weaponManager.AddWeaponReserve(this.gameObject.name);
                 EventManager.OP_EventManager.TriggerEvent("Show");
                 this.gameObject.SetActive(false);
             }

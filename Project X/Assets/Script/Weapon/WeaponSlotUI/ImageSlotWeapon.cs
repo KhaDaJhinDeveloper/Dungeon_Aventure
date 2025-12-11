@@ -36,9 +36,9 @@ public class ImageSlotWeapon : MonoBehaviour
     }
     public void LoadImageWeapon()
     {
-        StartCoroutine(DelaayLoad());
+        StartCoroutine(DelayLoad());
     }
-    IEnumerator DelaayLoad()
+    IEnumerator DelayLoad()
     {
         yield return null;
         for (int i = 0; i < this.weaponManager.Weaponlist.Count; i++)
@@ -50,14 +50,6 @@ public class ImageSlotWeapon : MonoBehaviour
             }
         }
     }
-    /*public bool CheckSlots()
-    {
-        foreach(bool isFull in this.slotFull)
-        {
-            if (!isFull) return false;
-        }
-        return true;
-    }*/
     private void OnDestroy()
     {
         EventManager.OP_EventManager.Unsubscribe<Sprite>("UpdateImageWeapon", UpdateImageWeapon);

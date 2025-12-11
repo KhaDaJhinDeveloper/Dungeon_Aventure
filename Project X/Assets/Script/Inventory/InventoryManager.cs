@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour,IDataManager
 {
     [SerializeField] private List<InventorySlotItems> slotsList = new List<InventorySlotItems>();
     [SerializeField] private RecoveryItem[] recoveryItems;
@@ -14,20 +14,11 @@ public class InventoryManager : MonoBehaviour
     {
         this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
         this.countdownTimer = GameObject.FindFirstObjectByType<CountdownTimer>();
-        InventoryDataManager.S_inventoryDataManager.LoadDataItems(this.slotsList);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_InventorySaveData, SaveData);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_InventoryLoadData, LoadData);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_InventoryDeleteData, DeleteData);
     }
     public List<InventorySlotItems> SlotsList { get => this.slotsList; set => this.slotsList = value; }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            InventoryDataManager.S_inventoryDataManager.SaveDataItems(this.slotsList);
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            InventoryDataManager.S_inventoryDataManager.DeleteAllDataItems();
-        }
-    }
     public void AddItem(Sprite imageItem, string nameItem, ItemType type)
     {
         foreach (InventorySlotItems item in slotsList)
@@ -70,5 +61,26 @@ public class InventoryManager : MonoBehaviour
             item.Option.SetActive(false);
             item.IsSelected = false;
         }
+    }
+
+    public void SaveData()
+    {
+        InventoryDataManager.S_inventoryDataManager.SaveDataItems(this.slotsList);
+    }
+
+    public void LoadData()
+    {
+        InventoryDataManager.S_inventoryDataManager.LoadDataItems(this.slotsList);
+    }
+
+    public void DeleteData()
+    {
+        InventoryDataManager.S_inventoryDataManager.DeleteAllDataItems();
+    }
+    public void OnDestroy()
+    {
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_InventorySaveData, SaveData);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_InventoryLoadData, LoadData);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_InventoryDeleteData, DeleteData);
     }
 }

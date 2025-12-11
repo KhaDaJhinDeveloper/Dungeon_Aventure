@@ -1,0 +1,8 @@
+{
+    "maxHeal": 50,
+    "currentHeal": 50,
+    "speed": 6,
+    "armor": 10,
+    "antiMagic": 20,
+    "damage": 0
+}

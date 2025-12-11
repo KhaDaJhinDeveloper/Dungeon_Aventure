@@ -77,25 +77,28 @@ public class WeaponManager : MonoBehaviour
         GetInterfaceWeapon();
         LoadUI();
     }
-    public void AddWeaponList(GameObject weapon)
+    public void AddWeaponList(string nameWeapon)
     {
         WeaponDetected();
-        if (this.weaponlist.Count < 2)
+        if (this.weaponlist.Count > 2) EventManager.OP_EventManager.TriggerEvent("Show"); ;
+        foreach (GameObject weapons in this.weaponPrefab)
         {
-            this.weaponlist.Add(weapon);
-            weapon.SetActive(true);
-            GetInterfaceWeapon();            
+            if (weapons.name == nameWeapon)
+            {
+                this.weaponlist.Add(weapons);
+                weapons.SetActive(true);
+                GetInterfaceWeapon();
+                break;
+            }
         }
-        else
-            EventManager.OP_EventManager.TriggerEvent("Show");
     }   
-    public void AddWeaponReserve(GameObject weapon)
+    public void AddWeaponReserve(string weaponName)
     {
         if (this.weaponReserve == null)
         {
             foreach (GameObject weaponPb in this.weaponPrefab)
             {
-                if (weaponPb.name == weapon.name || weapon.name == weaponPb.name + "(Clone)")
+                if (weaponPb.name == weaponName || weaponName == weaponPb.name + "(Clone)")
                 {
                     this.weaponReserve = weaponPb;
                 }
@@ -141,7 +144,7 @@ public class WeaponManager : MonoBehaviour
             }            
         }
     }
-    void LoadUI()
+    public void LoadUI()
     {
         EventManager.OP_EventManager.TriggerEvent("LoadInForWeapon");
         EventManager.OP_EventManager.TriggerEvent("LoadImageWeapon");

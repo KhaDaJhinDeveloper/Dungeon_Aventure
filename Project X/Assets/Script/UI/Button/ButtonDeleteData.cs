@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class ButtonDeleteData : BaseButton
 {
@@ -11,6 +8,6 @@ public class ButtonDeleteData : BaseButton
     protected override void OnClick()
     {
         DebugLogger.Log("Delete Data"); 
-        PlayerPrefs.DeleteAll();
+        GameSaveManager.Instance.DeleteAllDataLocal();
     }
 }

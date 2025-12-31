@@ -19,6 +19,8 @@ public class GameSaveManager : Singleton<GameSaveManager>
         WeaponsDataManager.S_WeaponsDataManager.SaveData();
         GameStateCoinManager.S_GameStateCoinManager.SaveData();
         GameStateTimerManager.S_GameStateTimerManager.SaveData();
+        GameSceneStateManager.S_GameSceneStateManager.SaveData();
+        DungeonDataManager.Instance.SaveData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventorySaveData);
         
 
@@ -31,6 +33,9 @@ public class GameSaveManager : Singleton<GameSaveManager>
         WeaponsDataManager.S_WeaponsDataManager.LoadData();
         GameStateCoinManager.S_GameStateCoinManager.LoadData();
         GameStateTimerManager.S_GameStateTimerManager.LoadData();
+        // Load dungeon data chỉ cho scene hiện tại, xóa data của scene khác
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        DungeonDataManager.Instance.LoadData(currentSceneName);
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventoryLoadData);
 
 
@@ -42,17 +47,11 @@ public class GameSaveManager : Singleton<GameSaveManager>
         WeaponsDataManager.S_WeaponsDataManager.SaveData();
         GameStateCoinManager.S_GameStateCoinManager.SaveData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventorySaveData);
-
-        DebugLogger.Log("All game data Loaded When Play");
+        DebugLogger.Log("All game data Saved When Play");
     }
     public void LoadDataWhenPlay()
     {
-        PlayerStatsDataManager.S_playerStatsDataManager.LoadData();
-        WeaponsDataManager.S_WeaponsDataManager.LoadData();
-        GameStateCoinManager.S_GameStateCoinManager.LoadData();
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventoryLoadData);
-
-        DebugLogger.Log("All game data Loaded When Play");
+        StartCoroutine(LoadDataWhenPlayWhenReady());
     }
     public void DeleteAllDataLocal()
     {
@@ -61,13 +60,11 @@ public class GameSaveManager : Singleton<GameSaveManager>
         PlayerPositionDataManager.S_playerPositionDataManager.DeleteData();
         GameStateCoinManager.S_GameStateCoinManager.DeleteData();
         GameStateTimerManager.S_GameStateTimerManager.DeleteData();
+        GameSceneStateManager.S_GameSceneStateManager.DeleteData();
+        DungeonDataManager.Instance.DeleteData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventoryDeleteData);
         DialogStateManager.dialogState_Instance.ResetAllStateDialog();
         DebugLogger.Log("All save data Deleted");
-    }
-    public bool HasData()
-    {
-        return JsonFileUtility.JsonFileExists(FILE_NAME);
     }
     private IEnumerator LoadAllDataWhenReady()
     {
@@ -82,6 +79,20 @@ public class GameSaveManager : Singleton<GameSaveManager>
         yield return new WaitForFixedUpdate();
         LoadAllDataLocal();
     }
+    private IEnumerator LoadDataWhenPlayWhenReady()
+    {
+        GameObject player = null;
+        while (player == null)
+        {
+            player = GameObject.FindWithTag(TagManager.TAG_PLAYER);
+            if (player == null) yield return null;
+        }
+        yield return new WaitForFixedUpdate();
+        PlayerStatsDataManager.S_playerStatsDataManager.LoadData();
+        WeaponsDataManager.S_WeaponsDataManager.LoadData();
+        GameStateCoinManager.S_GameStateCoinManager.LoadData();
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventoryLoadData);
+    }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainMenu")
@@ -95,6 +106,10 @@ public class GameSaveManager : Singleton<GameSaveManager>
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    public bool HasData()
+    {
+        return JsonFileUtility.JsonFileExists(FILE_NAME);
     }
     private void OnApplicationQuit()
     {

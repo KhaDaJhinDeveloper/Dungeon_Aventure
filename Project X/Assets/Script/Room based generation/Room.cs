@@ -10,7 +10,7 @@ public class Room : MonoBehaviour
     {
         public Transform exitPoint; 
         public Direction exitDirections; 
-        [HideInInspector] public bool isUsed;
+        public bool isUsed;
     }
     public Exits[] exits;
     [HideInInspector] public Room originalPrefab ;

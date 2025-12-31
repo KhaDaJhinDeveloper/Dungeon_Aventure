@@ -4807,6 +4807,67 @@ Transform:
   m_Father: {fileID: 1991523312}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &342695251
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694450626142635730, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793732976761443751, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
+      propertyPath: m_Name
+      value: NavmeshSunface
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 481a89b60be36f946bbcb2bb35241695, type: 3}
 --- !u!1 &352992624
 GameObject:
   m_ObjectHideFlags: 0
@@ -10630,6 +10691,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6225234263558902436, guid: 2a450a78dc5842547acd3b884d7a5036, type: 3}
+      propertyPath: managerID
+      value: LV2_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225234263558902436, guid: 2a450a78dc5842547acd3b884d7a5036, type: 3}
       propertyPath: roomPrefabs.Array.size
       value: 9
       objectReference: {fileID: 0}
@@ -10719,7 +10784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8014206482403768723, guid: 2a450a78dc5842547acd3b884d7a5036, type: 3}
       propertyPath: prefab.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8014206482403768723, guid: 2a450a78dc5842547acd3b884d7a5036, type: 3}
       propertyPath: prefab.Array.data[0]
@@ -10733,6 +10798,10 @@ PrefabInstance:
       propertyPath: prefab.Array.data[2]
       value: 
       objectReference: {fileID: 6340570089852782146, guid: 9cd5b9b4d50c8dc48aeac87b0eae3c14, type: 3}
+    - target: {fileID: 8014206482403768723, guid: 2a450a78dc5842547acd3b884d7a5036, type: 3}
+      propertyPath: prefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 4422177418012899001, guid: fc059c9ca6b5d6a4d88203a6120d8f14, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10932,6 +11001,7 @@ MonoBehaviour:
   - {fileID: 2936043429628467536, guid: 6e536c96bcea6574488d4b65c2b73810, type: 3}
   placedRooms: []
   roomCount: 7
+  managerID: LV2_02
 --- !u!1 &1920237064
 GameObject:
   m_ObjectHideFlags: 0

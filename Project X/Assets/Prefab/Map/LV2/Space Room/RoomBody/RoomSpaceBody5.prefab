@@ -4794,6 +4794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7573857423044827720}
+  - component: {fileID: 7240842609575188546}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -4818,6 +4819,22 @@ Transform:
   m_Father: {fileID: 1086207840104562529}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7240842609575188546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130715947837085272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6580068393638396988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5860,7 +5877,7 @@ Transform:
   - {fileID: 8431271555337305742}
   - {fileID: 3198959867168068140}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4933415007628308282
 MonoBehaviour:
@@ -6054,6 +6071,7 @@ GameObject:
   - component: {fileID: 1401589833590467690}
   - component: {fileID: 2835470334221725768}
   - component: {fileID: 8223013043986278110}
+  - component: {fileID: 4466632620811831166}
   m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
@@ -9012,7 +9030,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -9221,6 +9239,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 8301687624062929147}
+--- !u!114 &4466632620811831166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301687624062929147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &202151387543797132
 PrefabInstance:
   m_ObjectHideFlags: 0

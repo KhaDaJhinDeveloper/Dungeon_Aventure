@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonContinue : BaseButton
 {
-    public NameScene scene;
     protected override void Start()
     {
         base.Start();
@@ -14,7 +13,8 @@ public class ButtonContinue : BaseButton
     protected override void OnClick()
     {
         DebugLogger.Log("continue");
+        string nameScene = GameSceneStateManager.S_GameSceneStateManager.GetSceneNameData();
         GameSaveManager.Instance.RequestLoadOnNextScene();
-        SceneManager.LoadScene(scene.ToString());
+        SceneManager.LoadScene(nameScene);
     }
 }

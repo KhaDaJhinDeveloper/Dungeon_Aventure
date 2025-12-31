@@ -56,11 +56,6 @@ public abstract class BatController : MonoBehaviour
         if (this.currentState != null)
             this.currentState.Execute();
     }
-    protected virtual void FixedUpdate()
-    {
-        if (this.currentState != null)
-            this.currentState.Execute();
-    }
     protected virtual void ChangeState(IState state)
     {
         if (currentState != null && currentState.GetType() == state.GetType())

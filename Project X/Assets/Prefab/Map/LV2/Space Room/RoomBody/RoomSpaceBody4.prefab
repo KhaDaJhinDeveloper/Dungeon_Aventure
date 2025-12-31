@@ -33,7 +33,7 @@ Transform:
   - {fileID: 7601358812564111345}
   - {fileID: 4865914731784147479}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8957339582860158890
 MonoBehaviour:
@@ -1558,6 +1558,7 @@ GameObject:
   - component: {fileID: 4822944604574054237}
   - component: {fileID: 6635499421816834512}
   - component: {fileID: 7980222805641318345}
+  - component: {fileID: 272558878976457535}
   m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
@@ -4436,7 +4437,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -4645,6 +4646,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 7906968572008611331}
+--- !u!114 &272558878976457535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906968572008611331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8440323954203177469
 GameObject:
   m_ObjectHideFlags: 0
@@ -9106,6 +9123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4147872822107512727}
+  - component: {fileID: 7720369511547570288}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -9130,6 +9148,22 @@ Transform:
   m_Father: {fileID: 8321803761190863900}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7720369511547570288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101663799435692721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &9124322877395986113
 GameObject:
   m_ObjectHideFlags: 0

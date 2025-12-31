@@ -12,4 +12,8 @@ public class TimeManager : MonoBehaviour
     {
         Time.timeScale = 1f;
     }    
+    public static void TimeScale(float scale)
+    {
+        Time.timeScale = scale;
+    }
 }

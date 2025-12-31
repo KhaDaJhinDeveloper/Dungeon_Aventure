@@ -9,10 +9,10 @@ TagManager:
   - UI
   - Enemy
   - WeaponMlee
-  - WeaponRange
   - drop
   - Light
   - InventoryManager
+  - WeaponRange
   layers:
   - Default
   - TransparentFX
@@ -24,7 +24,7 @@ TagManager:
   - Bullet
   - Enemy
   - Player
-  - 
+  - Melee
   - 
   - 
   - 

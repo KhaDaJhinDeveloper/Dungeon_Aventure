@@ -1,4 +1,17 @@
 [System.Serializable]
+public class GameStateSceneName
+{
+    public string sceneName;
+    public GameStateSceneName() { }
+    public GameStateSceneName(string sceneName) 
+    { 
+        this.sceneName = sceneName; 
+    }
+}
+
+
+
+[System.Serializable]
 public class GameStateTimer
 {
     public float maxTime;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject sceneTransitton;
     void Start()
     {
         

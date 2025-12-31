@@ -46,7 +46,7 @@ public class Bat_AttackState : IState
         if(this.isRetreating)
         {
             this.batController.Ani.SetBool("attack", true);
-            this.batController.transform.position = Vector3.MoveTowards(this.batController.transform.position, this.retreatTargetPosition, 1 * Time.deltaTime);
+            this.batController.transform.position = Vector3.MoveTowards(this.batController.transform.position, this.retreatTargetPosition, 2f * Time.deltaTime);
             if (Vector3.Distance(this.batController.transform.position, this.retreatTargetPosition) <= 0.1f)
             {
                 this.isRetreating = false;
@@ -54,7 +54,7 @@ public class Bat_AttackState : IState
         }   
         else
         {
-            this.batController.transform.position = Vector3.MoveTowards(this.batController.transform.position, this.keyPosition, 4 * Time.deltaTime);
+            this.batController.transform.position = Vector3.MoveTowards(this.batController.transform.position, this.keyPosition, 6f * Time.deltaTime);
             if (Vector3.Distance(this.batController.transform.position, this.keyPosition) <= 0.5f)
                 this.batController.AttackComplated = true;
         }    

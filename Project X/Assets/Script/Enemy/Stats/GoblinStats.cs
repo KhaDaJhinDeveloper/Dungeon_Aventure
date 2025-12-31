@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GoblinStats : BaseStats
@@ -26,8 +27,9 @@ public class GoblinStats : BaseStats
     }
     public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
-        base.TakeDamage(amount, damageType, pos);
+        if (gameObject == null) return;
         StartCoroutine(Effect(this.transform.position, amount));
+        base.TakeDamage(amount, damageType, pos);
         UpdateUI();
     }
     protected override void Die()

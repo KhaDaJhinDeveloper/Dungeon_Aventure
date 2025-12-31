@@ -8,6 +8,7 @@ public class ButtonRestart : BaseButton, IPointerEnterHandler
     {
         base.OnClick();
         TimeManager.TimeResume();
+       DungeonDataManager.Instance.DeleteData();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);      
     }
     public void OnPointerEnter(PointerEventData eventData)

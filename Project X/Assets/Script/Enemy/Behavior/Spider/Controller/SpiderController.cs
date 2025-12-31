@@ -35,11 +35,6 @@ public abstract class SpiderController : MonoBehaviour
         if (this.currentState != null)
             this.currentState.Execute();
     }
-    protected virtual void FixedUpdate()
-    {
-        if (this.currentState != null)
-            this.currentState.Execute();
-    }
     protected virtual void LoadComponent()
     {
         this.stats = GetComponent<BaseStats>();

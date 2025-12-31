@@ -6,5 +6,6 @@ public enum NameScene
     Level2,
     Level3,
     Level4,
-    KingSlimeBossRoom
+    KingSlimeBossRoom,
+    SceneLoadData
 }

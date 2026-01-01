@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(SpawnEnemy))]
 public class RoomManager : MonoBehaviour
 {
@@ -10,10 +10,48 @@ public class RoomManager : MonoBehaviour
     public  List<Room> wallPrefabs = new List<Room>(); 
     [HideInInspector] public List<Room> placedRooms = new List<Room>();  
     List<GameObject> roomFailedList = new List<GameObject>();
-    public int roomCount;  
+    public int roomCount;
+
+    private DungeonLayoutData dungeonLayoutData = new DungeonLayoutData();  
+    private RoomInstanceData roomInstanceData = new RoomInstanceData();
+    string sceneName;
+    
+    [Tooltip("ID duy nhất để phân biệt RoomManager này. Nếu để trống sẽ dùng tên GameObject.")]
+    public string managerID = "";
+    
     private void Awake()
     {
-        GenerateLevel();
+        // Luôn lấy sceneName trước
+        this.sceneName = SceneManager.GetActiveScene().name;
+        
+        if (string.IsNullOrEmpty(managerID))
+        {
+            int buildIndex = SceneManager.GetActiveScene().buildIndex;
+            this.managerID = $"{gameObject.name}_Scene_{sceneName}_Index_{buildIndex}";
+        }
+        
+        bool loadedFromSave = false;
+        if (DungeonDataManager.Instance != null && DungeonDataManager.Instance.HasData())
+        {
+            // LoadData() với sceneName để chỉ giữ lại data của scene hiện tại, xóa data của scene khác
+            DungeonDataManager.Instance.LoadData(this.sceneName);
+            var layout = DungeonDataManager.Instance.GetLayout(this.sceneName, managerID);
+            if (layout != null)
+            {
+                loadedFromSave = LoadDungeonLayout(layout);
+                // Sau khi load, cần kiểm tra và reset các exit thừa (không có room kết nối)
+                if (loadedFromSave)
+                {
+                    ValidateAndResetRedundantExits();
+                }
+            }
+        }
+
+        if (!loadedFromSave)
+        {
+            GenerateLevel();
+        }
+
         MarkOverlappingExits();
         int unusedExitsCount = CountUnusedExits();
         while (unusedExitsCount > 0)
@@ -24,6 +62,11 @@ public class RoomManager : MonoBehaviour
         foreach (Room room in placedRooms)
             room.transform.SetParent(this.gameObject.transform);
         DeleteRoomFailed();
+
+        if (!loadedFromSave && DungeonDataManager.Instance != null)
+        {
+            SaveDungeonLayout();
+        }
     }
     public void GenerateLevel()
     {       
@@ -167,6 +210,11 @@ public class RoomManager : MonoBehaviour
     }
     void BlockEedundantExits()
     {
+        if (wallPrefabs == null || wallPrefabs.Count == 0)
+        {
+            DebugLogger.LogWarning("WallPrefabs is empty! Cannot block redundant exits.");
+            return;
+        }
         foreach (Room room in placedRooms)
         {
             foreach (Room.Exits exit in room.exits)
@@ -251,5 +299,117 @@ public class RoomManager : MonoBehaviour
             case Room.Direction.Right: return entrance == Room.Direction.Left;
             default: return false;
         }
+    }
+
+    void SaveDungeonLayout()
+    {
+        if (DungeonDataManager.Instance == null) return;
+
+        // Đảm bảo load data của scene hiện tại trước khi lưu để không ghi đè data của RoomManager khác trong cùng scene
+        if (DungeonDataManager.Instance.HasData())
+        {
+            DungeonDataManager.Instance.LoadData(this.sceneName);
+        }
+
+        this.dungeonLayoutData = new DungeonLayoutData();
+        foreach (Room room in placedRooms)
+        {
+            this.roomInstanceData = new RoomInstanceData
+            {
+                prefabName = GetPrefabName(room),
+                position = room.transform.position,
+                rotation = room.transform.rotation,
+                exitsUsed = room.exits.Select(e => e.isUsed).ToArray()
+            };
+            this.dungeonLayoutData.rooms.Add(this.roomInstanceData);
+        }
+
+        // Lưu layout với ID của RoomManager này (merge với data hiện có)
+        DungeonDataManager.Instance.SetLayout(sceneName, managerID, dungeonLayoutData);
+        DungeonDataManager.Instance.SaveData();
+    }
+
+    private bool LoadDungeonLayout(DungeonLayoutData data)
+    {
+        if (data == null || data.rooms == null || data.rooms.Count == 0) return false;
+
+        placedRooms.Clear();
+        foreach (RoomInstanceData roomData in data.rooms)
+        {
+            Room prefab = FindPrefabByName(roomData.prefabName);
+            if (prefab == null)
+            {
+                DebugLogger.LogWarning($"Prefab not found for saved room: {roomData.prefabName}");
+                continue;
+            }
+            Room room = Instantiate(prefab, roomData.position, roomData.rotation);
+            if (roomData.exitsUsed != null && roomData.exitsUsed.Length == room.exits.Length)
+            {
+                for (int i = 0; i < room.exits.Length; i++)
+                {
+                    room.exits[i].isUsed = roomData.exitsUsed[i];
+                }
+            }
+            placedRooms.Add(room);
+        }
+        return placedRooms.Count > 0;
+    }
+
+    void ValidateAndResetRedundantExits()
+    {
+        foreach (Room room in placedRooms)
+        {
+            foreach (Room.Exits exit in room.exits)
+            {
+                if (exit.isUsed)
+                {
+                    bool hasConnectedRoom = false;                 
+                    foreach (Room otherRoom in placedRooms)
+                    {
+                        if (otherRoom == room) continue;                       
+                        foreach (Room.Exits otherExit in otherRoom.exits)
+                        {
+                            if (CorrespondingEntrances(exit.exitDirections, otherExit.exitDirections))
+                            {
+                                Vector2 expectedPosition = exit.exitPoint.position - (otherExit.exitPoint.position - otherRoom.transform.position);
+                                if (Vector2.Distance(otherRoom.transform.position, expectedPosition) < 0.1f)
+                                {
+                                    hasConnectedRoom = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (hasConnectedRoom) break;
+                    }
+                    if (!hasConnectedRoom)
+                        exit.isUsed = false;
+                }
+            }
+        }
+    }
+
+    private Room FindPrefabByName(string prefabName)
+    {
+        if (string.IsNullOrEmpty(prefabName)) return null;
+
+        Room Search(List<Room> list) => list.FirstOrDefault(r => r != null && r.name == prefabName);
+
+        Room found = Search(roomPrefabs);
+        if (found != null) return found;
+        found = Search(roomOneExitsPrefabs);
+        if (found != null) return found;
+        found = Search(wallPrefabs);
+        return found;
+    }
+
+    private string GetPrefabName(Room room)
+    {
+        string name = room.name;
+        int idx = name.IndexOf("(Clone)", System.StringComparison.Ordinal);
+        if (idx >= 0)
+        {
+            name = name.Substring(0, idx);
+        }
+        return name.Trim();
     }
 }

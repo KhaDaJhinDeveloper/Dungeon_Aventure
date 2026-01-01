@@ -52,7 +52,7 @@ public class Bat_PatrolState : IState
     void CheckLineOfSight()
     {
         this.batController.IsDetecPlayer = false;
-        if (this.batController.TargetObject == null) return;
+        if (this.batController.TargetObject == null) return;           
         if (this.batController.IsTrigger)
         {
             float distanceTarget = Vector3.Distance(this.batController.TargetObject.transform.position, this.batController.transform.position);

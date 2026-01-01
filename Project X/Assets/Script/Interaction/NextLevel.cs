@@ -29,9 +29,19 @@ public class NextLevel : BaseInteraction
         }
     }
     IEnumerator LoadLevel()
-    {    
+    {
+        GameSaveManager.Instance.SaveDataWhenPlay();
         this.isLoad = false;
         yield return new WaitForSeconds(1f);
+        SceneManager.sceneLoaded += OnSceneLoadedForPlayLoad;
         SceneManager.LoadScene(this.nameScene.ToString());
-    }    
+    }
+    private void OnSceneLoadedForPlayLoad(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == this.nameScene.ToString())
+        {
+            GameSaveManager.Instance.LoadDataWhenPlay();
+        }
+        SceneManager.sceneLoaded -= OnSceneLoadedForPlayLoad;
+    }
 }

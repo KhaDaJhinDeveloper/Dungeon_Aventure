@@ -34,7 +34,7 @@ public abstract class BaseStats : MonoBehaviour
     }
     public virtual void ApplyPhysicalDamage(int amount)
     {
-        if (this.isDie) return;
+        if (ThisIsDie()) return;
         if (this.armor > 0)
         {
             int armorDamage = Mathf.Min(this.armor, amount);
@@ -54,7 +54,7 @@ public abstract class BaseStats : MonoBehaviour
     }
     public virtual void ApplyMagicalDamage(int amount)
     {
-        if (this.isDie) return;
+        if (ThisIsDie()) return;
         if (this.antiMagic > 0)
         {
             int magicDamage = Mathf.Min(this.antiMagic, amount);
@@ -74,7 +74,7 @@ public abstract class BaseStats : MonoBehaviour
     }
     public virtual void ApplyTrueDamage(int amount)
     {
-        if (this.isDie) return;
+        if (ThisIsDie()) return;
         this.currentHealth -= amount;
         if (currentHealth <= 0)
         {
@@ -101,16 +101,20 @@ public abstract class BaseStats : MonoBehaviour
         if (this.antiMagic >= this.maxAntiMagic)
             this.antiMagic = this.maxAntiMagic;
     }
+    public virtual bool ThisIsDie()
+    {
+        return this.currentHealth <= 0;
+    }
     protected virtual void Die()
     {
         
     }  
-    protected virtual void ResetStats()
-    {
-        this.currentHealth = this.maxHealth;
-        this.armor = this.maxArmor;
-        this.antiMagic = this.maxAntiMagic;
-    }
+    //protected virtual void ResetStats()
+    //{
+    //    this.currentHealth = this.maxHealth;
+    //    this.armor = this.maxArmor;
+    //    this.antiMagic = this.maxAntiMagic;
+    //}
     protected virtual void OnEnable()
     {
         this.currentHealth = this.maxHealth;

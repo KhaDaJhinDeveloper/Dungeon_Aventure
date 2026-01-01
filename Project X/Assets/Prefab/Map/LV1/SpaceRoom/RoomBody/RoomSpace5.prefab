@@ -1251,6 +1251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8031857822221881088}
+  - component: {fileID: 4634272022024529304}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -1275,6 +1276,22 @@ Transform:
   m_Father: {fileID: 1308946880660982054}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4634272022024529304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956432696553294240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3842461000886119576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,6 +1600,7 @@ GameObject:
   - component: {fileID: 6300075932428752260}
   - component: {fileID: 4407711257388476891}
   - component: {fileID: 4361670802800409885}
+  - component: {fileID: 1844381320848493796}
   m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
@@ -3187,7 +3205,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -3336,6 +3354,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 5533751636237161869}
+--- !u!114 &1844381320848493796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533751636237161869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6245050909523658592
 GameObject:
   m_ObjectHideFlags: 0

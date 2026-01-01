@@ -112,6 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1523788191084996047}
+  - component: {fileID: 2510983403808900575}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -136,6 +137,22 @@ Transform:
   m_Father: {fileID: 8527771028626481085}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2510983403808900575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955219319626300082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2856093753388730816
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +493,7 @@ GameObject:
   - component: {fileID: 1168529242913535230}
   - component: {fileID: 2443318557053878102}
   - component: {fileID: 7049562165674817584}
+  - component: {fileID: 4437995334231992958}
   m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
@@ -2564,7 +2582,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -2737,6 +2755,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 6223018481642188579}
+--- !u!114 &4437995334231992958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6223018481642188579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6559867479417237134
 GameObject:
   m_ObjectHideFlags: 0
@@ -7508,7 +7542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5193254470229555804}
   m_Layer: 0
-  m_Name: Object
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

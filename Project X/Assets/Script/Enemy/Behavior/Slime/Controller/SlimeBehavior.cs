@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlimeBehavior : SlimeController
 {
     private float timeChange;
-    private BaseStats stats;
+    //private BaseStats stats;
     [SerializeField] private int quantity;
     protected override void Start()
     {

@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FlyStats : BaseStats
+{
+    [SerializeField] private int damage;
+    public int amountCoin;
+    IDamageType damageType;
+    private Animator ani;
+    private Rigidbody2D rb;
+    protected override void Start()
+    {
+        base.Start();
+        this.damageType = new PhysicalDamage();
+        this.ani = GetComponentInChildren<Animator>();
+        this.rb = GetComponent<Rigidbody2D>();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
+        {
+            BaseStats objPlayer = collision.gameObject.GetComponentInChildren<BaseStats>();
+            objPlayer.TakeDamage(this.damage, this.damageType, this.transform);
+        }
+    }
+    public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
+    {
+        base.TakeDamage(amount, damageType, pos);
+        StartCoroutine(Effect(this.transform.position, amount));
+    }
+    protected override void Die()
+    {
+        base.Die();
+        StartCoroutine(Death());
+    }
+    IEnumerator Death()
+    {
+        rb.simulated = false;
+        this.ani.SetTrigger("death");
+        yield return new WaitForSeconds(1f);
+        ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.name, this.gameObject);
+        rb.simulated = true;
+    }
+    IEnumerator Effect(Vector3 pos, int amount)
+    {
+        this.ani.SetTrigger("takehit");
+        GameObject textShowDamage = ObjectPooling.ObjectPooling_Instance.GetPool(NameManager.NAME_TEXTPOPUPDAMAGE);
+        TextShowDamage component = textShowDamage.GetComponent<TextShowDamage>();
+        yield return null;
+        component.Notification(pos, amount);
+    }
+}

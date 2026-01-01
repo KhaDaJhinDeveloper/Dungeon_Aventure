@@ -17,6 +17,7 @@ public class WeaponManager : MonoBehaviour
         this.posDrop = GameObject.FindWithTag(TagManager.TAG_DROP_POSITION).transform;
         EventManager.OP_EventManager.Subscribe("ChangeWeaponSlot1", ChangeWeaponSlot1);
         EventManager.OP_EventManager.Subscribe("ChangeWeaponSlot2", ChangeWeaponSlot2);
+        GetInterfaceWeapon();
     }
     void Update()
     {

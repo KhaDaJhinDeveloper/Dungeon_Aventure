@@ -18,10 +18,18 @@ public class SlimeKing_MoveState : IState
     public void Execute()
     {
         DebugLogger.Log("Move");
+        Move();
     }
 
     public void Exit()
     {
         DebugLogger.Log("End Move");
+    }
+    void Move()
+    {
+        Vector3 pos = this.controller.transform.position;
+        Vector3 target = this.controller.Player.transform.position;
+        Vector3 direction = ( target - pos).normalized;
+        this.controller.Rb.velocity = direction * this.controller.Speed;
     }
 }

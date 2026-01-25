@@ -18,7 +18,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         AnimationMove();
     }
-    void AnimationMove()
+    void AnimationMove()    
     {
         bool moveleft = this.rb.velocity.x != 0;
         this.ani.SetBool("move",moveleft);

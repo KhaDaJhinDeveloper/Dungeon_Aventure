@@ -35,7 +35,7 @@ public class GameSceneStateManager : Singleton<GameSceneStateManager>,IDataManag
         {
             DebugLogger.LogWarning("Failed to load gameStateNameScene data - data is null");
             return "";
-        }         
+        }
         return dataName.sceneName;
     }
 }

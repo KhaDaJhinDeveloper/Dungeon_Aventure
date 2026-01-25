@@ -17,7 +17,7 @@ public class SlimeKing_IdleState : IState
 
     public void Execute()
     {
-        DebugLogger.Log("Idle");
+        
     }
 
     public void Exit()

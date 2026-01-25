@@ -88,7 +88,7 @@ Transform:
   - {fileID: 4986830148697351593}
   - {fileID: 4638483813628177853}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7178463076787189421
 GameObject:
@@ -348,7 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4638483813628177853}
-  - component: {fileID: 8910063627022206148}
+  - component: {fileID: 1744247482847958469}
   m_Layer: 0
   m_Name: VFX
   m_TagString: Untagged
@@ -371,7 +371,7 @@ Transform:
   m_Father: {fileID: 3092827412832737866}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8910063627022206148
+--- !u!114 &1744247482847958469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8560578156151637543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ca3931ae18b224da3c0ffa3840f082, type: 3}
+  m_Script: {fileID: 11500000, guid: b296ea25d3d1a4446baf031649343aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab:

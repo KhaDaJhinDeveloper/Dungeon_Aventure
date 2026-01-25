@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3541800639516778115}
   - component: {fileID: 6811083133444886736}
   - component: {fileID: 8757951506591725002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Storm
   m_TagString: WeaponMlee
   m_Icon: {fileID: 0}

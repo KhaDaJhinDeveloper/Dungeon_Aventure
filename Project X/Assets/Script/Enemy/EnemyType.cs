@@ -1,6 +1,12 @@
 public enum EnemyType
 {
-    PatrolEnemy,
-    FlyEnemy,
-    Boss,
+    Bat,
+    CubeSlime,
+    Ghost,
+    Goblin,
+    Rat,
+    Skeleton,
+    Slime,
+    SlimeChild,
+    Spider,
 }

@@ -12,18 +12,17 @@ public class SlimeKing_MoveState : IState
 
     public void Enter()
     {
-        DebugLogger.Log("Start Move");
+        
     }
 
     public void Execute()
     {
-        DebugLogger.Log("Move");
         Move();
     }
 
     public void Exit()
     {
-        DebugLogger.Log("End Move");
+        
     }
     void Move()
     {

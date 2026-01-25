@@ -2,7 +2,7 @@
     "maxHeal": 50,
     "currentHeal": 50,
     "speed": 6,
-    "armor": 0,
+    "armor": 30,
     "antiMagic": 30,
     "damage": 0
 }

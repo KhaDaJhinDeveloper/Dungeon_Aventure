@@ -188,7 +188,7 @@ Transform:
   - {fileID: 6545982801379733859}
   - {fileID: 6587152984293374639}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4719082839948965043
 MonoBehaviour:
@@ -6074,6 +6074,7 @@ GameObject:
   - component: {fileID: 8680761367816189127}
   - component: {fileID: 1295511325606049943}
   - component: {fileID: 8606247816945902316}
+  - component: {fileID: 4866269438462442371}
   m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
@@ -8287,6 +8288,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 7589876578690438338}
+--- !u!114 &4866269438462442371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589876578690438338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8038930756469535563
 GameObject:
   m_ObjectHideFlags: 0
@@ -8331,6 +8348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 859325099605333459}
+  - component: {fileID: 6372985912375692748}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -8355,6 +8373,22 @@ Transform:
   m_Father: {fileID: 4249022275467070974}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6372985912375692748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450567313118450009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &9126878547583384931
 GameObject:
   m_ObjectHideFlags: 0

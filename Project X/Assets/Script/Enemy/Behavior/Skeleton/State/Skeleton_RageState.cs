@@ -17,6 +17,7 @@ public class Skeleton_RageState : IState
         this.skeletonController.Ani.SetBool("rage",true);
         this.skeletonController.UnlockVelocity();
         this.skeletonController.AllowKnockBack = true;
+        this.skeletonController.Colli.enabled = true;
     }
 
     public void Execute()

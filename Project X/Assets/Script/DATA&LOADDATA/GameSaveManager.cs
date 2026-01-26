@@ -6,7 +6,6 @@ public class GameSaveManager : Singleton<GameSaveManager>
 {
     private const string FILE_NAME = "PlayerDataPosition.json";
     private bool pendingLoad;
-    public static GameSaveManager S_GameSaveManager { get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -33,7 +32,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         WeaponsDataManager.S_WeaponsDataManager.LoadData();
         GameStateCoinManager.S_GameStateCoinManager.LoadData();
         GameStateTimerManager.S_GameStateTimerManager.LoadData();
-        // Load dungeon data chỉ cho scene hiện tại, xóa data của scene khác
+
         string currentSceneName = SceneManager.GetActiveScene().name;
         DungeonDataManager.Instance.LoadData(currentSceneName);
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventoryLoadData);
@@ -95,7 +94,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MainMenu")
+        if (scene.name == "MainMenu" )
         {
             this.pendingLoad = false;
             return;

@@ -37,4 +37,14 @@ public class SceneBossState : MonoBehaviour
         this.bossUI.transform.DOKill();
         this.bossUI.transform.DOLocalMove(new Vector3(0, 140, 0), 0.5f);
     }
+    private void OnEnable()
+    {
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_StartBossFight, StartBossFight);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_EndBossFight, EndBossFight);
+    }
+    private void OnDisable()
+    {
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_StartBossFight, StartBossFight);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_EndBossFight, EndBossFight);
+    }
 }

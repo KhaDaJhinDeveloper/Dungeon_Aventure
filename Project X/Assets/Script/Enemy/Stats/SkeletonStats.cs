@@ -37,7 +37,7 @@ public class SkeletonStats : BaseStats
         if (ThisIsDie())
         {
             this.life -= 1;
-            this.currentHealth = Mathf.RoundToInt(this.maxHealth/2);
+            this.currentHealth = Mathf.RoundToInt(this.maxHealth*0.25f);
         }
         else
         {

@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 5196881503720438275}
   - component: {fileID: 5780167537551537439}
   - component: {fileID: 2874692013296645041}
+  - component: {fileID: 6119243674940310069}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
@@ -645,6 +646,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   quantity: 3
+--- !u!114 &6119243674940310069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585043442598117514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d94832d730c0734b93245a174f62782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueID: 
 --- !u!1 &6489524293699620166
 GameObject:
   m_ObjectHideFlags: 0

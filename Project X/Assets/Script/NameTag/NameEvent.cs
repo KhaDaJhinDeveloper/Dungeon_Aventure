@@ -28,4 +28,7 @@ public class NameEvent
     public const string Event_InventorySaveData = "InventorySaveData";
     public const string Event_InventoryLoadData = "InventoryLoadData";
     public const string Event_InventoryDeleteData = "InventoryDeleteData";
+    //================BOSSEVENT============================================================
+    public const string Event_StartBossFight = "StartBossFight";
+    public const string Event_EndBossFight = "EndBossFight";
 }

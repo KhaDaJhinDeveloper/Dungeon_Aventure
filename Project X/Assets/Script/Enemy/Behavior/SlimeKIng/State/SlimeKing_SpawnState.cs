@@ -16,21 +16,20 @@ public class SlimeKing_SpawnState : IState
 
     public void Enter()
     {
-        DebugLogger.Log("Start Spawn");
+        this.controller.LockVelocity();
         this.maxQuantity = this.controller.MaxQuantity;
         this.maxTimeSpawn = this.controller.MaxTimeSpawn;
         this.minQuantity = 0;
     }
 
     public void Execute()
-    {
-        DebugLogger.Log("Spawn");
+    {       
         SpawnChild();
     }
 
     public void Exit()
     {
-        DebugLogger.Log("End Spawn");
+        this.controller.UnLockVelocity();
     }
     void SpawnChild()
     {

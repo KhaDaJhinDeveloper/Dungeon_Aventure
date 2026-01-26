@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 736190389617385948}
   - component: {fileID: 5503771547879214100}
   - component: {fileID: 598976251400262506}
+  - component: {fileID: -4011676252739073249}
   m_Layer: 8
   m_Name: CubeSlime
   m_TagString: Enemy
@@ -133,6 +134,19 @@ MonoBehaviour:
   speed: 1
   damage: 0
   amountCoin: 15
+--- !u!114 &-4011676252739073249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935411468217408089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d94832d730c0734b93245a174f62782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueID: 
 --- !u!1 &8401331455430136587
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class SpawnBase : MonoBehaviour
     }
     protected virtual void CreatePool()
     {
+        if (prefab.Count < 0) DebugLogger.Log("prefab null");
         for (int i = 0; i < this.prefab.Count; i++)
         {
             ObjectPooling.ObjectPooling_Instance.CreatePool(prefab[i].name, prefab[i], poolSize);

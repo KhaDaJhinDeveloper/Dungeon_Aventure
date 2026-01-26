@@ -77,10 +77,9 @@ public class SkeletonController : MonoBehaviour
     {
         if(!this.allowKnockBack || target == null) return;
         Vector3 distance = (this.transform.position - target.position).normalized;
-        Vector3 newPos = new Vector3(
-                                     transform.position.x + distance.x * 0.2f ,
+        Vector3 newPos = new Vector3(transform.position.x + distance.x * 0.2f ,
                                      transform.position.y + distance.y * 0.2f , 
-                                     0f ); 
+                                     0f );                                   
         transform.position = newPos;
     }
     protected virtual void ChangeState(IState state)

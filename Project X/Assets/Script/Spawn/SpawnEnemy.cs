@@ -20,6 +20,9 @@ public class SpawnEnemy : SpawnBase
                 {
                     string randomKey = prefab[Random.Range(0, prefab.Count)].name;
                     GameObject enemy =  ObjectPooling.ObjectPooling_Instance.GetPool(randomKey);
+                    string uniqued = System.Guid.NewGuid().ToString();
+                    EnemyIDTracker tracker = enemy.GetComponent<EnemyIDTracker>();
+                    tracker.uniqueID = uniqued;
                     enemy.transform.position = pointSpawn.point.transform.position;
                     pointSpawn.isUsed = true;
                 }

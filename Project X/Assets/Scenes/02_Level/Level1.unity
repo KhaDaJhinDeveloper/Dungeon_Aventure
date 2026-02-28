@@ -8817,6 +8817,18 @@ PrefabInstance:
       propertyPath: poolSize
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1149543895145023917, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
+      propertyPath: prefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149543895145023917, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
+      propertyPath: prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 5188113876943938943, guid: 8c9a881c85b3f0c43908fa82f7430d17, type: 3}
+    - target: {fileID: 1149543895145023917, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
+      propertyPath: prefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 6924565081358853378, guid: a5be8769f56d2c44ca32e91b2f5796d6, type: 3}
     - target: {fileID: 1346035560699707362, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
       propertyPath: prefab.Array.size
       value: 8
@@ -8901,6 +8913,18 @@ PrefabInstance:
       propertyPath: poolSize
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8324729135518313867, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
+      propertyPath: prefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324729135518313867, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
+      propertyPath: prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 5188113876943938943, guid: 8c9a881c85b3f0c43908fa82f7430d17, type: 3}
+    - target: {fileID: 8324729135518313867, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
+      propertyPath: prefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 6924565081358853378, guid: a5be8769f56d2c44ca32e91b2f5796d6, type: 3}
     - target: {fileID: 8570875182063764770, guid: a35f43b2cee1e5a43983cbb2fca33ef4, type: 3}
       propertyPath: weaponDropRate.Array.size
       value: 7

@@ -39,8 +39,11 @@ public class ObjectPooling : Singleton<ObjectPooling>
             if(poolDictionary[cleankey].Count > 0)
             {
                 GameObject obj = poolDictionary[cleankey].Dequeue();
-                obj.SetActive(true);
-                return obj;
+                if (obj != null)
+                { 
+                    obj.SetActive(true);
+                    return obj;
+                }
             }    
             else if (prefabDictionary.ContainsKey(cleankey))
             {

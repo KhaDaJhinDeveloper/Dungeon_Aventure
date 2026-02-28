@@ -21,7 +21,7 @@ public class RoomManager : MonoBehaviour
     
     private void Awake()
     {
-        // Luôn lấy sceneName trước
+        
         this.sceneName = SceneManager.GetActiveScene().name;
         
         if (string.IsNullOrEmpty(managerID))
@@ -33,13 +33,12 @@ public class RoomManager : MonoBehaviour
         bool loadedFromSave = false;
         if (DungeonDataManager.Instance != null && DungeonDataManager.Instance.HasData())
         {
-            // LoadData() với sceneName để chỉ giữ lại data của scene hiện tại, xóa data của scene khác
+            
             DungeonDataManager.Instance.LoadData(this.sceneName);
             var layout = DungeonDataManager.Instance.GetLayout(this.sceneName, managerID);
             if (layout != null)
             {
-                loadedFromSave = LoadDungeonLayout(layout);
-                // Sau khi load, cần kiểm tra và reset các exit thừa (không có room kết nối)
+                loadedFromSave = LoadDungeonLayout(layout);               
                 if (loadedFromSave)
                 {
                     ValidateAndResetRedundantExits();
@@ -54,10 +53,13 @@ public class RoomManager : MonoBehaviour
 
         MarkOverlappingExits();
         int unusedExitsCount = CountUnusedExits();
-        while (unusedExitsCount > 0)
+        int currentIteration = 0;
+
+        while (unusedExitsCount > 0 && currentIteration < 100)
         {
             BlockEedundantExits();
             unusedExitsCount = CountUnusedExits();
+            currentIteration++;
         }
         foreach (Room room in placedRooms)
             room.transform.SetParent(this.gameObject.transform);
@@ -142,6 +144,7 @@ public class RoomManager : MonoBehaviour
     }
     void PlaceOneExitRoom()
     {
+        if (placedRooms == null) return;
         for (int i = placedRooms.Count - 1; i >= 0; i--)
         { 
             Room lastRoom = placedRooms[i];
@@ -305,7 +308,6 @@ public class RoomManager : MonoBehaviour
     {
         if (DungeonDataManager.Instance == null) return;
 
-        // Đảm bảo load data của scene hiện tại trước khi lưu để không ghi đè data của RoomManager khác trong cùng scene
         if (DungeonDataManager.Instance.HasData())
         {
             DungeonDataManager.Instance.LoadData(this.sceneName);
@@ -324,7 +326,7 @@ public class RoomManager : MonoBehaviour
             this.dungeonLayoutData.rooms.Add(this.roomInstanceData);
         }
 
-        // Lưu layout với ID của RoomManager này (merge với data hiện có)
+        // Save Layout & ID 
         DungeonDataManager.Instance.SetLayout(sceneName, managerID, dungeonLayoutData);
         DungeonDataManager.Instance.SaveData();
     }

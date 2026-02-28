@@ -9,4 +9,5 @@ public class TagManager
     public const string TAG_UI = "UI";
     public const string TAG_INVENTORY_MANAGER = "InventoryManager";
     public const string TAG_DROP_POSITION = "drop";
+    public const string TAG_ITEM = "Item";
 }

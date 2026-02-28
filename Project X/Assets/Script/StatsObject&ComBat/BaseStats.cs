@@ -126,4 +126,8 @@ public abstract class BaseStats : MonoBehaviour
     {
 
     }
+    public virtual void UpdateUI()
+    {
+
+    }    
 }

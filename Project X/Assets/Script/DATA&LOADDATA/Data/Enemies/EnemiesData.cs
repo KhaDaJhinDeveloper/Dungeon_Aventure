@@ -1,41 +1,59 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 public class EnemyStatsData
 {
-    public int maxHealth;
     public int currentHealth;
+    public int maxHealth;
     public int armor;
+    public int antiMagic;
     public int maxArmor;
-    public int antimagic;
-    public int maxAntimagic;
+    public int maxAntiMagic;
     public int speed;
-}
-
-
-[System.Serializable]
-public class EnemyInstanceData
-{
-    public string nameEnemy;
-    public Vector3 position;
-    public EnemyStatsData enemyStatsData;
-    public string uniqueID;
-    public EnemyInstanceData() { }
-    public EnemyInstanceData(string nameEnemy, Vector3 position, EnemyStatsData statsData, string uniqueID)
+    public EnemyStatsData(int currentHealth,int maxHealth, int armor, int antiMagic, int maxArmor, int maxAntiMagic, int speed)
     {
-        this.nameEnemy = nameEnemy;
-        this.position = position;
-        this.enemyStatsData = statsData;
-        this.uniqueID = uniqueID;
+        this.currentHealth = currentHealth;
+        this.maxHealth = maxHealth;
+        this.armor = armor;
+        this.antiMagic = antiMagic;
+        this.maxArmor = maxArmor;
+        this.maxAntiMagic = maxAntiMagic;
+        this.speed = speed;
     }
 }
 
 [System.Serializable]
-public class EnemyData
-{ 
-    public List<EnemyInstanceData> enemyInstance = new List<EnemyInstanceData>();
+public class EnemyInstanceData
+{
+    public string enemyType;
+    public Vector3 position;
+    public EnemyStatsData stats;
+    public string uniqueId;
+    public EnemyInstanceData(string enemyType, Vector3 position, EnemyStatsData stats, string uniqueId)
+    {
+        this.enemyType = enemyType;
+        this.position = position;
+        this.stats = stats;
+        this.uniqueId = uniqueId;
+    }
+}
+
+[System.Serializable]
+public class SceneEnemyData
+{
+    public string sceneName;
+    public List<EnemyInstanceData> enemies = new List<EnemyInstanceData>();
+    public SceneEnemyData(string sceneName, List<EnemyInstanceData> enemies)
+    {
+        this.sceneName = sceneName;
+        this.enemies = enemies;
+    }
+}
+
+[System.Serializable]
+public class AllEnemyDataSerializable
+{
+    public List<SceneEnemyData> sceneEnemies = new List<SceneEnemyData>();
 }
 
 

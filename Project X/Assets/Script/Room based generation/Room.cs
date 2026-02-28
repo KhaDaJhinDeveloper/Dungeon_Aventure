@@ -4,7 +4,18 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     //---------------Room Mounting Point--------------------
-    public enum Direction { Up, Down, Left, Right }  
+    public enum Direction { Up, Down, Left, Right }
+    public Exits[] exits;
+    [HideInInspector] public Room originalPrefab;
+    #region SpawnEnemy;
+    public List<SpawnPoint> availablePoints = new List<SpawnPoint>();
+    #endregion
+    #region SpawnBonFire;
+    public List<SpawnBonFire> bonFirePoints = new List<SpawnBonFire>();
+    #endregion
+    #region SpawnBox;
+    public List<SpawnBoxPoint> boxPoint = new List<SpawnBoxPoint>();
+    #endregion
     [System.Serializable]
     public class Exits
     {
@@ -12,16 +23,6 @@ public class Room : MonoBehaviour
         public Direction exitDirections; 
         public bool isUsed;
     }
-    public Exits[] exits;
-    [HideInInspector] public Room originalPrefab ;
-    //---------------Point Spawn Enemy--------------------
-    [System.Serializable]
-    public class SpawnPoint
-    {
-        public Transform point;
-        [HideInInspector]public bool isUsed;
-    }
-    public List<SpawnPoint> availablePoints = new List<SpawnPoint>();
     public List<SpawnPoint> GetSpawnPoint()
     {
         List<SpawnPoint> pointUnused = new List<SpawnPoint>();
@@ -31,7 +32,6 @@ public class Room : MonoBehaviour
             if(!point.isUsed) pointUnused.Add(point);
         }
         if (pointUnused.Count == 0) return null;
-        //SpawnPoint randomPointSpawn = pointUnused[Random.Range(0, pointUnused.Count)];
         return pointUnused;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +21,8 @@ public class GameSaveManager : Singleton<GameSaveManager>
         GameStateTimerManager.S_GameStateTimerManager.SaveData();
         GameSceneStateManager.S_GameSceneStateManager.SaveData();
         DungeonDataManager.Instance.SaveData();
+        EnemiesDataManager.Instance.SaveData();
+        ItemDataManager.Instance.SaveData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventorySaveData);
         
 
@@ -27,6 +30,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
     }
     public void LoadAllDataLocal()
     {
+        DebugLogger.Log(">>> LoadAllDataLocal CALLED");
         PlayerStatsDataManager.S_playerStatsDataManager.LoadData();
         PlayerPositionDataManager.S_playerPositionDataManager.LoadData();
         WeaponsDataManager.S_WeaponsDataManager.LoadData();
@@ -35,6 +39,8 @@ public class GameSaveManager : Singleton<GameSaveManager>
 
         string currentSceneName = SceneManager.GetActiveScene().name;
         DungeonDataManager.Instance.LoadData(currentSceneName);
+        EnemiesDataManager.Instance.LoadData(currentSceneName);
+        ItemDataManager.Instance.LoadData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventoryLoadData);
 
 
@@ -45,6 +51,8 @@ public class GameSaveManager : Singleton<GameSaveManager>
         PlayerStatsDataManager.S_playerStatsDataManager.SaveData();
         WeaponsDataManager.S_WeaponsDataManager.SaveData();
         GameStateCoinManager.S_GameStateCoinManager.SaveData();
+        EnemiesDataManager.Instance.DeleteData();
+        ItemDataManager.Instance.DeleteData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventorySaveData);
         DebugLogger.Log("All game data Saved When Play");
     }
@@ -61,6 +69,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         GameStateTimerManager.S_GameStateTimerManager.DeleteData();
         GameSceneStateManager.S_GameSceneStateManager.DeleteData();
         DungeonDataManager.Instance.DeleteData();
+        EnemiesDataManager.Instance.DeleteData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventoryDeleteData);
         DialogStateManager.dialogState_Instance.ResetAllStateDialog();
         DebugLogger.Log("All save data Deleted");

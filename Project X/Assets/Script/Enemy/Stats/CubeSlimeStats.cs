@@ -44,7 +44,7 @@ public class CubeSlimeStats : BaseStats
         ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, this.amountCoin);
         Destroy(gameObject);
     }
-    void UpdateUI()
+    public override void UpdateUI()
     {
         EventManager.OP_EventManager.TriggerEvent("LoadHp");
         EventManager.OP_EventManager.TriggerEvent("LoadArmor");

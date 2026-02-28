@@ -6369,7 +6369,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b8af82fa463894bb6d36a2841e8984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exits: []
+  exits:
+  - exitPoint: {fileID: 6876083341301488507}
+    exitDirections: 0
+    isUsed: 0
+  - exitPoint: {fileID: 4822057920604595792}
+    exitDirections: 1
+    isUsed: 0
   originalPrefab: {fileID: 0}
   availablePoints: []
 --- !u!1 &4782712898814041513
@@ -7746,7 +7752,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 1
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}

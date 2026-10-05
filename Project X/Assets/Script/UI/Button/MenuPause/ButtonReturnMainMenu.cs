@@ -1,16 +1,11 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 public class ButtonReturnMainMenu : BaseButton, IPointerEnterHandler
 {
     protected override void OnClick()
     {
         base.OnClick();
-        TimeManager.TimeResume();
-        SceneManager.LoadScene("MainMenu");
+        GameControl.Instance?.ReturnMainMenu();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

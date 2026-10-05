@@ -17,7 +17,7 @@ public class ButtonChangeWeaponSlot2 : BaseButton, IPointerEnterHandler
     protected override void OnClick()
     {
         base.OnClick();
-        EventManager.OP_EventManager.TriggerEvent("ChangeWeaponSlot2");
+        EventManager.Instance?.TriggerEvent<int>(NameEvent.Event_WeaponControll_ChangeSlotWeapon, 1);
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

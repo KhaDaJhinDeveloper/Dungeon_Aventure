@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DialogEventManager : Singleton<DialogEventManager>
@@ -48,7 +45,6 @@ public class DialogEventManager : Singleton<DialogEventManager>
     }
     public void NewGame()
     {
-        DebugLogger.Log("NewGame");
-        SceneManager.LoadScene("Level1");
+        GameControl.Instance.NewGame(); 
     }    
 }

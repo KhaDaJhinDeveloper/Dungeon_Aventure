@@ -39,13 +39,13 @@ public class FlyStats : BaseStats
         rb.simulated = false;
         this.ani.SetTrigger("death");
         yield return new WaitForSeconds(1f);
-        ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.name, this.gameObject);
+        ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.key, this.gameObject);
         rb.simulated = true;
     }
     IEnumerator Effect(Vector3 pos, int amount)
     {
         this.ani.SetTrigger("takehit");
-        GameObject textShowDamage = ObjectPooling.ObjectPooling_Instance.GetPool(NameManager.NAME_TEXTPOPUPDAMAGE);
+        GameObject textShowDamage = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_VFX_TEXTPOPUPDAMAGE);
         TextShowDamage component = textShowDamage.GetComponent<TextShowDamage>();
         yield return null;
         component.Notification(pos, amount);

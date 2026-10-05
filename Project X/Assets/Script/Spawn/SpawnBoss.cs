@@ -15,8 +15,7 @@ public class SpawnBoss : SpawnBase
     }
     protected override void Spawn()
     {
-        string key = KeyClean.CleanKey(this.prefab[0].name);
-        GameObject objBopss = ObjectPooling.ObjectPooling_Instance.GetPool(key);
+        GameObject objBopss = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_BOSS_SLIMEKING);
         objBopss.transform.position = this.pointSpawn.position;
     }
 }

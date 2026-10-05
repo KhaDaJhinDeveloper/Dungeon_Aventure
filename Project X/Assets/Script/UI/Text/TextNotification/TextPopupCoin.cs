@@ -9,7 +9,6 @@ public class TextPopupCoin : BaseText
     protected override void Start()
     {
         base.Start();
-        this.namekey = KeyClean.CleanKey(this.name);
         m_Text = GetComponentInChildren<TextMeshPro>();
     }
     public void Notification(Vector3 pos, int textinput)
@@ -32,6 +31,6 @@ public class TextPopupCoin : BaseText
             yield return null;
         }
         m_Text.text = "";
-        ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.namekey, this.gameObject);
+        ObjectPooling.ObjectPooling_Instance.ReturnToPool(KeyPool.KEY_VFX_TEXTPOPUPCOIN, this.gameObject);
     }
 }

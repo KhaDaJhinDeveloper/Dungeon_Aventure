@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/AntiMagicRecoveryItem")]
 public class AntiMagicRecoveryItem : RecoveryItem
 {
-    public int antiMagicAmount;
+    public float antiMagicAmount;
     public float additionalTime;
     public override void ApplyRecovery(PlayerStats player, CountdownTimer countdownTimer)
     {

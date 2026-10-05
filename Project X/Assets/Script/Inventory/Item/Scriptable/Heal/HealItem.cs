@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/HealItem")]
 public class HealItem : RecoveryItem
 {
-    public int HealAmount;
+    public float HealAmount;
     public float additionalTime;
     public override void ApplyRecovery(PlayerStats player, CountdownTimer countdownTimer)
     { 

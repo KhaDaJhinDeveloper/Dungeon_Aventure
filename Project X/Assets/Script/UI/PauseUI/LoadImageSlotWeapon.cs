@@ -15,7 +15,7 @@ public class LoadImageSlotWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Load();
+        //Load();
     }
     void Load()
     {

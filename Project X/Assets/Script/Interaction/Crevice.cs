@@ -16,6 +16,6 @@ public class Crevice : MonoBehaviour
         yield return new WaitForSeconds(duration);
         ani.SetTrigger("hide");
         yield return new WaitForSeconds(0.5f);
-        ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.name, this.gameObject);
+        ObjectPooling.ObjectPooling_Instance.ReturnToPool(KeyPool.KEY_VFX_CREVICE, this.gameObject);
     }
 }

@@ -1,7 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ButtonChangeWeaponSlot1 : BaseButton, IPointerEnterHandler
@@ -17,7 +14,7 @@ public class ButtonChangeWeaponSlot1 : BaseButton, IPointerEnterHandler
     protected override void OnClick()
     {
         base.OnClick();
-        EventManager.OP_EventManager.TriggerEvent("ChangeWeaponSlot1");
+        EventManager.Instance?.TriggerEvent<int>(NameEvent.Event_WeaponControll_ChangeSlotWeapon,0);
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

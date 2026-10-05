@@ -46,4 +46,8 @@ public class GameStateTimerManager : Singleton<GameStateTimerManager>, IDataMana
         JsonFileUtility.DeleteJsonFile(FILE_GAMESTATE_TIMERDATA);
         this.gameStateTimer = new GameStateTimer();
     }
+    public bool HasData()
+    {
+        return false;
+    }
 }

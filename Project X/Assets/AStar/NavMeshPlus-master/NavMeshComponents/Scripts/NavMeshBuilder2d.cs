@@ -298,7 +298,10 @@ namespace NavMeshPlus.Extensions
             }
 
             var vec3int = new Vector3Int(0, 0, 0);
-
+            if (tilemap.layoutGrid == null)
+            {
+                Debug.LogError($"Tilemap bị thiếu Grid là: {tilemap.gameObject.name}", tilemap.gameObject);
+            }
             var size = new Vector3(tilemap.layoutGrid.cellSize.x, tilemap.layoutGrid.cellSize.y, 0);
             Mesh sharedMesh = null;
             Quaternion rot = default;

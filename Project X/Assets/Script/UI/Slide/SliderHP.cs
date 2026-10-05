@@ -10,7 +10,7 @@ public class SliderHP : BaseSlider
     protected override void Start()
     {
         base.Start();
-        EventManager.OP_EventManager.Subscribe("LoadHp",Load);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_LoadHPBar,Load);
     }
     public override void Load()
     {
@@ -20,6 +20,6 @@ public class SliderHP : BaseSlider
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("LoadHp", Load);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_LoadHPBar, Load);
     }
 }

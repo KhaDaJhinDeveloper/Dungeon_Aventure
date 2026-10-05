@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ArmorRecoveryItem")]
 public class ArmorRecoveryItem : RecoveryItem
 {
-    public int armorAmount;
+    public float armorAmount;
     public float additionalTime;
     public override void ApplyRecovery(PlayerStats player, CountdownTimer countdownTimer)
     {

@@ -55,14 +55,14 @@ public class SpiderStats : BaseStats
     }
     public override void UpdateUI()
     {
-        EventManager.OP_EventManager.TriggerEvent("LoadHp");
-        EventManager.OP_EventManager.TriggerEvent("LoadArmor");
-        EventManager.OP_EventManager.TriggerEvent("LoadAntimagic");
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadHPBar);
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_loadArmorBar);
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadAntiMagicBar);
     }
     IEnumerator Effect(Vector3 pos, int amount)
     {
         this.ani.SetTrigger("takehit");
-        GameObject textShowDamage = ObjectPooling.ObjectPooling_Instance.GetPool(NameManager.NAME_TEXTPOPUPDAMAGE);
+        GameObject textShowDamage = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_VFX_TEXTPOPUPDAMAGE);
         TextShowDamage component = textShowDamage.GetComponent<TextShowDamage>();
         yield return null;
         component.Notification(pos, amount);

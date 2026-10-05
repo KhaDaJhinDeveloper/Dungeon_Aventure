@@ -8,7 +8,7 @@ public class SliderArmor : BaseSlider
     protected override void Start()
     {
         base.Start();
-        EventManager.OP_EventManager.Subscribe("LoadArmor", Load);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_loadArmorBar, Load);
     }
     public override void Load()
     {
@@ -21,6 +21,6 @@ public class SliderArmor : BaseSlider
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("LoadArmor", Load);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_loadArmorBar, Load);
     }
 }

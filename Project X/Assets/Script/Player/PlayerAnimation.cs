@@ -6,29 +6,25 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator ani;
-    private Rigidbody2D rb;
-    private bool facingRight;
+    private string moveAni = "isMoving";
+    private string moveXAni = "MoveX";
+    private string moveYAni = "MoveY";
+    private Vector2 lastMoveDirection = Vector2.down;
     void Start()
     {
         this.ani = GetComponentInChildren<Animator>();
-        this.rb = GetComponent<Rigidbody2D>();
         EventManager.OP_EventManager.Subscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);
     }
-    void Update()
+    public void UpdateAnimation(Vector2 direction)
     {
-        AnimationMove();
-    }
-    void AnimationMove()    
-    {
-        bool moveleft = this.rb.velocity.x != 0;
-        this.ani.SetBool("move",moveleft);
-        if (this.rb.velocity.x > 0 && this.facingRight)
-            Flip();
-        else if (this.rb.velocity.x < 0 && !this.facingRight) Flip();
-        bool runup = this.rb.velocity.y > 0 && rb.velocity.x == 0;
-        this.ani.SetBool ("runup",runup);
-        bool rundown = this.rb.velocity.y < 0 && rb.velocity.x == 0;
-        this.ani.SetBool("rundown", rundown);
+        if (direction != Vector2.zero)
+        {
+            this.lastMoveDirection = direction.normalized;
+            this.ani.SetBool(this.moveAni, true);
+        }    
+        else this.ani.SetBool(this.moveAni, false);
+        this.ani.SetFloat(this.moveXAni, lastMoveDirection.x);
+        this.ani.SetFloat(this.moveYAni, lastMoveDirection.y);
     }
     public void AnimationDrop()
     {
@@ -42,11 +38,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         this.ani.SetTrigger("death");
     }    
-    void Flip()
-    {
-        this.facingRight = !this.facingRight;
-        this.transform.Rotate(0, 180, 0);
-    }
     private void OnDestroy()
     {
         EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);

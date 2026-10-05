@@ -2,31 +2,27 @@
 using UnityEngine;
 
 [System.Serializable]
-public class RoomInstanceData
+public struct RoomDataNode
 {
-    public string prefabName;
-    public Vector3 position;
-    public Quaternion rotation;
-    public bool[] exitsUsed;
+    public string roomPrefabName;
+    public int x;
+    public int y;
+    public RoomDataNode(string name, int x, int y)
+    {
+        this.roomPrefabName = name;
+        this.x = x;
+        this.y = y;
+    }
 }
-
 [System.Serializable]
-public class DungeonLayoutData
+public class SaveRoomData
 {
-    public List<RoomInstanceData> rooms = new List<RoomInstanceData>();
+    public string mapID;
+    public List<RoomDataNode> listRoonNode = new();
 }
-
 [System.Serializable]
-public class LayoutEntry
+public class AllMapData
 {
-    public string managerID;
-    public DungeonLayoutData layout;
+    public List<SaveRoomData> allMap = new();
 }
-
-[System.Serializable]
-public class AllDungeonLayoutsDataSerializable
-{
-    public List<LayoutEntry> layouts = new List<LayoutEntry>();
-}
-
 

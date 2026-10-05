@@ -6,16 +6,15 @@ public static class JsonFileUtility
     private static string SaveFolder
     {
         get
-        { 
-            if(Application.isEditor)
-            {
-                return Path.Combine(Application.dataPath, "SaveData");
-            }
-            else
-            {
-                string exeDirettory = Path.GetDirectoryName(Application.dataPath);
-                return Path.Combine(exeDirettory, "SaveData");
-            }
+        {
+#if UNITY_EDITOR
+            return Path.Combine(Application.dataPath, "SaveData");
+#elif UNITY_ANDROID || UNITY_IOS || UNITY_WEBGL
+    return Application.persistentDataPath;
+#else
+            string exeDirectory = Path.GetDirectoryName(Application.dataPath);
+            return Path.Combine(exeDirectory, "SaveData");
+#endif
         }
     }
     private static void EnsureSaveDirectoryExists()

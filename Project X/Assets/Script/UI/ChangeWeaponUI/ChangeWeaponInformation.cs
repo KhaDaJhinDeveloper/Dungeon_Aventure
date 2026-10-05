@@ -13,55 +13,43 @@ public class ChangeWeaponInformation : MonoBehaviour
         public TextMeshProUGUI name;
         public Image image;
     }
-    public List<WeaponInfor> weapons = new List<WeaponInfor>();
-    public GameObject changeWeaponUI;
-    private WeaponManager weaponManager;
+    public WeaponInfor[] weapons = new WeaponInfor[2];
+    [SerializeField] private WeaponInfor weaponReverse;
+    [SerializeField] private GameObject changeWeaponUI;
     [SerializeField] private Transform startPos;
     [SerializeField] private GameObject background;
+    [SerializeField] private Sprite spriteDefault;
+    private WeaponController weaponControl;
     private bool isActive ;
     private void Start()
     {
-        this.weaponManager = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponentInChildren<WeaponManager>();
-        EventManager.OP_EventManager.Subscribe("LoadInForWeapon", LoadInForWeapon);
-        EventManager.OP_EventManager.Subscribe("Hide", Hide);
-        EventManager.OP_EventManager.Subscribe("Show", Show);
+        this.weaponControl = FindFirstObjectByType<WeaponController>();
+        EventManager.Instance.Subscribe(NameEvent.Event_ChangeWeaponSlot_ShowUI, Show);
+        EventManager.Instance.Subscribe(NameEvent.Event_ChangeWeaponSlot_HideUI, Hide);
+        EventManager.Instance.Subscribe(NameEvent.Event_ChangeWeaponSlot_LoadInfoWeapon, LoadInfoWeapon);
+        this.changeWeaponUI.transform.position = this.startPos.position;
     }
-    private void Update()
+    #region EventButton
+
+    #endregion
+    #region EventUI
+    public void LoadInfoWeapon()
     {
-        HideControll();
+        SetInfoWeapon(this.weapons[0], this.weaponControl.weaponsArray[0]);
+        SetInfoWeapon(this.weapons[1], this.weaponControl.weaponsArray[1]);
+        SetInfoWeapon(this.weaponReverse, this.weaponControl.weaponReserve);
     }
-    void HideControll()
+    public void SetInfoWeapon(WeaponInfor info,WeaponSlot weaponSlot)
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (weaponSlot.isFull)
         {
-            if (!isActive && this.weaponManager.Weaponlist.Count == 2)
-                this.Show();
-            else
-                this.Hide();
+            info.name.text = weaponSlot.currentWeapon.nameWeapon;
+            info.image.sprite = weaponSlot.currentWeapon.spriteWeapon;
         }
-        if (Input.GetKeyDown(KeyCode.X) && isActive)
+        else
         {
-            this.weaponManager.SwapWeaponSlots();
-        }
-    }    
-    void LoadInForWeapon()
-    {
-        StartCoroutine(DelayLoad());           
-    }    
-    IEnumerator DelayLoad()
-    {
-        yield return null;
-        for (int i = 0; i < this.weaponManager.Weaponlist.Count; i++)
-        {
-            if (this.weaponManager.Weaponlist[i] != null)
-            {
-                WeaponBase weaponBase = this.weaponManager.Weaponlist[i].GetComponentInChildren<WeaponBase>();
-                if (weaponBase != null)
-                {
-                    this.weapons[i].image.sprite = weaponBase.SrOriginal;
-                    this.weapons[i].name.text = weaponBase.NameWeapon;
-                }
-            }
+            info.name.text = "";
+            info.image.sprite = this.spriteDefault;
         }
     }
     void Hide()
@@ -69,8 +57,9 @@ public class ChangeWeaponInformation : MonoBehaviour
         this.isActive = false;
         this.changeWeaponUI.transform.DOKill();
         this.changeWeaponUI.transform.DOMove(this.startPos.transform.position, 0.5f).SetUpdate(true).OnComplete(() => {this.background.SetActive(false);
-                                                                                                                       this.changeWeaponUI.SetActive(false);                                                                                                                        
-                                                                                                                       TimeManager.TimeResume();});                                                                                                                                                   
+                                                                                                                       this.changeWeaponUI.SetActive(false);
+                                                                                                                       TimeManager.TimeResume();
+                                                                                                                       this.weaponControl.AllowTheAttack();});                                                                                                                                                                                                                                                                 
     }
     void Show()
     {      
@@ -78,12 +67,15 @@ public class ChangeWeaponInformation : MonoBehaviour
         this.background.SetActive(true);
         this.changeWeaponUI.SetActive(true);
         this.changeWeaponUI.transform.DOLocalMove(new Vector3(0, 30, 0), 0.5f).SetUpdate(true);
+        this.weaponControl.BlockAttack();
         TimeManager.TimePause();
     }
+    #endregion
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("LoadInForWeapon", LoadInForWeapon);
-        EventManager.OP_EventManager.Unsubscribe("Hide", Hide);
-        EventManager.OP_EventManager.Unsubscribe("Show", Show);
+        if (EventManager.Instance == null) return;
+        EventManager.Instance.Unsubscribe(NameEvent.Event_ChangeWeaponSlot_ShowUI, Show);
+        EventManager.Instance.Unsubscribe(NameEvent.Event_ChangeWeaponSlot_HideUI, Hide);
+        EventManager.Instance.Unsubscribe(NameEvent.Event_ChangeWeaponSlot_LoadInfoWeapon, LoadInfoWeapon);
     }
 }

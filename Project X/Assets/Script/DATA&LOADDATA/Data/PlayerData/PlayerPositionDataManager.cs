@@ -37,5 +37,8 @@ public class PlayerPositionDataManager : Singleton<PlayerPositionDataManager>, I
         JsonFileUtility.DeleteJsonFile(FILE_PLAYER_DATA_POSITION);
         this.positionData = new PlayerPositionData();
     }
-
+    public bool HasData()
+    {
+        return false;
+    }
 }

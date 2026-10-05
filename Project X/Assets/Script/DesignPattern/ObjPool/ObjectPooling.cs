@@ -6,78 +6,89 @@ using UnityEngine.SceneManagement;
 
 public class ObjectPooling : Singleton<ObjectPooling>
 {
-    public static ObjectPooling ObjectPooling_Instance {  get; private set; }
-    private Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
-    private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
+    public static ObjectPooling ObjectPooling_Instance { get; private set; }
+    private Dictionary<KeyPool, Queue<GameObject>> poolDictionary = new Dictionary<KeyPool, Queue<GameObject>>();
+    private Dictionary<KeyPool, GameObject> prefabDictionary = new Dictionary<KeyPool, GameObject>();
     protected override void Awake()
     {
         base.Awake();
+        if (Instance != this) return;
+
         ObjectPooling_Instance = this;
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    public void CreatePool(string key, GameObject prefab,int poolSize)
+    public void CreatePool(KeyPool key, GameObject prefab, int poolSize, Transform parent = null)
     {
-        string keyClean = CleanKey(key);
-        if(!poolDictionary.ContainsKey(keyClean))
+        if (prefab == null)
+        {
+            Debug.LogError($"Cannot create pool for {key}: prefab null.", this);
+            return;
+        }
+
+        prefabDictionary[key] = prefab;
+        if (!poolDictionary.ContainsKey(key))
         {
             Queue<GameObject> queue = new Queue<GameObject>();
-            for(int i = 0; i < poolSize; i++ )
+            for (int i = 0; i < poolSize; i++)
             {
                 GameObject obj = Instantiate(prefab);
                 obj.SetActive(false);
+                obj.transform.SetParent(parent);
                 queue.Enqueue(obj);
             }
-            poolDictionary.Add(keyClean, queue);
-            prefabDictionary[keyClean] = prefab;
+            poolDictionary.Add(key, queue);
         }
-    }   
-    public GameObject GetPool(string key)
+    }
+    public GameObject GetPool(KeyPool key, Transform parent = null)
     {
-        string cleankey = CleanKey(key);
-        if(poolDictionary.ContainsKey(cleankey))
-        {            
-            if(poolDictionary[cleankey].Count > 0)
+        if (poolDictionary.ContainsKey(key))
+        {
+            while (poolDictionary[key].Count > 0)
             {
-                GameObject obj = poolDictionary[cleankey].Dequeue();
+                GameObject obj = poolDictionary[key].Dequeue();
                 if (obj != null)
-                { 
+                {
                     obj.SetActive(true);
+                    obj.transform.SetParent(parent);
                     return obj;
                 }
-            }    
-            else if (prefabDictionary.ContainsKey(cleankey))
-            {
-                GameObject newObj = Instantiate(prefabDictionary[cleankey]);
-                newObj.SetActive(true);
-                return newObj;
             }
-        }    
+        }
+
+        if (prefabDictionary.TryGetValue(key, out GameObject prefab) && prefab != null)
+        {
+            GameObject newObj = Instantiate(prefab);
+            newObj.SetActive(true);
+            newObj.transform.SetParent(parent);
+            return newObj;
+        }
+
+        DebugLogger.Log($"Pool {key} has not been created or its prefab is missing.", this);
         return null;
     }
-    public void ReturnToPool(string key, GameObject prefab)
+    public void ReturnToPool(KeyPool key, GameObject prefab)
     {
-        string cleankey = CleanKey(key);
-        if (!poolDictionary.ContainsKey(cleankey))
+        if (prefab == null) return;
+        if (!poolDictionary.ContainsKey(key))
         {
-            poolDictionary[cleankey] = new Queue<GameObject>();
-        }  
+            poolDictionary[key] = new Queue<GameObject>();
+        }
         prefab.SetActive(false);
-        poolDictionary[cleankey].Enqueue(prefab);
+        if (poolDictionary[key].Contains(prefab)) return;
+        poolDictionary[key].Enqueue(prefab);
     }
-    private string CleanKey(string rawKey)
+    protected override void OnDestroy()
     {
-        return rawKey.Replace("(Clone)", "").Trim();
+        base.OnDestroy();
+        if (ObjectPooling_Instance == this)
+            ObjectPooling_Instance = null;
     }
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    protected override void OnApplicationQuit()
     {
+        base.OnApplicationQuit();
         PoolClear();
-    }
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     public void PoolClear()
     {
         this.poolDictionary.Clear();
-    }    
+    }
 }

@@ -39,7 +39,7 @@ public class SlimeKing_SpawnState : IState
 
         if (currentTime >= this.maxTimeSpawn)
         {
-            GameObject slime = ObjectPooling.ObjectPooling_Instance.GetPool("Slime");
+            GameObject slime = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_ENEMY_SLIME);
             slime.transform.position = RandomPosDrop(this.controller.transform.position);
 
             this.currentTime = 0f;

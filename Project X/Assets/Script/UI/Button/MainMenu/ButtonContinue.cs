@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ButtonContinue : BaseButton
 {
@@ -12,9 +8,6 @@ public class ButtonContinue : BaseButton
     }
     protected override void OnClick()
     {
-        DebugLogger.Log("continue");
-        string nameScene = GameSceneStateManager.S_GameSceneStateManager.GetSceneNameData();
-        GameSaveManager.Instance.RequestLoadOnNextScene();
-        SceneManager.LoadScene(nameScene);
+        GameControl.Instance.Continue();
     }
 }

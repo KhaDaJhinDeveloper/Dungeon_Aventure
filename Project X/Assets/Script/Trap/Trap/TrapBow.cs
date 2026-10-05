@@ -44,7 +44,7 @@ public class TrapBow : BaseTrap,IShoot
     }
     public void Shooting()
     {
-        GameObject bulleBow = ObjectPooling.ObjectPooling_Instance.GetPool("BowBullet");
+        GameObject bulleBow = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_POOL_BULLET_BOW);
         bulleBow.transform.position = this.posShoot.position;
         bulleBow.transform.rotation = this.transform.rotation;
         Rigidbody2D rbbullet = bulleBow.GetComponent<Rigidbody2D>();

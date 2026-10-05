@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public class ItemPickUp : MonoBehaviour
 {
+    [SerializeField] private KeyPool keyPool;
     [SerializeField] private ItemType type;
-    [SerializeField] private string nameitem;
     [SerializeField] private Sprite imageItem;
+    private string nameitem;
     private InventoryManager inventoryManager;
     private SpriteRenderer spriteRenderer;
-    public string Nameitem { get => nameitem; }
+    public KeyPool Key_Pool { get => keyPool; }
     public Sprite ImageItem { get => imageItem; }
     public ItemType Type { get => type; set => type = value; }
 
@@ -26,8 +25,8 @@ public class ItemPickUp : MonoBehaviour
         {
            if(!this.inventoryManager.IsFullSlot())
             {
-                this.inventoryManager.AddItem(this.imageItem, this.nameitem, this.type);
-                ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.nameitem, this.gameObject);
+                this.inventoryManager.AddItem(this.imageItem, this.nameitem, this.type, this.keyPool);
+                ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.keyPool, this.gameObject);
             }    
         }
     }

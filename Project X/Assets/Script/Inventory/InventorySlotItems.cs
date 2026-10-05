@@ -8,6 +8,7 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject option;
     [SerializeField] private GameObject slotSelected;
     [SerializeField] private Sprite imageDefault;
+    private KeyPool key;
     private ItemType type;
     private bool isSelected;
     private string nameItem; 
@@ -23,6 +24,7 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
     public GameObject Option { get => option; set => option = value; }
     public Image ImageItem { get => imageItem; set => imageItem = value; }
     public ItemType Type { get => type; set => type = value; }
+    public KeyPool Key { get => this.key; }
 
     void Start()
     {
@@ -30,11 +32,12 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
         this.craftingItem = GameObject.FindWithTag(TagManager.TAG_UI).GetComponentInChildren<CraftingItem>();
         this.posDrop = GameObject.FindWithTag(TagManager.TAG_DROP_POSITION).transform;
     }
-    public void AddItem(Sprite imageItem, string nameItem, ItemType type)
+    public void AddItem(Sprite imageItem, string nameItem, ItemType type, KeyPool key)
     {
         this.imageItem.sprite = imageItem;
         this.nameItem = nameItem;
         this.type = type;
+        this.key = key;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -82,7 +85,7 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
     }
     public void DropItemSlot()
     {
-        GameObject objItem = ObjectPooling.ObjectPooling_Instance.GetPool(this.nameItem);
+        GameObject objItem = ObjectPooling.ObjectPooling_Instance.GetPool(this.key);
         objItem.transform.position = this.posDrop.position;
         EmptySlot();
     }

@@ -47,7 +47,7 @@ public class EnemiesDataManager : Singleton<EnemiesDataManager>,IDataManager
                 foreach (EnemyInstanceData data in this.sceneEnemies[sceneData.sceneName])
                 {
                     count++;
-                    GameObject enemy = ObjectPooling.ObjectPooling_Instance.GetPool(data.enemyType);
+                    GameObject enemy = ObjectPooling.ObjectPooling_Instance.GetPool((KeyPool)data.enemyId);
                     if (enemy == null) continue;
                     enemy.transform.position = data.position;
                     BaseStats stats = enemy.GetComponent<BaseStats>();
@@ -92,11 +92,11 @@ public class EnemiesDataManager : Singleton<EnemiesDataManager>,IDataManager
         foreach (GameObject enemy in this.spawnedEnemies)
         {
             if (enemy == null || !enemy.activeInHierarchy) continue;
-            string nameEnemy = KeyClean.CleanKey(enemy.name);
             BaseStats stats = enemy.GetComponent<BaseStats>();
             EnemyIDTracker idTracker = enemy.GetComponent<EnemyIDTracker>();
             if (stats != null && idTracker != null)
             {
+                int enemyId = (int)idTracker.uniqueID;
                 EnemyStatsData enemyStats = new EnemyStatsData
                 (
                     stats.CurentHealth,
@@ -109,10 +109,9 @@ public class EnemiesDataManager : Singleton<EnemiesDataManager>,IDataManager
                 );
                 EnemyInstanceData enemyIntance = new EnemyInstanceData
                 (
-                    nameEnemy,
+                    enemyId,
                     enemy.transform.position,
-                    enemyStats,
-                    idTracker.uniqueID
+                    enemyStats
                 );
                 enemyInstanceDatas.Add(enemyIntance);
             }
@@ -129,7 +128,7 @@ public class EnemiesDataManager : Singleton<EnemiesDataManager>,IDataManager
         stats.MaxArmor = data.stats.maxArmor;
         stats.MaxAntiMagic = data.stats.maxAntiMagic;
         stats.Speed = data.stats.speed;
-        iDTracker.uniqueID = data.uniqueId;
+        iDTracker.uniqueID = (KeyPool)data.enemyId;
         stats.UpdateUI();
     }
 }

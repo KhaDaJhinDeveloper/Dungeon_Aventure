@@ -22,7 +22,7 @@ public class GameStateCoinManager : Singleton<GameStateCoinManager>, IDataManage
             gameStateCoin = new GameStateCoin(coinmanager.CoinAmount);
             JsonFileUtility.SaveToJson(this.gameStateCoin, FILE_GAMESTATE_COINDATA);
         }
-        else DebugLogger.Log("CoinManager not found");
+        else return;
     }
     public void LoadData()
     {
@@ -45,5 +45,8 @@ public class GameStateCoinManager : Singleton<GameStateCoinManager>, IDataManage
         JsonFileUtility.DeleteJsonFile(FILE_GAMESTATE_COINDATA);
         gameStateCoin = new GameStateCoin();
     }
-
+    public bool HasData()
+    {
+        return false;
+    }
 }

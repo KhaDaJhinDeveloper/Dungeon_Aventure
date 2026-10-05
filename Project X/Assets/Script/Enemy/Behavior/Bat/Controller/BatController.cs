@@ -11,7 +11,7 @@ public abstract class BatController : MonoBehaviour
     protected SpriteRenderer sr;
     private Rigidbody2D rb;
     [Header("CheckWall")]
-    protected float rayDistance;
+    [SerializeField] protected float rayDistance;
     protected LayerMask nameLayer;
     [Header("DetecPlayer")]
     protected GameObject targetObject;

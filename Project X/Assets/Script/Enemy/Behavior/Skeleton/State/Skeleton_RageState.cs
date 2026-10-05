@@ -18,6 +18,8 @@ public class Skeleton_RageState : IState
         this.skeletonController.UnlockVelocity();
         this.skeletonController.AllowKnockBack = true;
         this.skeletonController.Colli.enabled = true;
+        if (!this.skeletonController.Agent.isOnNavMesh)
+             EventManager.Instance.TriggerEvent(NameEvent.Event_NavMeshSetUp);
     }
 
     public void Execute()
@@ -31,7 +33,11 @@ public class Skeleton_RageState : IState
     }
     void Rage()
     {
-        posPlayer = this.skeletonController.Target.position;
-        this.skeletonController.Agent.SetDestination(posPlayer);
+
+            if (this.skeletonController.Agent.isOnNavMesh)
+            {
+                posPlayer = this.skeletonController.Target.position;
+                this.skeletonController.Agent.SetDestination(posPlayer);
+            }
     }
 }

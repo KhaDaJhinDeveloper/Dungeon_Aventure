@@ -1,6 +1,5 @@
 using DG.Tweening;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class ButtonRestart : BaseButton, IPointerEnterHandler
 {
@@ -8,8 +7,7 @@ public class ButtonRestart : BaseButton, IPointerEnterHandler
     {
         base.OnClick();
         TimeManager.TimeResume();
-       DungeonDataManager.Instance.DeleteData();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);      
+        GameControl.Instance.Restart(); 
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

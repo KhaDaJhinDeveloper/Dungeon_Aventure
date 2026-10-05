@@ -8,7 +8,7 @@ public class SlideAntiMagic : BaseSlider
     protected override void Start()
     {
         base.Start();
-        EventManager.OP_EventManager.Subscribe("LoadAntimagic", Load);
+        EventManager.OP_EventManager.Subscribe(NameEvent.Event_LoadAntiMagicBar, Load);
     }
     public override void Load()
     {
@@ -21,6 +21,6 @@ public class SlideAntiMagic : BaseSlider
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("LoadAntimagic", Load);
+        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_LoadAntiMagicBar, Load);
     }
 }

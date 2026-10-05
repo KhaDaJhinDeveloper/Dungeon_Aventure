@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +6,6 @@ public class DungeonDataManager : Singleton<DungeonDataManager>, IDataManager
     #region FILE_NAME_DATA
     private const string FILE_DUNGEON_LAYOUT = "DungeonLayout.json";
     #endregion
-    private Dictionary<string, DungeonLayoutData> allLayouts = new Dictionary<string, DungeonLayoutData>();
 
     protected override void Awake()
     {
@@ -16,94 +14,79 @@ public class DungeonDataManager : Singleton<DungeonDataManager>, IDataManager
 
     public void SaveData()
     {
-        AllDungeonLayoutsDataSerializable serializable = new AllDungeonLayoutsDataSerializable();
-        foreach (var kvp in allLayouts)
+        MapGeneration[] maps = FindObjectsByType<MapGeneration>(FindObjectsSortMode.None);
+        if (maps.Length == 0) return;
+        AllMapData allMapsData = new AllMapData();
+        foreach(var m in maps)
         {
-            serializable.layouts.Add(new LayoutEntry { managerID = kvp.Key, layout = kvp.Value });
+            SaveRoomData saveDungeonData = new SaveRoomData();
+            saveDungeonData.mapID = m.MapID;
+            foreach (var roomData in m.gridMap)
+            {
+                saveDungeonData.listRoonNode.Add
+                (
+                     new RoomDataNode(roomData.Value.prefab.name, roomData.Key.x, roomData.Key.y)
+                );
+            }
+            allMapsData.allMap.Add(saveDungeonData);
         }
-        JsonFileUtility.SaveToJson(serializable, FILE_DUNGEON_LAYOUT);
+        JsonFileUtility.SaveToJson<AllMapData>(allMapsData, FILE_DUNGEON_LAYOUT);
     }
-
     public void LoadData()
     {
-        AllDungeonLayoutsDataSerializable data = JsonFileUtility.LoadFromJson<AllDungeonLayoutsDataSerializable>(FILE_DUNGEON_LAYOUT);
-        if (data == null)
-        {
-            DebugLogger.LogWarning("Dungeon layout data is null - creating empty layout");
-            allLayouts = new Dictionary<string, DungeonLayoutData>();
-            return;
-        }
-        
-        // Load all data
-        allLayouts = new Dictionary<string, DungeonLayoutData>();
-        foreach (var entry in data.layouts)
-        {
-            if (!string.IsNullOrEmpty(entry.managerID))
-            {
-                allLayouts[entry.managerID] = entry.layout;
-            }
-        }
-    }
+        SaveRoomData saveDungeonData = JsonFileUtility.LoadFromJson<SaveRoomData>(FILE_DUNGEON_LAYOUT);
+        if (saveDungeonData == null) return;
+        MapGeneration[] maps = FindObjectsByType<MapGeneration>(FindObjectsSortMode.None);
+        if(maps.Length == 0) return;
 
-    // Load Data current scene
-    public void LoadData(string currentSceneName)
+
+        DeleteData();
+    }
+    public void LoadData(MapGeneration map)
     {
-        AllDungeonLayoutsDataSerializable data = JsonFileUtility.LoadFromJson<AllDungeonLayoutsDataSerializable>(FILE_DUNGEON_LAYOUT);
-        if (data == null)
+        AllMapData allData = JsonFileUtility.LoadFromJson<AllMapData>(FILE_DUNGEON_LAYOUT);
+        if (allData == null) return;
+        foreach (var mapdata in allData.allMap)
         {
-            DebugLogger.LogWarning("Dungeon layout data is null - creating empty layout");
-            allLayouts = new Dictionary<string, DungeonLayoutData>();
-            return;
-        }
-        
-        // Chỉ giữ lại data của scene đó, xóa data của scene khác
-        allLayouts = new Dictionary<string, DungeonLayoutData>();
-        string scenePrefix = currentSceneName + "_";
-        foreach (var entry in data.layouts)
-        {
-            if (!string.IsNullOrEmpty(entry.managerID))
+            if (mapdata.mapID == map.MapID)
             {
-                // Key format: "{sceneName}_{managerID}"
-                // Chỉ giữ lại entry có key bắt đầu bằng "{currentSceneName}_"
-                if (entry.managerID.StartsWith(scenePrefix))
+                foreach (var saveNode in mapdata.listRoonNode)
                 {
-                    allLayouts[entry.managerID] = entry.layout;
+                    Vector2Int pos = new Vector2Int(saveNode.x, saveNode.y);
+                    if (map.backUp.TryGetValue(saveNode.roomPrefabName, out RoomData prefab))
+                    {
+                        map.gridMap.Add(pos, new PlacedRoomNode(prefab, pos));
+                    }
                 }
+                map.RenderRoom();
             }
         }
-    }
-
+    }    
     public void DeleteData()
     {
         JsonFileUtility.DeleteJsonFile(FILE_DUNGEON_LAYOUT);
-        allLayouts = new Dictionary<string, DungeonLayoutData>();
     }
+    public bool HasMapData(string mapID)
+    {
+        if (!HasData()) return false;
+        AllMapData data = GetMapData();
+        return data.allMap.Exists(map => map.mapID == mapID);
+    }
+    private AllMapData GetMapData()
+    {
+        if (!HasData())
+            return new AllMapData { allMap = new List<SaveRoomData>() };
 
+        AllMapData data = JsonFileUtility.LoadFromJson<AllMapData>(FILE_DUNGEON_LAYOUT);
+
+        if (data.allMap == null)
+            data.allMap = new List<SaveRoomData>();
+
+        return data;
+    }
     public bool HasData()
     {
         return JsonFileUtility.JsonFileExists(FILE_DUNGEON_LAYOUT);
-    }
-
-    //Methods để lấy/lưu layout của một RoomManager cụ thể
-    private string ComposeKey(string sceneName, string managerID)
-    {
-        return $"{sceneName}_{managerID}";
-    }
-
-    public DungeonLayoutData GetLayout(string sceneName, string managerID)
-    {
-        string key = ComposeKey(sceneName, managerID);
-        if (allLayouts.ContainsKey(key))
-        {
-            return allLayouts[key];
-        }
-        return null;
-    }
-
-    public void SetLayout(string sceneName, string managerID, DungeonLayoutData layout)
-    {
-        string key = ComposeKey(sceneName, managerID);
-        allLayouts[key] = layout;
     }
 }
 

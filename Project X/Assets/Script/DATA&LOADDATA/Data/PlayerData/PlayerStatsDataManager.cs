@@ -22,11 +22,15 @@ public class PlayerStatsDataManager : Singleton<PlayerStatsDataManager>,IDataMan
         GameObject player = GameObject.FindWithTag(TagManager.TAG_PLAYER);
         if (player == null) return;
         PlayerStats stats = player.GetComponent<PlayerStats>();
-
         this.statsData = new PlayerStatsData(stats.MaxHealth,
                                              stats.CurentHealth,
-                                             stats.Speed, stats.Armor,
-                                             stats.AntiMagic);
+                                             stats.Speed, 
+                                             stats.Armor,
+                                             stats.AntiMagic,
+                                             stats.Mana,
+                                             stats.MaxArmor,
+                                             stats.MaxAntiMagic,
+                                             stats.MaxMana);
         JsonFileUtility.SaveToJson(this.statsData, FILE_PLAYER_DATA_STATS);
     }
 
@@ -50,6 +54,10 @@ public class PlayerStatsDataManager : Singleton<PlayerStatsDataManager>,IDataMan
         playerStats.Speed = stats.speed;
         playerStats.Armor = stats.armor;
         playerStats.AntiMagic = stats.antiMagic;
+        playerStats.Mana = stats.mana;
+        playerStats.MaxArmor = stats.maxArmor;
+        playerStats.MaxAntiMagic = stats.maxAntiMagic;
+        playerStats.MaxMana = stats.maxMana;
         playerStats.UpdateUI();
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -59,7 +67,7 @@ public class PlayerStatsDataManager : Singleton<PlayerStatsDataManager>,IDataMan
             LoadData();
         }
     }
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -67,5 +75,9 @@ public class PlayerStatsDataManager : Singleton<PlayerStatsDataManager>,IDataMan
     {
         JsonFileUtility.DeleteJsonFile(FILE_PLAYER_DATA_STATS);
         this.statsData = new PlayerStatsData();
+    }
+    public bool HasData()
+    {
+        return false;
     }
 }

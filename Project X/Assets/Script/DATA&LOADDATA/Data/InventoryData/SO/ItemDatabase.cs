@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class ItemDatabase : Singleton<ItemDatabase>
 {
-    public static ItemDatabase S_ItemDatabase { get; private set; }
     [SerializeField] private List<ItemDetailsSO> allItems = new List<ItemDetailsSO>();
     public Dictionary<string,ItemDetailsSO> itemDictionary = new Dictionary<string,ItemDetailsSO>();
     protected override void Awake()
     {
         base.Awake();
-        S_ItemDatabase = this;
         BuildDictionarry();
     }
     public void BuildDictionarry()
@@ -22,10 +20,8 @@ public class ItemDatabase : Singleton<ItemDatabase>
             {
                 if (!this.itemDictionary.ContainsKey(item.nameItem))
                     this.itemDictionary[item.nameItem] = item;
-                else DebugLogger.LogWarning($"OverWrite item name found: {item.nameItem}");
             }    
         }
-        DebugLogger.Log($"Initialize {itemDictionary.Count} item data");
     }    
     public ItemDetailsSO GetItemByName(string nameItem)
     {

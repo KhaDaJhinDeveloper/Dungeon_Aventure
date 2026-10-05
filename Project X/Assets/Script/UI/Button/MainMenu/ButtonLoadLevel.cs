@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +7,9 @@ public class ButtonLoadLevel : BaseButton
     protected override void OnClick()
     {
         base.OnClick();
-        SceneManager.LoadScene(this.nameScene.ToString());
+        TransitionScene.Instance.PlayTransition
+        (
+            () => SceneManager.LoadScene(this.nameScene.ToString())
+        );      
     }
 }

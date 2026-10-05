@@ -30,7 +30,8 @@ public class ButtonBuyItem : BaseButton, IPointerEnterHandler
             {
                 this.inventoryManager.AddItem(this.shopSlot.imageItem,
                                               this.shopSlot.nameItem,
-                                              this.shopSlot.typeItem);
+                                              this.shopSlot.typeItem,
+                                              this.shopSlot.key);
                 this.coinManager.SpendCoin(this.shopSlot.priceItem);
                 this.slotObject.SetActive(false);
             }

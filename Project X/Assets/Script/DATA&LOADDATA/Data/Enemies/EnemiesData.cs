@@ -25,16 +25,14 @@ public class EnemyStatsData
 [System.Serializable]
 public class EnemyInstanceData
 {
-    public string enemyType;
+    public int enemyId;
     public Vector3 position;
     public EnemyStatsData stats;
-    public string uniqueId;
-    public EnemyInstanceData(string enemyType, Vector3 position, EnemyStatsData stats, string uniqueId)
+    public EnemyInstanceData(int enemyType, Vector3 position, EnemyStatsData stats)
     {
-        this.enemyType = enemyType;
+        this.enemyId = enemyType;
         this.position = position;
         this.stats = stats;
-        this.uniqueId = uniqueId;
     }
 }
 

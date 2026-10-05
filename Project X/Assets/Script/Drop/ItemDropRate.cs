@@ -2,6 +2,6 @@ using UnityEngine;
 [System.Serializable]
 public class ItemDropRate 
 {
-    public GameObject item;
+    public KeyPool itemId;
     public float dropRate;
 }

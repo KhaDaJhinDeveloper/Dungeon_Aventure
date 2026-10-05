@@ -11,7 +11,10 @@ public class NextLevel : BaseInteraction
     {
         if (Input.GetKeyDown(KeyCode.E))
             if(this.isLoad)
-                StartCoroutine(LoadLevel());
+            {
+                TransitionScene.Instance.PlayTransition(() =>StartCoroutine(LoadLevel()));
+            }
+                
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,7 +40,7 @@ public class NextLevel : BaseInteraction
             GameSaveManager.Instance.SaveDataWhenPlay();
             this.isLoad = false;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
         SceneManager.sceneLoaded += OnSceneLoadedForPlayLoad;
         SceneManager.LoadScene(this.nameScene.ToString());
     }

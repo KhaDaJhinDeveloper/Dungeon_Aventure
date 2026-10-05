@@ -8,16 +8,22 @@ public class PlayerStatsData
     public int speed;
     public int armor;
     public int antiMagic;
-    public int damage;
+    public int mana;
+    public int maxArmor;
+    public int maxAntiMagic;
+    public int maxMana;
     public PlayerStatsData() { }
-    public PlayerStatsData(int maxHeal, int currentHeal, int speed, int armor, int antiMagic, int damage = 0)
+    public PlayerStatsData(int maxHeal, int currentHeal, int speed, int armor, int antiMagic,int mana, int maxArmor, int maxAntiMagic, int maxMana)
     {
         this.maxHeal = maxHeal;
         this.currentHeal = currentHeal;
         this.speed = speed;
         this.armor = armor;
         this.antiMagic = antiMagic;
-        this.damage = damage;
+        this.mana = mana;
+        this.maxArmor = maxArmor;
+        this.maxAntiMagic = maxAntiMagic;
+        this.maxMana = maxMana;
     }
 }
 

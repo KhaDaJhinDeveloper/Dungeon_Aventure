@@ -21,7 +21,7 @@ public class ItemDataManager : Singleton<ItemDataManager>,IDataManager
         if (allItems == null) return;
         foreach(ItemData data in allItems.allItemsData)
         {
-            string nameItem = data.nameItem;
+            KeyPool nameItem =(KeyPool)data.itemId;
             GameObject objItem = ObjectPooling.ObjectPooling_Instance.GetPool(nameItem);
             objItem.transform.position = data.position;
         }
@@ -48,10 +48,18 @@ public class ItemDataManager : Singleton<ItemDataManager>,IDataManager
         this.itemsList = GetItemsList().ToList();
         foreach (GameObject itemObj in this.itemsList)
         {
-            string nameITem = KeyClean.CleanKey(itemObj.name);
-            Vector3 itemPos = itemObj.transform.position;
-            itemDatas.Add(new ItemData(nameITem, itemPos));
-        }    
+            ItemKey itemKey = itemObj.GetComponent<ItemKey>();
+            if(itemKey != null)
+            {
+                int itemId = (int)itemKey.keyPool;
+                Vector3 itemPos = itemObj.transform.position;
+                itemDatas.Add(new ItemData(itemId, itemPos));
+            }
+        }
         return itemDatas;
+    }
+    public bool HasData()
+    {
+        return false;
     }
 }

@@ -36,7 +36,7 @@ public class InventoryDataManager : Singleton<InventoryDataManager>
             for (int i = 0; i < inventorySaveData.slotsData.Count; i++)
             {
                 InventorySlotSaveData slotdata = inventorySaveData.slotsData[i];
-                Sprite sprite = ItemDatabase.S_ItemDatabase.GetItemSprite(slotdata.nameItemData);
+                Sprite sprite = ItemDatabase.Instance.GetItemSprite(slotdata.nameItemData);
                 if (sprite != null)
                 {
                     listDataItems[i].ImageItem.sprite = sprite;

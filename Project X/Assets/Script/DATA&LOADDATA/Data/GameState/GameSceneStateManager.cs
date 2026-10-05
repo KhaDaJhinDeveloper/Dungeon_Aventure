@@ -38,4 +38,8 @@ public class GameSceneStateManager : Singleton<GameSceneStateManager>,IDataManag
         }
         return dataName.sceneName;
     }
+    public bool HasData()
+    {
+        return false;
+    }
 }

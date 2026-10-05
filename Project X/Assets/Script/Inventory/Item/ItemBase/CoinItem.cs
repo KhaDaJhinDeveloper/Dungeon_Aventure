@@ -24,10 +24,10 @@ public class CoinItem : MonoBehaviour
     }
     IEnumerator Effect(Vector3 pos, int amount)
     {
-        GameObject textShowCoin = ObjectPooling.ObjectPooling_Instance.GetPool(NameManager.NAME_TEXTPOPUPCOIN);
+        GameObject textShowCoin = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_VFX_TEXTPOPUPCOIN);
         TextPopupCoin component = textShowCoin.GetComponent<TextPopupCoin>();
         yield return null;
         component.Notification(pos, amount);
-        ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.nameitem, this.gameObject);
+        ObjectPooling.ObjectPooling_Instance.ReturnToPool(KeyPool.KEY_ITEM_GOLD, this.gameObject);
     }
 }

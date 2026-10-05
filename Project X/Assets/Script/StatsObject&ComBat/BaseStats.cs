@@ -10,24 +10,32 @@ public abstract class BaseStats : MonoBehaviour
     protected bool isDie;
     protected int armor;
     protected int antiMagic;
+    protected int mana;
     [SerializeField] protected int maxArmor;
     [SerializeField] protected int maxAntiMagic;
+    [SerializeField] protected int maxMana;
     [SerializeField] protected int speed;
+    [SerializeField] protected KeyPool key;
     public int MaxHealth{ get => this.maxHealth; set => this.maxHealth = value; }
     public int CurentHealth{ get => this.currentHealth; set => this.currentHealth = Mathf.Clamp(value, 0 , maxHealth); }
     public int Speed{ get => this.speed; set => this.speed = value;}
     public int Armor{ get => this.armor; set => this.armor = Mathf.Max(value, 0); }
     public int AntiMagic { get => this.antiMagic; set => this.antiMagic = Mathf.Max(value, 0); }
+    public int Mana { get => this.mana; set => this.mana = Mathf.Max(value, 0); }
     public bool IsDie { get => isDie; set => isDie = value; }
     public int MaxArmor { get => maxArmor; set => this.maxArmor = Mathf.Max(value, 0); }
     public int MaxAntiMagic { get => maxAntiMagic; set => this.maxAntiMagic = Mathf.Max(value, 0); }
+    public int MaxMana { get => maxMana; set => this.maxMana = Mathf.Max(value, 0); }
+    public KeyPool Key { get => this.key; }
 
     protected virtual void Start()
     {
         this.currentHealth = this.maxHealth;
         this.armor = this.maxArmor;
         this.antiMagic = this.maxAntiMagic;
+        this.mana = this.maxMana;
     }
+    #region TakeDamgeMethod
     public virtual void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
         damageType.ApplyDamage(this, amount);
@@ -82,29 +90,63 @@ public abstract class BaseStats : MonoBehaviour
             isDie = true;
             Die();
         }
-    }    
-    public virtual void Healing(int amount)
+    }
+    #endregion
+    #region StatsInteract
+    public virtual void Healing(float amount)
     {
-        this.currentHealth += amount;   
+        this.currentHealth += Mathf.RoundToInt( this.maxHealth*amount );   
         if(this.currentHealth >= this.maxHealth)
             this.currentHealth = this.maxHealth;
     }
-    public virtual void ArmorRecovery(int amount)
+    public virtual void ArmorRecovery(float amount)
     {
-        this.armor += amount;
+        this.armor += Mathf.RoundToInt( this.maxArmor*amount );
         if (this.armor >= this.maxArmor)
             this.armor = this.maxArmor;
     }
-    public virtual void AntiMagicRecovery(int amount)
+    public virtual void AntiMagicRecovery(float amount)
     {
-        this.antiMagic += amount;
+        this.antiMagic += Mathf.RoundToInt( this.MaxAntiMagic * amount);
         if (this.antiMagic >= this.maxAntiMagic)
             this.antiMagic = this.maxAntiMagic;
     }
-    public virtual bool ThisIsDie()
+    public virtual void ManaRecovery(int amount)
     {
-        return this.currentHealth <= 0;
+        this.mana +=  amount;
+        if (this.mana >= this.maxMana)
+            this.mana = this.maxMana;
     }
+    public virtual void ManaReduce(int amount)
+    {
+        this.mana -=  amount;
+        if (this.mana <= 0)
+            this.mana = 0;
+    }
+    #region UpgradeStats
+    public virtual void UpgradeMaxHealt(float amount)
+    {
+        amount = Mathf.Clamp01(amount);
+        this.maxHealth += Mathf.RoundToInt( this.maxHealth * amount);
+    }
+    public virtual void UpgradeMaxArmor(float amount)
+    {
+        amount = Mathf.Clamp01(amount);
+        this.maxArmor += Mathf.RoundToInt(this.maxArmor * amount);
+    }
+    public virtual void UpgradeMaxAntiMagic(float amount)
+    {
+        amount = Mathf.Clamp01(amount);
+        this.maxAntiMagic += Mathf.RoundToInt(this.maxAntiMagic * amount);
+    }
+    public virtual void UpgradeMaxMana(float amount)
+    {
+        amount = Mathf.Clamp01(amount);
+        this.maxMana += Mathf.RoundToInt(this.maxMana * amount);
+    }
+    #endregion
+    #endregion
+    public virtual bool ThisIsDie() => this.currentHealth <= 0;
     protected virtual void Die()
     {
         

@@ -17,7 +17,7 @@ public class MagicalDamage : IDamageType
 public class MixedDamage : IDamageType
 {
     private float physicalRate;
-    public MixedDamage(float physicalRate)
+    public MixedDamage(float physicalRate )
     {
         this.physicalRate = Mathf.Clamp01(physicalRate);
     }

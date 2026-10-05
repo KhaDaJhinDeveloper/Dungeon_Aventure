@@ -19,13 +19,13 @@ public class InventoryManager : MonoBehaviour,IDataManager
         EventManager.OP_EventManager.Subscribe(NameEvent.Event_InventoryDeleteData, DeleteData);
     }
     public List<InventorySlotItems> SlotsList { get => this.slotsList; set => this.slotsList = value; }
-    public void AddItem(Sprite imageItem, string nameItem, ItemType type)
+    public void AddItem(Sprite imageItem, string nameItem, ItemType type, KeyPool key)
     {
         foreach (InventorySlotItems item in slotsList)
         {
             if(!item.IsFull)
             {
-                item.AddItem(imageItem, nameItem, type);
+                item.AddItem(imageItem, nameItem, type, key);
                 item.IsFull = true;
                 break;
             }    
@@ -77,6 +77,10 @@ public class InventoryManager : MonoBehaviour,IDataManager
     {
         InventoryDataManager.S_inventoryDataManager.DeleteAllDataItems();
     }
+    public bool HasData()
+    {
+        return false;
+    }    
     public void OnDestroy()
     {
         EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_InventorySaveData, SaveData);

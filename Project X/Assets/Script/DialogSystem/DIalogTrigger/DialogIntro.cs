@@ -15,9 +15,8 @@ public class DialogIntro : BaseInteraction
     public void StartIntro()
     {
         if (!DialogStateManager.dialogState_Instance.IsDialogCompleted(this.dialogData.dialogID))
-        {
             this.dialogManager.StartDialogBox(this.dialogData);
-        }
-        else SceneManager.LoadScene(this._nameScene.ToString());
+        else
+            SceneManager.LoadScene(this._nameScene.ToString());
     }
 }

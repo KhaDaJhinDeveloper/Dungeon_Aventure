@@ -10,4 +10,6 @@ public class TagManager
     public const string TAG_INVENTORY_MANAGER = "InventoryManager";
     public const string TAG_DROP_POSITION = "drop";
     public const string TAG_ITEM = "Item";
+    public const string TAG_BGSOUND = "BGSound";
+    public const string TAG_SFXSOUND = "SFXSound";
 }

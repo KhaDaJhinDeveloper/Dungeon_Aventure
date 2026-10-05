@@ -87,7 +87,7 @@ public class SlimeKing_AttackState : IState
     }
     void Onlaned()
     {
-        GameObject crevice = ObjectPooling.ObjectPooling_Instance.GetPool("Crevice");
+        GameObject crevice = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_VFX_CREVICE);
         crevice.transform.transform.position = this.controller.transform.position;
     }
 }

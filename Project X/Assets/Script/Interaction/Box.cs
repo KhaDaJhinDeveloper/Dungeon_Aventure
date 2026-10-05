@@ -5,21 +5,21 @@ using UnityEngine;
 public class Box : BaseInteraction
 {
     private bool canOpen;
-    private bool canDrop;
     private Animator ani;
+    private Collider2D colli;
     protected override void Start()
     {
         base.Start();
     }
     protected override void Update()
     {
+        if (!this.canInteract) return;
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if (this.canOpen)
+            if (this.canOpen && this.canInteract)
             {
-                if (this.canDrop)
-                    DropItem();
-                //else Debug.Log("not item");
+                DropItem();
+                DisableObject();
             }                
         }    
     }
@@ -45,12 +45,18 @@ public class Box : BaseInteraction
     {
         this.ani.SetBool("open", true);
         ItemDropSpawn.itemDropSpawn_Instance.DropWeapon(this.transform.position);
-        this.canDrop = false;
+        this.canInteract = false;
     }
     protected override void LoadComponent()
     {
         base.LoadComponent();
         this.ani = GetComponent<Animator>();
-        this.canDrop = true;
+        this.colli = GetComponent<Collider2D>();
+        this.canInteract = true;
+    }
+    public override void DisableObject()
+    {
+        base.DisableObject();
+        this.colli.enabled = false;
     }
 }

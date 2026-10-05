@@ -1,18 +1,19 @@
 using NavMeshPlus.Components;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NavmeshSetup : MonoBehaviour
 {
     [SerializeField]private NavMeshSurface NavMeshSurface;
-    private void Start()
+    private void OnEnable()
     {
-        StartCoroutine(Build());
+        EventManager.Instance?.Subscribe(NameEvent.Event_NavMeshSetUp, Build);
     }
-    IEnumerator Build()
+    public void Build()
     {
-        yield return null;
         NavMeshSurface.BuildNavMesh();
+    }
+    private void OnDestroy()
+    {
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_NavMeshSetUp, Build);
     }
 }

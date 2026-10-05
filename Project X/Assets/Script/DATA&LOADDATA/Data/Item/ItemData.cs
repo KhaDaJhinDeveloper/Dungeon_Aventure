@@ -4,11 +4,11 @@ using UnityEngine;
 [System.Serializable]
 public class ItemData 
 {
-    public string nameItem;
+    public int itemId;
     public Vector3 position;
-    public ItemData(string nameItem, Vector3 position)
+    public ItemData(int itemId, Vector3 position)
     {
-        this.nameItem = nameItem;
+        this.itemId = itemId;
         this.position = position;
     }
 }

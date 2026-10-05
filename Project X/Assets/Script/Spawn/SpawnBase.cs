@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SpawnBase : MonoBehaviour
 {
-    [SerializeField] protected List<GameObject> prefab = new List<GameObject>();
-    [SerializeField] protected int poolSize;
+    [SerializeField] protected PoolEntry[] poolEntries;
     protected virtual void Start()
     {
         CreatePool();
@@ -13,14 +12,26 @@ public class SpawnBase : MonoBehaviour
     }
     protected virtual void CreatePool()
     {
-        if (prefab.Count < 0) DebugLogger.Log("prefab null");
-        for (int i = 0; i < this.prefab.Count; i++)
+        if (this.poolEntries.Length < 0) DebugLogger.Log("prefab null");
+        foreach (PoolEntry obj in this.poolEntries)
         {
-            ObjectPooling.ObjectPooling_Instance.CreatePool(prefab[i].name, prefab[i], poolSize);
-        }
+            int index = 0; 
+            while(index < obj.poolSize)
+            {
+                ObjectPooling.ObjectPooling_Instance.CreatePool(obj.key, obj.prefab, obj.poolSize);
+                index++;
+            }    
+        }    
     }
     protected virtual void Spawn()
     {
 
     }    
+}
+[System.Serializable]
+public struct PoolEntry
+{
+    public GameObject prefab;
+    public int poolSize;
+    public KeyPool key;
 }

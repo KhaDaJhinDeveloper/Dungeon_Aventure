@@ -30,7 +30,7 @@ public class Slime_SpawnState : IState
     {
         for(int i = 0; i < quantity; i++)
         {
-            GameObject slimeChild = ObjectPooling.ObjectPooling_Instance.GetPool("SlimeChild");
+            GameObject slimeChild = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_ENEMY_SLIMECHILD);
             slimeChild.transform.position = RandomPosDrop(this.slimeController.transform.position);
         }
     }

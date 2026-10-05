@@ -12,7 +12,7 @@ public class ButtonTrigger : BaseInteraction
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        this.posPlayer = GameObject.Find(NameManager.NAME_PLAYER).transform;
+        this.posPlayer = GameObject.FindWithTag(TagManager.TAG_PLAYER).transform;
         this.gameObject.SetActive(false);
         EventManager.OP_EventManager.Subscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
         EventManager.OP_EventManager.Subscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);

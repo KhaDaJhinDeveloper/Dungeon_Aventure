@@ -9,6 +9,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     public string nameItem;
     public int priceItem;
     public ItemType typeItem;
+    public KeyPool key;
     [TextArea] public string describe;
     public GameObject handleSelected;
     public bool isSelected = false;

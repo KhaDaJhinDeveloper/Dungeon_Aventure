@@ -32,7 +32,7 @@ public class CraftingItem : MonoBehaviour
         {
             if (this.rawMaterials[i].IsFull)
             {
-                this.inventoryManager.AddItem(this.rawMaterials[i].ImageItem.sprite, this.rawMaterials[i].NameItem, this.rawMaterials[i].Type);
+                this.inventoryManager.AddItem(this.rawMaterials[i].ImageItem.sprite, this.rawMaterials[i].NameItem, this.rawMaterials[i].Type, this.rawMaterials[i].Key);
                 this.rawMaterials[i].NameItem = null;
                 this.rawMaterials[i].IsFull = false;
             }
@@ -42,7 +42,7 @@ public class CraftingItem : MonoBehaviour
     {
         if (this.completeEquipment.IsFull)
         {
-            this.inventoryManager.AddItem(this.completeEquipment.ImageItem.sprite, this.completeEquipment.NameItem, this.completeEquipment.Type);
+            this.inventoryManager.AddItem(this.completeEquipment.ImageItem.sprite, this.completeEquipment.NameItem, this.completeEquipment.Type, this.completeEquipment.Key);
             this.completeEquipment.EmptySlot();
             EventManager.OP_EventManager.TriggerEvent<string>("LoadCraftingReportText", "Added item to inventory");
         }

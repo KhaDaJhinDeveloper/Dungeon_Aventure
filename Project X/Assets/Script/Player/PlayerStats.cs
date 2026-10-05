@@ -23,32 +23,58 @@ public class PlayerStats : BaseStats
         else
             Die();
     }
-    public override void Healing(int amount)
+    public override void Healing(float amount)
     {
         base.Healing(amount);
         UpdateUI();
     }
-    public override void ArmorRecovery(int amount)
+    public override void ArmorRecovery(float amount)
     {
         base.ArmorRecovery(amount);
         UpdateUI();
     }
-    public override void AntiMagicRecovery(int amount)
+    public override void AntiMagicRecovery(float amount)
     {
         base.AntiMagicRecovery(amount);
         UpdateUI();
+    }
+    public override void ManaRecovery(int amount)
+    {
+        base.ManaRecovery(amount); UpdateUI();
+    }
+    public override void ManaReduce(int amount)
+    {
+        base.ManaReduce(amount); UpdateUI();
+    }
+    public override void UpgradeMaxHealt(float amount)
+    {
+        base.UpgradeMaxHealt(amount); UpdateUI();
+    }
+    public override void UpgradeMaxArmor(float amount)
+    {
+        base.UpgradeMaxArmor(amount); UpdateUI();
+    }
+    public override void UpgradeMaxAntiMagic(float amount)
+    {
+        base.UpgradeMaxAntiMagic(amount); UpdateUI();
+    }
+    public override void UpgradeMaxMana(float amount)
+    {
+        base.UpgradeMaxMana(amount); UpdateUI();
     }
     protected override void Die()
     {
         base.Die();
         this.ani.AnimationDeath();
     }
-    public void UpdateUI()
+    public override void UpdateUI()
     {
-        EventManager.OP_EventManager.TriggerEvent("LoadHp");
-        EventManager.OP_EventManager.TriggerEvent("LoadHPText");
-        EventManager.OP_EventManager.TriggerEvent("LoadArmor");
-        EventManager.OP_EventManager.TriggerEvent("LoadAntimagic");
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadHPBar);
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadHPText);
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_loadArmorBar);
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadAntiMagicBar);
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadManaBar);
+        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadManaText);
     }
     protected override void KnockBack(Transform pos, float knockbackforce)
     {

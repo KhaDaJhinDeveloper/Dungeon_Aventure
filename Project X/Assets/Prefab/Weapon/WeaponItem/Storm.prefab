@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2663815831552337412}
   - component: {fileID: 3836237280121080182}
   - component: {fileID: 4135535590749950875}
+  - component: {fileID: 2529473316246829253}
   m_Layer: 0
   m_Name: Storm
   m_TagString: Item
@@ -98,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0312c0925f5dd469e4489335ece17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 472d2f2b56738fc41b095e76f2049039, type: 2}
+  Key: 9
 --- !u!61 &4135535590749950875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +146,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2043073, y: 0.18625611}
   m_EdgeRadius: 0
+--- !u!114 &2529473316246829253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119462386973194304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 9

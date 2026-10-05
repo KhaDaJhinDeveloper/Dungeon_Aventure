@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1654864866903581859}
   - component: {fileID: 1610129945336159243}
   - component: {fileID: 1096448642402580731}
+  - component: {fileID: 4264179243319766798}
   m_Layer: 0
   m_Name: GoldVault
   m_TagString: Item
@@ -167,3 +168,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &4264179243319766798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967528257518686949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 28

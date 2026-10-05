@@ -441,7 +441,7 @@ MonoBehaviour:
   - {x: 0.0039978796, y: -0.052964546, z: 0}
   m_ShapePathHash: 996039410
   m_Mesh: {fileID: 0}
-  m_InstanceId: -10998
+  m_InstanceId: 175630
   m_LocalBounds:
     m_Center: {x: 0.019292573, y: -0.011520967, z: 0}
     m_Extent: {x: 0.04588578, y: 0.04144358, z: 0}
@@ -766,7 +766,7 @@ Transform:
   - {fileID: 5187990427507380386}
   - {fileID: 2975999186295785364}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &6183621715750187452
 CircleCollider2D:
@@ -846,6 +846,7 @@ MonoBehaviour:
   maxArmor: 6
   maxAntiMagic: 6
   speed: 1
+  key: 30
   damage: 10
   amountCoin: 3
 --- !u!114 &6472522571201880432
@@ -860,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9a5d480eee2b74dba215616823eb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rayDistance: 0.5
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -871,7 +873,7 @@ MonoBehaviour:
     m_Bits: 64
   attackComplated: 0
   facingRight: 0
-  canSeeGizmos: 0
+  canSeeGizmos: 1
 --- !u!114 &-6888285339834449037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d94832d730c0734b93245a174f62782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueID: 
+  uniqueID: 30
 --- !u!1 &8402172403543265689
 GameObject:
   m_ObjectHideFlags: 0

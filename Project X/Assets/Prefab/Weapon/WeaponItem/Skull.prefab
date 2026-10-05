@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1124356685219617814}
   - component: {fileID: 658613428594280012}
   - component: {fileID: 2614520862942459180}
+  - component: {fileID: -8982030633346600993}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Item
@@ -143,3 +144,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0312c0925f5dd469e4489335ece17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: f21759a929e32a943a83d6d8c475e71a, type: 2}
+  Key: 7
+--- !u!114 &-8982030633346600993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246425319737301541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 7

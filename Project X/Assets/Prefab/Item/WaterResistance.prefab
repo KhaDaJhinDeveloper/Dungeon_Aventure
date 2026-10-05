@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 291846778895615530}
   - component: {fileID: 1762680860874363423}
   - component: {fileID: 8916373843521971277}
+  - component: {fileID: -5905400489480475382}
   m_Layer: 0
   m_Name: WaterResistance
   m_TagString: Item
@@ -144,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff34db1740d51649ae4c911255dcbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPool: 22
   type: 0
-  nameitem: 
   imageItem: {fileID: 0}
 --- !u!95 &8916373843521971277
 Animator:
@@ -168,3 +169,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5905400489480475382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738978228191124044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 22

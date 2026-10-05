@@ -15,5 +15,5 @@ MonoBehaviour:
   nameItem: Spell
   spriteImage: {fileID: -6214591665554272011, guid: 75f54d38992bb8a46b1a4d6ab28e6d9e, type: 3}
   type: 0
-  antiMagicAmount: 5
+  antiMagicAmount: 0.2
   additionalTime: 0.1

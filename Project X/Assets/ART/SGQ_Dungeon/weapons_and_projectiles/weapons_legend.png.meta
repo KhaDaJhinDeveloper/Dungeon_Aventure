@@ -1,0 +1,1086 @@
+fileFormatVersion: 2
+guid: 41a9183b945473643a3dabbd7028a861
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: weapons_legend_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 343
+        width: 17
+        height: 11
+      alignment: 9
+      pivot: {x: 0.1, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57072c954b2f1f46a839172d675e1aa
+      internalID: 1747920004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 345
+        width: 17
+        height: 19
+      alignment: 9
+      pivot: {x: 0.1, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212a3046f6a143e479389bbf7c5ec222
+      internalID: -28700647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 324
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.08, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0693fa0c3b4828e40afff2b3fc23c9d8
+      internalID: -873094300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 327
+        width: 17
+        height: 11
+      alignment: 9
+      pivot: {x: 0.1, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0e9396ef55d964ca8669557358291f
+      internalID: -1618034940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_4
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 327
+        width: 16
+        height: 10
+      alignment: 9
+      pivot: {x: 0.1, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9a4278bba7a7e4b95b226892e4c341
+      internalID: 17586462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_5
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 274
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c054cf97ae67f2a43b8c99f645bb3c82
+      internalID: -1441746627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 274
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ac82a7d807afd4c843ef98648d5d8d
+      internalID: 1533054276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 272
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c2dc6a1e8c5e143977ea7266db046f
+      internalID: -825425508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_8
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 273
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929c984017f5c684b9ce2f38dd22ff45
+      internalID: 1869037982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 274
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfc05f06bb6a424cb4dbc5366c4c844
+      internalID: 1435687880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_10
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 222
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0.15, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d87c69156314c47b0b6dfca9ba0497
+      internalID: 930874486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 223
+        width: 14
+        height: 17
+      alignment: 9
+      pivot: {x: 0.15, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77151804daa07542a6417420d3cb04e
+      internalID: 99301720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_12
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 219
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0.1, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437d75d038ad2d14b8ed3b5a50fec74e
+      internalID: -2047602635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_13
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 218
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0.09000111, y: 0.4123179}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a649ac4b6434024c885484341378bc4
+      internalID: -556634253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_14
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 218
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0.09, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8772d59ee22667408e5c1de2a6690ca
+      internalID: 684139758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_15
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c31736e3330d064ebda7757259aa654
+      internalID: -1073616579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ff5fb6e38790544b241483f84f5eae
+      internalID: -364917966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_17
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c4cddaa45b36546a73014b1b475153
+      internalID: 735166479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_18
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cfa629e0d0747459b55d3272c27efe
+      internalID: -1342840197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_19
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2383379e6a034748a55bc0cd54f7d6d
+      internalID: 1162301881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_20
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9c12b1aa3a56245aa6889d9ba61cb3
+      internalID: -49035369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_21
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a650ddb0ffd21409cf9a4779aa3568
+      internalID: -747136023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_22
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab50789541ebfd49afdbd227a69a3c2
+      internalID: -1942021169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_23
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a4c5fe304b4d848b9cdf446500c466
+      internalID: -1250367950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_24
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 125
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516bc7b3c50d26b42a935facf3e3cfd4
+      internalID: -1006958480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 126
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4b6e3c5efd2a245b0e576709fced59
+      internalID: 1375358217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_26
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 127
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd70c54d4abe0594a979dc8b4988b5de
+      internalID: 692206261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_27
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 120
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd523500db02fd41a3d88d9c4ddabea
+      internalID: -991844848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_28
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 120
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f005a1aa8f47bee44b5cb41c3aeaa4d4
+      internalID: 252232684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_29
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 118
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ac1c8eb3e1c2448a64b31be8214e6b
+      internalID: -1710363021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_30
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 92
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdbdaa24f857d0459fd4c6c10079236
+      internalID: -378497620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_31
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 93
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322cf80e876996c4eb61536260e050f5
+      internalID: 1761441583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_32
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 91
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e40dc85598ef7240a475a6ae2ba6fcd
+      internalID: 90898894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_33
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 91
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f6398e72dc72249a2dc3ad4986a4a0
+      internalID: 2103173669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_34
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 91
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47d6d70d9b18374daba4a1199556587
+      internalID: 1529356610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_35
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 93
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20e12604c12c57409e7a700298a1c33
+      internalID: -2020126432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_36
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 92
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cca86a1fb09c2c4aa915feb3664583e
+      internalID: -1291772820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_37
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 92
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eab16440bde13844ae7248b60145d98
+      internalID: -1953593181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_38
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 64
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f778c0d13f291d64dbe724e8fa486731
+      internalID: 262608054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_39
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 61
+        width: 92
+        height: 14
+      alignment: 9
+      pivot: {x: 0.02, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10731e61701dc5438a67c10dbe47f63
+      internalID: 842287640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_40
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 38
+        width: 92
+        height: 13
+      alignment: 9
+      pivot: {x: 0.02, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8adfaef3b3fe594699222881517471f
+      internalID: 577507898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_41
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 20
+        width: 92
+        height: 11
+      alignment: 9
+      pivot: {x: 0.02, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ffaf301d0c50547aa7604cf8ad40ff
+      internalID: -952940068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_legend_42
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63384f38068f7cf44a36c934cf8dac1c
+      internalID: -514661498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      weapons_legend_0: 1747920004
+      weapons_legend_1: -28700647
+      weapons_legend_10: 930874486
+      weapons_legend_11: 99301720
+      weapons_legend_12: -2047602635
+      weapons_legend_13: -556634253
+      weapons_legend_14: 684139758
+      weapons_legend_15: -1073616579
+      weapons_legend_16: -364917966
+      weapons_legend_17: 735166479
+      weapons_legend_18: -1342840197
+      weapons_legend_19: 1162301881
+      weapons_legend_2: -873094300
+      weapons_legend_20: -49035369
+      weapons_legend_21: -747136023
+      weapons_legend_22: -1942021169
+      weapons_legend_23: -1250367950
+      weapons_legend_24: -1006958480
+      weapons_legend_25: 1375358217
+      weapons_legend_26: 692206261
+      weapons_legend_27: -991844848
+      weapons_legend_28: 252232684
+      weapons_legend_29: -1710363021
+      weapons_legend_3: -1618034940
+      weapons_legend_30: -378497620
+      weapons_legend_31: 1761441583
+      weapons_legend_32: 90898894
+      weapons_legend_33: 2103173669
+      weapons_legend_34: 1529356610
+      weapons_legend_35: -2020126432
+      weapons_legend_36: -1291772820
+      weapons_legend_37: -1953593181
+      weapons_legend_38: 262608054
+      weapons_legend_39: 842287640
+      weapons_legend_4: 17586462
+      weapons_legend_40: 577507898
+      weapons_legend_41: -952940068
+      weapons_legend_42: -514661498
+      weapons_legend_5: -1441746627
+      weapons_legend_6: 1533054276
+      weapons_legend_7: -825425508
+      weapons_legend_8: 1869037982
+      weapons_legend_9: 1435687880
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

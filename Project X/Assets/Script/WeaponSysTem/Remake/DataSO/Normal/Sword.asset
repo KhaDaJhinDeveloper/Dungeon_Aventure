@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b3ad176b6a41944984b5b249de5cb4, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  keyPool: 10
+  weaponType: 0
+  weaponName: Sword
+  physicDamage: 8
+  magicDamage: 0
+  trueDamage: 0
+  mixDamage: 0
+  rateMixDamage: 0
+  keyBullet: 0
+  weaponSprite: {fileID: 953616922899734602, guid: 1c0cc04d8523c2a4f815f392cb3868a3, type: 3}
+  animatorController: {fileID: 9100000, guid: 7de5b9d8146f1de4d9f0e96b4234fda5, type: 2}

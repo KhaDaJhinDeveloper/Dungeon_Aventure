@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a9cd77d1b193d4ba1660c2254cf487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 6
   magical: 0
   strength: 0
   speedBullet: 8

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6477599118422142246}
   - component: {fileID: 1819126634224032048}
   - component: {fileID: 5981948840036263901}
+  - component: {fileID: 2506514190834696695}
   m_Layer: 0
   m_Name: MagicBall
   m_TagString: Item
@@ -143,3 +144,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0312c0925f5dd469e4489335ece17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 0f03db1544b366d45903f03044ce41bf, type: 2}
+  Key: 6
+--- !u!114 &2506514190834696695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510234287921693111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 6

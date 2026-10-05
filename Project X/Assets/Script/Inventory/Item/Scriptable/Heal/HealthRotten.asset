@@ -15,5 +15,5 @@ MonoBehaviour:
   nameItem: HealthRotten
   spriteImage: {fileID: 7938850683669423352, guid: eb81a19cfe6dea24aba0250d06443de6, type: 3}
   type: 0
-  HealAmount: 100
+  HealAmount: 1
   additionalTime: -1

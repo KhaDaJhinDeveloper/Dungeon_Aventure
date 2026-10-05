@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6264200245514870177}
   - component: {fileID: 4299241621110724133}
   - component: {fileID: 9000783497007405007}
+  - component: {fileID: 4489513953289647359}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Item
@@ -143,6 +144,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff34db1740d51649ae4c911255dcbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPool: 26
   type: 1
-  nameitem: 
   imageItem: {fileID: 0}
+--- !u!114 &4489513953289647359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115818472049129651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 26

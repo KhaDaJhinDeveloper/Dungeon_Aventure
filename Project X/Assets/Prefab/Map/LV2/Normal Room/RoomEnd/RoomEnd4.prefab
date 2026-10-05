@@ -8465,7 +8465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8753546642298328609}
-  - component: {fileID: 2618557633054988892}
+  - component: {fileID: 6763761195505287162}
   m_Layer: 0
   m_Name: RoomEnd4
   m_TagString: Untagged
@@ -8489,9 +8489,9 @@ Transform:
   - {fileID: 5713484595926470502}
   - {fileID: 2212146764019459308}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2618557633054988892
+--- !u!114 &6763761195505287162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8500,15 +8500,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8585274551918368730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b8af82fa463894bb6d36a2841e8984, type: 3}
+  m_Script: {fileID: 11500000, guid: 564c06fa2900fe84896495e56b184bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   exits:
   - exitPoint: {fileID: 3912634904910503987}
     exitDirections: 1
     isUsed: 0
-  originalPrefab: {fileID: 0}
-  availablePoints: []
+  bonFirePoint: {fileID: 0}
+  boxPoints: []
+  enemiesPoint: []
 --- !u!1 &8606256455241411208
 GameObject:
   m_ObjectHideFlags: 0

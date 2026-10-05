@@ -1,5 +1,14 @@
 {
-    "weaponName1": "Sword",
-    "weaponName2": "Bow",
-    "weaponReserve": ""
+    "weaponSlotLeft": {
+        "weaponID": "MagicBall Legend",
+        "mainDamage": 8
+    },
+    "weaponSlotRight": {
+        "weaponID": "Sword Legend",
+        "mainDamage": 12
+    },
+    "weaponReserve": {
+        "weaponID": "",
+        "mainDamage": 0
+    }
 }

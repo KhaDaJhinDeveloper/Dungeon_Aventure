@@ -335,6 +335,7 @@ MonoBehaviour:
   maxArmor: 30
   maxAntiMagic: 0
   speed: 2
+  key: 29
   damage: 10
   amountCoin: 2
 --- !u!114 &3814849606694641676
@@ -377,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d94832d730c0734b93245a174f62782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueID: 
+  uniqueID: 29
 --- !u!1 &7421276023883393731
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +514,7 @@ MonoBehaviour:
   - {x: 0.0013144439, y: -0.050987195, z: 0}
   m_ShapePathHash: 766061623
   m_Mesh: {fileID: 0}
-  m_InstanceId: 88336
+  m_InstanceId: 50110
   m_LocalBounds:
     m_Center: {x: 0.010855477, y: -0.014589403, z: 0}
     m_Extent: {x: 0.0445621, y: 0.036397792, z: 0}

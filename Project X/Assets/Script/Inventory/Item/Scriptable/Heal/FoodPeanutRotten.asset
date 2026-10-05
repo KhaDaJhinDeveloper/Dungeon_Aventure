@@ -15,5 +15,5 @@ MonoBehaviour:
   nameItem: FoodPeanutRotten
   spriteImage: {fileID: 6164743739567730321, guid: eb81a19cfe6dea24aba0250d06443de6, type: 3}
   type: 0
-  HealAmount: 10
+  HealAmount: 0.2
   additionalTime: -0.1

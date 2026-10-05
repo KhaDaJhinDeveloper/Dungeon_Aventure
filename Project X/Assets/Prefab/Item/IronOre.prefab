@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8790341365763128020}
   - component: {fileID: 8590651315392490021}
   - component: {fileID: 8290411753372022184}
+  - component: {fileID: 2947706047577954447}
   m_Layer: 0
   m_Name: IronOre
   m_TagString: Item
@@ -143,6 +144,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff34db1740d51649ae4c911255dcbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPool: 24
   type: 1
-  nameitem: 
   imageItem: {fileID: 0}
+--- !u!114 &2947706047577954447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111142365975754184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 24

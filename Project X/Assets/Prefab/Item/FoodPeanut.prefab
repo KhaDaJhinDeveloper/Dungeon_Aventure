@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8400704759699430711}
   - component: {fileID: 1595333195165247599}
   - component: {fileID: 8259257694556521628}
+  - component: {fileID: 663655901796853230}
   m_Layer: 0
   m_Name: FoodPeanut
   m_TagString: Item
@@ -165,6 +166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff34db1740d51649ae4c911255dcbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPool: 15
   type: 0
-  nameitem: 
   imageItem: {fileID: 0}
+--- !u!114 &663655901796853230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901563204041180068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 15

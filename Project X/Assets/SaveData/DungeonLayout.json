@@ -1,46 +1,69 @@
 {
-    "layouts": [
+    "allMap": [
         {
-            "managerID": "KingSlimeBossRoom_CreatRoom_Scene_KingSlimeBossRoom_Index_6",
-            "layout": {
-                "rooms": [
-                    {
-                        "prefabName": "RoomMain",
-                        "position": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
-                        },
-                        "rotation": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0,
-                            "w": 1.0
-                        },
-                        "exitsUsed": [
-                            true,
-                            false
-                        ]
-                    },
-                    {
-                        "prefabName": "RoomNextLEvel",
-                        "position": {
-                            "x": 0.0,
-                            "y": 16.0,
-                            "z": 0.0
-                        },
-                        "rotation": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0,
-                            "w": 1.0
-                        },
-                        "exitsUsed": [
-                            true
-                        ]
-                    }
-                ]
-            }
+            "mapID": "Map_01",
+            "listRoonNode": [
+                {
+                    "roomPrefabName": "RoomStart",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "roomPrefabName": "Room 7",
+                    "x": 1,
+                    "y": 0
+                },
+                {
+                    "roomPrefabName": "Room2",
+                    "x": 1,
+                    "y": 1
+                },
+                {
+                    "roomPrefabName": "Room 5",
+                    "x": 0,
+                    "y": 1
+                },
+                {
+                    "roomPrefabName": "Room 4",
+                    "x": 0,
+                    "y": 2
+                },
+                {
+                    "roomPrefabName": "Room 6",
+                    "x": -1,
+                    "y": 1
+                },
+                {
+                    "roomPrefabName": "Room1",
+                    "x": 2,
+                    "y": 0
+                },
+                {
+                    "roomPrefabName": "Room3",
+                    "x": 1,
+                    "y": 2
+                },
+                {
+                    "roomPrefabName": "RoomEnd 4",
+                    "x": 2,
+                    "y": 2
+                },
+                {
+                    "roomPrefabName": "RoomEnd 3",
+                    "x": 1,
+                    "y": 3
+                },
+                {
+                    "roomPrefabName": "RoomEnd 1",
+                    "x": 2,
+                    "y": -1
+                },
+                {
+                    "roomPrefabName": "RoomEnd 2",
+                    "x": -2,
+                    "y": 1
+                }
+            ]
         }
     ]
 }

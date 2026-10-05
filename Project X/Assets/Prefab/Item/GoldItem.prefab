@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2834582616445919217}
   - component: {fileID: 1625944716106318439}
   - component: {fileID: 2198715072415289051}
+  - component: {fileID: 7304822035679760323}
   m_Layer: 0
   m_Name: GoldItem
   m_TagString: Item
@@ -195,3 +196,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameitem: 
   amount: 5
+--- !u!114 &7304822035679760323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821699383063856526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 27

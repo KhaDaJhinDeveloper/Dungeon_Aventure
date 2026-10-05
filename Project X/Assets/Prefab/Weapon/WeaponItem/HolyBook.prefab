@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2476376595714393926}
   - component: {fileID: 4897438267702746415}
   - component: {fileID: 5988067089890247064}
+  - component: {fileID: -8027761929606555218}
   m_Layer: 0
   m_Name: HolyBook
   m_TagString: Item
@@ -143,3 +144,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0312c0925f5dd469e4489335ece17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: ade64aed67764bf49b118578c87945e2, type: 2}
+  Key: 12
+--- !u!114 &-8027761929606555218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905374842274944910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 12

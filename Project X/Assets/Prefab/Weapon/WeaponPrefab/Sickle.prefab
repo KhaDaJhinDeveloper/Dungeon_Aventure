@@ -165,5 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4613595abf6254bae3b36819758b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 11
   magical: 0
   strength: 20

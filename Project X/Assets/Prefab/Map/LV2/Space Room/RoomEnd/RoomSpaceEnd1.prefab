@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4414943911264754395}
   - component: {fileID: 8213767017049836446}
+  - component: {fileID: 1576726687852328150}
   m_Layer: 0
   m_Name: RoomSpaceEnd1
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   - {fileID: 7312237140845378121}
   - {fileID: 8301463234421692390}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8213767017049836446
 MonoBehaviour:
@@ -53,6 +54,27 @@ MonoBehaviour:
     isUsed: 0
   originalPrefab: {fileID: 0}
   availablePoints: []
+  bonFirePoints: []
+  boxPoint: []
+--- !u!114 &1576726687852328150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351136863666148512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564c06fa2900fe84896495e56b184bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exits:
+  - exitPoint: {fileID: 1530819371159142074}
+    exitDirections: 3
+    isUsed: 0
+  bonFirePoint: {fileID: 0}
+  boxPoints: []
+  enemiesPoint: []
 --- !u!1 &405293870932856233
 GameObject:
   m_ObjectHideFlags: 0
@@ -9489,7 +9511,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0

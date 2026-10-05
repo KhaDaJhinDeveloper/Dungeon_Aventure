@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de812a7a1fb6de4ca57532ed144d496, type: 3}
+  m_Name: LV01Special
+  m_EditorClassIdentifier: 
+  roomBody:
+  - {fileID: 7871185637584835367, guid: f3f1c9338a46a574cb590d60517e248b, type: 3}
+  - {fileID: -6139946505109020285, guid: 5a637e2615e15d843adeb0265b2e136f, type: 3}
+  - {fileID: 4083107521966155498, guid: b14dd2d238d0b9f4da57522b4f522869, type: 3}
+  - {fileID: -7998651391582460541, guid: 6898605e62e636a488638cfa533bdf58, type: 3}
+  - {fileID: -5036101663488593013, guid: 95a6aca794ee9224287623d8701f6d36, type: 3}
+  - {fileID: 7752326774631296719, guid: 0ab5dbb901784694fa56203d9fdf6034, type: 3}
+  - {fileID: -7193734945479214163, guid: ec7b7c768656fca4bb3cc4202c20ca8f, type: 3}
+  roomExit:
+  - {fileID: 761025816358224314, guid: d8be98f89af691440a8cf44d1ac6166e, type: 3}
+  - {fileID: 1779589552607986394, guid: 41ac17b6b51b2b747a35d8fb70ca1f82, type: 3}
+  - {fileID: 2449441095002409082, guid: cfbfe15427446144ab6b2b8ee2064a0d, type: 3}
+  wall:
+  - {fileID: 4231078837843549156, guid: 2a9138d88c08ac44fb8bfba7fdbb2d62, type: 3}
+  - {fileID: -5237119226145220379, guid: c096032945a7a504183652f775345fc4, type: 3}
+  - {fileID: 9126785804145243428, guid: b5e9370e40604a044bb5fde33bae2f9e, type: 3}
+  - {fileID: -580618909086747674, guid: 68c37dd69308396449a87fc4b480b613, type: 3}
+  enemyDataSpawnList:
+  - enemyPool: 30
+    unlockLevel: 2
+    weight: 0
+  - enemyPool: 32
+    unlockLevel: 1
+    weight: 0
+  - enemyPool: 36
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 29
+    unlockLevel: 1
+    weight: 0
+  - enemyPool: 31
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 34
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 33
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 35
+    unlockLevel: 0
+    weight: 0

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de812a7a1fb6de4ca57532ed144d496, type: 3}
+  m_Name: LV02
+  m_EditorClassIdentifier: 
+  roomBody:
+  - {fileID: 5605167849946329389, guid: 802c4a3176f70214897e09bac87d9b1b, type: 3}
+  - {fileID: 3928340001856309878, guid: f20ed17171e155541a16785a4c13bf7f, type: 3}
+  - {fileID: 4442924813779225328, guid: f3e83ec2f350bb9418248de33dd788b0, type: 3}
+  - {fileID: 7274593192157452445, guid: 6ab2d9800a61fe8479abf00a626af599, type: 3}
+  - {fileID: 7079167842819873442, guid: 0b9a4c6cb66111f4785898ead2046521, type: 3}
+  - {fileID: 3194980611346904739, guid: 2263eafc960508d46803976bf89738f3, type: 3}
+  - {fileID: 2693177687890299047, guid: 9e8a888059f39dc4ea7439bd2c4c3c27, type: 3}
+  - {fileID: 2085865533973849770, guid: 8cdee5da0b901b24fa538b4f3dcfd0fa, type: 3}
+  - {fileID: 6989862400475119093, guid: 594f76b15539e774789f3174ec1e47b3, type: 3}
+  roomExit:
+  - {fileID: 5775084144291749212, guid: ef3eaf95061c34949a7b1412b8e2e7a2, type: 3}
+  - {fileID: 6642408566309979415, guid: f96ae00ed9d79554492f90592ee44fc4, type: 3}
+  - {fileID: 6157598010381893431, guid: 2787b7ca7287f854084ac5f01d9890bf, type: 3}
+  - {fileID: 6763761195505287162, guid: 64651d63070f9fc408667b2db2ec6236, type: 3}
+  wall:
+  - {fileID: 4231078837843549156, guid: 34430b5624745fb49afaa31128956e2b, type: 3}
+  - {fileID: -5237119226145220379, guid: f83632529f4945941b35e17c476f1b74, type: 3}
+  - {fileID: 9126785804145243428, guid: 06f4eb9c0d5c23d4eaa7385b76780fca, type: 3}
+  - {fileID: -580618909086747674, guid: ad64f0665122d2a4297a012de22445e3, type: 3}
+  enemyDataSpawnList:
+  - enemyPool: 30
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 32
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 36
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 29
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 31
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 34
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 33
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 35
+    unlockLevel: 0
+    weight: 0

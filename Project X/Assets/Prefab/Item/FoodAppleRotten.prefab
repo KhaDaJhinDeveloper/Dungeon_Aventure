@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8694184533433352765}
   - component: {fileID: 2374777319720790033}
   - component: {fileID: 2732092145448830398}
+  - component: {fileID: -744724046190592688}
   m_Layer: 0
   m_Name: FoodAppleRotten
   m_TagString: Item
@@ -120,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff34db1740d51649ae4c911255dcbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPool: 14
   type: 0
-  nameitem: 
   imageItem: {fileID: 0}
 --- !u!61 &2732092145448830398
 BoxCollider2D:
@@ -168,3 +169,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &-744724046190592688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858622111703833970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b00477ce0ebf1c46a492832c73123c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPool: 14

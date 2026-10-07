@@ -13,12 +13,18 @@ public class ItemDropSpawn : MonoBehaviour
     }
     public void DropItem(Vector3 posDrop, int coinCout)
     {
+        int index = Random.Range(1, 5);
         if(posDrop == null) return;
         for(int i = 0; i < coinCout; i ++)
         {
             GameObject coinDrop = ObjectPooling.Instance.GetPool(KeyPool.KEY_ITEM_GOLD);
             coinDrop.transform.position = RandomPosDrop(posDrop);
-        }  
+        }
+        for(int j = 0; j < index; j++)
+        {
+            GameObject manaDrop = ObjectPooling.Instance.GetPool(KeyPool.KEY_INTERACT_MANADROP);
+            manaDrop.transform.position = RandomPosDrop(posDrop);
+        }
         foreach(ItemDropRate item in this.itemDropRates)
         {
             if(Random.value < item.dropRate)

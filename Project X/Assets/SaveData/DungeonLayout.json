@@ -9,59 +9,59 @@
                     "y": 0
                 },
                 {
-                    "roomPrefabName": "Room 7",
+                    "roomPrefabName": "Room2",
                     "x": 1,
                     "y": 0
                 },
                 {
-                    "roomPrefabName": "Room2",
+                    "roomPrefabName": "Room1",
                     "x": 1,
-                    "y": 1
+                    "y": -1
                 },
                 {
-                    "roomPrefabName": "Room 5",
+                    "roomPrefabName": "Room 6",
                     "x": 0,
-                    "y": 1
+                    "y": -1
                 },
                 {
                     "roomPrefabName": "Room 4",
                     "x": 0,
-                    "y": 2
+                    "y": -2
                 },
                 {
-                    "roomPrefabName": "Room 6",
+                    "roomPrefabName": "Room 5",
                     "x": -1,
-                    "y": 1
+                    "y": -1
                 },
                 {
-                    "roomPrefabName": "Room1",
-                    "x": 2,
-                    "y": 0
+                    "roomPrefabName": "Room 7",
+                    "x": 1,
+                    "y": -2
                 },
                 {
                     "roomPrefabName": "Room3",
-                    "x": 1,
-                    "y": 2
-                },
-                {
-                    "roomPrefabName": "RoomEnd 4",
-                    "x": 2,
-                    "y": 2
-                },
-                {
-                    "roomPrefabName": "RoomEnd 3",
-                    "x": 1,
-                    "y": 3
-                },
-                {
-                    "roomPrefabName": "RoomEnd 1",
-                    "x": 2,
-                    "y": -1
+                    "x": -1,
+                    "y": 0
                 },
                 {
                     "roomPrefabName": "RoomEnd 2",
                     "x": -2,
+                    "y": 0
+                },
+                {
+                    "roomPrefabName": "RoomEnd 3",
+                    "x": -1,
                     "y": 1
+                },
+                {
+                    "roomPrefabName": "RoomEnd 4",
+                    "x": 2,
+                    "y": -2
+                },
+                {
+                    "roomPrefabName": "RoomEnd 1",
+                    "x": 1,
+                    "y": -3
                 }
             ]
         }

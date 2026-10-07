@@ -207,6 +207,9 @@ public class MapGeneration : MonoBehaviour
     #region Place Object
     private void PlacedObject()
     {
+        string curentScene = SceneExtensions.GetCurrentSceneName();
+        if (ItemDataManager.Instance.HasMapData(curentScene))
+            return;
         SpawnBonFire();
         SpawnEnemies();
         SpawnBox();

@@ -59,6 +59,7 @@ public class WeaponController : MonoBehaviour
         this.weaponsArray[ID].ClearSlot();
         this.weaponsArray[ID].SetWeapon(this.weaponReserve.currentWeapon);
         this.weaponReserve.ClearSlot();
+        BlockAttack();
         EventManager.Instance.TriggerEvent(NameEvent.Event_ImageSlotWeapon_LoadWeaponSlotUI);
         EventManager.Instance.TriggerEvent(NameEvent.Event_ChangeWeaponSlot_LoadInfoWeapon);
     }
@@ -77,7 +78,7 @@ public class WeaponController : MonoBehaviour
         var temp = this.weaponsArray[0].currentWeapon;
         this.weaponsArray[0].SetWeapon(this.weaponsArray[1].currentWeapon);
         this.weaponsArray[1].SetWeapon(temp);
-        this.AllowTheAttack();
+        BlockAttack();
         EventManager.Instance.TriggerEvent(NameEvent.Event_ImageSlotWeapon_LoadWeaponSlotUI);
         EventManager.Instance.TriggerEvent(NameEvent.Event_ChangeWeaponSlot_LoadInfoWeapon);
     }

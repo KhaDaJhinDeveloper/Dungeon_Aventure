@@ -20,7 +20,6 @@ public class ChangeWeaponInformation : MonoBehaviour
     [SerializeField] private GameObject background;
     [SerializeField] private Sprite spriteDefault;
     private WeaponController weaponControl;
-    private bool isActive ;
     private void Start()
     {
         this.weaponControl = FindFirstObjectByType<WeaponController>();
@@ -54,7 +53,6 @@ public class ChangeWeaponInformation : MonoBehaviour
     }
     void Hide()
     {       
-        this.isActive = false;
         this.changeWeaponUI.transform.DOKill();
         this.changeWeaponUI.transform.DOMove(this.startPos.transform.position, 0.5f).SetUpdate(true).OnComplete(() => {this.background.SetActive(false);
                                                                                                                        this.changeWeaponUI.SetActive(false);
@@ -63,11 +61,9 @@ public class ChangeWeaponInformation : MonoBehaviour
     }
     void Show()
     {      
-        this.isActive = true;
         this.background.SetActive(true);
         this.changeWeaponUI.SetActive(true);
         this.changeWeaponUI.transform.DOLocalMove(new Vector3(0, 30, 0), 0.5f).SetUpdate(true);
-        this.weaponControl.BlockAttack();
         TimeManager.TimePause();
     }
     #endregion

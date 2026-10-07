@@ -4,10 +4,14 @@ using UnityEngine;
 
 public abstract class BaseInteraction : MonoBehaviour
 {
-    public bool canInteract;
-    protected virtual void Start()
+    public bool canInteract = true;
+    protected virtual void Awake()
     {
         LoadComponent();
+    }
+    protected virtual void Start()
+    {
+
     }
     protected virtual void Update()
     {
@@ -37,4 +41,6 @@ public abstract class BaseInteraction : MonoBehaviour
     {
 
     }
+    public virtual void OnLoadData(bool canInteract)
+    { }
 }

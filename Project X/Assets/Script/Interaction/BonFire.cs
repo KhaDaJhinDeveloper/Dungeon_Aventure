@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BonFire : BaseInteraction
 {
-    public bool Pre_activated;
-    private bool activeBorn;
+    private Collider2D colli;
     private bool canActive;
     private CountdownTimer timer;
     private Animator ani;
@@ -17,20 +16,17 @@ public class BonFire : BaseInteraction
     }
     protected override void Update()
     {
-        if(this.Pre_activated)
-        {
-            this.activeBorn = true;
-            this.ani.SetBool("fire", true);
-        }
+
         if(Input.GetKeyDown(KeyCode.E))
         {
             if(this.canActive)
             {
-                this.activeBorn = true;
+                this.canInteract = false;
                 this.ani.SetBool("fire", true);
+                DisableObject();
             }
         }
-        if(this.canActive && this.activeBorn)
+        if(this.canActive && !this.canInteract)
             this.timer.IncreaseTime(0.1f);     
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -48,5 +44,21 @@ public class BonFire : BaseInteraction
             EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
             this.canActive= false;
         }
+    }
+    public override void DisableObject()
+    {
+        base.DisableObject();
+        if (colli == null) this.colli = GetComponent<Collider2D>();
+        colli.enabled = false;
+    }
+    public override void OnLoadData(bool canInteract)
+    {
+        base.OnLoadData(canInteract);
+        if(!canInteract)
+        {
+            this.canInteract = false;
+            this.ani?.SetBool("fire", true);
+            DisableObject();
+        }    
     }
 }

@@ -16,6 +16,7 @@ TagManager:
   - Item
   - BGSound
   - SFXSound
+  - InteractObject
   layers:
   - Default
   - TransparentFX

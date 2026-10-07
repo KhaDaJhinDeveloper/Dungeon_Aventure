@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemDataManager : Singleton<ItemDataManager>,IDataManager
@@ -12,7 +13,9 @@ public class ItemDataManager : Singleton<ItemDataManager>,IDataManager
     public void SaveData()
     {
         this.allItems = new AllItems();
+        this.allItems.sceneID = SceneExtensions.GetCurrentSceneName();
         this.allItems.allItemsData = GetItemsData();
+        this.allItems.allInteractData = GetInteractData();
         JsonFileUtility.SaveToJson(this.allItems, FILE_ITEM_DATA);
     }    
     public void LoadData()
@@ -24,6 +27,14 @@ public class ItemDataManager : Singleton<ItemDataManager>,IDataManager
             KeyPool nameItem =(KeyPool)data.itemId;
             GameObject objItem = ObjectPooling.ObjectPooling_Instance.GetPool(nameItem);
             objItem.transform.position = data.position;
+        }
+        foreach(InteractOjectData objData in allItems.allInteractData)
+        {
+            KeyPool interactPool = (KeyPool)objData.objectId;
+            GameObject interactObj = ObjectPooling.Instance.GetPool(interactPool);
+            interactObj.transform.position = objData.position;
+            BaseInteraction intercatComponent = interactObj.GetComponent<BaseInteraction>();
+            intercatComponent.OnLoadData(objData.canInteract);
         }
     }
     public void DeleteData()
@@ -58,8 +69,28 @@ public class ItemDataManager : Singleton<ItemDataManager>,IDataManager
         }
         return itemDatas;
     }
+    private List<InteractOjectData> GetInteractData()
+    {
+        List<InteractOjectData> data = new();
+        GameObject[] listObjt = GameObject.FindGameObjectsWithTag(TagManager.TAG_INTERACTOBECJT);
+        foreach(var obj in listObjt)
+        {
+            BaseInteraction intercatComponent = obj.GetComponent<BaseInteraction>();
+            if (obj.TryGetComponent<ItemKey>(out ItemKey key))
+                data.Add(new InteractOjectData((int)key.keyPool, obj.transform.position, intercatComponent.canInteract));
+        }
+        return data;
+    }
+    public bool HasMapData(string mapID)
+    {
+        if (!HasData()) return false;
+        AllItems data = JsonFileUtility.LoadFromJson<AllItems>(FILE_ITEM_DATA);
+        if (string.IsNullOrEmpty(data.sceneID))
+            return false;
+        else return data.sceneID == mapID;
+    }
     public bool HasData()
     {
-        return false;
+        return JsonFileUtility.JsonFileExists(FILE_ITEM_DATA);
     }
 }

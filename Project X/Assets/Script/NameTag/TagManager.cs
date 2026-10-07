@@ -12,4 +12,5 @@ public class TagManager
     public const string TAG_ITEM = "Item";
     public const string TAG_BGSOUND = "BGSound";
     public const string TAG_SFXSOUND = "SFXSound";
+    public const string TAG_INTERACTOBECJT = "InteractObject";
 }

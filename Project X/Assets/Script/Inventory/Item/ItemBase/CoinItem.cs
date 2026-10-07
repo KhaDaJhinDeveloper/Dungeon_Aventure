@@ -12,7 +12,7 @@ public class CoinItem : MonoBehaviour
     private void Start()
     {
         this.nameitem = KeyClean.CleanKey(this.name);
-        this.coinManager = GameObject.FindFirstObjectByType<CoinManager>();
+        this.coinManager = FindFirstObjectByType<CoinManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -29,7 +29,6 @@ public class GameSaveManager : Singleton<GameSaveManager>
     }
     public void LoadAllDataLocal()
     {
-        DebugLogger.Log(">>> LoadAllDataLocal CALLED");
         PlayerStatsDataManager.Instance.LoadData();
         PlayerPositionDataManager.Instance.LoadData();
         WeaponsSaveLoad.Instance.LoadData();

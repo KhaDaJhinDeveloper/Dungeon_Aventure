@@ -12,9 +12,8 @@ public class Box : BaseInteraction
         base.Start();
     }
     protected override void Update()
-    {
-        if (!this.canInteract) return;
-        if(Input.GetKeyDown(KeyCode.E))
+    {  
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (this.canOpen && this.canInteract)
             {
@@ -52,11 +51,19 @@ public class Box : BaseInteraction
         base.LoadComponent();
         this.ani = GetComponent<Animator>();
         this.colli = GetComponent<Collider2D>();
-        this.canInteract = true;
     }
     public override void DisableObject()
     {
         base.DisableObject();
         this.colli.enabled = false;
+    }
+    public override void OnLoadData(bool canInteract)
+    {
+        base.OnLoadData(canInteract);
+        if (!canInteract)
+        {
+            this.ani.SetBool("open", true);
+            DisableObject();
+        }
     }
 }

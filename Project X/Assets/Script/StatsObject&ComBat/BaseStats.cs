@@ -16,10 +16,11 @@ public abstract class BaseStats : MonoBehaviour
     [SerializeField] protected int maxMana;
     [SerializeField] protected int speed;
     [SerializeField] protected KeyPool key;
-    public int MaxHealth{ get => this.maxHealth; set => this.maxHealth = value; }
-    public int CurentHealth{ get => this.currentHealth; set => this.currentHealth = Mathf.Clamp(value, 0 , maxHealth); }
-    public int Speed{ get => this.speed; set => this.speed = value;}
-    public int Armor{ get => this.armor; set => this.armor = Mathf.Max(value, 0); }
+    [SerializeField] protected int damage;
+    public int MaxHealth { get => this.maxHealth; set => this.maxHealth = value; }
+    public int CurentHealth { get => this.currentHealth; set => this.currentHealth = Mathf.Clamp(value, 0, maxHealth); }
+    public int Speed { get => this.speed; set => this.speed = value; }
+    public int Armor { get => this.armor; set => this.armor = Mathf.Max(value, 0); }
     public int AntiMagic { get => this.antiMagic; set => this.antiMagic = Mathf.Max(value, 0); }
     public int Mana { get => this.mana; set => this.mana = Mathf.Max(value, 0); }
     public bool IsDie { get => isDie; set => isDie = value; }
@@ -27,13 +28,11 @@ public abstract class BaseStats : MonoBehaviour
     public int MaxAntiMagic { get => maxAntiMagic; set => this.maxAntiMagic = Mathf.Max(value, 0); }
     public int MaxMana { get => maxMana; set => this.maxMana = Mathf.Max(value, 0); }
     public KeyPool Key { get => this.key; }
+    public int Damage { get => this.damage; set => this.damage = Mathf.Max(value, 0); }
 
     protected virtual void Start()
     {
-        this.currentHealth = this.maxHealth;
-        this.armor = this.maxArmor;
-        this.antiMagic = this.maxAntiMagic;
-        this.mana = this.maxMana;
+
     }
     #region TakeDamgeMethod
     public virtual void TakeDamage(int amount, IDamageType damageType, Transform pos)
@@ -49,10 +48,10 @@ public abstract class BaseStats : MonoBehaviour
             this.armor -= armorDamage;
             amount -= armorDamage;
         }
-        if(amount > 0)
+        if (amount > 0)
         {
             this.currentHealth -= amount;
-            if(currentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 currentHealth = 0;
                 isDie = true;
@@ -95,31 +94,31 @@ public abstract class BaseStats : MonoBehaviour
     #region StatsInteract
     public virtual void Healing(float amount)
     {
-        this.currentHealth += Mathf.RoundToInt( this.maxHealth*amount );   
-        if(this.currentHealth >= this.maxHealth)
+        this.currentHealth += Mathf.RoundToInt(this.maxHealth * amount);
+        if (this.currentHealth >= this.maxHealth)
             this.currentHealth = this.maxHealth;
     }
     public virtual void ArmorRecovery(float amount)
     {
-        this.armor += Mathf.RoundToInt( this.maxArmor*amount );
+        this.armor += Mathf.RoundToInt(this.maxArmor * amount);
         if (this.armor >= this.maxArmor)
             this.armor = this.maxArmor;
     }
     public virtual void AntiMagicRecovery(float amount)
     {
-        this.antiMagic += Mathf.RoundToInt( this.MaxAntiMagic * amount);
+        this.antiMagic += Mathf.RoundToInt(this.MaxAntiMagic * amount);
         if (this.antiMagic >= this.maxAntiMagic)
             this.antiMagic = this.maxAntiMagic;
     }
     public virtual void ManaRecovery(int amount)
     {
-        this.mana +=  amount;
+        this.mana += amount;
         if (this.mana >= this.maxMana)
             this.mana = this.maxMana;
     }
     public virtual void ManaReduce(int amount)
     {
-        this.mana -=  amount;
+        this.mana -= amount;
         if (this.mana <= 0)
             this.mana = 0;
     }
@@ -127,7 +126,7 @@ public abstract class BaseStats : MonoBehaviour
     public virtual void UpgradeMaxHealt(float amount)
     {
         amount = Mathf.Clamp01(amount);
-        this.maxHealth += Mathf.RoundToInt( this.maxHealth * amount);
+        this.maxHealth += Mathf.RoundToInt(this.maxHealth * amount);
     }
     public virtual void UpgradeMaxArmor(float amount)
     {
@@ -149,8 +148,8 @@ public abstract class BaseStats : MonoBehaviour
     public virtual bool ThisIsDie() => this.currentHealth <= 0;
     protected virtual void Die()
     {
-        
-    }  
+
+    }
     //protected virtual void ResetStats()
     //{
     //    this.currentHealth = this.maxHealth;
@@ -162,6 +161,7 @@ public abstract class BaseStats : MonoBehaviour
         this.currentHealth = this.maxHealth;
         this.armor = this.maxArmor;
         this.antiMagic = this.maxAntiMagic;
+        this.mana = this.maxMana;
         this.isDie = false;
     }
     protected virtual void KnockBack(Transform pos, float knockbackforce)
@@ -171,5 +171,34 @@ public abstract class BaseStats : MonoBehaviour
     public virtual void UpdateUI()
     {
 
-    }    
+    }
+    public virtual void ScaleStats(float scaleIndex)
+    {
+        this.maxHealth += Mathf.RoundToInt(this.maxHealth * scaleIndex);
+        this.maxArmor += Mathf.RoundToInt(this.maxArmor * scaleIndex);
+        this.maxAntiMagic += Mathf.RoundToInt(this.maxAntiMagic * scaleIndex);
+        this.currentHealth += Mathf.RoundToInt(this.currentHealth * scaleIndex);
+        this.armor += Mathf.RoundToInt(this.armor * scaleIndex);
+        this.antiMagic += Mathf.RoundToInt(this.antiMagic * scaleIndex);
+        this.speed += Mathf.RoundToInt(this.speed * scaleIndex);
+        this.damage += Mathf.RoundToInt(this.damage * scaleIndex);
+        UpdateUI();
+    }
+    public virtual void ScaleStats(float scaleIndex, EnemyStatsData data)
+    {
+        if(data == null)
+        {
+            ScaleStats(scaleIndex);
+            return;
+        }
+        this.maxHealth = data.maxHealth;
+        this.maxArmor = data.maxArmor;
+        this.maxAntiMagic = data.maxAntiMagic;
+        this.currentHealth = data.currentHealth;
+        this.armor = data.armor;
+        this.antiMagic = data.antiMagic;
+        //this.speed += data.speed;
+        this.damage = data.damage;
+        UpdateUI();
+    }
 }

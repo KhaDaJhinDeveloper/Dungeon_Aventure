@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SlimeKingStats : BaseStats
 {
-    [SerializeField] private int damage;
     public int amountCoin;
     IDamageType damageType;
     private Animator ani;
@@ -40,6 +39,7 @@ public class SlimeKingStats : BaseStats
     {
         rb.simulated = false;
         this.ani.SetTrigger("death");
+        EventManager.Instance?.TriggerEvent(NameEvent.Event_EndBossFight);
         yield return new WaitForSeconds(1f);
         ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, this.amountCoin);
         Destroy(gameObject);

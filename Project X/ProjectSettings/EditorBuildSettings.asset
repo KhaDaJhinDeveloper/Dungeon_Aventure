@@ -21,12 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/02_Level/Level3.unity
     guid: 7152da59d86e81b4a9a6a5793fd44e0f
   - enabled: 1
-    path: Assets/Scenes/02_Level/Level4.unity
-    guid: 158eb525b9dfe264891c76c1b9419def
-  - enabled: 1
     path: Assets/Scenes/03_BossRoom/KingSlimeBossRoom.unity
     guid: 4507394c7da9f884ba63f625fb0bd05a
-  - enabled: 1
-    path: Assets/Scenes/02_Level/SceneLoadData.unity
-    guid: aebd9cf67ec9c364ca6a6e804f6dd1ec
   m_configObjects: {}

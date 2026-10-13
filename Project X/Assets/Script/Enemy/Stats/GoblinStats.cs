@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GoblinStats : BaseStats
 {
-    [SerializeField] int damage;
     public int amountCoin;
     IDamageType damageType;
     private Animator ani;

@@ -9,16 +9,19 @@ public class EnemyStatsData
     public int antiMagic;
     public int maxArmor;
     public int maxAntiMagic;
-    public int speed;
-    public EnemyStatsData(int currentHealth,int maxHealth, int armor, int antiMagic, int maxArmor, int maxAntiMagic, int speed)
+    //public int speed;
+    public int damage;
+    public EnemyStatsData(int maxHealth,int maxArmor,  int maxAntiMagic, int currentHealth, int armor, int antiMagic, int damage)
     {
-        this.currentHealth = currentHealth;
+
         this.maxHealth = maxHealth;
-        this.armor = armor;
-        this.antiMagic = antiMagic;
         this.maxArmor = maxArmor;
         this.maxAntiMagic = maxAntiMagic;
-        this.speed = speed;
+        this.currentHealth = currentHealth;
+        this.armor = armor;
+        this.antiMagic = antiMagic;
+        //this.speed = speed;
+        this.damage = damage;
     }
 }
 
@@ -37,22 +40,12 @@ public class EnemyInstanceData
 }
 
 [System.Serializable]
-public class SceneEnemyData
-{
-    public string sceneName;
-    public List<EnemyInstanceData> enemies = new List<EnemyInstanceData>();
-    public SceneEnemyData(string sceneName, List<EnemyInstanceData> enemies)
-    {
-        this.sceneName = sceneName;
-        this.enemies = enemies;
-    }
-}
-
-[System.Serializable]
 public class AllEnemyDataSerializable
 {
-    public List<SceneEnemyData> sceneEnemies = new List<SceneEnemyData>();
+    public string sceneName;
+    public List<EnemyInstanceData> allEnemies = new List<EnemyInstanceData>();
 }
+
 
 
 

@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class SkeletonStats : BaseStats
 {
     private int life = 1;
-    [SerializeField] private int damage;
     public int amountCoin;
     IDamageType damageType;
     private Animator ani;

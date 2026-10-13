@@ -2,6 +2,7 @@
 public class GameStateSceneName
 {
     public string sceneName;
+    public BossState bossState;
     public GameStateSceneName() { }
     public GameStateSceneName(string sceneName) 
     { 
@@ -9,7 +10,20 @@ public class GameStateSceneName
     }
 }
 
-
+[System.Serializable]
+public class BossState
+{
+    public string cutSceneId;
+    public bool canInteract;
+    public bool isEnd;
+    public BossState() { }
+    public BossState(string cutsceneID, bool canInteract, bool isEnd)
+    {
+        this.cutSceneId = cutsceneID;
+        this.canInteract = canInteract;
+        this.isEnd = isEnd;
+    }
+}
 
 [System.Serializable]
 public class GameStateTimer

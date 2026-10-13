@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BatStats : BaseStats
 {
-    [SerializeField] private int damage;
     public int amountCoin;
     IDamageType damageType;
     private Animator ani;

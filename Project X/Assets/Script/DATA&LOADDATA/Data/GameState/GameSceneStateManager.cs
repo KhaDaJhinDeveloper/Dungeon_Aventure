@@ -1,23 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameSceneStateManager : Singleton<GameSceneStateManager>,IDataManager
 {
     private const string FILE_GAMESATE_SCENENAME = "SceneNameData.json";
     private GameStateSceneName gameSceneName = new GameStateSceneName();
-    public static GameSceneStateManager S_GameSceneStateManager { get; private set; }
-    protected override void Awake()
-    {
-        base.Awake();
-        S_GameSceneStateManager = this;
-    }
     public void SaveData()
     {
-        string name = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        this.gameSceneName = new GameStateSceneName(name);
+        CutSceneRunner cutScene = FindAnyObjectByType<CutSceneRunner>();
+        SceneBossState bossScene = FindAnyObjectByType<SceneBossState>();
+        if (cutScene == null || bossScene == null) return;
+        this.gameSceneName.bossState = new BossState(cutScene.CutSceneID, cutScene.canInteract, bossScene.isEnd);
+        string name = SceneExtensions.GetCurrentSceneName();
+        this.gameSceneName.sceneName = name;
         JsonFileUtility.SaveToJson(this.gameSceneName, FILE_GAMESATE_SCENENAME);
-        DebugLogger.Log($"Scene name saved {name}");
     }
     public void LoadData()
     {
@@ -38,8 +36,22 @@ public class GameSceneStateManager : Singleton<GameSceneStateManager>,IDataManag
         }
         return dataName.sceneName;
     }
+    public bool HasCutSceneID(string ID)
+    {
+        GameStateSceneName stateData = JsonFileUtility.LoadFromJson<GameStateSceneName>(FILE_GAMESATE_SCENENAME);
+        if (stateData == null) return false;
+        if (string.IsNullOrEmpty(stateData.bossState.cutSceneId)) return false;
+        return ID == stateData.bossState.cutSceneId;
+    }
+    public GameStateSceneName GetData()
+    {
+        if (!HasData())
+            return new GameStateSceneName ();
+        GameStateSceneName data = JsonFileUtility.LoadFromJson<GameStateSceneName>(FILE_GAMESATE_SCENENAME);
+        return data;
+    }
     public bool HasData()
     {
-        return false;
+        return JsonFileUtility.JsonFileExists(FILE_GAMESATE_SCENENAME);
     }
 }

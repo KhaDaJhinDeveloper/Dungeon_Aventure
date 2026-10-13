@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5968200309423474171}
-  - component: {fileID: 8597648500787013977}
+  - component: {fileID: 7562350894793452475}
   - component: {fileID: 6911295586644250836}
   - component: {fileID: 2136056511485893759}
   - component: {fileID: 6752761945267696179}
@@ -143,7 +143,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &8597648500787013977
+--- !u!60 &7562350894793452475
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,19 +187,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.326254, y: 0.46201324}
-      - {x: 2.1438906, y: 1.7079964}
-      - {x: 1.6105883, y: 2.3821144}
-      - {x: 0.5039096, y: 2.9820442}
-      - {x: -0.5387931, y: 2.9743729}
-      - {x: -1.3819656, y: 2.6894302}
-      - {x: -2.0226579, y: 2.0825577}
-      - {x: -2.3517046, y: 1.2954369}
-      - {x: -2.3802109, y: 0.2960739}
-      - {x: -1.7349157, y: -0.32926962}
-      - {x: -0.8117451, y: -0.59625614}
-      - {x: 0.86773527, y: -0.58505607}
-      - {x: 1.8468959, y: -0.17249686}
+    - - {x: 0.05625516, y: 3.418971}
+      - {x: -2.0620956, y: 2.6154778}
+      - {x: -2.681509, y: 1.3496399}
+      - {x: -2.1846814, y: -0.04892105}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 2.2805135, y: 0.09045951}
+      - {x: 2.516437, y: 1.3696043}
+      - {x: 1.8089474, y: 2.5873504}
   m_UseDelaunayMesh: 0
 --- !u!50 &6911295586644250836
 Rigidbody2D:
@@ -243,6 +239,7 @@ MonoBehaviour:
   maxHealth: 200
   maxArmor: 200
   maxAntiMagic: 100
+  maxMana: 0
   speed: 1
   key: 38
   damage: 30
@@ -284,4 +281,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d94832d730c0734b93245a174f62782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueID: 0
+  uniqueID: 38

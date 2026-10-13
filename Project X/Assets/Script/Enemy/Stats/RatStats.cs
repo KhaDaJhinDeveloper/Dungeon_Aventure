@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class RatStats : BaseStats
 {
-    [SerializeField] int damage;
     public int amountCoin;
     IDamageType damageType;
     private Animator ani;

@@ -4,29 +4,36 @@ using UnityEngine;
 using DG.Tweening;
 public class SceneBossState : MonoBehaviour
 {
-    private bool bossIsDie;
     [SerializeField] GameObject bossUI;
     [SerializeField] GameObject doorblock;
+    public bool isEnd;
     private void Start()
     {
         EndBossFight();
     }
-    private void Update()
-    {
-        if (this.bossIsDie)
-            EndBossFight();
-    }
-    public bool ComplateBossFight() => this.bossIsDie = true;
+    #region BossFightState
     public void StartBossFight()
     {
         this.doorblock.SetActive(true);
         ShowUI();
+        this.isEnd = false;
     }
     public void EndBossFight()
     {
         this.doorblock.SetActive(false);
         HideUI();
+        this.isEnd = true;
     }
+    public void LoadState(bool isEnd)
+    {
+        if (isEnd)
+            EndBossFight();
+        else
+            StartBossFight();
+        this.isEnd = isEnd;
+    }
+    #endregion
+    #region Event
     void HideUI()
     {
         this.bossUI.transform.DOKill();
@@ -39,12 +46,13 @@ public class SceneBossState : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_StartBossFight, StartBossFight);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_EndBossFight, EndBossFight);
+        EventManager.Instance.Subscribe(NameEvent.Event_StartBossFight, StartBossFight);
+        EventManager.Instance.Subscribe(NameEvent.Event_EndBossFight, EndBossFight);
     }
-    private void OnDisable()
+    private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_StartBossFight, StartBossFight);
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_EndBossFight, EndBossFight);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_StartBossFight, StartBossFight);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_EndBossFight, EndBossFight);
     }
+    #endregion
 }

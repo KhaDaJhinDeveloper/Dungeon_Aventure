@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class GhostStats : BaseStats
 {
-    [SerializeField] private int damage;
     public int amountCoin;
     IDamageType damageType;
     private Animator ani;

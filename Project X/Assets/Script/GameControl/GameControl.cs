@@ -32,7 +32,7 @@ public class GameControl : Singleton<GameControl>
         TransitionScene.Instance.PlayTransition
         (() =>
         {
-            string nameScene = GameSceneStateManager.S_GameSceneStateManager.GetSceneNameData();
+            string nameScene = GameSceneStateManager.Instance.GetSceneNameData();
             GameSaveManager.Instance.RequestLoadOnNextScene();
             SceneManager.LoadScene(nameScene);
         }

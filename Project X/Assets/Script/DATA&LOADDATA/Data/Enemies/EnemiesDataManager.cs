@@ -4,12 +4,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemiesDataManager : Singleton<EnemiesDataManager>,IDataManager
+public class EnemiesDataManager : Singleton<EnemiesDataManager>, IDataManager
 {
     #region FILE_NAME
     private const string FILE_ENEMY_DATA = "EnemiesData.json";
-    private Dictionary<string, List<EnemyInstanceData>> sceneEnemies = new Dictionary<string, List<EnemyInstanceData>>();
-    private List<GameObject> spawnedEnemies = new List<GameObject>();
+    private AllEnemyDataSerializable allData ;
     #endregion
     protected override void Awake()
     {
@@ -17,118 +16,70 @@ public class EnemiesDataManager : Singleton<EnemiesDataManager>,IDataManager
     }
     public void SaveData()
     {
-        DeleteData();
-        AllEnemyDataSerializable allEnemyDataSerializable = new AllEnemyDataSerializable();
-        List<EnemyInstanceData> allEnemies = new List<EnemyInstanceData>();
-        string currentScene = SceneManager.GetActiveScene().name; 
-        List<EnemyInstanceData> enemydata = GetEnemiesData();
-        allEnemies.AddRange(enemydata);           
-        this.sceneEnemies[currentScene] = allEnemies;
-        foreach (KeyValuePair<string, List<EnemyInstanceData>> data in sceneEnemies)
+        this.allData = new AllEnemyDataSerializable();
+        GameObject[] enemyList = GameObject.FindGameObjectsWithTag(TagManager.TAG_ENEMY);
+        if (enemyList.Length <= 0) return;
+        this.allData.sceneName = SceneExtensions.GetCurrentSceneName();
+        foreach(var obj in enemyList)
         {
-            allEnemyDataSerializable.sceneEnemies.Add(new SceneEnemyData(data.Key, data.Value));
+            EnemyStatsData statsData = GetStatsData(obj);
+            EnemyInstanceData instanceData = GetEnemyData(obj, statsData);
+            this.allData.allEnemies.Add(instanceData);
         }
-        JsonFileUtility.SaveToJson(allEnemyDataSerializable, FILE_ENEMY_DATA);
+        JsonFileUtility.SaveToJson<AllEnemyDataSerializable>(this.allData, FILE_ENEMY_DATA);
     }
     public void LoadData()
     {
-        //Not use
-    }
-    public void LoadData(string Scenename)
-    {
-        int count = 0;
-        AllEnemyDataSerializable allData = JsonFileUtility.LoadFromJson<AllEnemyDataSerializable>(FILE_ENEMY_DATA);
-        if (allData == null) return;
-        foreach (SceneEnemyData sceneData in allData.sceneEnemies)
+        this.allData = JsonFileUtility.LoadFromJson<AllEnemyDataSerializable>(FILE_ENEMY_DATA);
+        if(this.allData == null) return;
+        foreach(var data in  this.allData.allEnemies)
         {
-            if (sceneData.sceneName == Scenename)
-            {
-                this.sceneEnemies[sceneData.sceneName] = sceneData.enemies;
-                foreach (EnemyInstanceData data in this.sceneEnemies[sceneData.sceneName])
-                {
-                    count++;
-                    GameObject enemy = ObjectPooling.ObjectPooling_Instance.GetPool((KeyPool)data.enemyId);
-                    if (enemy == null) continue;
-                    enemy.transform.position = data.position;
-                    BaseStats stats = enemy.GetComponent<BaseStats>();
-                    EnemyIDTracker iDTracker = enemy.GetComponent<EnemyIDTracker>();
-                    if (stats != null && iDTracker != null)
-                    {
-                        StartCoroutine(DelayLoad(stats, iDTracker, data));
-                    }
-                }
-                DebugLogger.Log(this.sceneEnemies[sceneData.sceneName].Count);
-                break;
-                
-            }
+            GameObject enemy = ObjectPooling.Instance.GetPool((KeyPool)data.enemyId);
+            if(enemy == null) continue;
+            enemy.transform.position = data.position;
+            if (enemy.TryGetComponent<BaseStats>(out BaseStats stats))
+                stats?.ScaleStats(GameControl.Instance.ScaleDamage, data.stats);
         }
-        DebugLogger.Log(count);
+        DeleteData();
     }
     public void DeleteData()
     {
         JsonFileUtility.DeleteJsonFile(FILE_ENEMY_DATA);
-        this.sceneEnemies = new Dictionary<string, List<EnemyInstanceData>>();
+        this.allData = new();
     }
     public bool HasData()
     {
         return JsonFileUtility.JsonFileExists(FILE_ENEMY_DATA);
     }
-    public List<GameObject> GetEnemiesList()
+    public bool HasMapData(string mapName)
     {
-        List<GameObject> list = new List<GameObject>();
-        GameObject[] enemyList = GameObject.FindGameObjectsWithTag(TagManager.TAG_ENEMY);
-        foreach(GameObject enemy in enemyList)
-        {
-            if (!enemy.activeInHierarchy || enemy == null) 
-                continue;
-            else list.Add(enemy);
-        }
-        return list; 
+        if (!HasData()) return false;
+        AllEnemyDataSerializable data = JsonFileUtility.LoadFromJson<AllEnemyDataSerializable>(FILE_ENEMY_DATA);
+        if (string.IsNullOrEmpty(data.sceneName))
+            return false;
+        else return data.sceneName == mapName;
     }
-    public List<EnemyInstanceData> GetEnemiesData()
+    public EnemyStatsData GetStatsData(GameObject enemy)
     {
-        List<EnemyInstanceData> enemyInstanceDatas = new List<EnemyInstanceData>();
-        this.spawnedEnemies = GetEnemiesList().ToList();
-        foreach (GameObject enemy in this.spawnedEnemies)
-        {
-            if (enemy == null || !enemy.activeInHierarchy) continue;
-            BaseStats stats = enemy.GetComponent<BaseStats>();
-            EnemyIDTracker idTracker = enemy.GetComponent<EnemyIDTracker>();
-            if (stats != null && idTracker != null)
-            {
-                int enemyId = (int)idTracker.uniqueID;
-                EnemyStatsData enemyStats = new EnemyStatsData
-                (
-                    stats.CurentHealth,
-                    stats.MaxHealth,
-                    stats.Armor,
-                    stats.AntiMagic,
-                    stats.MaxArmor,
-                    stats.MaxAntiMagic,
-                    stats.Speed
-                );
-                EnemyInstanceData enemyIntance = new EnemyInstanceData
-                (
-                    enemyId,
-                    enemy.transform.position,
-                    enemyStats
-                );
-                enemyInstanceDatas.Add(enemyIntance);
-            }
-        }
-        return enemyInstanceDatas;
+        BaseStats stats = enemy.GetComponent<BaseStats>();
+        if (stats == null) return null;
+        EnemyStatsData data = new(  stats.MaxHealth,
+                                    stats.MaxArmor,
+                                    stats.MaxAntiMagic,
+                                    stats.CurentHealth,
+                                    stats.Armor,
+                                    stats.AntiMagic,
+                                    //stats.Speed,
+                                    stats.Damage);
+        return data;
     }
-    IEnumerator DelayLoad(BaseStats stats, EnemyIDTracker iDTracker, EnemyInstanceData data)
+    public EnemyInstanceData GetEnemyData(GameObject enemy, EnemyStatsData statsData)
     {
-        yield return null;
-        stats.CurentHealth = data.stats.currentHealth;
-        stats.MaxHealth = data.stats.maxHealth;
-        stats.Armor = data.stats.armor;
-        stats.AntiMagic = data.stats.antiMagic;
-        stats.MaxArmor = data.stats.maxArmor;
-        stats.MaxAntiMagic = data.stats.maxAntiMagic;
-        stats.Speed = data.stats.speed;
-        iDTracker.uniqueID = (KeyPool)data.enemyId;
-        stats.UpdateUI();
+        EnemyIDTracker enemyID = enemy.GetComponent<EnemyIDTracker>();
+        if (enemyID == null) return null;
+        Vector3 pos = enemy.transform.position;
+        int ID = (int)enemyID.uniqueID;
+        EnemyInstanceData instanceData= new(ID, pos, statsData);
+        return instanceData;
     }
 }

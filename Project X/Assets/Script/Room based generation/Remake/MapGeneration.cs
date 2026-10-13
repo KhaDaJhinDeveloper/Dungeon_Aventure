@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 public class MapGeneration : MonoBehaviour
 {
@@ -129,26 +128,28 @@ public class MapGeneration : MonoBehaviour
     private void PlaceRoomExit()
     {
         if (mapLayout.roomExit == null || mapLayout.roomExit.Length == 0 || this.exitsList.Count == 0) return;
-        for(int i = this.exitsList.Count - 1; i > 0; i--)
-        {      
-            Vector2Int targetPos = this.exitsList[i].fromGridPos + this.exitsList[i].exitDirection.ConvertVector2Int();
-            if (!this.gridMap.ContainsKey(targetPos))
+        int maxLoop = 0;
+            for (int i = this.exitsList.Count - 1; i > 0; i--)
             {
-                float dist = Vector2Int.Distance(Vector2Int.zero, targetPos);
-                if(dist > 0)
+                Vector2Int targetPos = this.exitsList[i].fromGridPos + this.exitsList[i].exitDirection.ConvertVector2Int();
+                if (!this.gridMap.ContainsKey(targetPos))
                 {
-                    Direction requiredEntrance = this.exitsList[i].exitDirection.GetOppositeDir();
-                    List<RoomData> prefabsValid = GetValidRoom(this.roomExit, requiredEntrance);
-                    if (prefabsValid.Count > 0)
+                    float dist = Vector2Int.Distance(Vector2Int.zero, targetPos);
+                    if (dist > 0)
                     {
-                        RoomData selectPrefabs = prefabsValid[Random.Range(0, prefabsValid.Count)];
-                        PlacedRoomNode newNode = new PlacedRoomNode(selectPrefabs, targetPos);
-                        this.gridMap.Add(targetPos, newNode);
-                        this.roomExit.Remove(selectPrefabs);
+                        Direction requiredEntrance = this.exitsList[i].exitDirection.GetOppositeDir();
+                        List<RoomData> prefabsValid = GetValidRoom(this.roomExit, requiredEntrance);
+                        if (prefabsValid.Count > 0)
+                        {
+                            RoomData selectPrefabs = prefabsValid[Random.Range(0, prefabsValid.Count)];
+                            PlacedRoomNode newNode = new PlacedRoomNode(selectPrefabs, targetPos);
+                            this.gridMap.Add(targetPos, newNode);
+                            this.roomExit.Remove(selectPrefabs);
+                        }
                     }
                 }
-            }
-        }
+                else maxLoop++;
+            } 
         RenderRoom();
     }
     public bool IsExitConnected(PlacedRoomNode currentRoom, Direction exitDir)
@@ -208,12 +209,13 @@ public class MapGeneration : MonoBehaviour
     private void PlacedObject()
     {
         string curentScene = SceneExtensions.GetCurrentSceneName();
-        if (ItemDataManager.Instance.HasMapData(curentScene))
-            return;
-        SpawnBonFire();
-        SpawnEnemies();
-        SpawnBox();
-
+        if(!EnemiesDataManager.Instance.HasMapData(curentScene))
+            SpawnEnemies();
+        if (!ItemDataManager.Instance.HasMapData(curentScene))
+        {
+            SpawnBonFire();
+            SpawnBox();
+        }
     }
     private void SpawnEnemies()
     {

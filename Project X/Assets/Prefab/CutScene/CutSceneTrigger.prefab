@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5212617563246503990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2683652849229155637}
+  - component: {fileID: 1690147429452275468}
+  - component: {fileID: 8868210214515450822}
+  - component: {fileID: 8608739065294792248}
+  - component: {fileID: 7042739237154195631}
+  - component: {fileID: 938965474098143528}
+  m_Layer: 0
+  m_Name: CutSceneTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2683652849229155637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212617563246503990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690147429452275468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212617563246503990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c326fbb7ac288a84fa784ca474a2cde7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossUI: {fileID: 0}
+  doorblock: {fileID: 0}
+--- !u!114 &8868210214515450822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212617563246503990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9096150b0c144d80849096038741b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canInteract: 1
+  keyBoss: 38
+  playerTransform: {fileID: 0}
+  bossTransform: {fileID: 0}
+  CutSceneID: 
+--- !u!61 &8608739065294792248
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212617563246503990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.3328581}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 21.17, y: 11.87572}
+  m_EdgeRadius: 0
+--- !u!320 &7042739237154195631
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212617563246503990}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8482847881652659121, guid: ad73c3e6e19d8cb4f80410aaffa64328, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8450190574734994258, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7511372549916981956, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6752885543746216544, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2925580911017237471, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6397130902634903307, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7414980401559465981, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1475714638387085210, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5722313685367677433, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8856016374270973256, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7836982875672293838, guid: d68952f9f16dd0240927dbc41ff447bb, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &938965474098143528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212617563246503990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: bda41263e5456124fb39e1bd92940d8a, type: 2}
+    - {fileID: 11400000, guid: f2ed8149bb184a5459ff1e8ec186bd41, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8868210214515450822}
+          m_TargetAssemblyTypeName: CutSceneRunner, Assembly-CSharp
+          m_MethodName: StartCutScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8868210214515450822}
+          m_TargetAssemblyTypeName: CutSceneRunner, Assembly-CSharp
+          m_MethodName: EndCutScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

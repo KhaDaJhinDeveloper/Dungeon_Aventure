@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de812a7a1fb6de4ca57532ed144d496, type: 3}
+  m_Name: SlimeKingBossRoom
+  m_EditorClassIdentifier: 
+  roomBody:
+  - {fileID: 555997287469765899, guid: f22b1bff50f2e0c43a29aac2ba75f590, type: 3}
+  - {fileID: 4570618002430528274, guid: 9ee1e0414214b9e429e929114b957cdc, type: 3}
+  roomExit:
+  - {fileID: 2498421089448537715, guid: 43d067d96fc775e41aaef015231c0370, type: 3}
+  - {fileID: 3374979651937639742, guid: bc8a9dcc4b8714f4db68ce1677f82fae, type: 3}
+  wall:
+  - {fileID: 4231078837843549156, guid: 1fe6a4c6540ba1542bf5aaa295c52064, type: 3}
+  - {fileID: -5237119226145220379, guid: 654d13fb2147c09438248ef3d922194f, type: 3}
+  - {fileID: 9126785804145243428, guid: f98582db1e8972344a45d11b25d706ff, type: 3}
+  - {fileID: -580618909086747674, guid: 075d8d38d658446409f7d1d382a4736f, type: 3}
+  enemyDataSpawnList:
+  - enemyPool: 30
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 32
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 36
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 29
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 31
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 34
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 33
+    unlockLevel: 0
+    weight: 0
+  - enemyPool: 35
+    unlockLevel: 0
+    weight: 0
+  boxQty: 0
+  bonFireQty: 0

@@ -22,7 +22,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         GameStateTimerManager.Instance.SaveData();
         GameSceneStateManager.Instance.SaveData();
         DungeonDataManager.Instance.SaveData();
-        //EnemiesDataManager.Instance.SaveData();
+        EnemiesDataManager.Instance.SaveData();
         ItemDataManager.Instance.SaveData();
         EventManager.Instance.TriggerEvent(NameEvent.Event_InventorySaveData);
         DebugLogger.Log("All game data Saved");
@@ -36,7 +36,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         GameStateTimerManager.Instance.LoadData();
 
         string currentSceneName = SceneManager.GetActiveScene().name;
-        //EnemiesDataManager.Instance.LoadData(currentSceneName);
+        EnemiesDataManager.Instance.LoadData();
         ItemDataManager.Instance.LoadData();
         EventManager.Instance.TriggerEvent(NameEvent.Event_InventoryLoadData);
 
@@ -48,7 +48,6 @@ public class GameSaveManager : Singleton<GameSaveManager>
         PlayerStatsDataManager.Instance.SaveData();
         WeaponsSaveLoad.Instance.SaveData();
         GameStateCoinManager.Instance.SaveData();
-        EnemiesDataManager.Instance.DeleteData();
         ItemDataManager.Instance.DeleteData();
         EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventorySaveData);
         DebugLogger.Log("All game data Saved When Play");

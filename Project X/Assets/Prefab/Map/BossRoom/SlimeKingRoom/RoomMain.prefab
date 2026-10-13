@@ -6331,7 +6331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7675258967132368415}
-  - component: {fileID: 4185897296585331249}
+  - component: {fileID: 555997287469765899}
   m_Layer: 0
   m_Name: RoomMain
   m_TagString: Untagged
@@ -6357,7 +6357,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4185897296585331249
+--- !u!114 &555997287469765899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6366,18 +6366,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4505393324438983947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b8af82fa463894bb6d36a2841e8984, type: 3}
+  m_Script: {fileID: 11500000, guid: 564c06fa2900fe84896495e56b184bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   exits:
   - exitPoint: {fileID: 6876083341301488507}
     exitDirections: 0
     isUsed: 0
-  - exitPoint: {fileID: 4822057920604595792}
-    exitDirections: 1
-    isUsed: 0
-  originalPrefab: {fileID: 0}
-  availablePoints: []
+  bonFirePoint: {fileID: 0}
+  boxPoints: []
+  enemiesPoint: []
 --- !u!1 &4782712898814041513
 GameObject:
   m_ObjectHideFlags: 0

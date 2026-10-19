@@ -43,7 +43,6 @@ public class InventoryDataManager : Singleton<InventoryDataManager>
                     listDataItems[i].NameItem = slotdata.nameItemData;
                     listDataItems[i].Type = slotdata.typeData;
                     listDataItems[i].IsFull = true;
-                    DebugLogger.Log($"Loaded item: {slotdata.nameItemData}");
                 }
                 else
                 {

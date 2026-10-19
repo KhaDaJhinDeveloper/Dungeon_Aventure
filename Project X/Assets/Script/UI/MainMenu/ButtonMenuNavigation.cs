@@ -31,5 +31,6 @@ public class ButtonMenuNavigation : MonoBehaviour
     void SelectButton(int index)
     {
         EventSystem.current.SetSelectedGameObject(this.buttonsArray[this.selectedIndex].gameObject);
+        SoundManager.Instance?.PlayMusicSFX(SoundID.SFX_HoverButton);
     }
 }

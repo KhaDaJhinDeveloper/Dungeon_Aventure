@@ -31,26 +31,28 @@ MonoBehaviour:
   - {fileID: -580618909086747674, guid: 68c37dd69308396449a87fc4b480b613, type: 3}
   enemyDataSpawnList:
   - enemyPool: 30
-    unlockLevel: 2
+    unlockLevel: 3
     weight: 0
   - enemyPool: 32
     unlockLevel: 1
     weight: 0
   - enemyPool: 36
-    unlockLevel: 0
+    unlockLevel: 2
     weight: 0
   - enemyPool: 29
     unlockLevel: 1
     weight: 0
   - enemyPool: 31
-    unlockLevel: 0
+    unlockLevel: 3
     weight: 0
   - enemyPool: 34
-    unlockLevel: 0
+    unlockLevel: 4
     weight: 0
   - enemyPool: 33
-    unlockLevel: 0
+    unlockLevel: 5
     weight: 0
   - enemyPool: 35
-    unlockLevel: 0
+    unlockLevel: 5
     weight: 0
+  boxQty: 0
+  bonFireQty: 0

@@ -26,6 +26,7 @@ public class CoinItem : MonoBehaviour
     {
         GameObject textShowCoin = ObjectPooling.ObjectPooling_Instance.GetPool(KeyPool.KEY_VFX_TEXTPOPUPCOIN);
         TextPopupCoin component = textShowCoin.GetComponent<TextPopupCoin>();
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Pickup_Coin);
         yield return null;
         component.Notification(pos, amount);
         ObjectPooling.ObjectPooling_Instance.ReturnToPool(KeyPool.KEY_ITEM_GOLD, this.gameObject);

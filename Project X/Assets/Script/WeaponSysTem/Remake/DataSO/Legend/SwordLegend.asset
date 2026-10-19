@@ -19,8 +19,11 @@ MonoBehaviour:
   magicDamage: 0
   trueDamage: 0
   mixDamage: 0
+  isUsedMana: 0
+  manaQty: 0
   rateMixDamage: 0
   shootPattern: {fileID: 0}
   keyBullet: 0
   weaponSprite: {fileID: 1747920004, guid: 41a9183b945473643a3dabbd7028a861, type: 3}
   animatorController: {fileID: 9100000, guid: 764fb36aed7ddd545a3f09f17f8c5e11, type: 2}
+  soundWeapon: 9

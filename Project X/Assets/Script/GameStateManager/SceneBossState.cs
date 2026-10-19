@@ -7,13 +7,14 @@ public class SceneBossState : MonoBehaviour
     [SerializeField] GameObject bossUI;
     [SerializeField] GameObject doorblock;
     public bool isEnd;
-    private void Start()
+    private void Awake()
     {
         EndBossFight();
     }
     #region BossFightState
     public void StartBossFight()
     {
+        Debug.Log("close");
         this.doorblock.SetActive(true);
         ShowUI();
         this.isEnd = false;

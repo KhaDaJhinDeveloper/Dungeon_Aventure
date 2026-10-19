@@ -16,8 +16,9 @@ public class ButtonChangeWeaponSlot1 : BaseButton, IPointerEnterHandler
         base.OnClick();
         EventManager.Instance?.TriggerEvent<int>(NameEvent.Event_WeaponControll_ChangeSlotWeapon,0);
     }
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void OnPointerEnter(PointerEventData eventData)
     {
+        base.OnPointerEnter(eventData);
         transform.DOKill();
         transform.localPosition = this.originalPos;
         transform.DOShakePosition(0.3f, 10f, 10, 40, false, true).SetUpdate(true);

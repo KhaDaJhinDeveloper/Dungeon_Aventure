@@ -21,4 +21,5 @@ public class WeaponData : ScriptableObject
     [Header("Visual Weapon")]
     public Sprite weaponSprite;
     public RuntimeAnimatorController animatorController;
+    public SoundID soundWeapon;
 }

@@ -11,8 +11,8 @@ public class GameSceneStateManager : Singleton<GameSceneStateManager>,IDataManag
     {
         CutSceneRunner cutScene = FindAnyObjectByType<CutSceneRunner>();
         SceneBossState bossScene = FindAnyObjectByType<SceneBossState>();
-        if (cutScene == null || bossScene == null) return;
-        this.gameSceneName.bossState = new BossState(cutScene.CutSceneID, cutScene.canInteract, bossScene.isEnd);
+        if (cutScene != null && bossScene != null) 
+            this.gameSceneName.bossState = new BossState(cutScene.CutSceneID, cutScene.canInteract, bossScene.isEnd);
         string name = SceneExtensions.GetCurrentSceneName();
         this.gameSceneName.sceneName = name;
         JsonFileUtility.SaveToJson(this.gameSceneName, FILE_GAMESATE_SCENENAME);

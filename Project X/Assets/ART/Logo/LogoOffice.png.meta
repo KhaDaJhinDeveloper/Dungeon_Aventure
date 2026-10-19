@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 39eb7fa49ba9bf04887edc9aafbdc19e
+guid: 2bdd5f1371bfd244c85264b8f4d16b85
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 1404028623067837608
-    second: Logo_0
+  internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -75,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,6 +82,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Logo_0
+      name: LogoOffice_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 840
-        height: 680
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8a47074089c1c7310800000000000000
-      internalID: 1404028623067837608
+      spriteID: b13ac7e40871435489f8baafc7ed5e77
+      internalID: -1815160397
       vertices: []
       indices: 
       edges: []
@@ -136,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +154,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Logo_0: 1404028623067837608
+      LogoOffice_0: -1815160397
+      LogoOffice_1: -2012103621
+      LogoOffice_10: 1851300775
+      LogoOffice_2: 506403918
+      LogoOffice_3: -1346011115
+      LogoOffice_4: -1252171262
+      LogoOffice_5: -1826257792
+      LogoOffice_6: 1930598912
+      LogoOffice_7: -557882489
+      LogoOffice_8: -1743542060
+      LogoOffice_9: 269537565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

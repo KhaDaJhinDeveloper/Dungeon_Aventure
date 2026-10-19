@@ -53,6 +53,7 @@ public class WeaponItem : MonoBehaviour
         {
             if (!controller.WeaponSlotIsFull())
             {
+                SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Pickup_Weapon);
                 controller.EquipWeapon(this.weaponInstance);
                 ObjectPooling.Instance.ReturnToPool(this.Key, this.gameObject);
             } 

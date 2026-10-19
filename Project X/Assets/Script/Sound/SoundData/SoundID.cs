@@ -1,0 +1,44 @@
+public enum SoundID
+{
+    None,
+    BG_MainMenu,
+//BGLevel
+    //1.Prison
+    BG_BottomPrison,
+    BG_UpperPrison,
+    BG_MainGatePrison,
+//BG_Boss
+    BG_SlimeKingBossFight,
+//SFX
+    //1.Button
+    SFX_PressButton,
+    SFX_HoverButton,
+    //Weapons
+    SFX_Weapon_SwordNormal_Attack,
+    SFX_Weapon_SwordLegend_Attack,
+    SFX_Weapon_SickleNormal_Attack,
+    SFX_Weapon_SickleLegend_Attack,
+    SFX_Weapon_StormNormal_Attack,
+    SFX_Weapon_StormLegend_Attack,
+    SFX_Weapon_BowNormal_Attack,
+    SFX_Weapon_BowLegend_Attack,
+    SFX_Weapon_AxeNormal_Attack,
+    SFX_Weapon_AxeLegend_Attack,
+    SFX_Weapon_ArrowTouch,
+    SFX_Weapon_MagicNormal_Attack,
+    SFX_Weapon_MagicLegend_Attack,
+    SFX_Weapon_MagicLegend_Special_Attack,
+    SFX_Weapon_SkullNormal_Attack,
+    SFX_Weapon_SkullLegend_Attack,
+    SFX_Weapon_SkullLegend_Explode,
+    //Item
+    SFX_Pickup_Item,
+    SFX_Pickup_Weapon,
+    SFX_Pickup_Coin,
+    //Interact
+    SFX_OpenChest,
+    //Interface
+    SFX_Interface_SwapWeapon,
+    SFX_Interface_MenuPause,
+    //Enemy
+}

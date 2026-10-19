@@ -26,3 +26,4 @@ MonoBehaviour:
   keyBullet: 0
   weaponSprite: {fileID: -1756710713196441331, guid: c21569f9f47d42e48bbf0f3b18da694a, type: 3}
   animatorController: {fileID: 9100000, guid: 0d19e8d7ec4b375418bd46709497e977, type: 2}
+  soundWeapon: 12

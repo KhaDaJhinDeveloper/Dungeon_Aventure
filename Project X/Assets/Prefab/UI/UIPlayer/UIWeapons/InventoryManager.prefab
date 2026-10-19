@@ -104,4 +104,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b8b4a0a0f43a4e44997a91f2a459f90, type: 2}
   - {fileID: 11400000, guid: 204cdb24ed863684391fc989ac4d118e, type: 2}
   - {fileID: 11400000, guid: b426454cc1a173c4680656b435f17de6, type: 2}
+  - {fileID: 11400000, guid: 85ce9562aa21cc448be536dfd9ae1b1c, type: 2}
   completeEquipment: {fileID: 0}

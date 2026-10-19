@@ -16,6 +16,7 @@ public class WeaponInstance
     public KeyPool keyBullet;
     public bool isUsedMana;
     public int manaQty;
+    public SoundID soundWeapon;
     [Range(0f, 1f)] public float rateMixDamage;
     public WeaponInstance(WeaponData data)
     {
@@ -32,6 +33,7 @@ public class WeaponInstance
         this.mainDamage = this.GetOppositeMainDamage();
         this.isUsedMana = data.isUsedMana;
         this.manaQty = data.manaQty;
+        this.soundWeapon = data.soundWeapon;
     }
     #region Save&&Load
     public WeaponInstance(WeaponData data, WeaponSaveData saveData ) : this(data) 

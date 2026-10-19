@@ -7,7 +7,6 @@ public static class SceneExtensions
 { 
     public static string GetCurrentSceneName()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         return SceneManager.GetActiveScene().name;
     }
 }

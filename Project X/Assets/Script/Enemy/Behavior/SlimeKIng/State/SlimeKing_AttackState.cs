@@ -34,7 +34,7 @@ public class SlimeKing_AttackState : IState
         for (int i = 0; i < this.controller.NumbersOfJump; i++)
         {
             this.target = this.controller.Player.transform.position;
-            this.controller.JumpUpDuration -= this.controller.JumpUpDuration * 0.25f;
+            this.controller.JumpUpDuration -= this.controller.JumpUpDuration * 0.15f;
             //this.controller.JumpHeight += this.controller.JumpHeight * 0.25f;
             this.delayBetweenJumps -= this.delayBetweenJumps * 0.25f;
             yield return SingleJumpCoroutine(this.target);

@@ -219,14 +219,26 @@ public class MapGeneration : MonoBehaviour
     }
     private void SpawnEnemies()
     {
+        this.enemiesPointsList = ShuffleList(this.enemiesPointsList);
         List<EnemySpawnData> valid = GetEnemiesValid();
         if (valid.Count <= 0) return;
-        foreach (var point in this.enemiesPointsList)
+        foreach(var enemyData in valid)
         {
-            int index = Random.Range(0, valid.Count);
-            GameObject enemy = ObjectPooling.Instance.GetPool(valid[index].enemyPool);
-            if(enemy != null) 
-                enemy.transform.position = point.position;
+            int maxIndex = (int)(enemyData.weight * GameControl.Instance.Density);
+            int index = 0;
+            while(index < maxIndex)
+            {
+                foreach (var point in this.enemiesPointsList)
+                {
+                    if(index >= maxIndex) break;
+                    GameObject enemy = ObjectPooling.Instance.GetPool(enemyData.enemyPool);
+                    if (enemy != null)
+                    {
+                        enemy.transform.position = point.position;
+                        index++;
+                    }
+                }
+            }
         }
     }
     private void SpawnBox()
@@ -234,9 +246,9 @@ public class MapGeneration : MonoBehaviour
         int index = 0;
         if (this.boxPointsList.Count <= 0) return;
         this.boxPointsList = ShuffleList(this.boxPointsList);
-        while(index < this.boxQty)
+        while(index <= this.boxQty)
         {
-            foreach(var pos in this.boxPointsList)
+            foreach (var pos in this.boxPointsList)
             {
                 GameObject boxObj = ObjectPooling.Instance.GetPool(KeyPool.KEY_INTERACT_BOX);
                 boxObj.transform.position = pos.position;
@@ -247,10 +259,9 @@ public class MapGeneration : MonoBehaviour
     private void SpawnBonFire()
     {
         int index = 0;
-        if (this.bonFiresPointList.Count <= 0)
-            return;
+        if (this.bonFiresPointList.Count <= 0)return;        
         this.bonFiresPointList = ShuffleList(this.bonFiresPointList);
-        while (index < this.bonFireQty)
+        while (index <= this.bonFireQty)
         {
             foreach (var pos in this.bonFiresPointList)
             {
@@ -264,9 +275,9 @@ public class MapGeneration : MonoBehaviour
     {
         List<EnemySpawnData> valid = new();
 
-        foreach(var enemyDataSpawn in this.enemiesDataSpawn)
+        foreach(var enemyDataSpawn in this.mapLayout.enemyDataSpawnList)
         {
-            if(enemyDataSpawn.unlockLevel >= GameControl.Instance.LevelOfDanger)
+            if(enemyDataSpawn.unlockLevel <= GameControl.Instance.LevelOfDanger)
                 valid.Add(enemyDataSpawn);
         }
         return valid;

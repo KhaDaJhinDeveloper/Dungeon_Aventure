@@ -13,11 +13,12 @@ public class BonFire : BaseInteraction
         base.LoadComponent();
         this.timer = GameObject.FindFirstObjectByType<CountdownTimer>();
         this.ani = GetComponent<Animator>();
+        this.canInteract = true;
     }
     protected override void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && this.canInteract)
         {
             if(this.canActive)
             {

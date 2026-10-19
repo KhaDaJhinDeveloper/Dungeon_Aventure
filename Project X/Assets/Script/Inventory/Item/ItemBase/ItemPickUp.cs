@@ -25,6 +25,7 @@ public class ItemPickUp : MonoBehaviour
         {
            if(!this.inventoryManager.IsFullSlot())
             {
+                SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Pickup_Item);
                 this.inventoryManager.AddItem(this.imageItem, this.nameitem, this.type, this.keyPool);
                 ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.keyPool, this.gameObject);
             }    

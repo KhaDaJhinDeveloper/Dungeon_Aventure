@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25096ebd1ad6af43b8e4fa40c6cf495, type: 3}
+  m_Name: SoundDatabase
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundID: 1
+    clip: {fileID: 8300000, guid: 3232a5db58f0d91449969c37c4a2c4a0, type: 3}
+  - soundID: 2
+    clip: {fileID: 8300000, guid: dcdb140b6c1de9d47ad05ae95a0548e1, type: 3}
+  - soundID: 4
+    clip: {fileID: 8300000, guid: e37566840a1751645ab2f121e2325686, type: 3}
+  - soundID: 4
+    clip: {fileID: 8300000, guid: e37566840a1751645ab2f121e2325686, type: 3}
+  - soundID: 4
+    clip: {fileID: 8300000, guid: e37566840a1751645ab2f121e2325686, type: 3}
+  - soundID: 7
+    clip: {fileID: 8300000, guid: d8fc66f1a8d790446a9a11e5ca037007, type: 3}
+  - soundID: 6
+    clip: {fileID: 8300000, guid: b4430ed4785293348a430855a89ecdce, type: 3}
+  - soundID: 25
+    clip: {fileID: 8300000, guid: cd33f6cc1d0606a469931b2b01f9fc23, type: 3}
+  - soundID: 27
+    clip: {fileID: 8300000, guid: d730b17628ca0be42a88ae80272bb39f, type: 3}
+  - soundID: 26
+    clip: {fileID: 8300000, guid: 36f0a711ea444ec419b6978678564369, type: 3}
+  - soundID: 28
+    clip: {fileID: 8300000, guid: 1b57db97f202b064d9af067b712e1ffd, type: 3}
+  - soundID: 8
+    clip: {fileID: 8300000, guid: 209b95263d78fef49b2cf7808acce27f, type: 3}
+  - soundID: 9
+    clip: {fileID: 8300000, guid: 56baf4bd5b8f57a48a282a75410111a5, type: 3}
+  - soundID: 10
+    clip: {fileID: 8300000, guid: 076dcf32d13a47f40890fbb650f53cfb, type: 3}
+  - soundID: 11
+    clip: {fileID: 8300000, guid: 91fee781d14a5c24f845fcf7f26ad439, type: 3}
+  mapSounds:
+  - sceneID: 2
+    soundID: 2

@@ -1,4 +1,5 @@
 
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class PlayerAnimation : MonoBehaviour
     private string moveAni = "isMoving";
     private string moveXAni = "MoveX";
     private string moveYAni = "MoveY";
+    private bool isMoving;
+    private Tween fadeTween;
+    [SerializeField] private AudioSource audioSource;
     private Vector2 lastMoveDirection = Vector2.down;
     void Start()
     {
@@ -21,8 +25,29 @@ public class PlayerAnimation : MonoBehaviour
         {
             this.lastMoveDirection = direction.normalized;
             this.ani.SetBool(this.moveAni, true);
-        }    
-        else this.ani.SetBool(this.moveAni, false);
+            if(!this.isMoving)
+            {
+                this.isMoving = true;
+                this.fadeTween?.Kill();
+                if (!this.audioSource.isPlaying)
+                    this.audioSource.Play();
+                this.fadeTween = this.audioSource.DOFade(SoundManager.Instance.volumeSFX, 0.05f);
+            }
+        }
+        else 
+        {
+            if (this.isMoving)
+            {
+                this.isMoving = false;
+                this.fadeTween?.Kill();
+                if (this.audioSource.isPlaying)
+                {
+                    this.fadeTween = this.audioSource.DOFade(0f, 0.25f)
+                        .OnComplete(() => this.audioSource.Stop());
+                }
+            }
+            this.ani.SetBool(this.moveAni, false); 
+        }
         this.ani.SetFloat(this.moveXAni, lastMoveDirection.x);
         this.ani.SetFloat(this.moveYAni, lastMoveDirection.y);
     }

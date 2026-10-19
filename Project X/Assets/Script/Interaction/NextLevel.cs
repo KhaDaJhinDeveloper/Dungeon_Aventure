@@ -43,6 +43,7 @@ public class NextLevel : BaseInteraction
         yield return new WaitForSeconds(0.2f);
         SceneManager.sceneLoaded += OnSceneLoadedForPlayLoad;
         SceneManager.LoadScene(this.nameScene.ToString());
+        SoundManager.Instance?.PlaySceneMusicBG(this.nameScene);
     }
     private void OnSceneLoadedForPlayLoad(Scene scene, LoadSceneMode mode)
     {

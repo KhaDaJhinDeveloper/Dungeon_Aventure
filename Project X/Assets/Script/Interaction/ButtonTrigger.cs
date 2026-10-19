@@ -8,14 +8,14 @@ public class ButtonTrigger : BaseInteraction
     protected override void Start()
     {
         base.Start();
+        EventManager.Instance.Subscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
+        EventManager.Instance.Subscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
+        this.gameObject.SetActive(false);
     }
     protected override void LoadComponent()
     {
         base.LoadComponent();
         this.posPlayer = GameObject.FindWithTag(TagManager.TAG_PLAYER).transform;
-        this.gameObject.SetActive(false);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
     }
     void Showbutton()
     {
@@ -24,11 +24,11 @@ public class ButtonTrigger : BaseInteraction
     }
     void HiddenButton()
     {
-        this.gameObject.SetActive(false);
+        this.gameObject?.SetActive(false);
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
     }
 }

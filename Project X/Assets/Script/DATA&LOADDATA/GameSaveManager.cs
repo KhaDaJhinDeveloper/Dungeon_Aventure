@@ -66,6 +66,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         GameSceneStateManager.Instance.DeleteData();
         DungeonDataManager.Instance.DeleteData();
         EnemiesDataManager.Instance.DeleteData();
+        ItemDataManager.Instance.DeleteData();
         EventManager.Instance.TriggerEvent(NameEvent.Event_InventoryDeleteData);
         DialogStateManager.dialogState_Instance.ResetAllStateDialog();
         DebugLogger.Log("All save data Deleted");

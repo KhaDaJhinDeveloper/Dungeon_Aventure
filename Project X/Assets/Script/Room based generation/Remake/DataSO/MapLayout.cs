@@ -5,14 +5,20 @@ using UnityEngine;
 public class MapLayout : ScriptableObject
 {
     [Tooltip("The starting room will always be the first element")]
-    public RoomData[] roomBody;
-    public RoomData[] roomExit;
+    public RoomLevel[] roomBody;
+    public RoomLevel[] roomExit;
     public RoomData[] wall;
     [Header("EnemySpawnData")]
     public List<EnemySpawnData> enemyDataSpawnList;
     [Header("Interact Object Data")]
     public int boxQty;
     public int bonFireQty;
+}
+[System.Serializable]
+public struct RoomLevel
+{
+    public RoomData room;
+    [Range(0, 10)] public int unlockLevel;
 }
 [System.Serializable]
 public struct EnemySpawnData

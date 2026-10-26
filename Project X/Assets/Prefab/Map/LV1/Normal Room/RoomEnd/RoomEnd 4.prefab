@@ -3492,6 +3492,9 @@ MonoBehaviour:
   - exitPoint: {fileID: 2727811311503026057}
     exitDirections: 2
     isUsed: 0
+  bonFirePoint: {fileID: 0}
+  boxPoints: []
+  enemiesPoint: []
 --- !u!1 &1516944817135646283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4699,7 +4702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca5dcf45ffe2df4e9583b2b6bb1c7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 6094441743340354013}
 --- !u!1 &3169332580613042248
 GameObject:
   m_ObjectHideFlags: 0
@@ -9823,7 +9825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7754227887016013743, guid: 42d0299a31e6a734999eeb1e9156d111, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7754227887016013743, guid: 42d0299a31e6a734999eeb1e9156d111, type: 3}
       propertyPath: m_TagString

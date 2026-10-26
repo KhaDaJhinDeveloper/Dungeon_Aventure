@@ -5,26 +5,26 @@ using UnityEngine;
 
 public class Abyss : BaseInteraction
 {
-    [SerializeField] private NamePointTele targetObjectName; 
-    private Transform player;
+    [SerializeField] private NamePointTele targetObjectName;
     private Transform target;
     private bool istele = false;
     protected override void Start()
     {
         base.Start();
+        this.target = GameObject.Find(targetObjectName.ToString())?.transform;
     }
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        this.player = GameObject.FindGameObjectWithTag(TagManager.TAG_PLAYER).transform;
-        this.target = GameObject.Find(targetObjectName.ToString()).transform;
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
-            StartCoroutine(Tele(1f));
+        {
+             StartCoroutine(Tele(2f, collision.gameObject));
+        }
     }
-    IEnumerator Tele(float duration)
+    IEnumerator Tele(float duration, GameObject player)
     {
         if(!this.istele)
         {
@@ -32,11 +32,13 @@ public class Abyss : BaseInteraction
             {
                 EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_PlayerAnimationDrop);
                 this.istele = true;
-                yield return new WaitForSeconds(duration);
-                this.player.position = this.target.transform.position;
-                this.istele = false;
+                yield return new WaitForSeconds(.4f);
+                TransitionScene.Instance.PlayTransition(() =>
+                {
+                    player.transform.position = this.target.transform.position;
+                    this.istele = false;
+                });
             }
-            else DebugLogger.LogWarning("Not Tele" + this.targetObjectName);
         }     
     }
 }

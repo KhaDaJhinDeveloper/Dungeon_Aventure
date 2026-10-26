@@ -5,9 +5,9 @@ public class GameControl : Singleton<GameControl>
 {
     #region Input Density
     private int maxDanger = 10;
-    private int levelOfDanger = 1;
+    private int levelOfDanger = 0;
     public int LevelOfDanger { get => this.levelOfDanger;  
-                               set => this.levelOfDanger = Mathf.Clamp(value, 1, this.maxDanger); }
+                               set => this.levelOfDanger = Mathf.Clamp(value, 0, this.maxDanger); }
     private float scaleDamage = 0.0f;
     public float ScaleDamage { get => this.scaleDamage;
                                set => this.scaleDamage = Mathf.Clamp01(value); }

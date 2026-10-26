@@ -13,19 +13,31 @@ MonoBehaviour:
   m_Name: LV01
   m_EditorClassIdentifier: 
   roomBody:
-  - {fileID: -4073724631669142208, guid: 3a7c0dac221dd9844b855085433adc1e, type: 3}
-  - {fileID: -4302685435474503737, guid: 722dedf0a3c594e43b06eb5df34d443b, type: 3}
-  - {fileID: 1760724769303868619, guid: 01385df4709309345b03bd129ff065c3, type: 3}
-  - {fileID: 259701553251743313, guid: f787cc4f5a14f9646aa0c00d5c4d879d, type: 3}
-  - {fileID: 2696628867347871989, guid: f26902961b078f147a3e93f7582b5c1f, type: 3}
-  - {fileID: -7259577410361598894, guid: 70fdecdcb15f7474e9cfeddfe693f520, type: 3}
-  - {fileID: 2802228640876045906, guid: 74d26d6e5bc45364c9a527fca6d82428, type: 3}
-  - {fileID: 1625986496780550563, guid: d3a8170df22421847b20a9f27e7944dd, type: 3}
+  - room: {fileID: -4073724631669142208, guid: 3a7c0dac221dd9844b855085433adc1e, type: 3}
+    unlockLevel: 0
+  - room: {fileID: -7259577410361598894, guid: 70fdecdcb15f7474e9cfeddfe693f520, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 1625986496780550563, guid: d3a8170df22421847b20a9f27e7944dd, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 2802228640876045906, guid: 74d26d6e5bc45364c9a527fca6d82428, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 2696628867347871989, guid: f26902961b078f147a3e93f7582b5c1f, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 259701553251743313, guid: f787cc4f5a14f9646aa0c00d5c4d879d, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 1760724769303868619, guid: 01385df4709309345b03bd129ff065c3, type: 3}
+    unlockLevel: 0
+  - room: {fileID: -4302685435474503737, guid: 722dedf0a3c594e43b06eb5df34d443b, type: 3}
+    unlockLevel: 0
   roomExit:
-  - {fileID: 5841557082755060139, guid: 0d7e300cc9dee4a4484262f4f1c5ba40, type: 3}
-  - {fileID: -6353609893223714977, guid: aababdb139b8bae4d931165835e9df96, type: 3}
-  - {fileID: 3143831301444142238, guid: 7d178448a15787e4ca8fc280bc3ffd4a, type: 3}
-  - {fileID: 7237255542847846702, guid: f5dc9efb2b8f1b440b760bc6e081c0df, type: 3}
+  - room: {fileID: 5841557082755060139, guid: 0d7e300cc9dee4a4484262f4f1c5ba40, type: 3}
+    unlockLevel: 0
+  - room: {fileID: -6353609893223714977, guid: aababdb139b8bae4d931165835e9df96, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 7237255542847846702, guid: f5dc9efb2b8f1b440b760bc6e081c0df, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 3143831301444142238, guid: 7d178448a15787e4ca8fc280bc3ffd4a, type: 3}
+    unlockLevel: 0
   wall:
   - {fileID: 4231078837843549156, guid: 1fe6a4c6540ba1542bf5aaa295c52064, type: 3}
   - {fileID: -5237119226145220379, guid: 654d13fb2147c09438248ef3d922194f, type: 3}
@@ -33,16 +45,16 @@ MonoBehaviour:
   - {fileID: -580618909086747674, guid: 075d8d38d658446409f7d1d382a4736f, type: 3}
   enemyDataSpawnList:
   - enemyPool: 29
-    unlockLevel: 1
+    unlockLevel: 0
     weight: 50
   - enemyPool: 32
-    unlockLevel: 1
+    unlockLevel: 0
     weight: 10
   - enemyPool: 30
-    unlockLevel: 4
+    unlockLevel: 3
     weight: 0
   - enemyPool: 36
-    unlockLevel: 2
+    unlockLevel: 1
     weight: 0
   - enemyPool: 31
     unlockLevel: 3
@@ -51,7 +63,7 @@ MonoBehaviour:
     unlockLevel: 4
     weight: 0
   - enemyPool: 33
-    unlockLevel: 5
+    unlockLevel: 4
     weight: 0
   - enemyPool: 35
     unlockLevel: 5

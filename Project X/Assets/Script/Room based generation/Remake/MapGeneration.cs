@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 public class MapGeneration : MonoBehaviour
 {
@@ -47,16 +48,27 @@ public class MapGeneration : MonoBehaviour
         this.enemiesDataSpawn.Clear();
         this.boxQty = this.mapLayout.boxQty;
         this.bonFireQty = this.mapLayout.bonFireQty;
-        this.roomBody = new List<RoomData>(this.mapLayout.roomBody);
-        this.roomExit = new List<RoomData>(this.mapLayout.roomExit);
+        this.roomBody = RoomFilter(this.mapLayout.roomBody);
+        this.roomExit = RoomFilter(this.mapLayout.roomExit);
         this.wall = new RoomData[this.mapLayout.wall.Length];
         this.mapLayout.wall.CopyTo(this.wall, 0);
         this.enemiesDataSpawn = new List<EnemySpawnData>(this.mapLayout.enemyDataSpawnList);
         foreach (var body in this.mapLayout.roomBody)
-            this.backUp[body.gameObject.name] = body;
+            this.backUp[body.room.gameObject.name] = body.room;
         foreach (var body in this.mapLayout.roomExit)
-            this.backUp[body.gameObject.name] = body;
+            this.backUp[body.room.gameObject.name] = body.room;
     }
+    private List<RoomData> RoomFilter(RoomLevel[] roomsLevelArray)
+    {
+        int levelRequire = GameControl.Instance.LevelOfDanger;
+        List<RoomData> roomsValid = new();
+        foreach(var roomElement in roomsLevelArray)
+        {
+            if(roomElement.unlockLevel <= levelRequire)
+                roomsValid.Add(roomElement.room);
+        }    
+        return roomsValid;
+    }    
     private void PlaceRoomStart()
     {
         Vector2Int startPos = Vector2Int.zero;

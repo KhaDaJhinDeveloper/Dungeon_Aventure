@@ -20,4 +20,8 @@ public class HolyBooks : WeaponBase, IWeapon
     {
         
     }
+    public void PlaySoundWeapon()
+    {
+
+    }
 }

@@ -54,6 +54,7 @@ public class GameControl : Singleton<GameControl>
         (() =>
         {
             SceneManager.LoadScene("MainMenu");
+            SoundManager.Instance?.PlayMusicBG(SoundID.BG_MainMenu);
         }
         );
     }    

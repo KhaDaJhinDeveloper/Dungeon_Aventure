@@ -27,4 +27,8 @@ public class Skull : WeaponBase, IWeapon, IShoot
         Rigidbody2D rbbullet = bulletSkull.GetComponent<Rigidbody2D>();
         rbbullet.velocity = transform.right * this.speedBullet;
     }
+    public void PlaySoundWeapon()
+    {
+
+    }
 }

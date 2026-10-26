@@ -137,12 +137,15 @@ public class SoundManager : Singleton<SoundManager>
     }
     #endregion
     #region MusicSFX
-    public void PlayMusicSFX(SoundID soundID)
+    public void PlayMusicSFX(SoundID soundID, Transform pos = null, float blend = 1)
     {
-        if (soundID == SoundID.None) Debug.Log("null");
         if (this.soundDictionary.TryGetValue(soundID, out AudioClip clipSFX))
         {
             AudioSource audioSFX = ObjectPooling.Instance.GetPool(KeyPool.KEY_SOUND_MUSICSFX, this.transform).GetComponent<AudioSource>();
+            if (pos != null)
+                audioSFX.transform.position = new Vector3(pos.position.x, pos.position.y, 0);
+            else blend = 0;
+            audioSFX.spatialBlend = blend;
             audioSFX.clip = clipSFX;
             audioSFX.volume = this.volumeSFX;
             audioSFX.Play();
@@ -151,7 +154,7 @@ public class SoundManager : Singleton<SoundManager>
     }
     IEnumerator ReturnSFX(AudioSource objSfx, float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSecondsRealtime(time);
         ObjectPooling.Instance.ReturnToPool(KeyPool.KEY_SOUND_MUSICSFX, objSfx.gameObject);
     }
     public void SetVolumeSFX(float value)

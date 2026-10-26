@@ -73,3 +73,11 @@ MonoBehaviour:
     dropRate: 0.02
   weaponNormal: 05000000060000000700000008000000090000000a0000000b000000
   weaponLegend: 33000000340000003500000036000000370000003800000039000000
+  layerWall:
+    serializedVersion: 2
+    m_Bits: 64
+  minDropDistance: 0.6
+  maxDropDistance: 1.5
+  wallOffset: 0.2
+  jumpForce: 0.8
+  jumpDuration: 0.5

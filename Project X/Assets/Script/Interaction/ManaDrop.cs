@@ -20,7 +20,8 @@ public class ManaDrop : BaseInteraction
         if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
             PlayerStats stats = collision.gameObject.GetComponent<PlayerStats>();
-            stats?.ManaRecovery(2);
+            stats?.ManaRecovery(this.manaQty);
+            SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Pickup_Mana);
             ObjectPooling.Instance?.ReturnToPool(this.keyPool,this.gameObject);
         }
     }

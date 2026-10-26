@@ -27,6 +27,7 @@ public class SlimeKingStats : BaseStats
     public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
         base.TakeDamage(amount, damageType, pos);
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_TakeHit, this.transform);
         StartCoroutine(Effect(this.transform.position, amount));
         UpdateUI();
     }

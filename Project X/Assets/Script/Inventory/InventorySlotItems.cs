@@ -57,8 +57,9 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
                 this.option.SetActive(true);
                 this.slotSelected.SetActive(true);
                 this.isSelected = true;
+                SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_InventorySlotItem);
             }
-            else return;//Add Sound Effect
+            else return;
         }    
         else
         {
@@ -66,10 +67,12 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
             {
                 EventManager.OP_EventManager.TriggerEvent<string>("LoadSlotItemReportText", "Used item");
                 this.inventoryManager.UseItem(this.nameItem);
+                SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_EquipItem);
                 EmptySlot();
             }
             else if (this.type == ItemType.Material)
             {
+                SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Notification_Warning);
                 EventManager.OP_EventManager.TriggerEvent<string>("LoadSlotItemReportText", "This is material, not usable");
             }
         }    

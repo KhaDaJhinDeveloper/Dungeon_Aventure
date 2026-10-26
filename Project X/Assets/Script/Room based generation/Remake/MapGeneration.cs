@@ -243,23 +243,20 @@ public class MapGeneration : MonoBehaviour
     }
     private void SpawnBox()
     {
-        int index = 0;
-        if (this.boxPointsList.Count <= 0) return;
+        if (this.boxPointsList.Count <= 0 || this.boxQty ==0) return;
         this.boxPointsList = ShuffleList(this.boxPointsList);
-        while(index <= this.boxQty)
+        int spawnCount = Mathf.Min(boxQty, boxPointsList.Count);
+
+        for (int i = 0; i < spawnCount; i++)
         {
-            foreach (var pos in this.boxPointsList)
-            {
-                GameObject boxObj = ObjectPooling.Instance.GetPool(KeyPool.KEY_INTERACT_BOX);
-                boxObj.transform.position = pos.position;
-                index++;
-            }
+            GameObject boxObj = ObjectPooling.Instance.GetPool(KeyPool.KEY_INTERACT_BOX);
+            boxObj.transform.position = boxPointsList[i].position;
         }
     }
     private void SpawnBonFire()
     {
         int index = 0;
-        if (this.bonFiresPointList.Count <= 0)return;        
+        if (this.bonFiresPointList.Count <= 0 || this.bonFireQty == 0)return;        
         this.bonFiresPointList = ShuffleList(this.bonFiresPointList);
         while (index <= this.bonFireQty)
         {

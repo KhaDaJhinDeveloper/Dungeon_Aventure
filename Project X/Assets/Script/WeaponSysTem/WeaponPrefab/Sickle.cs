@@ -30,4 +30,8 @@ public class Sickle : WeaponBase, IWeapon
     {
         target.TakeDamage(this.strength, this.damageType,this.transform);
     }
+    public void PlaySoundWeapon()
+    {
+
+    }
 }

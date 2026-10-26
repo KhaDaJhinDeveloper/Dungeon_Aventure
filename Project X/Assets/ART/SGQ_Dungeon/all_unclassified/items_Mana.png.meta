@@ -126,10 +126,10 @@ TextureImporter:
       name: items_Mana_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 82
-        width: 8
-        height: 13
+        x: 1
+        y: 79
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: items_Mana_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 82
-        width: 8
-        height: 13
+        x: 17
+        y: 81
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: items_Mana_2
       rect:
         serializedVersion: 2
-        x: 36
+        x: 33
         y: 82
-        width: 8
-        height: 13
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: items_Mana_3
       rect:
         serializedVersion: 2
-        x: 52
+        x: 49
         y: 80
-        width: 8
-        height: 14
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,12 +210,12 @@ TextureImporter:
       name: items_Mana_4
       rect:
         serializedVersion: 2
-        x: 4
+        x: 1
         y: 51
-        width: 8
-        height: 13
+        width: 14
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: items_Mana_5
       rect:
         serializedVersion: 2
-        x: 20
+        x: 17
         y: 51
-        width: 8
-        height: 13
+        width: 14
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: items_Mana_6
       rect:
         serializedVersion: 2
-        x: 36
+        x: 33
         y: 51
-        width: 8
-        height: 13
+        width: 14
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: items_Mana_7
       rect:
         serializedVersion: 2
-        x: 52
+        x: 49
         y: 49
-        width: 8
-        height: 14
+        width: 14
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

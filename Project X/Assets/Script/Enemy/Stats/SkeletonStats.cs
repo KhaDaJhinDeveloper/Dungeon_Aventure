@@ -33,6 +33,7 @@ public class SkeletonStats : BaseStats
     public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
         base.TakeDamage(amount, damageType, pos);
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_TakeHit, this.transform);
         if (ThisIsDie())
         {
             this.life -= 1;

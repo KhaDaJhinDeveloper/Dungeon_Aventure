@@ -26,14 +26,19 @@ public class PauseAndResume : MonoBehaviour
     }
     void Resume()
     {
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_MenuPause);
         this.pauseUI.transform.DOKill();
         this.gamepause = true;
-        this.pauseUI.transform.DOMove(this.startPos.transform.position, 0.5f).SetUpdate(true).OnComplete(() => { this.background.SetActive(false); 
-                                                                                              this.pauseUI.SetActive(false);
-                                                                                              TimeManager.TimeResume(); }); 
+        this.pauseUI.transform.DOMove(this.startPos.transform.position, 0.5f).SetUpdate(true).OnComplete(() => 
+        {
+            this.background.SetActive(false); 
+            this.pauseUI.SetActive(false);
+            TimeManager.TimeResume(); 
+        }); 
     }
     void Pause()
     {
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_MenuPause);
         this.pauseUI.transform.DOKill();
         this.gamepause = false;
         this.pauseUI.transform.position = this.startPos.transform.position;

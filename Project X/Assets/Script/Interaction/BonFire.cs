@@ -22,6 +22,7 @@ public class BonFire : BaseInteraction
         {
             if(this.canActive)
             {
+                SoundManager.Instance.PlayMusicSFX(SoundID.SFX_ActiveBonFire, this.transform, 0);
                 this.canInteract = false;
                 this.ani.SetBool("fire", true);
                 DisableObject();

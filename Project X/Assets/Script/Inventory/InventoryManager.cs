@@ -65,17 +65,17 @@ public class InventoryManager : MonoBehaviour,IDataManager
 
     public void SaveData()
     {
-        InventoryDataManager.S_inventoryDataManager.SaveDataItems(this.slotsList);
+        InventoryDataManager.Instance.SaveDataItems(this.slotsList);
     }
 
     public void LoadData()
     {
-        InventoryDataManager.S_inventoryDataManager.LoadDataItems(this.slotsList);
+        InventoryDataManager.Instance.LoadDataItems(this.slotsList);
     }
 
     public void DeleteData()
     {
-        InventoryDataManager.S_inventoryDataManager.DeleteAllDataItems();
+        InventoryDataManager.Instance.DeleteAllDataItems();
     }
     public bool HasData()
     {
@@ -83,8 +83,8 @@ public class InventoryManager : MonoBehaviour,IDataManager
     }    
     public void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_InventorySaveData, SaveData);
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_InventoryLoadData, LoadData);
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_InventoryDeleteData, DeleteData);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_InventorySaveData, SaveData);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_InventoryLoadData, LoadData);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_InventoryDeleteData, DeleteData);
     }
 }

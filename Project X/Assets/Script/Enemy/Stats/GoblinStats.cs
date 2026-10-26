@@ -27,6 +27,7 @@ public class GoblinStats : BaseStats
     public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
         if (gameObject == null) return;
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_TakeHit, this.transform);
         StartCoroutine(Effect(this.transform.position, amount));
         base.TakeDamage(amount, damageType, pos);
         UpdateUI();

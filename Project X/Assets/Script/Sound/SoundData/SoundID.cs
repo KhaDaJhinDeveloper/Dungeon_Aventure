@@ -13,7 +13,7 @@ public enum SoundID
     //1.Button
     SFX_PressButton,
     SFX_HoverButton,
-    //Weapons
+    //2.Weapons
     SFX_Weapon_SwordNormal_Attack,
     SFX_Weapon_SwordLegend_Attack,
     SFX_Weapon_SickleNormal_Attack,
@@ -31,14 +31,28 @@ public enum SoundID
     SFX_Weapon_SkullNormal_Attack,
     SFX_Weapon_SkullLegend_Attack,
     SFX_Weapon_SkullLegend_Explode,
-    //Item
+    //3.PickUp
     SFX_Pickup_Item,
     SFX_Pickup_Weapon,
     SFX_Pickup_Coin,
-    //Interact
+    SFX_Pickup_Mana,
+    //4.Interact
     SFX_OpenChest,
-    //Interface
-    SFX_Interface_SwapWeapon,
+    SFX_ActiveBonFire,
+    //5.Interface
+    //MenuPause
     SFX_Interface_MenuPause,
-    //Enemy
+    //Inventory
+    SFX_Interface_InventorySlotItem,
+    SFX_Interface_EquipItem,
+    SFX_Interface_SwapWeapon,
+    //
+    //6.Notification
+    SFX_Notification_Warning,
+    //7.Enemy
+    SFX_TakeHit,
+    //Rat
+    SFX_Rat_Death,
+    //Ghost
+    SFX_Ghost_Death
 }

@@ -27,4 +27,8 @@ public class Sword : WeaponBase, IWeapon
     {
         target.TakeDamage(this.strength, this.damageType, this.transform);
     }
+    public void PlaySoundWeapon()
+    {
+
+    }
 }

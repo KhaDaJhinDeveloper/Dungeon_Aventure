@@ -67,14 +67,15 @@ public class WeaponController : MonoBehaviour
     {
         foreach(var weapon in this.weaponsArray)
         {
-            if(weapon.isFull == true)
-                return true;
+            if(!weapon.isFull)
+                return false;
         }
-        return false;
+        return true;
     }
     public bool WeaponSlotIsFull()=> SlotIsFull() && this.weaponReserve.isFull;
     public void SwapWeapon()
     {
+        if (!SlotIsFull()) return;
         var temp = this.weaponsArray[0].currentWeapon;
         this.weaponsArray[0].SetWeapon(this.weaponsArray[1].currentWeapon);
         this.weaponsArray[1].SetWeapon(temp);

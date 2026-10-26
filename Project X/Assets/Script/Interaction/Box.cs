@@ -42,7 +42,7 @@ public class Box : BaseInteraction
     }
     void DropItem()
     {
-        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_OpenChest);
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_OpenChest, this.transform, 0);
         this.ani.SetBool("open", true);
         ItemDropSpawn.itemDropSpawn_Instance.DropWeapon(this.transform.position);
         this.canInteract = false;

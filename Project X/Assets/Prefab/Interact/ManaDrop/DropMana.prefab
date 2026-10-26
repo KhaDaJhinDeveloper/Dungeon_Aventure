@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 0
   speed: 3
-  manaQty: 2
+  manaQty: 4
   keyPool: 62
 --- !u!114 &4710824531697928402
 MonoBehaviour:

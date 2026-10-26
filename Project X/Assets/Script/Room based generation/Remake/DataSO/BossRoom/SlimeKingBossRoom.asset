@@ -48,5 +48,5 @@ MonoBehaviour:
   - enemyPool: 35
     unlockLevel: 0
     weight: 0
-  boxQty: 0
+  boxQty: 4
   bonFireQty: 0

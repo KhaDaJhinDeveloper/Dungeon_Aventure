@@ -30,4 +30,8 @@ public class Storm : WeaponBase, IWeapon
     {
         target.TakeDamage(this.magical, this.damageType, this.transform);
     }
+    public void PlaySoundWeapon()
+    {
+
+    }
 }

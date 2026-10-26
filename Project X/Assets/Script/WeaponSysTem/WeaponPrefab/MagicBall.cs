@@ -28,4 +28,8 @@ public class MagicBall : WeaponBase, IWeapon, IShoot
         Rigidbody2D rbbullet = bulletMagic.GetComponent<Rigidbody2D>();
         rbbullet.velocity = transform.right * this.speedBullet;
     }
+    public void PlaySoundWeapon()
+    {
+
+    }
 }

@@ -27,4 +27,8 @@ public class Bow : WeaponBase, IWeapon, IShoot
         Rigidbody2D rbbullet = bulletAxe.GetComponent<Rigidbody2D>();
         rbbullet.velocity = transform.right * this.speedBullet;
     }
+    public void PlaySoundWeapon()
+    {
+
+    }
 }

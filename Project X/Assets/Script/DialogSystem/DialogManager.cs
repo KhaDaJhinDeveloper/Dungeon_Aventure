@@ -19,7 +19,7 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
         this.listButtonChoices = GetComponentInChildren<ListButtonChoices>();
-        DialogStateManager.dialogState_Instance.LoadDialogState();
+        DialogStateManager.Instance.LoadDialogState();
         CloseDialogBox();
     }
     private void Update()
@@ -43,7 +43,7 @@ public class DialogManager : MonoBehaviour
             return;        
         }
         DialogLine currentLine = this.currentDialog.dialogLines[this.currentDialogLineIndex];
-        if (!string.IsNullOrEmpty(currentLine.requiredFlag) && !DialogStateManager.dialogState_Instance.HasFlag(currentLine.requiredFlag))
+        if (!string.IsNullOrEmpty(currentLine.requiredFlag) && !DialogStateManager.Instance.HasFlag(currentLine.requiredFlag))
         {
             this.currentDialogLineIndex++;
             DisplayCurrentLine();
@@ -51,10 +51,10 @@ public class DialogManager : MonoBehaviour
         }
         if (!string.IsNullOrEmpty(currentLine.setFlag))
         {
-            DialogStateManager.dialogState_Instance.SetFlag(currentLine.setFlag);
+            DialogStateManager.Instance.SetFlag(currentLine.setFlag);
         }
         if (currentLine.hasEvent && currentLine.executeEventOnStart)
-            DialogEventManager.dialogEvent_Instance.CallDialogEvent(currentLine.dialogEvents);
+            DialogEventManager.Instance.CallDialogEvent(currentLine.dialogEvents);
         DisplayTextDialog(currentLine);
         ShowChoices(currentLine.choices);
     }    
@@ -64,7 +64,7 @@ public class DialogManager : MonoBehaviour
         this.listButtonChoices.ActiveButton(choices.Length);
         for(int i=0; i < choices.Length; i++)
         {
-            if (!string.IsNullOrEmpty(choices[i].requiedFlag) && !DialogStateManager.dialogState_Instance.HasFlag(choices[i].requiedFlag))
+            if (!string.IsNullOrEmpty(choices[i].requiedFlag) && !DialogStateManager.Instance.HasFlag(choices[i].requiedFlag))
                 continue;
             TextMeshProUGUI choicesText = this.listButtonChoices.arrayButtonChoices[i].GetComponentInChildren<TextMeshProUGUI>();
             choicesText.text = choices[i].choiceText;
@@ -85,7 +85,7 @@ public class DialogManager : MonoBehaviour
     {
         DialogLine currentLine = this.currentDialog.dialogLines[this.currentDialogLineIndex];
         if (currentLine.hasEvent && !currentLine.executeEventOnStart)
-            DialogEventManager.dialogEvent_Instance.CallDialogEvent(currentLine.dialogEvents);
+            DialogEventManager.Instance.CallDialogEvent(currentLine.dialogEvents);
         if (currentLine.hasChoice) return;
         if(currentLine.nextDialogIndex >= 0)
         {
@@ -103,7 +103,7 @@ public class DialogManager : MonoBehaviour
         this.waitingForChoice = false;
         if(!string.IsNullOrEmpty(choice.setFlag))
         {
-            DialogStateManager.dialogState_Instance.SetFlag(choice.setFlag);
+            DialogStateManager.Instance.SetFlag(choice.setFlag);
         }
         if(choice.nextDialogIndex >= 0)
         {
@@ -117,7 +117,7 @@ public class DialogManager : MonoBehaviour
     {
         if (this.currentDialog != null && !string.IsNullOrEmpty(this.currentDialog.dialogID))
         {
-            DialogStateManager.dialogState_Instance.MarkDialogCompleted(this.currentDialog.dialogID);
+            DialogStateManager.Instance.MarkDialogCompleted(this.currentDialog.dialogID);
         }    
         this.listButtonChoices.HideButton();
         //DialogStateManager.dialogState_Instance.UpdateProgress(this.currentDialog.dialogID, this.currentDialogLineIndex);
@@ -142,7 +142,7 @@ public class DialogManager : MonoBehaviour
     {
         this.isTying = true;
         yield return null;
-        EventManager.OP_EventManager.TriggerEvent<string>(NameEvent.Event_LoadDialogText, currentLine.dialogText);
+        EventManager.Instance.TriggerEvent<string>(NameEvent.Event_LoadDialogText, currentLine.dialogText);
         this.isTying = false;
     }
     public void CloseDialogBox() => this.dialogBox.SetActive(false);

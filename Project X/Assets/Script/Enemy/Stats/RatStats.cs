@@ -26,6 +26,7 @@ public class RatStats : BaseStats
     public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
         base.TakeDamage(amount, damageType, pos);
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_TakeHit, this.transform);
         StartCoroutine(Effect(this.transform.position, amount));
         UpdateUI();       
     }
@@ -37,6 +38,7 @@ public class RatStats : BaseStats
     IEnumerator Death()
     {
         rb.simulated = false;
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Rat_Death, this.transform);
         this.ani.SetTrigger("death");
         yield return new WaitForSeconds(1f);
         ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, this.amountCoin);
@@ -44,9 +46,9 @@ public class RatStats : BaseStats
     }
     public override void UpdateUI()
     {
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadHPBar);
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_loadArmorBar);
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadAntiMagicBar);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadHPBar);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_loadArmorBar);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadAntiMagicBar);
     }
     IEnumerator Effect(Vector3 pos, int amount)
     {

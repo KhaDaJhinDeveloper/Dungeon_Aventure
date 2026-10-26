@@ -26,6 +26,7 @@ public class GhostStats : BaseStats
     public override void TakeDamage(int amount, IDamageType damageType, Transform pos)
     {
         base.TakeDamage(amount, damageType, pos);
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_TakeHit, this.transform);
         StartCoroutine(Effect(this.transform.position, amount));
         UpdateUI();
     }
@@ -38,6 +39,7 @@ public class GhostStats : BaseStats
     {
         rb.simulated = false;
         this.ani.SetTrigger("death");
+        SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Ghost_Death, this.transform);
         yield return new WaitForSeconds(1f);
         ItemDropSpawn.itemDropSpawn_Instance.DropItem(this.transform.position, this.amountCoin);
         Destroy(gameObject);

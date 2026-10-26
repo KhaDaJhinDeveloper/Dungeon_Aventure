@@ -57,7 +57,6 @@ public class WeaponSlot : MonoBehaviour,IWeapon
             }
                 //SoundWarning not enought mana
         }
-        SoundManager.Instance?.PlayMusicSFX(this.currentWeapon.soundWeapon);
         this.weaponAni.SetTrigger("attack");
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,5 +79,6 @@ public class WeaponSlot : MonoBehaviour,IWeapon
         stats.TakeDamage(this.currentWeapon.GetOppositeMainDamage(), this.currentWeapon.damageType,stats.transform);
     }
     public void AllowTheAttack() => this.weaponController.AllowTheAttack();
+    public void PlaySoundWeapon() => SoundManager.Instance?.PlayMusicSFX(this.currentWeapon.soundWeapon, this.transform, 0);
     #endregion
 }

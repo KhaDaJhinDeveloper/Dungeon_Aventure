@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour,IDataManager
 {
     [SerializeField] private List<InventorySlotItems> slotsList = new List<InventorySlotItems>();
     [SerializeField] private RecoveryItem[] recoveryItems;
+    private InventorySlotItems currentSlot;
     private PlayerStats playerStats;
     private CountdownTimer countdownTimer;
     //------------------------------------
@@ -53,6 +54,12 @@ public class InventoryManager : MonoBehaviour,IDataManager
         }
         return true;
     }    
+    public void SelectSlot(InventorySlotItems slot)
+    {
+        if (this.currentSlot != null)
+            this.currentSlot.UnSelectSlot();
+        this.currentSlot = slot;
+    }
     public void DeselectedAllSlots()
     {
         foreach (InventorySlotItems item in slotsList)

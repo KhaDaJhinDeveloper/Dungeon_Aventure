@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7754227887016013743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.42, y: -5.3178263, z: -0.27354836}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6e0292b6efe5f478861974a54ae548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   targetObjectName: 0
 --- !u!60 &6691509875710289989
 PolygonCollider2D:

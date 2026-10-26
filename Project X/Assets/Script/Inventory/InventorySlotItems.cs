@@ -77,6 +77,11 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
             }
         }    
     }
+    public void UnSelectSlot()
+    {
+        this.option.SetActive(false);
+        this.slotSelected.SetActive(false);
+    }
     public void EmptySlot()
     {
         this.imageItem.sprite = this.imageDefault;

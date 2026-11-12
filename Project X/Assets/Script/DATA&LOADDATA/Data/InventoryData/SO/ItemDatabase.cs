@@ -33,11 +33,11 @@ public class ItemDatabase : Singleton<ItemDatabase>
     public Sprite GetItemSprite( string nameItem )
     {
         ItemDetailsSO item = GetItemByName(nameItem);
-        return item != null ? item.imageItem : null;
+        return item != null ? item.iconItem : null;
     }   
     public ItemType GetItemType(string nameItem)
     {
         ItemDetailsSO item = GetItemByName(nameItem);
-        return item != null ? item.typeItem : ItemType.Usable;
+        return item != null ? item.itemType : ItemType.Usable;
     }    
 }

@@ -8,7 +8,7 @@ public class TextCraftingReport : BaseText
     protected override void Start()
     {
         base.Start();
-        EventManager.OP_EventManager.Subscribe<string>("LoadCraftingReportText", Loadinput);
+        EventManager.Instance.Subscribe<string>(NameEvent.Event_LoadCraftingReportText, Loadinput);
     }
     public override void Loadinput(string textinput)
     {
@@ -22,6 +22,6 @@ public class TextCraftingReport : BaseText
     }    
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe<string>("LoadCraftingReportText", Loadinput);
+        EventManager.Instance?.Unsubscribe<string>(NameEvent.Event_LoadCraftingReportText, Loadinput);
     }
 }

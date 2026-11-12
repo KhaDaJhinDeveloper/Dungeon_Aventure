@@ -3,36 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour,IDataManager
+public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] private List<InventorySlotItems> slotsList = new List<InventorySlotItems>();
+    [SerializeField] private InventoryView inventoryView;
     [SerializeField] private RecoveryItem[] recoveryItems;
-    private InventorySlotItems currentSlot;
+    private Transform playerPos;
+    public InventoryModel inventoryModel { get; private set; } = new();
+    private CraftingSystem craftingSystem;
     private PlayerStats playerStats;
     private CountdownTimer countdownTimer;
     //------------------------------------
+    private void Awake()
+    {
+        this.playerPos = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<Transform>();
+        this.craftingSystem = FindFirstObjectByType<CraftingSystem>();
+        this.playerStats = FindFirstObjectByType<PlayerStats>();
+        this.countdownTimer = FindFirstObjectByType<CountdownTimer>();
+        this.inventoryModel.Initialize(); //50 Slots
+    }
     private void Start()
     {
-        this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
-        this.countdownTimer = GameObject.FindFirstObjectByType<CountdownTimer>();
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_InventorySaveData, SaveData);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_InventoryLoadData, LoadData);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_InventoryDeleteData, DeleteData);
+        EventManager.Instance.Subscribe<int>(NameEvent.Event_Inventory_UseItem, UseItem);
+        EventManager.Instance.Subscribe<int>(NameEvent.Event_Inventory_DropItem, DropItem);
+        EventManager.Instance.Subscribe<int>(NameEvent.Event_Inventory_SelectCratingItem, AddMaterial);
     }
-    public List<InventorySlotItems> SlotsList { get => this.slotsList; set => this.slotsList = value; }
-    public void AddItem(Sprite imageItem, string nameItem, ItemType type, KeyPool key)
+    //
+    public bool TryPickUpItem(string itemName, ItemType type, KeyPool keyPool, int amount = 1)
     {
-        foreach (InventorySlotItems item in slotsList)
-        {
-            if(!item.IsFull)
-            {
-                item.AddItem(imageItem, nameItem, type, key);
-                item.IsFull = true;
-                break;
-            }    
-        }           
+        bool addSuccess = this.inventoryModel.AddItem(itemName, type, keyPool, amount);
+        return addSuccess;
     }
-    public void UseItem(string name)
+    #region USED ITEM
+    private void UseItem(int index)
+    {
+        if (index > this.inventoryModel.slots.Length) return;
+        var slot = this.inventoryModel.slots[index];
+        ApplyEffectItem(slot.itemName);
+        this.inventoryModel.UsedItem(index);
+    }
+    public void ApplyEffectItem(string name)
     {
         foreach (RecoveryItem itemSO in recoveryItems)
         {
@@ -42,56 +51,27 @@ public class InventoryManager : MonoBehaviour,IDataManager
                 break; 
             }
         }           
-    }    
-    public bool IsFullSlot()
-    {
-        foreach (InventorySlotItems item in slotsList)
-        {
-            if (!item.IsFull)
-            {
-                return false;
-            }
-        }
-        return true;
-    }    
-    public void SelectSlot(InventorySlotItems slot)
-    {
-        if (this.currentSlot != null)
-            this.currentSlot.UnSelectSlot();
-        this.currentSlot = slot;
     }
-    public void DeselectedAllSlots()
+    #endregion
+    #region DROP ITEM
+    public void DropItem(int inDex)
     {
-        foreach (InventorySlotItems item in slotsList)
-        {
-            item.SlotSelected.SetActive(false);
-            item.Option.SetActive(false);
-            item.IsSelected = false;
-        }
+        this.inventoryModel.DropItem(inDex, this.playerPos.position);
     }
-
-    public void SaveData()
+    #endregion
+    #region CRATING
+    void AddMaterial(int inDex)
     {
-        InventoryDataManager.Instance.SaveDataItems(this.slotsList);
+        var slot = this.inventoryModel.slots[inDex];
+        bool addSuccess = this.craftingSystem.TryAddMaterial(inDex);
+        if (addSuccess)
+            this.inventoryModel.RemoveItem(slot);
     }
-
-    public void LoadData()
+    #endregion
+    private void OnDestroy()
     {
-        InventoryDataManager.Instance.LoadDataItems(this.slotsList);
-    }
-
-    public void DeleteData()
-    {
-        InventoryDataManager.Instance.DeleteAllDataItems();
-    }
-    public bool HasData()
-    {
-        return false;
-    }    
-    public void OnDestroy()
-    {
-        EventManager.Instance?.Unsubscribe(NameEvent.Event_InventorySaveData, SaveData);
-        EventManager.Instance?.Unsubscribe(NameEvent.Event_InventoryLoadData, LoadData);
-        EventManager.Instance?.Unsubscribe(NameEvent.Event_InventoryDeleteData, DeleteData);
+        EventManager.Instance?.Unsubscribe<int>(NameEvent.Event_Inventory_UseItem, UseItem);
+        EventManager.Instance?.Unsubscribe<int>(NameEvent.Event_Inventory_DropItem, DropItem);
+        EventManager.Instance?.Unsubscribe<int>(NameEvent.Event_Inventory_SelectCratingItem, AddMaterial);
     }
 }

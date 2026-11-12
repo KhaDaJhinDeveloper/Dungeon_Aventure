@@ -49,7 +49,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         WeaponsSaveLoad.Instance.SaveData();
         GameStateCoinManager.Instance.SaveData();
         ItemDataManager.Instance.DeleteData();
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_InventorySaveData);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_InventorySaveData);
         DebugLogger.Log("All game data Saved When Play");
     }
     public void LoadDataWhenPlay()

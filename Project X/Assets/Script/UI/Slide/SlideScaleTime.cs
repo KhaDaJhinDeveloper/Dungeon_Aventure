@@ -9,7 +9,7 @@ public class SlideScaleTime : BaseSlider
     {
         base.Start();
         this.countdownTimer = GameObject.FindFirstObjectByType<CountdownTimer>();
-        EventManager.OP_EventManager.Subscribe("LoadTimeBar", Load);
+        EventManager.Instance.Subscribe("LoadTimeBar", Load);
     }
     public override void Load()
     {
@@ -19,6 +19,6 @@ public class SlideScaleTime : BaseSlider
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("LoadTimeBar", Load);
+        EventManager.Instance?.Unsubscribe("LoadTimeBar", Load);
     }
 }

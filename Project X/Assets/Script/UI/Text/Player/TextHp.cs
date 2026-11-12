@@ -10,7 +10,7 @@ public class TextHp : BaseText
         base.Start();
         this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
         Load();
-        EventManager.OP_EventManager.Subscribe("LoadHPText", Load);
+        EventManager.Instance.Subscribe("LoadHPText", Load);
     }
     public override void Load()
     {
@@ -18,6 +18,6 @@ public class TextHp : BaseText
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe("LoadHPText", Load);
+        EventManager.Instance?.Unsubscribe("LoadHPText", Load);
     }
 }

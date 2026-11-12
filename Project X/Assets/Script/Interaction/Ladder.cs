@@ -34,7 +34,7 @@ public class Ladder : BaseInteraction
     {
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
             this.canTeleport = true;
         }    
     }
@@ -42,7 +42,7 @@ public class Ladder : BaseInteraction
     {
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
             this.canTeleport = false;
         }
     }

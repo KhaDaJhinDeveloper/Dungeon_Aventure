@@ -8,6 +8,8 @@ public class ButtonTrigger : BaseInteraction
     protected override void Start()
     {
         base.Start();
+        EventManager.Instance.Subscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
+        EventManager.Instance.Subscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
         this.gameObject.SetActive(false);
     }
     protected override void LoadComponent()
@@ -23,11 +25,6 @@ public class ButtonTrigger : BaseInteraction
     void HiddenButton()
     {
         this.gameObject.SetActive(false);
-    }
-    private void OnEnable()
-    {
-        EventManager.Instance.Subscribe(NameEvent.Event_ShowButtonTrigger, Showbutton);
-        EventManager.Instance.Subscribe(NameEvent.Event_HiddenButtonTrigger, HiddenButton);
     }
     private void OnDestroy()
     {

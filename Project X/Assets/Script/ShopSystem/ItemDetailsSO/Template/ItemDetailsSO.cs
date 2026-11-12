@@ -2,9 +2,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ItemDetails")]
 public class ItemDetailsSO : ScriptableObject
 {
-    public Sprite imageItem;
+    [Header("VisualItem")]
+    public Sprite iconItem;
+    [Header("DataItem")]
     public string nameItem;
-    public int priceItem;
-    public ItemType typeItem;
-    [TextArea] public string describe;
+    public ItemType itemType;
+    public KeyPool keyPool;
+    public int buyPrice;
+    [TextArea] public string description;
 }

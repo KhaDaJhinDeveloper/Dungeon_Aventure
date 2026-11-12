@@ -30,7 +30,7 @@ public class Abyss : BaseInteraction
         {
             if (this.target != null)
             {
-                EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_PlayerAnimationDrop);
+                EventManager.Instance.TriggerEvent(NameEvent.Event_PlayerAnimationDrop);
                 this.istele = true;
                 yield return new WaitForSeconds(.4f);
                 TransitionScene.Instance.PlayTransition(() =>

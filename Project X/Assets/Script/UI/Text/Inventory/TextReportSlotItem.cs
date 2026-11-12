@@ -7,7 +7,7 @@ public class TextReportSlotItem : BaseText
     protected override void Start()
     {
         base.Start();
-        EventManager.OP_EventManager.Subscribe<string>("LoadSlotItemReportText", Loadinput);
+        EventManager.Instance.Subscribe<string>(NameEvent.Event_LoadSlotItemReportText, Loadinput);
     }
     public override void Loadinput(string textinput)
     {
@@ -21,6 +21,6 @@ public class TextReportSlotItem : BaseText
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe<string>("LoadSlotItemReportText", Loadinput);
+        EventManager.Instance?.Unsubscribe<string>(NameEvent.Event_LoadSlotItemReportText, Loadinput);
     }
 }

@@ -2,29 +2,31 @@ using UnityEngine;
 
 public class NameEvent 
 {
-    public const string Event_NavMeshSetUp = "NavmeshSetup";
-    public const string Event_PlayerAnimationDrop = "AnimationDrop";
-    //UI=========================
+        public const string Event_NavMeshSetUp = "NavmeshSetup";
+        public const string Event_PlayerAnimationDrop = "AnimationDrop";
+    #region UI
     //-------CONTENTUI
         public const string Event_LoadIndex = "LoadIndex";
         public const string Event_ShowContentBoard = "ShowContentBoard";
         public const string Event_HideContentBroad = "HideContentBroad";
     //-------STATS
-    public const string Event_LoadHPBar = "loadHP";
-    public const string Event_loadArmorBar ="LoadArmor";
-    public const string Event_LoadAntiMagicBar = "LoadAntiMagic";
-    public const string Event_LoadManaBar = "LoadMana";
-    public const string Event_LoadHPText = "LoadHPText";
-    public const string Event_LoadManaText = "LoadManaText";
+        public const string Event_LoadHPBar = "loadHP";
+        public const string Event_loadArmorBar ="LoadArmor";
+        public const string Event_LoadAntiMagicBar = "LoadAntiMagic";
+        public const string Event_LoadManaBar = "LoadMana";
+        public const string Event_LoadHPText = "LoadHPText";
+        public const string Event_LoadManaText = "LoadManaText";
     //-------BUTTON
     //--------------ButtonTrigger
-    public const string Event_ShowButtonTrigger = "EventShowButton";
+        public const string Event_ShowButtonTrigger = "EventShowButton";
         public const string Event_HiddenButtonTrigger = "EventHiddenButton";
 
    //-------TEXT
         //--------------TextPopup
         public const string Event_LoadCoinText = "LoadCoinText";
         public const string Event_ShowDamageText = "ShowDamageText";
+        public const string Event_LoadCraftingReportText = "LoadCraftingReportText";
+        public const string Event_LoadSlotItemReportText = "LoadSlotItemReportText";
         //--------------TextDialog
         public const string Event_LoadDialogText = "LoadDialogText";
     //--------SHOPUI
@@ -40,13 +42,26 @@ public class NameEvent
         public const string Event_ChangeWeaponSlot_LoadInfoWeapon = "LoadInfoWeapon";
         public const string Event_ChangeWeaponSlot_HideUI = "HideChangeSlotUI";
         public const string Event_ChangeWeaponSlot_ShowUI = "ShowChangeSlotUI";
+    //-------INVENTORY
+        public const string Event_InventoryView_OnSlotChanged = "OnSlotChanged";
+        public const string Event_InventoryView_SetPanel = "SetPael";
+    //-------CRAFTING
+        public const string Event_LoadSlotsMaterialUI = "LoadSlotsMaterialUI";
+        public const string Event_LoadSlotResultlUI = "Event_LoadSlotResultlUI";
+    #endregion
     //--------SOUND
-    //DATA=========================
+
+
+    #region LOGIC
     //-------INVENTORY
     public const string Event_InventorySaveData = "InventorySaveData";
     public const string Event_InventoryLoadData = "InventoryLoadData";
     public const string Event_InventoryDeleteData = "InventoryDeleteData";
+    public const string Event_Inventory_UseItem = "InventoryUseItem";
+    public const string Event_Inventory_DropItem = "InventoryDropItem";
+    public const string Event_Inventory_SelectCratingItem = "InventorySelectCratingItem";
     //BOSSEVENT====================
     public const string Event_StartBossFight = "StartBossFight";
     public const string Event_EndBossFight = "EndBossFight";
+    #endregion
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8426990756420746011}
   - component: {fileID: 8156255199166063359}
   - component: {fileID: 3661803485536902716}
+  - component: {fileID: 8300774999203988891}
   m_Layer: 5
   m_Name: InventoryManager
   m_TagString: InventoryManager
@@ -50,27 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8f7cd7fb8cbaf489a910cc917a2941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  inventoryView: {fileID: 8300774999203988891}
   recoveryItems:
   - {fileID: 11400000, guid: a40d6916b2afc63459bf132691d76cd7, type: 2}
   - {fileID: 11400000, guid: 093f5621e304bc746a0f91badbbc13a1, type: 2}
@@ -96,13 +77,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffec889d505491849a7c75657df52b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawMaterials:
-  - {fileID: 0}
-  - {fileID: 0}
   recipes:
-  - {fileID: 11400000, guid: 1b211a984f6a85045ba7025d340a6d24, type: 2}
-  - {fileID: 11400000, guid: 2b8b4a0a0f43a4e44997a91f2a459f90, type: 2}
-  - {fileID: 11400000, guid: 204cdb24ed863684391fc989ac4d118e, type: 2}
-  - {fileID: 11400000, guid: b426454cc1a173c4680656b435f17de6, type: 2}
-  - {fileID: 11400000, guid: 85ce9562aa21cc448be536dfd9ae1b1c, type: 2}
-  completeEquipment: {fileID: 0}
+  - {fileID: 11400000, guid: 86257a6774f598446878134f2ebdc9a1, type: 2}
+--- !u!114 &8300774999203988891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4032115996228733227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482d37cfea3491a4e9462b0f73194cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotsUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  panel: {fileID: 0}

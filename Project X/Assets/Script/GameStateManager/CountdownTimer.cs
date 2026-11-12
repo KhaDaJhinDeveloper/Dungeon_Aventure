@@ -21,7 +21,7 @@ public class CountdownTimer : MonoBehaviour
     void Update()
     {
         RunTime();
-        EventManager.OP_EventManager.TriggerEvent("LoadTimeBar");
+        EventManager.Instance.TriggerEvent("LoadTimeBar");
     }
     void RunTime()
     {

@@ -13,7 +13,6 @@ public class Pagination : MonoBehaviour
             int index = i;
             listButton[i].onClick.AddListener(() => ShowPage(index));
         }    
-        ShowPage(0);
     }
     void ShowPage(int index)
     {
@@ -22,5 +21,9 @@ public class Pagination : MonoBehaviour
             indexpage.SetActive(false);
         }
         this.page[index].SetActive(true);
-    }    
+    }
+    private void OnEnable()
+    {
+        ShowPage(0);
+    }
 }

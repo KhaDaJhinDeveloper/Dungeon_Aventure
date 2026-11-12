@@ -9,12 +9,14 @@ public class BaseButton : MonoBehaviour, IPointerEnterHandler
     protected Vector3 originalPos;
     protected Vector3 originalScale;
     public Button Button { get => button; set => button = value; }
-
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         button = GetComponent<Button>();
         this.originalPos = transform.localPosition;
         this.originalScale = transform.localScale;
+    }
+    protected virtual void Start()
+    {
         AddOnClickEvent();
     }
     protected virtual void AddOnClickEvent()

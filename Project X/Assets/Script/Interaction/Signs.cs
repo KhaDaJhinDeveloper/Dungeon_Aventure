@@ -15,14 +15,14 @@ public class Signs : BaseInteraction
         base.Update();
         if (isTrigger)
             if (Input.GetKeyDown(KeyCode.E))
-                EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadIndex, this.content.spriteDescription, this.content.textDescription);
+                EventManager.Instance?.TriggerEvent(NameEvent.Event_LoadIndex, this.content.spriteDescription, this.content.textDescription);
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
         if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
+            EventManager.Instance?.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
             this.isTrigger = true;
         }
     }
@@ -31,7 +31,7 @@ public class Signs : BaseInteraction
         base.OnTriggerExit2D(collision);
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
+            EventManager.Instance?.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
             this.isTrigger = false;
         }
     }

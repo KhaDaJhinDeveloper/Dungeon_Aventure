@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class EventManager : Singleton<EventManager>
 {
-    public static EventManager OP_EventManager;
     private static Dictionary<string, Delegate> eventDictionary = new Dictionary<string, Delegate>();
     protected override void Awake()
     {
         base.Awake();
-        OP_EventManager = this;
     }
     public void Subscribe(string eventName, Action listener)
     {

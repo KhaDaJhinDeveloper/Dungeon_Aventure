@@ -69,12 +69,12 @@ public class PlayerStats : BaseStats
     }
     public override void UpdateUI()
     {
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadHPBar);
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadHPText);
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_loadArmorBar);
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadAntiMagicBar);
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadManaBar);
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_LoadManaText);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadHPBar);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadHPText);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_loadArmorBar);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadAntiMagicBar);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadManaBar);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadManaText);
     }
     protected override void KnockBack(Transform pos, float knockbackforce)
     {

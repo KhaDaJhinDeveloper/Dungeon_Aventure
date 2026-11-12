@@ -1,12 +1,9 @@
 ﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PauseAndResume : MonoBehaviour
 {
-    private bool gamepause;
+    private bool isPause = true;
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject background;
     [SerializeField] private Transform startPos;
@@ -19,16 +16,16 @@ public class PauseAndResume : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (this.gamepause)
+            if (this.isPause)
                 Pause();
             else Resume();      
         }
     }
-    void Resume()
+    public void Resume()
     {
+        this.isPause = true;
         SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_MenuPause);
         this.pauseUI.transform.DOKill();
-        this.gamepause = true;
         this.pauseUI.transform.DOMove(this.startPos.transform.position, 0.5f).SetUpdate(true).OnComplete(() => 
         {
             this.background.SetActive(false); 
@@ -38,9 +35,9 @@ public class PauseAndResume : MonoBehaviour
     }
     void Pause()
     {
+        this.isPause = false;
         SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_MenuPause);
         this.pauseUI.transform.DOKill();
-        this.gamepause = false;
         this.pauseUI.transform.position = this.startPos.transform.position;
         this.background.SetActive(true);
         this.pauseUI.SetActive(true);

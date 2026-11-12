@@ -17,7 +17,7 @@ public class ButtonBack : BaseButton, IPointerEnterHandler
     {
         base.OnClick();
         this.shopManager.currentSlot = null;
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_CloseShop);     
+        EventManager.Instance.TriggerEvent(NameEvent.Event_CloseShop);     
     }
     public override void OnPointerEnter(PointerEventData eventData)
     {

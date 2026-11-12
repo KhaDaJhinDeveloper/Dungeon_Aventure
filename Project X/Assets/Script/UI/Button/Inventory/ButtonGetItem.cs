@@ -4,16 +4,16 @@ using UnityEngine.EventSystems;
 
 public class ButtonGetItem : BaseButton, IPointerEnterHandler
 {
-    private CraftingItem craftingItem;
+    private CraftingSystem craftingItem;
     protected override void Start()
     {
         base.Start();
-        this.craftingItem = GameObject.FindWithTag(TagManager.TAG_UI).GetComponentInChildren<CraftingItem>();
+        this.craftingItem = FindFirstObjectByType<CraftingSystem>();
     }
     protected override void OnClick()
     {
         base.OnClick();
-        this.craftingItem.GetItemcomplete();
+        this.craftingItem.GetItemResult();
     }
     public override void OnPointerEnter(PointerEventData eventData)
     {

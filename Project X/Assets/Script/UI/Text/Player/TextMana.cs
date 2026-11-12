@@ -10,7 +10,7 @@ public class TextMana : BaseText
         base.Start();
         this.playerStats = GameObject.FindWithTag(TagManager.TAG_PLAYER).GetComponent<PlayerStats>();
         Load();
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_LoadManaText, Load);
+        EventManager.Instance.Subscribe(NameEvent.Event_LoadManaText, Load);
     }
     public override void Load()
     {
@@ -18,6 +18,6 @@ public class TextMana : BaseText
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_LoadManaText, Load);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_LoadManaText, Load);
     }
 }

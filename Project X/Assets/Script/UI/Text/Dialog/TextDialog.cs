@@ -8,7 +8,7 @@ public class TextDialog : BaseText
     protected override void Start()
     {
         base.Start();
-        EventManager.OP_EventManager.Subscribe<string>(NameEvent.Event_LoadDialogText, TypeWritterEffect);
+        EventManager.Instance.Subscribe<string>(NameEvent.Event_LoadDialogText, TypeWritterEffect);
     }
     public void TypeWritterEffect(string text)
     {
@@ -30,6 +30,6 @@ public class TextDialog : BaseText
     }    
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe<string>(NameEvent.Event_LoadDialogText, TypeWritterEffect);
+        EventManager.Instance?.Unsubscribe<string>(NameEvent.Event_LoadDialogText, TypeWritterEffect);
     }
 }

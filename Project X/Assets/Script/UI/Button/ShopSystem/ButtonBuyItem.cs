@@ -26,15 +26,15 @@ public class ButtonBuyItem : BaseButton, IPointerEnterHandler
     {
         if(this.coinManager.CoinAmount > this.shopSlot.priceItem)
         {
-            if(!this.inventoryManager.IsFullSlot())
-            {
-                this.inventoryManager.AddItem(this.shopSlot.imageItem,
-                                              this.shopSlot.nameItem,
-                                              this.shopSlot.typeItem,
-                                              this.shopSlot.key);
-                this.coinManager.SpendCoin(this.shopSlot.priceItem);
-                this.slotObject.SetActive(false);
-            }
+            //if(!this.inventoryManager.IsFullSlot())
+            //{
+            //    this.inventoryManager.AddItem(this.shopSlot.imageItem,
+            //                                  this.shopSlot.nameItem,
+            //                                  this.shopSlot.typeItem,
+            //                                  this.shopSlot.key);
+            //    this.coinManager.SpendCoin(this.shopSlot.priceItem);
+            //    this.slotObject.SetActive(false);
+            //}
         }
     }
     public override void OnPointerEnter(PointerEventData eventData)

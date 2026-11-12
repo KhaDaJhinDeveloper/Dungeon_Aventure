@@ -4,17 +4,17 @@ using UnityEngine.EventSystems;
 
 public class ButtonCrafting : BaseButton, IPointerEnterHandler
 {
-    private CraftingItem craftingItem;
+    private CraftingSystem craftingItem;
     protected override void Start()
     {
         base.Start();
-        this.craftingItem = GameObject.FindWithTag(TagManager.TAG_UI).GetComponentInChildren<CraftingItem>();
+        this.craftingItem = FindFirstObjectByType<CraftingSystem>();
     }
     protected override void OnClick()
     {
         base.OnClick();
         this.craftingItem.Crafting();
-        EventManager.OP_EventManager.TriggerEvent("LoadCraftingeUI");
+        EventManager.Instance.TriggerEvent("LoadCraftingeUI");
     }
     public override void OnPointerEnter(PointerEventData eventData)
     {

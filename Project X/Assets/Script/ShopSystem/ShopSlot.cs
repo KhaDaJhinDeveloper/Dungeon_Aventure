@@ -37,13 +37,13 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     }
     public void LoadDataItem()
     {
-        int dataIndex = Random.Range(0, this.shopManager.itemsDetails.Count);
-        ItemDetailsSO currentslot = this.shopManager.itemsDetails[dataIndex];
-        this.imageItem = currentslot.imageItem;
-        this.nameItem = currentslot.nameItem;
-        this.priceItem = currentslot.priceItem;
-        this.describe = currentslot.describe;
-        this.typeItem = currentslot.typeItem;
+        //int dataIndex = Random.Range(0, this.shopManager.itemsDetails.Count);
+        //ItemDetailsSO currentslot = this.shopManager.itemsDetails[dataIndex];
+        //this.imageItem = currentslot.imageItem;
+        //this.nameItem = currentslot.nameItem;
+        //this.priceItem = currentslot.priceItem;
+        //this.describe = currentslot.describe;
+        //this.typeItem = currentslot.typeItem;
     }
     void OnLeftClick()
     {

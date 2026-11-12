@@ -35,7 +35,7 @@ public class SlimeKingBehavior : SlimeKingController
             }
         }
         if (this.stats.ThisIsDie())
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_EndBossFight);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_EndBossFight);
     }
     void CheckCoolDown()
     {

@@ -8,25 +8,25 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] private Sprite imageItem;
     private string nameitem;
     private InventoryManager inventoryManager;
-    private SpriteRenderer spriteRenderer;
     public KeyPool Key_Pool { get => keyPool; }
     public Sprite ImageItem { get => imageItem; }
-    public ItemType Type { get => type; set => type = value; }
+    public ItemType Type { get => type; }
+    private bool isPickUp;
 
     private void Start()
     {
-        this.inventoryManager = GameObject.FindWithTag(TagManager.TAG_INVENTORY_MANAGER).GetComponent<InventoryManager>();
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.inventoryManager = FindFirstObjectByType<InventoryManager>();
         this.LoadIndexItem();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (this.isPickUp) return;
         if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-           if(!this.inventoryManager.IsFullSlot())
+           if(this.inventoryManager.TryPickUpItem(this.nameitem, this.type, this.keyPool))
             {
+                this.isPickUp = true;
                 SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Pickup_Item, this.transform, 0);
-                this.inventoryManager.AddItem(this.imageItem, this.nameitem, this.type, this.keyPool);
                 ObjectPooling.ObjectPooling_Instance.ReturnToPool(this.keyPool, this.gameObject);
             }    
         }
@@ -34,6 +34,9 @@ public class ItemPickUp : MonoBehaviour
     private void LoadIndexItem()
     {
         this.nameitem = KeyClean.CleanKey(this.name);
-        this.imageItem = this.spriteRenderer.sprite;
+    }
+    private void OnEnable()
+    {
+        this.isPickUp = false;
     }
 }

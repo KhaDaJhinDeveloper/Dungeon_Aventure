@@ -35,15 +35,15 @@ public class ContentUI : MonoBehaviour
     }    
     void SubEvent()
     {
-        EventManager.OP_EventManager.Subscribe<Sprite, string>(NameEvent.Event_LoadIndex, LoadIndex);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_ShowContentBoard, ShowContentBoard);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_HideContentBroad, HideContentBroad);
+        EventManager.Instance.Subscribe<Sprite, string>(NameEvent.Event_LoadIndex, LoadIndex);
+        EventManager.Instance.Subscribe(NameEvent.Event_ShowContentBoard, ShowContentBoard);
+        EventManager.Instance.Subscribe(NameEvent.Event_HideContentBroad, HideContentBroad);
     }    
     void UnsubEvent()
     {
-        EventManager.OP_EventManager.Unsubscribe<Sprite, string>(NameEvent.Event_LoadIndex, LoadIndex);
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_ShowContentBoard, ShowContentBoard);
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_HideContentBroad, HideContentBroad);
+        EventManager.Instance?.Unsubscribe<Sprite, string>(NameEvent.Event_LoadIndex, LoadIndex);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_ShowContentBoard, ShowContentBoard);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_HideContentBroad, HideContentBroad);
     }    
     private void OnDestroy()
     {

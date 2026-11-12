@@ -26,7 +26,7 @@ public class DialogTriggerNPC : BaseInteraction
     {
         if(collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
             this.canDialog = true;
         }    
     }
@@ -34,7 +34,7 @@ public class DialogTriggerNPC : BaseInteraction
     {
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
             this.canDialog = false;
         }
     }

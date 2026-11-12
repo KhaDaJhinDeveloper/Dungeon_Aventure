@@ -9,11 +9,11 @@ public class CoinManager : MonoBehaviour
     public void IncreaseCoinAmount(int amount)
     {
         this.coinAmount += amount;
-        EventManager.OP_EventManager.TriggerEvent("LoadCoinText");
+        EventManager.Instance.TriggerEvent("LoadCoinText");
     }
     public void SpendCoin(int amount)
     {
         this.coinAmount -= amount;
-        EventManager.OP_EventManager.TriggerEvent("LoadCoinText");
+        EventManager.Instance.TriggerEvent("LoadCoinText");
     }
 }

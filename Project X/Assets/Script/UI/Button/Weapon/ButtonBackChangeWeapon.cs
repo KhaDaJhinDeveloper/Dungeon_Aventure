@@ -17,7 +17,7 @@ public class ButtonBackChangeWeapon : BaseButton, IPointerEnterHandler
     protected override void OnClick()
     {
         base.OnClick();
-        EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ChangeWeaponSlot_HideUI);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_ChangeWeaponSlot_HideUI);
     }
     public override void OnPointerEnter(PointerEventData eventData)
     {

@@ -8,7 +8,7 @@ public class SlideMana : BaseSlider
     protected override void Start()
     {
         base.Start();
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_LoadManaBar, Load);
+        EventManager.Instance.Subscribe(NameEvent.Event_LoadManaBar, Load);
     }
     public override void Load()
     {
@@ -21,6 +21,6 @@ public class SlideMana : BaseSlider
     }
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_LoadManaBar, Load);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_LoadManaBar, Load);
     }
 }

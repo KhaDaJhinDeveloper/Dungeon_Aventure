@@ -27,7 +27,7 @@ public class Box : BaseInteraction
         base.OnTriggerEnter2D(collision);
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_ShowButtonTrigger);
             this.canOpen = true;
         }
     }
@@ -36,7 +36,7 @@ public class Box : BaseInteraction
         base.OnTriggerExit2D(collision);
         if (collision.gameObject.CompareTag(TagManager.TAG_PLAYER))
         {
-            EventManager.OP_EventManager.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_HiddenButtonTrigger);
             this.canOpen = false;
         }
     }

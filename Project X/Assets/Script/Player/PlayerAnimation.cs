@@ -17,7 +17,7 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         this.ani = GetComponentInChildren<Animator>();
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);
+        EventManager.Instance.Subscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);
     }
     public void UpdateAnimation(Vector2 direction)
     {
@@ -65,6 +65,6 @@ public class PlayerAnimation : MonoBehaviour
     }    
     private void OnDestroy()
     {
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);
+        EventManager.Instance?.Unsubscribe(NameEvent.Event_PlayerAnimationDrop, AnimationDrop);
     }
 }

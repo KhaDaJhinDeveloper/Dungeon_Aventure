@@ -12,8 +12,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private Transform startPos;
     void Start()
     {
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_OpenShop, OpenShop);
-        EventManager.OP_EventManager.Subscribe(NameEvent.Event_CloseShop, CloseShop);
+        EventManager.Instance.Subscribe(NameEvent.Event_OpenShop, OpenShop);
+        EventManager.Instance.Subscribe(NameEvent.Event_CloseShop, CloseShop);
         CloseShop();
     }
     public void SelectedSlot(ShopSlot slot)
@@ -43,7 +43,7 @@ public class ShopManager : MonoBehaviour
     private void OnDestroy()
     {
         this.shopUI.transform.DOKill();
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_OpenShop, OpenShop);
-        EventManager.OP_EventManager.Unsubscribe(NameEvent.Event_CloseShop, CloseShop);
+        EventManager.Instance.Unsubscribe(NameEvent.Event_OpenShop, OpenShop);
+        EventManager.Instance.Unsubscribe(NameEvent.Event_CloseShop, CloseShop);
     }
 }

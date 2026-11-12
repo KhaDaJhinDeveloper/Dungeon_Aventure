@@ -16,7 +16,7 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
     //-------------------------------------------------
     private Transform posDrop;
     private InventoryManager inventoryManager;
-    private CraftingItem craftingItem;
+    private CraftingSystem craftingItem;
     public bool IsFull { get => this.isFull; set => this.isFull = value; }
     public string NameItem { get => nameItem; set => nameItem = value; }
     public bool IsSelected { get => isSelected; set => isSelected = value; }
@@ -29,7 +29,7 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         this.inventoryManager = GameObject.FindWithTag(TagManager.TAG_UI).GetComponentInChildren<InventoryManager>();
-        this.craftingItem = GameObject.FindWithTag(TagManager.TAG_UI).GetComponentInChildren<CraftingItem>();
+        this.craftingItem = GameObject.FindWithTag(TagManager.TAG_UI).GetComponentInChildren<CraftingSystem>();
         this.posDrop = GameObject.FindWithTag(TagManager.TAG_DROP_POSITION).transform;
     }
     public void AddItem(Sprite imageItem, string nameItem, ItemType type, KeyPool key)
@@ -53,7 +53,7 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
         {
             if (this.isFull)
             {
-                this.inventoryManager.DeselectedAllSlots();
+                //this.inventoryManager.DeselectedAllSlots();
                 this.option.SetActive(true);
                 this.slotSelected.SetActive(true);
                 this.isSelected = true;
@@ -65,15 +65,15 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
         {
             if (this.type == ItemType.Usable)
             {
-                EventManager.OP_EventManager.TriggerEvent<string>("LoadSlotItemReportText", "Used item");
-                this.inventoryManager.UseItem(this.nameItem);
-                SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_EquipItem);
-                EmptySlot();
+                //EventManager.OP_EventManager.TriggerEvent<string>("LoadSlotItemReportText", "Used item");
+                //this.inventoryManager.UseItem(this.nameItem);
+                //SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Interface_EquipItem);
+                //EmptySlot();
             }
             else if (this.type == ItemType.Material)
             {
                 SoundManager.Instance.PlayMusicSFX(SoundID.SFX_Notification_Warning);
-                EventManager.OP_EventManager.TriggerEvent<string>("LoadSlotItemReportText", "This is material, not usable");
+                EventManager.Instance.TriggerEvent<string>("LoadSlotItemReportText", "This is material, not usable");
             }
         }    
     }
@@ -96,9 +96,5 @@ public class InventorySlotItems : MonoBehaviour, IPointerClickHandler
         GameObject objItem = ObjectPooling.ObjectPooling_Instance.GetPool(this.key);
         objItem.transform.position = this.posDrop.position;
         EmptySlot();
-    }
-    public void AddMaterial()
-    {
-        this.craftingItem.AddMaterial(this);
     }
 }

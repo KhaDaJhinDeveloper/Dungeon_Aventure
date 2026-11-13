@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +16,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         PlayerStatsDataManager.Instance.SaveData();
         PlayerPositionDataManager.Instance.SaveData();
         WeaponsSaveLoad.Instance.SaveData();
+        InventoryDataManager.Instance.SaveData();
         GameStateCoinManager.Instance.SaveData();
         GameStateTimerManager.Instance.SaveData();
         GameSceneStateManager.Instance.SaveData();
@@ -34,7 +33,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         WeaponsSaveLoad.Instance.LoadData();
         GameStateCoinManager.Instance.LoadData();
         GameStateTimerManager.Instance.LoadData();
-
+        InventoryDataManager.Instance.LoadData();
         string currentSceneName = SceneManager.GetActiveScene().name;
         EnemiesDataManager.Instance.LoadData();
         ItemDataManager.Instance.LoadData();
@@ -48,6 +47,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         PlayerStatsDataManager.Instance.SaveData();
         WeaponsSaveLoad.Instance.SaveData();
         GameStateCoinManager.Instance.SaveData();
+        InventoryDataManager.Instance.SaveData();
         ItemDataManager.Instance.DeleteData();
         EventManager.Instance.TriggerEvent(NameEvent.Event_InventorySaveData);
         DebugLogger.Log("All game data Saved When Play");
@@ -67,6 +67,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         DungeonDataManager.Instance.DeleteData();
         EnemiesDataManager.Instance.DeleteData();
         ItemDataManager.Instance.DeleteData();
+        InventoryDataManager.Instance.DeleteData();
         EventManager.Instance.TriggerEvent(NameEvent.Event_InventoryDeleteData);
         DialogStateManager.dialogState_Instance.ResetAllStateDialog();
         DebugLogger.Log("All save data Deleted");
@@ -96,6 +97,7 @@ public class GameSaveManager : Singleton<GameSaveManager>
         PlayerStatsDataManager.Instance.LoadData();
         WeaponsSaveLoad.Instance.LoadData();
         GameStateCoinManager.Instance.LoadData();
+        InventoryDataManager.Instance.LoadData();
         EventManager.Instance.TriggerEvent(NameEvent.Event_InventoryLoadData);
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)

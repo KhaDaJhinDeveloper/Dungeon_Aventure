@@ -1,0 +1,8 @@
+{
+    "sceneName": "Test",
+    "bossState": {
+        "cutSceneId": "",
+        "canInteract": false,
+        "isEnd": false
+    }
+}

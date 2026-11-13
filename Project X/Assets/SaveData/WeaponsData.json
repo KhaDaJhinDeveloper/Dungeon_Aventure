@@ -1,0 +1,14 @@
+{
+    "weaponSlotLeft": {
+        "weaponID": "",
+        "mainDamage": 0
+    },
+    "weaponSlotRight": {
+        "weaponID": "",
+        "mainDamage": 0
+    },
+    "weaponReserve": {
+        "weaponID": "",
+        "mainDamage": 0
+    }
+}

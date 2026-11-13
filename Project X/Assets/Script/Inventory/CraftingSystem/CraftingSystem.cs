@@ -1,5 +1,5 @@
-using MCPForUnity.Editor.Helpers;
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class CraftingSystem : MonoBehaviour
@@ -7,8 +7,8 @@ public class CraftingSystem : MonoBehaviour
     public const int MAX_CRAFT_SLOTS = 5;
     [SerializeField] CraftingRecipe[] recipes;
     private InventoryManager inventoryManager;
-    public InventorySlotData[] rawMaterials { get; private set; }
-    public InventorySlotData itemCompleteEquipment { get; private set; }
+    public InventorySlotData[] rawMaterials;
+    public InventorySlotData itemCompleteEquipment;
     private void Awake()
     {
         Initialize();
@@ -152,5 +152,19 @@ public class CraftingSystem : MonoBehaviour
                 }
             }
         }    
-    }    
+    }
+    #region Data
+    public void SetData(List<InventorySlotSaveData> listData, InventorySlotSaveData result)
+    {
+        if (listData.Count <= 0) return;
+        for(int i =0; i < listData.Count; i++)
+        {
+            this.rawMaterials[i].SetItem(listData[i].nameItem, (ItemType)listData[i].typeData, (KeyPool)listData[i].keyPool, listData[i].quantity);
+            this.rawMaterials[i].SetIndex(i);
+            EventManager.Instance.TriggerEvent(NameEvent.Event_LoadSlotsMaterialUI, i, this.rawMaterials[i]);
+        }
+        if (result != null) this.itemCompleteEquipment.SetItem(result.nameItem, (ItemType)result.typeData, (KeyPool)result.keyPool, result.quantity);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_LoadSlotResultlUI, this.itemCompleteEquipment);
+    }
+    #endregion
 }

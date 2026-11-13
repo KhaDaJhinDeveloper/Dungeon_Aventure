@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: SlimeKingBossRoom
   m_EditorClassIdentifier: 
   roomBody:
-  - {fileID: 555997287469765899, guid: f22b1bff50f2e0c43a29aac2ba75f590, type: 3}
-  - {fileID: 4570618002430528274, guid: 9ee1e0414214b9e429e929114b957cdc, type: 3}
+  - room: {fileID: 555997287469765899, guid: f22b1bff50f2e0c43a29aac2ba75f590, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 4570618002430528274, guid: 9ee1e0414214b9e429e929114b957cdc, type: 3}
+    unlockLevel: 0
   roomExit:
-  - {fileID: 2498421089448537715, guid: 43d067d96fc775e41aaef015231c0370, type: 3}
-  - {fileID: 3374979651937639742, guid: bc8a9dcc4b8714f4db68ce1677f82fae, type: 3}
+  - room: {fileID: 2498421089448537715, guid: 43d067d96fc775e41aaef015231c0370, type: 3}
+    unlockLevel: 0
+  - room: {fileID: 3374979651937639742, guid: bc8a9dcc4b8714f4db68ce1677f82fae, type: 3}
+    unlockLevel: 0
   wall:
   - {fileID: 4231078837843549156, guid: 1fe6a4c6540ba1542bf5aaa295c52064, type: 3}
   - {fileID: -5237119226145220379, guid: 654d13fb2147c09438248ef3d922194f, type: 3}

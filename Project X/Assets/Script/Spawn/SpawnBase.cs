@@ -18,7 +18,7 @@ public class SpawnBase : MonoBehaviour
             int index = 0; 
             while(index < obj.poolSize)
             {
-                ObjectPooling.ObjectPooling_Instance.CreatePool(obj.key, obj.prefab, obj.poolSize);
+                ObjectPooling.Instance.CreatePool(obj.key, obj.prefab, obj.poolSize);
                 index++;
             }    
         }    

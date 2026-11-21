@@ -30,10 +30,11 @@ public class NameEvent
         //--------------TextDialog
         public const string Event_LoadDialogText = "LoadDialogText";
     //--------SHOPUI
-        public const string Event_OpenShop = "OpenShop";
-        public const string Event_CloseShop = "CloseShop";
+        public const string Event_OpenShopUI = "OpenShop";
+        public const string Event_CloseShopUI = "CloseShop";
+        public const string Event_ShopView_UpdateSlotView = "UpdateSlotView";
     //--------WEAPON
-        //WeaponSlotUI
+    //WeaponSlotUI
         public const string Event_ImageSlotWeapon_LoadWeaponSlotUI = "LoadWeaponSlotUI";
         //WeaponController
         public const string Event_WeaponControll_ChangeSlotWeapon = "ChangeSlotWeapon";
@@ -45,6 +46,9 @@ public class NameEvent
     //-------INVENTORY
         public const string Event_InventoryView_OnSlotChanged = "OnSlotChanged";
         public const string Event_InventoryView_SetPanel = "SetPael";
+
+    //-------SHOPVIEW
+        public const string Event_ShopView_RefreshView = "RefreshView";
     //-------CRAFTING
         public const string Event_LoadSlotsMaterialUI = "LoadSlotsMaterialUI";
         public const string Event_LoadSlotResultlUI = "Event_LoadSlotResultlUI";
@@ -54,14 +58,18 @@ public class NameEvent
 
     #region LOGIC
     //-------INVENTORY
-    public const string Event_InventorySaveData = "InventorySaveData";
-    public const string Event_InventoryLoadData = "InventoryLoadData";
-    public const string Event_InventoryDeleteData = "InventoryDeleteData";
-    public const string Event_Inventory_UseItem = "InventoryUseItem";
-    public const string Event_Inventory_DropItem = "InventoryDropItem";
-    public const string Event_Inventory_SelectCratingItem = "InventorySelectCratingItem";
-    //BOSSEVENT====================
-    public const string Event_StartBossFight = "StartBossFight";
-    public const string Event_EndBossFight = "EndBossFight";
+        public const string Event_InventorySaveData = "InventorySaveData";
+        public const string Event_InventoryLoadData = "InventoryLoadData";
+        public const string Event_InventoryDeleteData = "InventoryDeleteData";
+        public const string Event_Inventory_UseItem = "InventoryUseItem";
+        public const string Event_Inventory_DropItem = "InventoryDropItem";
+        public const string Event_Inventory_SelectCratingItem = "InventorySelectCratingItem";
+    //-------SHOPSYSTEM
+        public const string Event_ShopSystem_GetItemDetails = "GetItemDetails";
+        public const string Event_ShopSystem_BuyItem = "BuyItem";
+        public const string Event_ShopSystem_RefreshShop = "RefreshShop";
+        //BOSSEVENT====================
+        public const string Event_StartBossFight = "StartBossFight";
+        public const string Event_EndBossFight = "EndBossFight";
     #endregion
 }

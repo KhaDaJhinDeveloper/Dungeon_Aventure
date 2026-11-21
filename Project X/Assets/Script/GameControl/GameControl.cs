@@ -14,6 +14,8 @@ public class GameControl : Singleton<GameControl>
     private float density  = 0.4f;
     public float Density { get => this.density;
                            set => this.density = Mathf.Clamp01(value); }
+    private float scalePrice = 0.0f;
+    public float ScalePrice { get => this.scalePrice; set => this.scalePrice = Mathf.Clamp01(value); }
     #endregion
     #region StateGame
     public void NewGame()

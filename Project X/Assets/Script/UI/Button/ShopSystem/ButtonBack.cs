@@ -1,23 +1,17 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class ButtonBack : BaseButton, IPointerEnterHandler
 {
-    private ShopManager shopManager;
     protected override void Start()
     {
         base.Start();
-        this.shopManager = GameObject.FindFirstObjectByType<ShopManager>();
     }
     protected override void OnClick()
     {
         base.OnClick();
-        this.shopManager.currentSlot = null;
-        EventManager.Instance.TriggerEvent(NameEvent.Event_CloseShop);     
+        EventManager.Instance.TriggerEvent(NameEvent.Event_CloseShopUI);     
     }
     public override void OnPointerEnter(PointerEventData eventData)
     {

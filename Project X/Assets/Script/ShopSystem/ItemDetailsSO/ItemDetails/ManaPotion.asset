@@ -16,5 +16,5 @@ MonoBehaviour:
   nameItem: Mana
   itemType: 0
   keyPool: 60
-  buyPrice: 0
+  buyPrice: 550
   description: 

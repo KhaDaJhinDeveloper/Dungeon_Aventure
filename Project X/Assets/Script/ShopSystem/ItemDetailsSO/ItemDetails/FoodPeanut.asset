@@ -16,5 +16,5 @@ MonoBehaviour:
   nameItem: FoodPeanut
   itemType: 0
   keyPool: 15
-  buyPrice: 0
+  buyPrice: 80
   description: 

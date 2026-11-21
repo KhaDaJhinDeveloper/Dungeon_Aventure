@@ -16,5 +16,5 @@ MonoBehaviour:
   nameItem: HealthRotten
   itemType: 0
   keyPool: 20
-  buyPrice: 0
+  buyPrice: 350
   description: 

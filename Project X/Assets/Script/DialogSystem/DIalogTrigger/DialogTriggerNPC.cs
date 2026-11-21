@@ -10,7 +10,7 @@ public class DialogTriggerNPC : BaseInteraction
     private bool canDialog;
     protected override void LoadComponent()
     {
-        this.dialogManager = GameObject.FindFirstObjectByType<DialogManager>();
+        this.dialogManager = FindFirstObjectByType<DialogManager>();
     }
     protected override void Update()
     {

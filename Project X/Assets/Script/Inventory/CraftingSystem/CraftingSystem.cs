@@ -111,10 +111,6 @@ public class CraftingSystem : MonoBehaviour
                                             craftingRecipe.resultItem.itemType,
                                             craftingRecipe.resultKeyPool,
                                             craftingRecipe.resultQuantity);
-        Debug.Log(itemCompleteEquipment.itemName);
-        Debug.Log(itemCompleteEquipment.type);
-        Debug.Log(itemCompleteEquipment.keyPool);
-        Debug.Log(itemCompleteEquipment.quantity);
         for (int i = 0; i < this.rawMaterials.Length; i++)
             EventManager.Instance.TriggerEvent(NameEvent.Event_LoadSlotsMaterialUI, i, this.rawMaterials[i]);
         EventManager.Instance.TriggerEvent(NameEvent.Event_LoadSlotResultlUI,this.itemCompleteEquipment);

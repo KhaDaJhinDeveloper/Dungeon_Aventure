@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TextDescribeItem : BaseText
 {
-    private ShopManager shopManager;
+    private ShopSystem shopManager;
     protected override void Start()
     {
-        this.shopManager = GameObject.FindFirstObjectByType<ShopManager>();
+        this.shopManager = GameObject.FindFirstObjectByType<ShopSystem>();
         base.Start();
     }
     protected override void Update()
@@ -17,7 +17,6 @@ public class TextDescribeItem : BaseText
     }
     public override void Load()
     {
-        if(this.shopManager.currentSlot != null)
-            m_TextMeshProUGUI.text = this.shopManager.currentSlot.describe;
+
     }
 }

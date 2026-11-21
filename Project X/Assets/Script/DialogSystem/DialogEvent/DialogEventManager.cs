@@ -36,7 +36,7 @@ public class DialogEventManager : Singleton<DialogEventManager>
     private void ShowShop()
     {
         DebugLogger.Log("ShowShop");
-        EventManager.Instance.TriggerEvent(NameEvent.Event_OpenShop);
+        EventManager.Instance.TriggerEvent(NameEvent.Event_OpenShopUI);
     }   
     private void DropItem()
     {

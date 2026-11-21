@@ -16,5 +16,5 @@ MonoBehaviour:
   nameItem: FoodAppleRotten
   itemType: 0
   keyPool: 14
-  buyPrice: 0
+  buyPrice: 200
   description: 

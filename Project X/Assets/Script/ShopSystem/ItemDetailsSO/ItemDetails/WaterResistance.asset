@@ -16,5 +16,5 @@ MonoBehaviour:
   nameItem: WaterResistance
   itemType: 0
   keyPool: 22
-  buyPrice: 0
+  buyPrice: 350
   description: 

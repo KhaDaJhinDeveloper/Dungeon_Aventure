@@ -16,5 +16,5 @@ MonoBehaviour:
   nameItem: ForceMeat
   itemType: 0
   keyPool: 17
-  buyPrice: 0
+  buyPrice: 550
   description: 

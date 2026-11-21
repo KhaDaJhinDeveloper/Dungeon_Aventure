@@ -16,5 +16,5 @@ MonoBehaviour:
   nameItem: MeatRotten
   itemType: 0
   keyPool: 18
-  buyPrice: 0
+  buyPrice: 400
   description: 

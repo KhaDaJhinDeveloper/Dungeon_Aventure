@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8426990756420746011}
   - component: {fileID: 8156255199166063359}
-  - component: {fileID: 3661803485536902716}
   - component: {fileID: 8300774999203988891}
   m_Layer: 5
   m_Name: InventoryManager
@@ -32,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -65,20 +64,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb0a63bcb1d390345b89263cdd537f72, type: 2}
   - {fileID: 11400000, guid: fee3067366928194b98ace34a90e02f9, type: 2}
   - {fileID: 11400000, guid: d6df614d1966cac46904a5a7b9da1eaa, type: 2}
---- !u!114 &3661803485536902716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4032115996228733227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffec889d505491849a7c75657df52b64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipes:
-  - {fileID: 11400000, guid: 86257a6774f598446878134f2ebdc9a1, type: 2}
 --- !u!114 &8300774999203988891
 MonoBehaviour:
   m_ObjectHideFlags: 0
